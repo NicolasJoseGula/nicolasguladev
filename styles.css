@@ -258,10 +258,30 @@ a:hover { text-decoration: underline; }
   flex: 1;
 }
 
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
 .card-open {
   font-size: 12px;
   color: var(--accent);
 }
+
+.card-platform {
+  display: inline-flex;
+  color: var(--text-3);
+}
+
+.card-platform svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+}
+
+.card:hover .card-platform { color: var(--text-2); }
 
 /* ----------------------------------------------------------------
    Theme toggle button (lives in the terminal title bar)
