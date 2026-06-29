@@ -27,16 +27,11 @@
   var catAboutLine = cmds[1].closest(".cmd");
   var catLinksLine = cmds[2].closest(".cmd");
 
-  // Empty every element we will type into, so nothing flashes before it is typed.
-  var typeables = [cmds[0], cmds[1], cmds[2], nameEl, aboutText];
-  linkEls.forEach(function (a) { typeables.push(a); });
-  typeables.forEach(function (el) {
-    el.setAttribute("data-full", el.textContent);
-    el.textContent = "";
-  });
-
-  // Safety net: if anything throws, reveal everything so nothing stays hidden.
-  function revealAll() { root.classList.remove("intro"); }
+  // Safety net: if anything throws, reveal everything and unlock the height.
+  function revealAll() {
+    root.classList.remove("intro");
+    hero.style.minHeight = "";
+  }
   var fallback = setTimeout(revealAll, 8000);
 
   function sleep(ms) {
@@ -94,11 +89,41 @@
     await sleep(200);
 
     show(finalPrompt);
+
+    // Unlock the height now that the content is complete (same size, no jump).
+    hero.style.minHeight = "";
     clearTimeout(fallback);
   }
 
-  run().catch(function () {
-    clearTimeout(fallback);
-    revealAll();
-  });
+  var started = false;
+  function begin() {
+    if (started) return;
+    started = true;
+
+    // Lock the body to its final height BEFORE emptying the text, so the
+    // terminal window keeps a constant size while everything types in.
+    hero.style.minHeight = hero.offsetHeight + "px";
+
+    // Empty every element we will type into, so nothing flashes before typing.
+    var typeables = [cmds[0], cmds[1], cmds[2], nameEl, aboutText];
+    linkEls.forEach(function (a) { typeables.push(a); });
+    typeables.forEach(function (el) {
+      el.setAttribute("data-full", el.textContent);
+      el.textContent = "";
+    });
+
+    run().catch(function () {
+      clearTimeout(fallback);
+      revealAll();
+    });
+  }
+
+  // Wait for the web font before measuring, so the locked height matches the
+  // text that will actually be typed (font swaps can change line wrapping).
+  if (document.fonts && document.fonts.ready) {
+    document.fonts.ready.then(begin);
+    setTimeout(begin, 1500); // safety in case fonts.ready never settles
+  } else {
+    begin();
+  }
 })();
