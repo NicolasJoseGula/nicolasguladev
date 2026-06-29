@@ -35,18 +35,30 @@
   </button>
 
   <main class="page page--center">
-    <section class="hero">
-      <p class="cmd reveal"><span class="prompt">$</span> <span class="cmd-text">whoami</span></p>
-      <h1 class="name reveal">Nicolás Gula</h1>
+    <section class="terminal-window">
+      <div class="terminal-bar">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-title">nicolasgula.dev — zsh</span>
+      </div>
 
-      <p class="cmd reveal"><span class="prompt">$</span> <span class="cmd-text">cat about.txt</span></p>
-      <p class="about reveal"><span class="about-text">I build software — iOS apps, games, and tools — with a background in offensive security.</span><span class="cursor" aria-hidden="true"></span></p>
+      <div class="terminal-body hero">
+        <p class="cmd reveal"><span class="prompt">$</span> <span class="cmd-text">whoami</span></p>
+        <h1 class="name reveal">Nicolás Gula</h1>
 
-      <nav class="links reveal">
-        <a href="projects.html">&rarr; projects</a>
-        <!-- TODO: replace with your real LinkedIn profile URL -->
-        <a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener">&rarr; linkedin</a>
-      </nav>
+        <p class="cmd reveal"><span class="prompt">$</span> <span class="cmd-text">cat about.txt</span></p>
+        <p class="about reveal"><span class="about-text">I build software — iOS apps, games, and tools — with a background in offensive security.</span></p>
+
+        <p class="cmd reveal"><span class="prompt">$</span> <span class="cmd-text">cat links.txt</span></p>
+        <nav class="links reveal">
+          <a href="projects.html">&rarr; projects</a>
+          <!-- TODO: replace with your real LinkedIn profile URL -->
+          <a href="https://www.linkedin.com/in/YOUR-PROFILE" target="_blank" rel="noopener">&rarr; linkedin</a>
+        </nav>
+
+        <p class="cmd reveal prompt-final"><span class="prompt">$</span> <span class="cursor" aria-hidden="true"></span></p>
+      </div>
     </section>
   </main>
 
