@@ -1,0 +1,263 @@
+/* ----------------------------------------------------------------
+   Theme tokens. Dark is the default; light overrides via [data-theme].
+   ---------------------------------------------------------------- */
+:root {
+  --bg: #0d0d10;
+  --surface: #141418;
+  --surface-2: #1c1c22;
+  --border: #26262b;
+  --text: #f2f2f0;
+  --text-2: #9a9aa2;
+  --text-3: #6b6b73;
+  --accent: #5dcaa5;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, monospace;
+}
+
+[data-theme="light"] {
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f1f1ee;
+  --border: #e6e6e2;
+  --text: #1a1a1a;
+  --text-2: #56564f;
+  --text-3: #8a8a82;
+  --accent: #1d9e75;
+}
+
+/* ----------------------------------------------------------------
+   Base
+   ---------------------------------------------------------------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { min-height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* ----------------------------------------------------------------
+   Page layout
+   ---------------------------------------------------------------- */
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 28px;
+}
+
+.page--center {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ----------------------------------------------------------------
+   Terminal prompt lines
+   ---------------------------------------------------------------- */
+.cmd {
+  color: var(--text-3);
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.prompt { color: var(--accent); }
+
+/* ----------------------------------------------------------------
+   Home hero
+   ---------------------------------------------------------------- */
+.name {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 2px 0 24px;
+}
+
+.about {
+  color: var(--text-2);
+  max-width: 520px;
+  margin-bottom: 32px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 8px;
+  height: 15px;
+  background: var(--text);
+  vertical-align: -2px;
+  margin-left: 3px;
+  animation: blink 1.1s steps(1) infinite;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.links {
+  display: flex;
+  gap: 24px;
+  font-size: 14px;
+}
+
+/* ----------------------------------------------------------------
+   Projects page header
+   ---------------------------------------------------------------- */
+.projects-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 32px;
+}
+
+.page-title {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.back { font-size: 14px; }
+
+/* ----------------------------------------------------------------
+   Projects grid
+   ---------------------------------------------------------------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  color: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.card-image {
+  aspect-ratio: 16 / 10;
+  background: var(--surface-2);
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-name {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.card-open {
+  font-size: 12px;
+  color: var(--accent);
+}
+
+/* ----------------------------------------------------------------
+   Theme toggle button
+   ---------------------------------------------------------------- */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text);
+  border-color: var(--text-3);
+}
+
+.theme-toggle svg { width: 18px; height: 18px; }
+
+/* Show the icon for the theme you would switch TO */
+.icon-sun { display: block; }
+.icon-moon { display: none; }
+[data-theme="light"] .icon-sun { display: none; }
+[data-theme="light"] .icon-moon { display: block; }
+
+/* ----------------------------------------------------------------
+   Small screens
+   ---------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .page { padding: 44px 20px; }
+  .name { font-size: 24px; }
+  .links { gap: 18px; }
+}
+
+/* ----------------------------------------------------------------
+   Intro typing animation (home page).
+   These rules only apply while the <html> element has the "intro"
+   class, which JS adds once per session. Otherwise everything shows
+   normally.
+   ---------------------------------------------------------------- */
+.intro .reveal { opacity: 0; }
+
+.intro .reveal.show {
+  opacity: 1;
+  transition: opacity 0.25s ease;
+}
+
+/* Hide the steady cursor until the typing sequence hands off to it */
+.intro .cursor { opacity: 0; }
+.intro.intro-done .cursor { opacity: 1; }
+
+/* Blinking caret shown on the element currently being typed */
+.cmd-text.typing-active::after,
+.about-text.typing-active::after {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  background: var(--text);
+  vertical-align: -2px;
+  margin-left: 1px;
+  animation: blink 1.1s steps(1) infinite;
+}
