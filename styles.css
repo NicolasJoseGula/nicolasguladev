@@ -34,7 +34,7 @@
 html, body { height: 100%; }
 
 body {
-  background: var(--bg);
+  background: var(--surface);
   color: var(--text);
   font-family: var(--font-mono);
   font-size: 15px;
@@ -100,7 +100,10 @@ a:hover { text-decoration: underline; }
   min-height: 0;
   overflow-y: auto;
   padding: 32px;
+  scrollbar-width: none;
 }
+
+.terminal-body::-webkit-scrollbar { width: 0; height: 0; }
 
 .terminal-body--center {
   display: flex;
@@ -300,7 +303,6 @@ a:hover { text-decoration: underline; }
 }
 
 @media (max-width: 480px) {
-  .terminal-window { inset: 8px; border-radius: 12px; }
   .terminal-body { padding: 22px 18px; }
   .name { font-size: 24px; }
   .links { gap: 18px; }
