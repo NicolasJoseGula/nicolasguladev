@@ -151,6 +151,7 @@ var projects = [
   var cmdLine = cmdText ? cmdText.closest(".cmd") : null;
   var title = document.querySelector(".page-title");
   var hasIO = "IntersectionObserver" in window;
+  var scrollRoot = document.querySelector(".terminal-body");
 
   // Safety net: if anything breaks, reveal everything.
   function revealAll() {
@@ -192,7 +193,7 @@ var projects = [
         io.unobserve(el);
       }
     });
-  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }) : null;
+  }, { root: scrollRoot, threshold: 0.12, rootMargin: "0px 0px -8% 0px" }) : null;
 
   function startReveal() {
     if (hasIO) {
