@@ -15,6 +15,14 @@
       var saved = localStorage.getItem('theme');
       if (saved) document.documentElement.setAttribute('data-theme', saved);
     })();
+    // Enable the typing + scroll-reveal animation unless reduced motion is on.
+    // Adding the class here (before paint) hides the header so there is no flash.
+    (function () {
+      try {
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (!reduce) document.documentElement.classList.add('projects-anim');
+      } catch (e) {}
+    })();
   </script>
 </head>
 <body>
@@ -23,16 +31,27 @@
     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
   </button>
 
-  <main class="page">
-    <header class="projects-header">
-      <div>
-        <p class="cmd"><span class="prompt">$</span> ls projects/</p>
-        <h1 class="page-title">projects</h1>
+  <main class="page page--wide">
+    <section class="terminal-window terminal-window--wide">
+      <div class="terminal-bar">
+        <span class="dot dot-red"></span>
+        <span class="dot dot-yellow"></span>
+        <span class="dot dot-green"></span>
+        <span class="terminal-title">nicolasgula.dev/projects — zsh</span>
       </div>
-      <a class="back" href="index.html">&larr; home</a>
-    </header>
 
-    <div class="grid" id="projectGrid"></div>
+      <div class="terminal-body">
+        <header class="projects-header">
+          <div>
+            <p class="cmd reveal"><span class="prompt">$</span> <span class="cmd-text">ls projects/</span></p>
+            <h1 class="page-title reveal">projects</h1>
+          </div>
+          <a class="back" href="index.html">&larr; home</a>
+        </header>
+
+        <div class="grid" id="projectGrid"></div>
+      </div>
+    </section>
   </main>
 
   <script src="projects.js"></script>
