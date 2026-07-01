@@ -304,10 +304,29 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 26px 32px;
+  padding: 32px;
   color: var(--text-3);
-  font-size: 13px;
 }
+
+.socials {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.socials a {
+  display: inline-flex;
+  color: var(--text-3);
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.socials a:hover { color: var(--text); transform: translateY(-2px); }
+
+.socials svg { width: 20px; height: 20px; display: block; }
+
+.copyright { font-size: 13px; }
 
 /* ----------------------------------------------------------------
    Small screens
