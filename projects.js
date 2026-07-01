@@ -18,18 +18,18 @@
 // ----------------------------------------------------------------
 var projects = [
   {
+    name: "Fix Your Life",
+    image: "assets/fixyourlife.png",
+    description: "An alarm that wakes you to the present with confronting questions.",
+    url: "fixyourlife/",
+    platform: "ios"
+  },
+  {
     name: "CurrencyFlow",
     image: "assets/currencyflow.png",
     description: "A fast, premium currency converter for iPhone.",
     url: "currencyflow/",
     platform: "ios"
-  },
-  {
-    name: "PassForge",
-    image: "assets/passforge.png",
-    description: "Generate and store strong passwords, fully offline.",
-    url: "#",
-    platform: "extension"
   },
   {
     name: "NetScout",
