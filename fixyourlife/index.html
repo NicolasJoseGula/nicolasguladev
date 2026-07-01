@@ -99,13 +99,14 @@
   footer .copy { font-size: 13px; margin-bottom: 40px;}
 
   @media (max-width: 720px) {
-    .topbar { flex-direction: column; gap: 13px; }
-    .topbar .nav { justify-content: center; gap: 14px 20px; }
+    .topbar { display: none; }
     .row, .row:nth-child(even) { flex-direction: column; text-align: center; gap: 26px; padding: 36px 0; }
     .row .txt { flex: 0 1 auto; }
     .row .txt .ic { margin-left: auto; margin-right: auto; }
     .phone { width: 232px; }
-    .hero { padding: 48px 0 24px; }
+    .hero { padding: 56px 0 24px; display: flex; flex-direction: column; align-items: center; }
+    .hero h1 { order: -2; }
+    .hero .appicon { order: -1; margin: 24px auto 0; }
   }
 </style>
 </head>
