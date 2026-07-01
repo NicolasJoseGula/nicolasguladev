@@ -27,73 +27,73 @@ var projects = [
   {
     name: "CurrencyFlow",
     image: "assets/currencyflow.png",
-    description: "A fast, premium currency converter for iPhone.",
+    description: "A fast, premium currency converter for iPhone. IN PROGRES...",
     url: "currencyflow/",
     platform: "ios"
   },
-  {
-    name: "NetScout",
-    image: "assets/netscout.png",
-    description: "Scan your local network and see every device.",
-    url: "#",
-    platform: "ios"
-  },
-  {
-    name: "FocusGrid",
-    image: "assets/focusgrid.png",
-    description: "A minimal pomodoro timer that keeps you on task.",
-    url: "#",
-    platform: "extension"
-  },
-  {
-    name: "CipherNote",
-    image: "assets/ciphernote.png",
-    description: "End-to-end encrypted notes for your iPhone.",
-    url: "#",
-    platform: "ios"
-  },
-  {
-    name: "PixelRunner",
-    image: "assets/pixelrunner.png",
-    description: "A fast-paced 2D platformer made with Unity.",
-    url: "#",
-    platform: "steam"
-  },
-  {
-    name: "HabitLoop",
-    image: "assets/habitloop.png",
-    description: "Build habits with simple streaks and reminders.",
-    url: "#",
-    platform: "ios"
-  },
-  {
-    name: "PortPeek",
-    image: "assets/portpeek.png",
-    description: "A lightweight port scanner for quick recon.",
-    url: "#",
-    platform: "extension"
-  },
-  {
-    name: "MoodTint",
-    image: "assets/moodtint.png",
-    description: "Track your mood and spot patterns over time.",
-    url: "#",
-    platform: "ios"
-  },
-  {
-    name: "VaultKey",
-    image: "assets/vaultkey.png",
-    description: "A clean, offline two-factor authentication app.",
-    url: "#",
-    platform: "ios"
-  },
-  {
-    name: "SkyCast",
-    image: "assets/skycast.png",
-    description: "Beautiful, no-nonsense weather at a glance.",
-    url: "#",
-    platform: "ios"
-  }
+  // {
+  //   name: "NetScout",
+  //   image: "assets/netscout.png",
+  //   description: "Scan your local network and see every device.",
+  //   url: "#",
+  //   platform: "ios"
+  // },
+  // {
+  //   name: "FocusGrid",
+  //   image: "assets/focusgrid.png",
+  //   description: "A minimal pomodoro timer that keeps you on task.",
+  //   url: "#",
+  //   platform: "extension"
+  // },
+  // {
+  //   name: "CipherNote",
+  //   image: "assets/ciphernote.png",
+  //   description: "End-to-end encrypted notes for your iPhone.",
+  //   url: "#",
+  //   platform: "ios"
+  // },
+  // {
+  //   name: "PixelRunner",
+  //   image: "assets/pixelrunner.png",
+  //   description: "A fast-paced 2D platformer made with Unity.",
+  //   url: "#",
+  //   platform: "steam"
+  // },
+  // {
+  //   name: "HabitLoop",
+  //   image: "assets/habitloop.png",
+  //   description: "Build habits with simple streaks and reminders.",
+  //   url: "#",
+  //   platform: "ios"
+  // },
+  // {
+  //   name: "PortPeek",
+  //   image: "assets/portpeek.png",
+  //   description: "A lightweight port scanner for quick recon.",
+  //   url: "#",
+  //   platform: "extension"
+  // },
+  // {
+  //   name: "MoodTint",
+  //   image: "assets/moodtint.png",
+  //   description: "Track your mood and spot patterns over time.",
+  //   url: "#",
+  //   platform: "ios"
+  // },
+  // {
+  //   name: "VaultKey",
+  //   image: "assets/vaultkey.png",
+  //   description: "A clean, offline two-factor authentication app.",
+  //   url: "#",
+  //   platform: "ios"
+  // },
+  // {
+  //   name: "SkyCast",
+  //   image: "assets/skycast.png",
+  //   description: "Beautiful, no-nonsense weather at a glance.",
+  //   url: "#",
+  //   platform: "ios"
+  // }
 ];
 
 // Platform logos (monochrome, inherit the text color).
