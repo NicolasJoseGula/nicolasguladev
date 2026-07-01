@@ -1,22 +1,18 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects — Nicolás Gula</title>
-  <meta name="description" content="Projects and apps by Nicolás Gula.">
+  <title>Work — dezeo</title>
+  <meta name="description" content="Apps, games, and experiments from dezeo creative studio.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    // Apply the saved theme before the page paints to avoid a flash
-    (function () {
-      var saved = localStorage.getItem('theme');
-      if (saved) document.documentElement.setAttribute('data-theme', saved);
-    })();
-    // Enable the typing + scroll-reveal animation unless reduced motion is on.
-    // Adding the class here (before paint) hides the header so there is no flash.
+    // Enable the scroll-reveal animation unless the visitor prefers reduced motion.
     (function () {
       try {
         var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -26,36 +22,30 @@
   </script>
 </head>
 <body>
-  <main>
-    <section class="terminal-window">
-      <div class="terminal-bar">
-        <span class="dot dot-red"></span>
-        <span class="dot dot-yellow"></span>
-        <span class="dot dot-green"></span>
-        <span class="terminal-title">nicolasgula.dev/projects — zsh</span>
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        </button>
-      </div>
+  <div class="glow" aria-hidden="true"></div>
 
-      <div class="terminal-body">
-        <div class="terminal-content terminal-content--wide">
-          <header class="projects-header">
-            <div>
-              <p class="cmd reveal"><span class="prompt">$</span> <span class="cmd-text">ls projects/</span></p>
-              <h1 class="page-title reveal">projects</h1>
-            </div>
-            <a class="back" href="index.html">&larr; home</a>
-          </header>
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img class="brand-icon" src="assets/dezeotransparent.png" alt="dezeo logo" onerror="this.style.display='none'">
+      <span class="brand-name">dezeo</span>
+    </a>
+    <nav class="site-nav">
+      <a href="projects.html" class="active">Work</a>
+      <!-- TODO: set your real contact email -->
+      <a href="mailto:hola@dezeo.lat">Contact</a>
+    </nav>
+  </header>
 
-          <div class="grid" id="projectGrid"></div>
-        </div>
-      </div>
-    </section>
+  <main class="work">
+    <div class="work-head">
+      <h1 class="page-title">Work</h1>
+      <p class="page-sub">Apps, games, and experiments from the studio.</p>
+    </div>
+    <div class="grid" id="projectGrid"></div>
   </main>
 
+  <footer class="site-footer">© 2026 dezeo — creative studio</footer>
+
   <script src="projects.js"></script>
-  <script src="theme.js"></script>
 </body>
 </html>

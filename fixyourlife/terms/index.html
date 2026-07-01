@@ -1,84 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Use — Fix Your Life</title>
-<link rel="icon" href="../assets/icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #000; color: #fff; font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif; line-height: 1.65; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-  .top { display: flex; align-items: center; gap: 10px; padding: 22px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
-  .top img { width: 26px; height: 26px; border-radius: 7px; }
-  .top a { color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; }
-  .top .back { margin-left: auto; font-weight: 500; font-size: 13px; color: rgba(255,255,255,.4); }
-  .top .back:hover { color: #fff; }
-  main { padding: 48px 0 80px; }
-  h1 { font-size: 32px; font-weight: 800; letter-spacing: -.02em; }
-  .updated { color: rgba(255,255,255,.4); font-size: 14px; margin: 8px 0 36px; }
-  h2 { font-size: 19px; font-weight: 700; margin: 34px 0 10px; }
-  p { color: rgba(255,255,255,.7); margin-bottom: 14px; }
-  ul { color: rgba(255,255,255,.7); margin: 0 0 14px 20px; }
-  li { margin-bottom: 6px; }
-  a.inline { color: #ff5b5b; text-decoration: none; }
-  a.inline:hover { text-decoration: underline; }
-  strong { color: #fff; }
-  footer { border-top: 1px solid rgba(255,255,255,.1); padding: 28px 0; color: rgba(255,255,255,.35); font-size: 13px; text-align: center; }
-  footer a { color: rgba(255,255,255,.5); text-decoration: none; margin: 0 10px; }
-  footer a:hover { color: #fff; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use — Fix Your Life</title>
+  <link rel="icon" href="../assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, .1);
+    }
+
+    .top img {
+      width: 26px;
+      height: 26px;
+      border-radius: 7px;
+    }
+
+    .top a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
+    .top .back {
+      margin-left: auto;
+      font-weight: 500;
+      font-size: 13px;
+      color: rgba(255, 255, 255, .4);
+    }
+
+    .top .back:hover {
+      color: #fff;
+    }
+
+    main {
+      padding: 48px 0 80px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -.02em;
+    }
+
+    .updated {
+      color: rgba(255, 255, 255, .4);
+      font-size: 14px;
+      margin: 8px 0 36px;
+    }
+
+    h2 {
+      font-size: 19px;
+      font-weight: 700;
+      margin: 34px 0 10px;
+    }
+
+    p {
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 14px;
+    }
+
+    ul {
+      color: rgba(255, 255, 255, .7);
+      margin: 0 0 14px 20px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    a.inline {
+      color: #ff5b5b;
+      text-decoration: none;
+    }
+
+    a.inline:hover {
+      text-decoration: underline;
+    }
+
+    strong {
+      color: #fff;
+    }
+
+    footer {
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      padding: 28px 0;
+      color: rgba(255, 255, 255, .35);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, .5);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="wrap">
-  <div class="top">
-    <img src="../assets/icon.png" alt="">
-    <a href="../">Fix Your Life</a>
-    <a class="back" href="../">← back</a>
+  <div class="wrap">
+    <div class="top">
+      <img src="../assets/icon.png" alt="">
+      <a href="../">Fix Your Life</a>
+      <a class="back" href="../">← back</a>
+    </div>
+
+    <main>
+      <h1>Terms of Use</h1>
+      <p class="updated">Last updated: June 30, 2026</p>
+
+      <p>By downloading or using <strong>Fix Your Life</strong> ("the App"), you agree to these Terms of Use.</p>
+
+      <h2>1. License</h2>
+      <p>We grant you a personal, non-transferable, non-exclusive license to use the App on Apple devices that you own
+        or control, in accordance with the Apple Media Services Terms and Conditions.</p>
+
+      <h2>2. Subscriptions</h2>
+      <p>Fix Your Life offers auto-renewable subscriptions:</p>
+      <ul>
+        <li><strong>Weekly</strong> — with a 3-day free trial, then the price shown in the App per week.</li>
+        <li><strong>Yearly</strong> — billed once per year at the price shown in the App.</li>
+      </ul>
+      <p>Payment is charged to your Apple Account at confirmation of purchase. The subscription <strong>automatically
+          renews</strong> unless cancelled at least 24 hours before the end of the current period. Your Apple Account is
+        charged for renewal within 24 hours prior to the end of the current period. You can manage or cancel your
+        subscription in your device's App Store account settings. Any unused portion of a free trial is forfeited when
+        you purchase a subscription.</p>
+
+      <h2>3. Acceptable use</h2>
+      <p>You agree to use the App only for lawful, personal purposes and not to misuse, reverse-engineer, or attempt to
+        disrupt it.</p>
+
+      <h2>4. Disclaimer</h2>
+      <p>The App is provided "as is", without warranties of any kind. Fix Your Life is a personal-development and
+        reminder tool and does not provide medical, psychological, or professional advice. It is your responsibility to
+        ensure alarms are configured appropriately for your needs.</p>
+
+      <h2>5. Limitation of liability</h2>
+      <p>To the maximum extent permitted by law, we are not liable for any indirect or consequential damages arising
+        from your use of the App.</p>
+
+      <h2>6. Governing law</h2>
+      <p>These Terms are governed by the laws of Uruguay.</p>
+
+      <h2>7. Contact</h2>
+      <p>Email: <a class="inline" href="mailto:fixyourlifeiosapp@gmail.com">fixyourlifeiosapp@gmail.com</a></p>
+    </main>
   </div>
 
-  <main>
-    <h1>Terms of Use</h1>
-    <p class="updated">Last updated: June 30, 2026</p>
-
-    <p>By downloading or using <strong>Fix Your Life</strong> ("the App"), you agree to these Terms of Use.</p>
-
-    <h2>1. License</h2>
-    <p>We grant you a personal, non-transferable, non-exclusive license to use the App on Apple devices that you own or control, in accordance with the Apple Media Services Terms and Conditions.</p>
-
-    <h2>2. Subscriptions</h2>
-    <p>Fix Your Life offers auto-renewable subscriptions:</p>
-    <ul>
-      <li><strong>Weekly</strong> — with a 3-day free trial, then the price shown in the App per week.</li>
-      <li><strong>Yearly</strong> — billed once per year at the price shown in the App.</li>
-    </ul>
-    <p>Payment is charged to your Apple Account at confirmation of purchase. The subscription <strong>automatically renews</strong> unless cancelled at least 24 hours before the end of the current period. Your Apple Account is charged for renewal within 24 hours prior to the end of the current period. You can manage or cancel your subscription in your device's App Store account settings. Any unused portion of a free trial is forfeited when you purchase a subscription.</p>
-
-    <h2>3. Acceptable use</h2>
-    <p>You agree to use the App only for lawful, personal purposes and not to misuse, reverse-engineer, or attempt to disrupt it.</p>
-
-    <h2>4. Disclaimer</h2>
-    <p>The App is provided "as is", without warranties of any kind. Fix Your Life is a personal-development and reminder tool and does not provide medical, psychological, or professional advice. It is your responsibility to ensure alarms are configured appropriately for your needs.</p>
-
-    <h2>5. Limitation of liability</h2>
-    <p>To the maximum extent permitted by law, we are not liable for any indirect or consequential damages arising from your use of the App.</p>
-
-    <h2>6. Governing law</h2>
-    <p>These Terms are governed by the laws of Uruguay.</p>
-
-    <h2>7. Contact</h2>
-    <p>Email: <a class="inline" href="mailto:fixyourlifeiosapp@gmail.com">fixyourlifeiosapp@gmail.com</a></p>
-  </main>
-</div>
-
-<footer>
-  <a href="../">Home</a> · <a href="../privacypolicy/">Privacy Policy</a> · <a href="../support/">Support</a><br>
-  <span style="display:inline-block;margin-top:10px">© 2026 Nicolas Gula</span>
-</footer>
+  <footer>
+    <a href="../">Home</a> · <a href="../privacypolicy/">Privacy Policy</a> · <a href="../support/">Support</a><br>
+    <span style="display:inline-block;margin-top:10px">© 2026 Dezeo - creative studio</span>
+  </footer>
 
 </body>
+
 </html>

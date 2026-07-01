@@ -12,9 +12,6 @@
 //   url:         where the card links to (the project landing page)
 //   platform:    one of "ios", "extension" or "steam" (shows a small logo).
 //                omit it if the project has no platform tag.
-//
-// Note: every project below except CurrencyFlow is fake placeholder
-// data, only there to preview how the grid looks. Replace or delete.
 // ----------------------------------------------------------------
 var projects = [
   {
@@ -113,7 +110,7 @@ var PLATFORMS = {
 };
 
 // ----------------------------------------------------------------
-// Render the grid, then run the intro typing + scroll-reveal.
+// Render the grid, then reveal the cards as they scroll into view.
 // You do not need to edit anything below this line.
 // ----------------------------------------------------------------
 (function () {
@@ -187,45 +184,15 @@ var PLATFORMS = {
     cards.push(card);
   });
 
-  // No animation: everything is already visible, nothing else to do.
+  // No animation: everything is already visible.
   if (!animate) return;
 
-  var cmdText = document.querySelector(".projects-header .cmd-text");
-  var cmdLine = cmdText ? cmdText.closest(".cmd") : null;
-  var title = document.querySelector(".page-title");
-  var hasIO = "IntersectionObserver" in window;
-  var scrollRoot = document.querySelector(".terminal-body");
-
-  // Safety net: if anything breaks, reveal everything.
-  function revealAll() {
-    root.classList.remove("projects-anim");
-    cards.forEach(function (c) { c.classList.remove("reveal-card"); });
-  }
-  var fallback = setTimeout(revealAll, 8000);
-
-  function sleep(ms) {
-    return new Promise(function (resolve) { setTimeout(resolve, ms); });
+  if (!("IntersectionObserver" in window)) {
+    cards.forEach(function (c) { c.classList.add("in"); });
+    return;
   }
 
-  function type(el, speed) {
-    return new Promise(function (resolve) {
-      var full = el.getAttribute("data-full") || "";
-      el.classList.add("typing-active");
-      var i = 0;
-      (function step() {
-        el.textContent = full.slice(0, i);
-        if (i < full.length) {
-          i++;
-          setTimeout(step, speed);
-        } else {
-          el.classList.remove("typing-active");
-          resolve();
-        }
-      })();
-    });
-  }
-
-  var io = hasIO ? new IntersectionObserver(function (entries) {
+  var io = new IntersectionObserver(function (entries) {
     var delay = 0;
     entries.forEach(function (entry) {
       if (entry.isIntersecting) {
@@ -236,36 +203,7 @@ var PLATFORMS = {
         io.unobserve(el);
       }
     });
-  }, { root: scrollRoot, threshold: 0.12, rootMargin: "0px 0px -8% 0px" }) : null;
+  }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
 
-  function startReveal() {
-    if (hasIO) {
-      cards.forEach(function (c) { io.observe(c); });
-    } else {
-      cards.forEach(function (c) { c.classList.add("in"); });
-    }
-  }
-
-  async function run() {
-    if (cmdText) {
-      cmdText.setAttribute("data-full", cmdText.textContent);
-      cmdText.textContent = "";
-    }
-
-    await sleep(250);
-    if (cmdLine) cmdLine.classList.add("show");
-    if (cmdText) await type(cmdText, 70);
-
-    await sleep(160);
-    if (title) title.classList.add("show");
-
-    await sleep(180);
-    startReveal();
-    clearTimeout(fallback);
-  }
-
-  run().catch(function () {
-    clearTimeout(fallback);
-    revealAll();
-  });
+  cards.forEach(function (c) { io.observe(c); });
 })();

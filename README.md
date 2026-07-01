@@ -1,27 +1,33 @@
-# nicolasgula.dev
+# dezeo.lat
 
-Personal site and home for the landing pages of my apps.
+Site and landing-page host for dezeo — a creative studio.
 
 ## Structure
 
 ```
 nicolasdev/
-├── index.html      Home (terminal style, dark by default + light toggle)
-├── projects.html   Grid of all projects
-├── styles.css      Shared styles and the two themes
-├── theme.js        Light / dark toggle (remembers the choice)
-├── projects.js     The list of projects  <- add apps here
-├── assets/         Images and screenshots
-└── currencyflow/   One folder per app (landing + privacy policy)
+├── index.html      Home (studio hero)
+├── projects.html   Work (grid of projects)
+├── styles.css      Shared styles (dark theme, brand gradients)
+├── projects.js     The list of projects  <- add work here
+├── assets/         Images, screenshots, and the dezeo logo
+└── currencyflow/   One folder per project (landing + privacy policy)
     ├── index.html
-    └── privacy.html
+    └── privacypolicy/
+        └── index.html
 ```
+
+## Brand
+
+- Fonts: Space Grotesk (headings) + Inter (body).
+- Gradient: blue `#2F6BFF` → violet `#7C3AED` → pink `#EC4899` → orange `#FB6E3C`.
+- Dark background `#08080c`. Logo icon lives at `assets/dezeo-icon.png`.
 
 ## How to edit
 
-### Change my name / intro / links
-Open `index.html` and edit the text inside `<h1 class="name">`, the
-`<p class="about">` line, and the `<a>` links (set the real LinkedIn URL).
+### Change the hero copy / links
+Edit the text in `index.html` (`.hero-title`, `.hero-sub`) and the nav links.
+Set the real contact email (currently `hola@dezeo.lat`).
 
 ### Add a project to the grid
 Open `projects.js` and add one object to the `projects` list:
@@ -31,28 +37,23 @@ Open `projects.js` and add one object to the `projects` list:
   name: "App name",
   image: "assets/app.png",
   description: "One short line about the app.",
-  url: "appfolder/"
+  url: "appfolder/",
+  platform: "ios"   // or "extension", "steam", or omit
 }
 ```
 
-Drop the image in `assets/`. The grid updates itself.
-
-### Add an app landing page
-Create a folder (for example `currencyflow/`) with an `index.html`
-(the landing) and a `privacy.html` (the privacy policy Apple requires).
-Reuse `../styles.css` so everything matches. Then point that project's
-`url` in `projects.js` to the folder.
+### Add a project landing page
+Create a folder (for example `currencyflow/`) with an `index.html` and a
+`privacypolicy/index.html`. Keep it self-contained. Point the project's
+`url` in `projects.js` to that folder.
 
 ## Preview locally
-Open `index.html` directly in a browser, or run a tiny static server
-from this folder:
+Open `index.html` in a browser, or run a static server from this folder:
 
 ```
 python3 -m http.server 8000
 ```
 
-Then visit http://localhost:8000
-
-## Hosting (later)
-This is a plain static site, so it works on Cloudflare Pages, GitHub
-Pages, Netlify or Vercel. Point the `nicolasgula.dev` domain there.
+## Hosting
+Static site on GitHub Pages, served at the custom domain in `CNAME`.
+Update DNS at the registrar to point the domain at GitHub Pages.

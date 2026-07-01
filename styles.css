@@ -1,29 +1,20 @@
 /* ----------------------------------------------------------------
-   Theme tokens. Dark is the default; light overrides via [data-theme].
+   dezeo — creative studio. Dark theme, brand gradients.
    ---------------------------------------------------------------- */
 :root {
-  --bg: #0d0d10;
-  --surface: #141418;
-  --surface-2: #1c1c22;
-  --border: #26262b;
-  --text: #f2f2f0;
-  --text-2: #9a9aa2;
-  --text-3: #6b6b73;
-  --accent: #5dcaa5;
-  --window-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, monospace;
-}
-
-[data-theme="light"] {
-  --bg: #f3f3f0;
-  --surface: #ffffff;
-  --surface-2: #f1f1ee;
-  --border: #e6e6e2;
-  --text: #1a1a1a;
-  --text-2: #56564f;
-  --text-3: #8a8a82;
-  --accent: #1d9e75;
-  --window-shadow: 0 18px 50px rgba(20, 20, 20, 0.14);
+  --bg: #08080c;
+  --surface: #111119;
+  --surface-2: #16161f;
+  --border: #23232e;
+  --border-strong: #30303c;
+  --text: #f4f4f7;
+  --text-2: #9a9aa6;
+  --text-3: #6c6c78;
+  --accent: #c084fc;
+  --grad-brand: linear-gradient(120deg, #7C3AED, #EC4899 60%, #FB6E3C);
+  --grad-text: linear-gradient(120deg, #2F6BFF, #7C3AED, #EC4899, #FB6E3C);
+  --font-head: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
 }
 
 /* ----------------------------------------------------------------
@@ -31,168 +22,213 @@
    ---------------------------------------------------------------- */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-html, body { height: 100%; }
+html, body { min-height: 100%; }
 
 body {
-  background: var(--surface);
+  background: var(--bg);
   color: var(--text);
-  font-family: var(--font-mono);
-  font-size: 15px;
-  line-height: 1.7;
-  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   -webkit-font-smoothing: antialiased;
-  transition: background 0.2s ease, color 0.2s ease;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
+a { color: inherit; text-decoration: none; }
 
-/* ----------------------------------------------------------------
-   Full-screen terminal window (macOS style).
-   Fills the viewport with a small margin so the rounded corners show.
-   ---------------------------------------------------------------- */
-.terminal-window {
+.grad-text {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Background glow */
+.glow {
   position: fixed;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  background: var(--surface);
-  overflow: hidden;
-}
-
-.terminal-bar {
-  position: relative;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 14px;
-  background: var(--surface-2);
-  border-bottom: 1px solid var(--border);
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.dot-red { background: #ff5f56; }
-.dot-yellow { background: #ffbd2e; }
-.dot-green { background: #27c93f; }
-
-.terminal-title {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  color: var(--text-3);
+  top: -18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1000px, 120vw);
+  height: 640px;
+  background: radial-gradient(closest-side, rgba(124, 58, 237, 0.28), rgba(47, 107, 255, 0.10), transparent);
   pointer-events: none;
+  z-index: 0;
 }
-
-.terminal-body {
-  flex: 1;
-  min-height: 0;
-  overflow-y: auto;
-  padding: 32px;
-  scrollbar-width: none;
-}
-
-.terminal-body::-webkit-scrollbar { width: 0; height: 0; }
-
-.terminal-body--center {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.terminal-content {
-  width: 100%;
-  max-width: 640px;
-  margin: 0 auto;
-}
-
-.terminal-content--wide { max-width: 900px; }
 
 /* ----------------------------------------------------------------
-   Terminal prompt lines
+   Header
    ---------------------------------------------------------------- */
-.cmd {
-  color: var(--text-3);
-  font-size: 13px;
-  margin-bottom: 4px;
+.site-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 32px;
 }
 
-.prompt { color: var(--accent); }
+.brand { display: flex; align-items: center; gap: 10px; }
 
-.prompt-final { margin-bottom: 0; }
+.brand-icon { height: 44px; width: auto; display: block; }
+
+.brand-name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.site-nav { display: flex; gap: 28px; font-size: 16px; color: var(--text-2); }
+.site-nav a { transition: color 0.15s ease; }
+.site-nav a:hover, .site-nav a.active { color: var(--text); }
 
 /* ----------------------------------------------------------------
    Home hero
    ---------------------------------------------------------------- */
-.name {
-  font-size: 28px;
-  font-weight: 500;
-  margin: 2px 0 20px;
+.hero {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 32px 90px;
 }
 
-.about {
+.kicker {
+  font-size: 12px;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(34px, 6vw, 60px);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: #fff;
+  max-width: 840px;
+  margin-bottom: 24px;
+}
+
+.hero-sub {
+  font-size: 19px;
   color: var(--text-2);
   max-width: 520px;
-  margin-bottom: 20px;
+  margin-bottom: 38px;
+  line-height: 1.6;
 }
 
-.cursor {
-  display: inline-block;
-  width: 8px;
-  height: 15px;
-  background: var(--text);
-  vertical-align: -2px;
-  animation: blink 1.1s steps(1) infinite;
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+
+/* Entrance animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
 }
 
-@keyframes blink {
-  0%, 49% { opacity: 1; }
-  50%, 100% { opacity: 0; }
-}
+.hero > * { opacity: 0; animation: fadeUp 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+.hero .kicker { animation-delay: 0.05s; }
+.hero-title { animation-delay: 0.15s; }
+.hero-sub { animation-delay: 0.28s; }
+.hero-actions { animation-delay: 0.4s; }
 
-.links {
-  display: flex;
-  gap: 24px;
-  font-size: 14px;
-  margin-bottom: 20px;
+@media (prefers-reduced-motion: reduce) {
+  .hero > * { opacity: 1; animation: none; }
 }
 
 /* ----------------------------------------------------------------
-   Projects page header
+   Buttons
    ---------------------------------------------------------------- */
-.projects-header {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 32px;
+.btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 14px 28px;
+  border-radius: 12px;
+  transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.25s ease;
 }
+
+/* Light beam that sweeps across on hover */
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+}
+
+.btn:hover::after { animation: btn-shine 0.7s ease; }
+
+@keyframes btn-shine {
+  from { left: -75%; }
+  to { left: 130%; }
+}
+
+.btn-primary { background: var(--grad-brand); color: #fff; }
+.btn-primary:hover { box-shadow: 0 6px 30px rgba(236, 72, 153, 0.42); }
+
+.btn-ghost { border: 1px solid var(--border-strong); color: var(--text); }
+.btn-ghost:hover { border-color: #45455a; background: rgba(255, 255, 255, 0.04); }
+
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover::after { animation: none; }
+}
+
+/* ----------------------------------------------------------------
+   Work (projects) page
+   ---------------------------------------------------------------- */
+.work {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 32px 80px;
+}
+
+.work-head { margin-bottom: 40px; }
 
 .page-title {
-  font-size: 22px;
-  font-weight: 500;
-  margin-top: 2px;
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
-.back { font-size: 14px; }
+.page-sub { font-size: 16px; color: var(--text-2); max-width: 520px; }
 
 /* ----------------------------------------------------------------
    Projects grid
    ---------------------------------------------------------------- */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 22px;
 }
 
 .card {
@@ -200,17 +236,12 @@ a:hover { text-decoration: underline; }
   flex-direction: column;
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 10px;
+  border-radius: 16px;
   overflow: hidden;
-  color: inherit;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  transition: border-color 0.18s ease, transform 0.18s ease;
 }
 
-.card:hover {
-  border-color: var(--accent);
-  transform: translateY(-2px);
-  text-decoration: none;
-}
+.card:hover { border-color: var(--border-strong); transform: translateY(-4px); }
 
 .card-image {
   position: relative;
@@ -219,12 +250,18 @@ a:hover { text-decoration: underline; }
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .card-mono {
-  font-size: 32px;
-  font-weight: 500;
-  color: var(--text-3);
+  font-family: var(--font-head);
+  font-size: 42px;
+  font-weight: 700;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  opacity: 0.9;
 }
 
 .card-image img {
@@ -236,140 +273,48 @@ a:hover { text-decoration: underline; }
   display: block;
 }
 
-.card-body {
-  padding: 14px 16px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
+.card-body { padding: 18px 20px; display: flex; flex-direction: column; flex: 1; }
 
 .card-name {
-  font-size: 15px;
+  font-family: var(--font-head);
+  font-size: 17px;
   font-weight: 500;
-  color: var(--text);
-  margin-bottom: 6px;
+  color: #fff;
+  margin-bottom: 7px;
 }
 
-.card-desc {
-  font-size: 13px;
-  color: var(--text-2);
-  line-height: 1.6;
-  margin-bottom: 12px;
-  flex: 1;
-}
+.card-desc { font-size: 14px; color: var(--text-2); line-height: 1.55; margin-bottom: 16px; flex: 1; }
 
-.card-foot {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-}
+.card-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 
-.card-open {
-  font-size: 12px;
-  color: var(--accent);
-}
+.card-open { font-size: 13px; font-weight: 500; color: var(--accent); }
 
-.card-platform {
-  display: inline-flex;
-  color: var(--text-3);
-}
-
-.card-platform svg {
-  width: 17px;
-  height: 17px;
-  display: block;
-}
-
+.card-platform { display: inline-flex; color: var(--text-3); }
+.card-platform svg { width: 18px; height: 18px; display: block; }
 .card:hover .card-platform { color: var(--text-2); }
 
+/* Scroll reveal */
+.reveal-card { opacity: 0; transform: translateY(18px); }
+.reveal-card.in { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s ease; }
+
 /* ----------------------------------------------------------------
-   Theme toggle button (lives in the terminal title bar)
+   Footer
    ---------------------------------------------------------------- */
-.theme-toggle {
-  margin-left: auto;
-  width: 28px;
-  height: 28px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: transparent;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  color: var(--text-2);
-  cursor: pointer;
+.site-footer {
+  position: relative;
   z-index: 1;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  text-align: center;
+  padding: 26px 32px;
+  color: var(--text-3);
+  font-size: 13px;
 }
-
-.theme-toggle:hover {
-  color: var(--text);
-  border-color: var(--text-3);
-}
-
-.theme-toggle svg { width: 15px; height: 15px; }
-
-/* Show the icon for the theme you would switch TO */
-.icon-sun { display: block; }
-.icon-moon { display: none; }
-[data-theme="light"] .icon-sun { display: none; }
-[data-theme="light"] .icon-moon { display: block; }
 
 /* ----------------------------------------------------------------
    Small screens
    ---------------------------------------------------------------- */
 @media (max-width: 560px) {
-  .terminal-title { display: none; }
-}
-
-@media (max-width: 480px) {
-  .terminal-body { padding: 22px 18px; }
-  .name { font-size: 24px; }
-  .links { gap: 18px; }
-}
-
-/* ----------------------------------------------------------------
-   Home intro typing animation.
-   Applies only while <html> has the "intro" class (added by JS once
-   per session). Otherwise everything shows normally.
-   ---------------------------------------------------------------- */
-.intro .reveal { opacity: 0; }
-
-.intro .reveal.show {
-  opacity: 1;
-  transition: opacity 0.25s ease;
-}
-
-/* Blinking caret shown on the element currently being typed */
-.typing-active::after {
-  content: "";
-  display: inline-block;
-  width: 0.5em;
-  height: 1em;
-  background: var(--text);
-  vertical-align: -2px;
-  margin-left: 2px;
-  animation: blink 1.1s steps(1) infinite;
-}
-
-/* ----------------------------------------------------------------
-   Projects page: header typing + cards revealing on scroll.
-   The "projects-anim" class is added by JS only when motion is allowed.
-   ---------------------------------------------------------------- */
-.projects-anim .reveal { opacity: 0; }
-
-.projects-anim .reveal.show {
-  opacity: 1;
-  transition: opacity 0.25s ease;
-}
-
-.reveal-card {
-  opacity: 0;
-  transform: translateY(16px);
-}
-
-.reveal-card.in {
-  opacity: 1;
-  transform: none;
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  .site-header { padding: 20px; }
+  .site-nav { gap: 18px; }
+  .hero { padding: 24px 20px 70px; }
+  .work { padding: 24px 20px 64px; }
 }
