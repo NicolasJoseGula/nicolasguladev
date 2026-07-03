@@ -21,13 +21,13 @@ var projects = [
     url: "fixyourlife/",
     platform: "ios"
   },
-  {
-    name: "CurrencyFlow",
-    image: "assets/currencyflow.png",
-    description: "A fast, premium currency converter for iPhone. IN PROGRES...",
-    url: "currencyflow/",
-    platform: "ios"
-  },
+  // {
+  //   name: "CurrencyFlow",
+  //   image: "assets/currencyflow.png",
+  //   description: "A fast, premium currency converter for iPhone. IN PROGRES...",
+  //   url: "currencyflow/",
+  //   platform: "ios"
+  // },
   // {
   //   name: "NetScout",
   //   image: "assets/netscout.png",
