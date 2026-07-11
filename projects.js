@@ -16,9 +16,9 @@
 var projects = [
   {
     name: "Block&Read",
-    image: "assets/fixyourlife.png",
-    description: "An alarm that wakes you to the present with confronting questions.",
-    url: "fixyourlife/",
+    image: "assets/blockandread.png",
+    description: "FALTA DESCRIPCION ACA",
+    url: "blockandread/",
     platform: "ios"
   },
   {

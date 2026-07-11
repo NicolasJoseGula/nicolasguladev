@@ -4,131 +4,309 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Use — Block&Read</title>
+  <title>Terms of Service — Block&Read</title>
   <link rel="icon" href="../assets/icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: #000;
-      color: #fff;
-      font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-
-    .top {
-      display: flex; align-items: center; gap: 10px;
-      padding: 22px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, .1);
-    }
-
-    .top img { width: 26px; height: 26px; border-radius: 7px; }
-
-    .top a { color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; }
-
-    .top .back { margin-left: auto; font-weight: 500; font-size: 13px; color: rgba(255, 255, 255, .4); }
-    .top .back:hover { color: #fff; }
-
-    main { padding: 48px 0 80px; }
-
-    h1 { font-size: 32px; font-weight: 800; letter-spacing: -.02em; }
-
-    .updated { color: rgba(255, 255, 255, .4); font-size: 14px; margin: 8px 0 36px; }
-
-    h2 { font-size: 19px; font-weight: 700; margin: 34px 0 10px; }
-
-    p { color: rgba(255, 255, 255, .7); margin-bottom: 14px; }
-
-    a.inline { color: #E3A23E; text-decoration: none; }
-    a.inline:hover { text-decoration: underline; }
-
-    strong { color: #fff; }
-
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, .1);
-      padding: 28px 0;
-      color: rgba(255, 255, 255, .35);
-      font-size: 13px;
-      text-align: center;
-    }
-
-    footer a { color: rgba(255, 255, 255, .5); text-decoration: none; margin: 0 10px; }
-    footer a:hover { color: #fff; }
-  </style>
+  <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body data-active="en">
 
   <div class="wrap">
     <div class="top">
       <img src="../assets/icon.png" alt="">
-      <a href="../">Block&Read</a>
-      <a class="back" href="/">← back</a>
+      <a class="brand" href="../">Block&Read</a>
+      <span class="spacer"></span>
+      <span class="langswitch">
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+      </span>
+      <a class="back" href="../">← back</a>
     </div>
 
-    <main>
-      <h1>Terms of Use</h1>
+    <!-- ============ ENGLISH ============ -->
+    <main data-lang="en">
+      <h1>Terms of Service</h1>
       <p class="updated">Last updated: July 12, 2026</p>
 
-      <p>These Terms of Use govern your use of <strong>Block&Read</strong> ("the App"), developed by
-        <strong>Dezeo</strong>, a studio operated by <strong>Nicolas Gula</strong>. By downloading or using the App,
-        you agree to these terms.</p>
+      <p>These Terms of Service ("Terms") govern your use of <strong>Block&Read</strong> ("the App"),
+        an iOS application developed and operated by <strong>Nicolas Gula</strong> ("we", "us", "our").
+        By downloading, installing, or using the App, you agree to these Terms. If you do not agree, do not
+        use the App.</p>
 
-      <h2>1. License</h2>
-      <p>Your use of the App is licensed, not sold, under Apple's
-        <a class="inline" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed
-          Application End User License Agreement (EULA)</a>. You may use the App on Apple devices you own or control,
-        for personal, non-commercial purposes.</p>
+      <h2>1. Eligibility</h2>
+      <p>You must be at least 13 years old to use the App. By using it, you represent that you meet this
+        requirement and that you can form a binding agreement under the laws of your jurisdiction.</p>
 
-      <h2>2. Subscriptions</h2>
-      <p>Block&Read offers optional auto-renewing subscriptions ("Premium"). Payment is charged to your Apple
-        Account at confirmation of purchase. Subscriptions <strong>renew automatically</strong> unless canceled at
-        least 24 hours before the end of the current period. You can manage or cancel your subscription anytime in
-        your device Settings → your name → Subscriptions. If a free trial is offered, any unused portion is forfeited
-        when you purchase a subscription.</p>
+      <h2>2. The Service</h2>
+      <p>Block&Read is a self-discipline reading tool for iPhone. It lets you choose apps to block using
+        Apple's Screen Time (Family Controls) framework, and unblocks them once you read a number of pages
+        or minutes you set. It also includes an EPUB reader, a catalog of public-domain classics, reading
+        statistics, reminders, and optional automatic blocking schedules.</p>
+      <p><strong>Block&Read is a personal habit tool, not a security, parental-control, or content-filtering
+        product.</strong> Blocking relies on Apple's system frameworks and your device settings, and it can
+        be circumvented (for example, by removing Screen Time permission or uninstalling the App). We do not
+        guarantee that blocking cannot be bypassed.</p>
 
-      <h2>3. App blocking</h2>
-      <p>The App uses Apple's Screen Time framework to block apps you choose. Blocking depends on permissions and
-        system behavior controlled by Apple and can be circumvented by device settings outside the App's control
-        (for example, removing Screen Time permission or uninstalling the App). Block&Read is a self-discipline
-        tool, <strong>not a parental control or security product</strong>, and we make no guarantee that blocking
-        cannot be bypassed.</p>
+      <h2>3. No accounts — your device and iCloud</h2>
+      <p>The App has no user accounts and requires no sign-up or login. Your reading activity, progress,
+        library, and settings are stored on your device and, if you enable iCloud, backed up to
+        <strong>your own private iCloud</strong> (Apple's CloudKit and iCloud Drive). We operate no servers
+        and have no access to your data. You are responsible for maintaining access to your Apple Account and
+        device.</p>
 
-      <h2>4. Book content</h2>
-      <p>Books offered in the App are <strong>public-domain works</strong> provided by third-party libraries
-        (Standard Ebooks and Project Gutenberg) and are downloaded directly from their servers, "as is". We do not
-        own, edit, or guarantee the availability, completeness, or quality of that content. Books you import yourself
-        remain your sole responsibility — you must have the right to use them.</p>
+      <h2>4. Subscriptions and payments</h2>
+      <p>The App is free to download and includes optional auto-renewing subscriptions ("Premium") that
+        unlock additional features (such as blocking unlimited apps, importing your own EPUBs, additional
+        themes, reading insights, iCloud backup of your books, automatic schedules, and online book search).</p>
+      <ul>
+        <li>Premium is offered on a weekly plan (which may include a free trial) and a yearly plan. The exact
+          price, currency, and any trial are shown to you in the App at the time of purchase and may vary by
+          region.</li>
+        <li><strong>All payments are processed by Apple</strong> through your Apple Account. We never receive
+          or have access to your payment information.</li>
+        <li>Subscriptions <strong>renew automatically</strong> unless canceled at least 24 hours before the
+          end of the current period. You can manage or cancel your subscription at any time in iOS Settings →
+          your name → Subscriptions. If a free trial is offered, any unused portion is forfeited when you
+          purchase the subscription.</li>
+        <li><strong>Refunds are handled by Apple</strong> in accordance with Apple's policies. We are not able
+          to issue refunds directly.</li>
+      </ul>
 
       <h2>5. Acceptable use</h2>
-      <p>You agree not to misuse the App, attempt to reverse-engineer it, or use it in violation of applicable laws
-        or Apple's terms.</p>
+      <p>You agree not to: (a) reverse-engineer, decompile, or attempt to extract the source code of the App
+        except as permitted by law; (b) use the App in violation of any applicable law or of Apple's terms;
+        (c) interfere with or disrupt the App or the third-party services it relies on; or (d) misuse the
+        public book libraries the App connects to.</p>
 
-      <h2>6. Disclaimer &amp; limitation of liability</h2>
-      <p>The App is provided "as is", without warranties of any kind. To the maximum extent permitted by law, Dezeo
-        and Nicolas Gula shall not be liable for any indirect, incidental, or consequential damages arising from your
-        use of the App, including missed notifications, blocking failures, or loss of data.</p>
+      <h2>6. Your content</h2>
+      <p>The App lets you import your own EPUB files. <strong>You are solely responsible for the books you
+        import and must have the legal right to use them.</strong> Your imported files remain yours; we claim
+        no ownership. You grant the App only the technical permissions needed to store, display, and (if you
+        enable it) back up those files to your own iCloud. We do not access, share, or transmit your imported
+        files to us or any third party.</p>
 
-      <h2>7. Changes</h2>
-      <p>We may update these terms from time to time. Continued use of the App after changes are posted constitutes
-        acceptance of the new terms.</p>
+      <h2>7. Books and third-party content</h2>
+      <p>Books offered within the App are <strong>public-domain works</strong> provided by third-party
+        libraries — <a class="inline" href="https://standardebooks.org">Standard Ebooks</a> and
+        <a class="inline" href="https://www.gutenberg.org">Project Gutenberg</a> (searched via the Gutendex
+        API) — and are downloaded directly from their servers, "as is". We do not own, edit, host, or
+        guarantee the availability, accuracy, completeness, or quality of that content. Your use of those
+        works may also be subject to the terms of those libraries.</p>
 
-      <h2>8. Contact</h2>
-      <p>Email: <a class="inline" href="mailto:blockandread.app@gmail.com">blockandread.app@gmail.com</a></p>
+      <h2>8. Third-party services</h2>
+      <p>The App relies on services provided by <strong>Apple</strong>, including the App Store and StoreKit
+        (payments), iCloud/CloudKit (backup), Screen Time / Family Controls (blocking), and alarms and
+        notifications. Your use of those services is governed by Apple's own terms and privacy policy. We are
+        not responsible for third-party services.</p>
+
+      <h2>9. Intellectual property</h2>
+      <p>The App itself — its software, design, name, and branding — is owned by Nicolas Gula and is protected
+        by intellectual-property laws. These Terms grant you a limited, personal, non-transferable,
+        non-exclusive license to use the App on devices you own or control, consistent with Apple's
+        <a class="inline" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Licensed
+        Application End User License Agreement (EULA)</a>.</p>
+
+      <h2>10. Disclaimers</h2>
+      <p>The App is provided <strong>"as is" and "as available", without warranties of any kind</strong>,
+        whether express or implied, including fitness for a particular purpose. We do not warrant that the
+        App will be uninterrupted, error-free, or that blocking, reminders, or backups will function without
+        fault. The App is not a medical, security, or parental-control product and should not be relied on as
+        such.</p>
+
+      <h2>11. Limitation of liability</h2>
+      <p>To the maximum extent permitted by law, Nicolas Gula shall not be liable for any indirect,
+        incidental, special, consequential, or punitive damages, or for any loss of data, missed
+        notifications, failed blocking, or lost time, arising from your use of the App. Where liability cannot
+        be excluded, it is limited to the amount you paid for the App in the twelve months before the claim.</p>
+
+      <h2>12. Indemnification</h2>
+      <p>You agree to indemnify and hold harmless Nicolas Gula from any claims or demands arising out of your
+        misuse of the App, your violation of these Terms, or your violation of any law or the rights of a
+        third party (including regarding books you import).</p>
+
+      <h2>13. Termination</h2>
+      <p>You may stop using the App at any time by deleting it, which removes its local data from your device.
+        You can remove your iCloud backup from iOS Settings, and cancel any subscription through Apple. We may
+        suspend or discontinue the App, or any feature, at any time. Because the App has no accounts, we do
+        not "terminate" users individually.</p>
+
+      <h2>14. Changes to these Terms</h2>
+      <p>We may update these Terms from time to time. The updated version will be posted at this address with
+        a new "Last updated" date. Continued use of the App after changes take effect constitutes acceptance
+        of the revised Terms.</p>
+
+      <h2>15. Governing law</h2>
+      <p>These Terms are governed by the laws of the <strong>Eastern Republic of Uruguay</strong>, without
+        regard to conflict-of-laws principles, and any dispute shall be subject to the courts of Montevideo,
+        Uruguay — except where mandatory consumer-protection laws of your country of residence grant you
+        rights that cannot be waived, which continue to apply.</p>
+
+      <h2>16. Contact</h2>
+      <p>Questions about these Terms? Email
+        <a class="inline" href="mailto:blockandread.app@gmail.com">blockandread.app@gmail.com</a>.</p>
     </main>
+
+    <!-- ============ ESPAÑOL ============ -->
+    <main data-lang="es">
+      <h1>Términos del Servicio</h1>
+      <p class="updated">Última actualización: 12 de julio de 2026</p>
+
+      <p>Estos Términos del Servicio ("Términos") rigen tu uso de <strong>Block&Read</strong> ("la App"),
+        una aplicación para iOS desarrollada y operada por <strong>Nicolas Gula</strong> ("nosotros").
+        Al descargar, instalar o usar la App, aceptas estos Términos. Si no estás de acuerdo, no uses la App.</p>
+
+      <h2>1. Elegibilidad</h2>
+      <p>Debes tener al menos 13 años para usar la App. Al usarla, declaras que cumples este requisito y que
+        puedes celebrar un acuerdo vinculante según las leyes de tu jurisdicción.</p>
+
+      <h2>2. El Servicio</h2>
+      <p>Block&Read es una herramienta de lectura y autodisciplina para iPhone. Te permite elegir apps para
+        bloquear usando el sistema Tiempo en pantalla (Family Controls) de Apple, y las desbloquea cuando lees
+        la cantidad de páginas o minutos que fijaste. También incluye un lector de EPUB, un catálogo de
+        clásicos de dominio público, estadísticas de lectura, recordatorios y horarios de bloqueo automáticos
+        opcionales.</p>
+      <p><strong>Block&Read es una herramienta personal de hábitos, no un producto de seguridad, control
+        parental ni filtrado de contenido.</strong> El bloqueo depende de los sistemas de Apple y de la
+        configuración de tu dispositivo, y puede eludirse (por ejemplo, quitando el permiso de Tiempo en
+        pantalla o desinstalando la App). No garantizamos que el bloqueo no pueda evitarse.</p>
+
+      <h2>3. Sin cuentas — tu dispositivo e iCloud</h2>
+      <p>La App no tiene cuentas de usuario y no requiere registro ni inicio de sesión. Tu actividad de
+        lectura, progreso, biblioteca y ajustes se guardan en tu dispositivo y, si activas iCloud, se
+        respaldan en <strong>tu propio iCloud privado</strong> (CloudKit e iCloud Drive de Apple). No operamos
+        servidores ni tenemos acceso a tus datos. Eres responsable de mantener el acceso a tu Cuenta de Apple
+        y a tu dispositivo.</p>
+
+      <h2>4. Suscripciones y pagos</h2>
+      <p>La App es gratuita de descargar e incluye suscripciones opcionales de renovación automática
+        ("Premium") que desbloquean funciones adicionales (como bloquear apps ilimitadas, importar tus propios
+        EPUB, temas adicionales, estadísticas de lectura, respaldo de tus libros en iCloud, horarios
+        automáticos y búsqueda de libros online).</p>
+      <ul>
+        <li>Premium se ofrece en un plan semanal (que puede incluir una prueba gratis) y un plan anual. El
+          precio exacto, la moneda y cualquier prueba se te muestran en la App al momento de la compra y pueden
+          variar según la región.</li>
+        <li><strong>Todos los pagos los procesa Apple</strong> a través de tu Cuenta de Apple. Nunca recibimos
+          ni tenemos acceso a tu información de pago.</li>
+        <li>Las suscripciones <strong>se renuevan automáticamente</strong> salvo que se cancelen al menos 24
+          horas antes del fin del período actual. Puedes gestionarlas o cancelarlas cuando quieras en Ajustes
+          de iOS → tu nombre → Suscripciones. Si se ofrece una prueba gratis, cualquier parte no usada se
+          pierde al comprar la suscripción.</li>
+        <li><strong>Los reembolsos los gestiona Apple</strong> según sus políticas. No podemos emitir
+          reembolsos directamente.</li>
+      </ul>
+
+      <h2>5. Uso aceptable</h2>
+      <p>Aceptas no: (a) aplicar ingeniería inversa, descompilar o intentar extraer el código de la App salvo
+        que la ley lo permita; (b) usar la App en violación de leyes aplicables o de los términos de Apple;
+        (c) interferir con la App o los servicios de terceros de los que depende; ni (d) hacer un uso indebido
+        de las bibliotecas públicas de libros a las que la App se conecta.</p>
+
+      <h2>6. Tu contenido</h2>
+      <p>La App te permite importar tus propios archivos EPUB. <strong>Eres el único responsable de los libros
+        que importas y debes tener el derecho legal de usarlos.</strong> Tus archivos importados siguen siendo
+        tuyos; no reclamamos ninguna propiedad. Le otorgas a la App únicamente los permisos técnicos
+        necesarios para guardar, mostrar y (si lo activas) respaldar esos archivos en tu propio iCloud. No
+        accedemos, compartimos ni transmitimos tus archivos importados a nosotros ni a terceros.</p>
+
+      <h2>7. Libros y contenido de terceros</h2>
+      <p>Los libros que ofrece la App son <strong>obras de dominio público</strong> provistas por bibliotecas
+        de terceros — <a class="inline" href="https://standardebooks.org">Standard Ebooks</a> y
+        <a class="inline" href="https://www.gutenberg.org">Project Gutenberg</a> (buscados mediante la API
+        Gutendex) — y se descargan directamente de sus servidores, "tal cual". No poseemos, editamos,
+        alojamos ni garantizamos la disponibilidad, exactitud, integridad o calidad de ese contenido. Tu uso
+        de esas obras también puede estar sujeto a los términos de esas bibliotecas.</p>
+
+      <h2>8. Servicios de terceros</h2>
+      <p>La App depende de servicios de <strong>Apple</strong>, incluidos el App Store y StoreKit (pagos),
+        iCloud/CloudKit (respaldo), Tiempo en pantalla / Family Controls (bloqueo), y alarmas y
+        notificaciones. Tu uso de esos servicios se rige por los propios términos y política de privacidad de
+        Apple. No somos responsables de los servicios de terceros.</p>
+
+      <h2>9. Propiedad intelectual</h2>
+      <p>La App en sí — su software, diseño, nombre y marca — es propiedad de Nicolas Gula y está protegida por
+        leyes de propiedad intelectual. Estos Términos te otorgan una licencia limitada, personal,
+        intransferible y no exclusiva para usar la App en dispositivos que poseas o controles, de acuerdo con
+        el
+        <a class="inline" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de
+        Licencia de Usuario Final (EULA)</a> de Apple.</p>
+
+      <h2>10. Renuncias de garantía</h2>
+      <p>La App se provee <strong>"tal cual" y "según disponibilidad", sin garantías de ningún tipo</strong>,
+        expresas o implícitas, incluida la idoneidad para un propósito particular. No garantizamos que la App
+        sea ininterrumpida, libre de errores, ni que el bloqueo, los recordatorios o los respaldos funcionen
+        sin fallas. La App no es un producto médico, de seguridad ni de control parental y no debe usarse como
+        tal.</p>
+
+      <h2>11. Limitación de responsabilidad</h2>
+      <p>En la máxima medida permitida por la ley, Nicolas Gula no será responsable por daños indirectos,
+        incidentales, especiales, consecuentes o punitivos, ni por pérdida de datos, notificaciones no
+        entregadas, fallas de bloqueo o tiempo perdido, derivados de tu uso de la App. Cuando la
+        responsabilidad no pueda excluirse, se limita al monto que pagaste por la App en los doce meses
+        previos al reclamo.</p>
+
+      <h2>12. Indemnización</h2>
+      <p>Aceptas indemnizar y eximir de responsabilidad a Nicolas Gula ante cualquier reclamo derivado de tu
+        uso indebido de la App, tu incumplimiento de estos Términos, o tu violación de cualquier ley o de los
+        derechos de un tercero (incluidos los libros que importes).</p>
+
+      <h2>13. Terminación</h2>
+      <p>Puedes dejar de usar la App en cualquier momento eliminándola, lo que borra sus datos locales de tu
+        dispositivo. Puedes quitar tu respaldo de iCloud desde Ajustes de iOS y cancelar cualquier suscripción
+        a través de Apple. Podemos suspender o discontinuar la App, o cualquier función, en cualquier momento.
+        Como la App no tiene cuentas, no "terminamos" usuarios de forma individual.</p>
+
+      <h2>14. Cambios a estos Términos</h2>
+      <p>Podemos actualizar estos Términos ocasionalmente. La versión actualizada se publicará en esta
+        dirección con una nueva fecha de "Última actualización". El uso continuado de la App después de que los
+        cambios entren en vigor constituye la aceptación de los Términos revisados.</p>
+
+      <h2>15. Ley aplicable</h2>
+      <p>Estos Términos se rigen por las leyes de la <strong>República Oriental del Uruguay</strong>, sin
+        considerar principios de conflicto de leyes, y cualquier disputa estará sujeta a los tribunales de
+        Montevideo, Uruguay — salvo cuando las leyes imperativas de protección al consumidor de tu país de
+        residencia te otorguen derechos irrenunciables, que seguirán aplicando.</p>
+
+      <h2>16. Contacto</h2>
+      <p>¿Preguntas sobre estos Términos? Escribe a
+        <a class="inline" href="mailto:blockandread.app@gmail.com">blockandread.app@gmail.com</a>.</p>
+    </main>
+
+    <div class="note">
+      <span data-lang="en"><strong>Note:</strong> This document reflects the app's actual behavior (no
+        accounts, no data collection, Apple-billed subscriptions, public-domain books, no AI). It is provided
+        in good faith and should be reviewed by a qualified attorney before relying on it in a dispute.</span>
+      <span data-lang="es"><strong>Nota:</strong> Este documento refleja el comportamiento real de la app (sin
+        cuentas, sin recolección de datos, suscripciones cobradas por Apple, libros de dominio público, sin
+        IA). Se ofrece de buena fe y conviene que un abogado calificado lo revise antes de usarlo en una
+        disputa.</span>
+    </div>
   </div>
 
   <footer>
-    <a href="../">Home</a> · <a href="../privacypolicy/">Privacy Policy</a> · <a href="../support/">Support</a><br>
-    <span style="display:inline-block;margin-top:10px">© 2026 Nicolas Gula · Dezeo</span>
+    <span data-lang="en"><a href="../">Home</a> · <a href="../privacypolicy/">Privacy Policy</a> ·
+      <a href="../support/">Support</a></span>
+    <span data-lang="es"><a href="../">Inicio</a> · <a href="../privacypolicy/">Política de privacidad</a> ·
+      <a href="../support/">Soporte</a></span>
+    <br>
+    <span style="display:inline-block;margin-top:10px">© 2026 Nicolas Gula</span>
   </footer>
+
+  <script>
+    function setLang(l) {
+      document.body.setAttribute('data-active', l);
+      document.documentElement.lang = l;
+      document.getElementById('btn-en').classList.toggle('active', l === 'en');
+      document.getElementById('btn-es').classList.toggle('active', l === 'es');
+      try { localStorage.setItem('bnr-lang', l); } catch (e) {}
+    }
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('bnr-lang'); } catch (e) {}
+      var lang = saved || ((navigator.language || 'en').slice(0, 2) === 'es' ? 'es' : 'en');
+      setLang(lang);
+    })();
+  </script>
 
 </body>
 
