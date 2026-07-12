@@ -6,138 +6,177 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Block&Read</title>
   <link rel="icon" href="../assets/icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      background: #000;
-      color: #fff;
-      font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
-
-    .top {
-      display: flex; align-items: center; gap: 10px;
-      padding: 22px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, .1);
-    }
-
-    .top img { width: 26px; height: 26px; border-radius: 7px; }
-
-    .top a { color: #fff; text-decoration: none; font-weight: 700; font-size: 15px; }
-
-    .top .back { margin-left: auto; font-weight: 500; font-size: 13px; color: rgba(255, 255, 255, .4); }
-    .top .back:hover { color: #fff; }
-
-    main { padding: 48px 0 80px; }
-
-    h1 { font-size: 32px; font-weight: 800; letter-spacing: -.02em; }
-
-    .updated { color: rgba(255, 255, 255, .4); font-size: 14px; margin: 8px 0 36px; }
-
-    h2 { font-size: 19px; font-weight: 700; margin: 34px 0 10px; }
-
-    p { color: rgba(255, 255, 255, .7); margin-bottom: 14px; }
-
-    a.inline { color: #E3A23E; text-decoration: none; }
-    a.inline:hover { text-decoration: underline; }
-
-    strong { color: #fff; }
-
-    footer {
-      border-top: 1px solid rgba(255, 255, 255, .1);
-      padding: 28px 0;
-      color: rgba(255, 255, 255, .35);
-      font-size: 13px;
-      text-align: center;
-    }
-
-    footer a { color: rgba(255, 255, 255, .5); text-decoration: none; margin: 0 10px; }
-    footer a:hover { color: #fff; }
-  </style>
+  <link rel="stylesheet" href="../style.css">
 </head>
 
-<body>
+<body data-active="en">
 
   <div class="wrap">
     <div class="top">
       <img src="../assets/icon.png" alt="">
-      <a href="../">Block&Read</a>
-      <a class="back" href="/">← back</a>
+      <a class="brand" href="../">Block&Read</a>
+      <span class="spacer"></span>
+      <span class="langswitch">
+        <button id="btn-en" onclick="setLang('en')">EN</button>
+        <button id="btn-es" onclick="setLang('es')">ES</button>
+      </span>
+      <a class="back" href="../">← back</a>
     </div>
 
-    <main>
+    <!-- ============ ENGLISH ============ -->
+    <main data-lang="en">
       <h1>Privacy Policy</h1>
       <p class="updated">Last updated: July 12, 2026</p>
 
-      <p>This Privacy Policy explains how <strong>Block&Read</strong> ("the App"), developed by
-      by <strong>Nicolas Gula</strong> ("we", "us"), handles your
-        information. The short version: <strong>we don't collect, see, or sell your data. Ever.</strong></p>
+      <p>This Privacy Policy explains how <strong>Block&Read</strong> ("the App"), developed and operated by
+        <strong>Nicolas Gula</strong> ("we", "us", "our"), handles your information. The short version:
+        <strong>we have no servers and we do not collect, see, or sell your data.</strong></p>
 
       <h2>1. Information we collect</h2>
-      <p><strong>We do not collect, store, or transmit any personal data to our own servers — we have none.</strong>
-        Your reading activity (pages read, streaks, reading time, progress), your book list, and your settings are
-        stored <strong>locally on your device</strong>. The App has no user accounts, no analytics, no advertising,
-        and no third-party tracking.</p>
+      <p><strong>We do not collect, store, or transmit any personal data to servers of our own — we operate
+        none.</strong> The App has no user accounts, no analytics, no advertising, and no third-party tracking
+        of any kind. Your reading activity (pages read, streaks, reading time, progress), your book list, and
+        your settings are stored <strong>locally on your device</strong>.</p>
 
       <h2>2. iCloud backup</h2>
       <p>If iCloud is enabled on your device, your reading data and the books you add are backed up to
-        <strong>your private iCloud</strong> (Apple's CloudKit and iCloud Drive). This backup belongs to your Apple
-        Account: we have no access to it — only you do. You can remove it anytime from iOS Settings → your name →
-        iCloud.</p>
+        <strong>your own private iCloud</strong> (Apple's CloudKit and iCloud Drive). This backup belongs to
+        your Apple Account: <strong>we have no access to it — only you do.</strong> You can remove it at any time
+        from iOS Settings → your name → iCloud.</p>
 
       <h2>3. Screen Time &amp; app blocking</h2>
       <p>The App uses Apple's Screen Time (Family Controls) framework to block the apps you choose. Apple designed
-        this system so that developers <strong>cannot see which apps you select or when you use them</strong> — the
-        selection is an opaque token that never leaves your device. We know nothing about your app usage.</p>
+        this system so that developers <strong>cannot see which apps you select or when you use them</strong> —
+        the selection is stored as an opaque token that never leaves your device. We know nothing about your app
+        usage.</p>
 
-      <h2>4. Book downloads</h2>
-      <p>When you download a book, the App requests the file directly from public-domain libraries:
-        <strong>Standard Ebooks</strong> (standardebooks.org) and <strong>Project Gutenberg</strong> (gutenberg.org,
-        via the Gutendex API). Like any web request, those servers may see standard technical data (such as your IP
-        address), governed by their own policies. We add no identifiers to those requests.</p>
+      <h2>4. Book search &amp; downloads</h2>
+      <p>The App connects to public-domain libraries so you can find and read books. When you use search, the
+        <strong>text you type is sent to the Gutendex API</strong> (gutendex.com) to return matching titles. When
+        you download a book or its cover, the App requests the file directly from <strong>Project Gutenberg</strong>
+        (gutenberg.org) or <strong>Standard Ebooks</strong> (standardebooks.org). Like any web request, those
+        servers may see standard technical data such as your IP address, governed by their own policies. We add no
+        identifiers to those requests, and we never receive their contents.</p>
 
       <h2>5. Purchases</h2>
       <p>Subscriptions are processed entirely by <strong>Apple</strong> through the App Store. We never receive or
-        have access to your payment information. Apple's handling of your data is governed by <a class="inline"
-          href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
+        have access to your payment information. Apple's handling of your data is governed by
+        <a class="inline" href="https://www.apple.com/legal/privacy/">Apple's Privacy Policy</a>.</p>
 
       <h2>6. Notifications &amp; alarms</h2>
       <p>Daily reading reminders and alarms are scheduled <strong>locally on your device</strong>. They involve no
         server and send no data anywhere.</p>
 
       <h2>7. Deleting your data</h2>
-      <p>Delete the App to remove all local data. To remove the iCloud backup, go to iOS Settings → your name →
-        iCloud → Manage Account Storage, or disable iCloud for Block&Read.</p>
+      <p>Delete the App to remove all data stored on your device. To remove the iCloud backup, go to iOS Settings →
+        your name → iCloud → Manage Account Storage, or turn off iCloud for Block&Read.</p>
 
       <h2>8. Children</h2>
       <p>The App is not directed to children under 13, and we do not knowingly collect any information from
         children.</p>
 
-      <h2>9. Your rights (GDPR &amp; others)</h2>
-      <p>Because we do not collect personal data, there is no personal information for us to access, modify, or
-        delete. If you have any questions about your privacy, contact us at the email below.</p>
+      <h2>9. Your rights</h2>
+      <p>Because we do not collect any personal data, there is no personal information held by us to access, correct,
+        export, or delete. Rights you may have under laws such as the GDPR or CCPA are satisfied by design: your data
+        stays with you. If you have any questions, contact us at the email below.</p>
 
       <h2>10. Changes</h2>
-      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with a new "Last
-        updated" date.</p>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with a new
+        "Last updated" date.</p>
 
       <h2>11. Contact</h2>
-      <p>Email: <a class="inline" href="mailto:blockandread.app@gmail.com">blockandread.app@gmail.com</a></p>
+      <p>Questions? Email <a class="inline" href="mailto:blockandread.app@gmail.com">blockandread.app@gmail.com</a>.</p>
+    </main>
+
+    <!-- ============ ESPAÑOL ============ -->
+    <main data-lang="es">
+      <h1>Política de privacidad</h1>
+      <p class="updated">Última actualización: 12 de julio de 2026</p>
+
+      <p>Esta Política de privacidad explica cómo <strong>Block&Read</strong> ("la App"), desarrollada y operada por
+        <strong>Nicolas Gula</strong> ("nosotros"), maneja tu información. La versión corta:
+        <strong>no tenemos servidores y no recopilamos, vemos ni vendemos tus datos.</strong></p>
+
+      <h2>1. Información que recopilamos</h2>
+      <p><strong>No recopilamos, almacenamos ni transmitimos ningún dato personal a servidores propios — no operamos
+        ninguno.</strong> La App no tiene cuentas de usuario, ni analítica, ni publicidad, ni rastreo de terceros de
+        ningún tipo. Tu actividad de lectura (páginas leídas, rachas, tiempo de lectura, progreso), tu lista de libros
+        y tus ajustes se guardan <strong>localmente en tu dispositivo</strong>.</p>
+
+      <h2>2. Copia de seguridad en iCloud</h2>
+      <p>Si iCloud está activado en tu dispositivo, tus datos de lectura y los libros que agregás se respaldan en
+        <strong>tu propio iCloud privado</strong> (CloudKit e iCloud Drive de Apple). Esa copia pertenece a tu Cuenta
+        de Apple: <strong>no tenemos acceso a ella — solo vos.</strong> Podés eliminarla cuando quieras desde Ajustes
+        de iOS → tu nombre → iCloud.</p>
+
+      <h2>3. Tiempo de uso y bloqueo de apps</h2>
+      <p>La App usa el marco Screen Time (Family Controls) de Apple para bloquear las apps que elijas. Apple diseñó
+        este sistema para que los desarrolladores <strong>no puedan ver qué apps seleccionás ni cuándo las usás</strong>
+        — la selección se guarda como un token opaco que nunca sale de tu dispositivo. No sabemos nada sobre tu uso de
+        apps.</p>
+
+      <h2>4. Búsqueda y descarga de libros</h2>
+      <p>La App se conecta a bibliotecas de dominio público para que encuentres y leas libros. Cuando usás la búsqueda,
+        el <strong>texto que escribís se envía a la API de Gutendex</strong> (gutendex.com) para devolver los títulos
+        que coinciden. Cuando descargás un libro o su portada, la App pide el archivo directamente a
+        <strong>Project Gutenberg</strong> (gutenberg.org) o <strong>Standard Ebooks</strong> (standardebooks.org).
+        Como en cualquier petición web, esos servidores pueden ver datos técnicos estándar como tu dirección IP, regidos
+        por sus propias políticas. No agregamos identificadores a esas peticiones ni recibimos su contenido.</p>
+
+      <h2>5. Compras</h2>
+      <p>Las suscripciones las procesa íntegramente <strong>Apple</strong> a través de la App Store. Nunca recibimos ni
+        tenemos acceso a tu información de pago. El tratamiento de tus datos por parte de Apple se rige por la
+        <a class="inline" href="https://www.apple.com/legal/privacy/">Política de privacidad de Apple</a>.</p>
+
+      <h2>6. Notificaciones y alarmas</h2>
+      <p>Los recordatorios y alarmas diarias de lectura se programan <strong>localmente en tu dispositivo</strong>. No
+        involucran ningún servidor ni envían datos a ningún lado.</p>
+
+      <h2>7. Eliminar tus datos</h2>
+      <p>Eliminá la App para borrar todos los datos guardados en tu dispositivo. Para quitar la copia de iCloud, andá a
+        Ajustes de iOS → tu nombre → iCloud → Gestionar almacenamiento de la cuenta, o desactivá iCloud para
+        Block&Read.</p>
+
+      <h2>8. Menores</h2>
+      <p>La App no está dirigida a menores de 13 años, y no recopilamos a sabiendas ninguna información de menores.</p>
+
+      <h2>9. Tus derechos</h2>
+      <p>Como no recopilamos ningún dato personal, no hay información personal en nuestro poder para acceder, corregir,
+        exportar o eliminar. Los derechos que puedas tener bajo leyes como el RGPD o la CCPA se cumplen por diseño: tus
+        datos se quedan con vos. Si tenés dudas, escribinos al correo de abajo.</p>
+
+      <h2>10. Cambios</h2>
+      <p>Podemos actualizar esta Política de privacidad de vez en cuando. Los cambios se publicarán en esta página con
+        una nueva fecha de "Última actualización".</p>
+
+      <h2>11. Contacto</h2>
+      <p>¿Preguntas? Escribí a
+        <a class="inline" href="mailto:blockandread.app@gmail.com">blockandread.app@gmail.com</a>.</p>
     </main>
   </div>
 
   <footer>
-    <a href="../">Home</a> · <a href="../terms/">Terms of Use</a> · <a href="../support/">Support</a><br>
+    <span data-lang="en"><a href="../">Home</a> · <a href="../terms/">Terms of Use</a> · <a href="../support/">Support</a></span>
+    <span data-lang="es"><a href="../">Inicio</a> · <a href="../terms/">Términos</a> · <a href="../support/">Soporte</a></span>
+    <br>
     <span style="display:inline-block;margin-top:10px">© 2026 Nicolas Gula</span>
   </footer>
+
+  <script>
+    function setLang(l) {
+      document.body.setAttribute('data-active', l);
+      document.documentElement.lang = l;
+      document.getElementById('btn-en').classList.toggle('active', l === 'en');
+      document.getElementById('btn-es').classList.toggle('active', l === 'es');
+      try { localStorage.setItem('bnr-lang', l); } catch (e) {}
+    }
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('bnr-lang'); } catch (e) {}
+      var lang = saved || ((navigator.language || 'en').slice(0, 2) === 'es' ? 'es' : 'en');
+      setLang(lang);
+    })();
+  </script>
 
 </body>
 
