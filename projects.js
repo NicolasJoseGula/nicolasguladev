@@ -17,9 +17,10 @@ var projects = [
   {
     name: "Block&Read",
     image: "assets/blockandread.png",
-    description: "FALTA DESCRIPCION ACA",
+    description: "Blocks your distracting apps until you read a few pages of a good book.",
     url: "blockandread/",
-    platform: "ios"
+    platform: "ios",
+    imageFit: "contain"
   },
   {
     name: "Fix Your Life",
@@ -149,6 +150,7 @@ var PLATFORMS = {
       img.alt = p.name;
       img.loading = "lazy";
       img.onerror = function () { img.remove(); };
+      if (p.imageFit === "contain") img.className = "fit-contain";
       imageWrap.appendChild(img);
     }
 
