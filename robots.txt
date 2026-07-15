@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /landingone
+Allow: /landingtwo
+
+Sitemap: https://dezeo.lat
