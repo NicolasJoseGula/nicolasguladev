@@ -1,6 +1,8 @@
+# dezeo.lat — creative studio
+# Allow all crawlers full access.
 User-agent: *
 Allow: /
-Allow: /landingone
-Allow: /landingtwo
+Disallow:
 
-Sitemap: https://dezeo.lat
+# Point crawlers to the sitemap.
+Sitemap: https://dezeo.lat/sitemap.xml
