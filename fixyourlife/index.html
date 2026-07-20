@@ -1,611 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fix Your Life — Wake up to the present moment</title>
-  <meta name="description"
-    content="Fix Your Life is an alarm that interrupts your day with confronting questions to pull you back into the present — instead of a sound you silence and forget.">
-
+  <title>Fix Your Life — The Alarm App That Asks You Questions</title>
+  <meta name="description" content="Fix Your Life turns your alarms into a daily reflection practice. Confronting questions, one-line answers, a streak heatmap, and iPhone widgets. No ads. Free to try.">
   <link rel="canonical" href="https://dezeo.lat/fixyourlife/">
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/svg+xml" href="assets/img/fyl-logo.svg">
+  <link rel="apple-touch-icon" href="assets/img/fyl-logo.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="dezeo">
-  <meta property="og:title" content="Fix Your Life — Wake up to the present moment">
-  <meta property="og:description" content="An alarm that doesn't just wake you up — it wakes you up to your life.">
+  <meta property="og:site_name" content="Fix Your Life">
+  <meta property="og:title" content="Fix Your Life — The Alarm App That Asks You Questions">
+  <meta property="og:description" content="Alarms that confront you with reflective questions instead of a beep. Answer in one line, build a streak, and wake up to the present moment.">
   <meta property="og:url" content="https://dezeo.lat/fixyourlife/">
-  <meta property="og:image" content="https://dezeo.lat/fixyourlife/assets/icon.png">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Fix Your Life — Wake up to the present moment">
-  <meta name="twitter:description" content="An alarm that doesn't just wake you up — it wakes you up to your life.">
-  <meta name="twitter:image" content="https://dezeo.lat/fixyourlife/assets/icon.png">
+  <meta property="og:image" content="https://dezeo.lat/fixyourlife/assets/img/alarm-reflection-question.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fix Your Life — The Alarm App That Asks You Questions">
+  <meta name="twitter:description" content="Alarms that confront you with reflective questions instead of a beep. Answer in one line, build a streak, and wake up to the present moment.">
+  <meta name="twitter:image" content="https://dezeo.lat/fixyourlife/assets/img/alarm-reflection-question.png">
 
-  <!-- Structured data -->
+  <!-- Structured data: app + FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    "name": "Fix Your Life: Mindful Alarm",
+    "@type": "MobileApplication",
+    "name": "Fix Your Life",
+    "alternateName": "FYL",
     "operatingSystem": "iOS",
     "applicationCategory": "LifestyleApplication",
-    "description": "An alarm that interrupts your day with confronting questions to pull you back into the present moment.",
+    "description": "Fix Your Life is a different kind of alarm. Instead of a sound you silence and forget, it interrupts your day with confronting questions that pull you back into the present moment. Answer in one line, build a streak, and keep it in sight with home screen widgets.",
     "url": "https://dezeo.lat/fixyourlife/",
+    "image": "https://dezeo.lat/fixyourlife/assets/img/fyl-logo.svg",
     "offers": {
       "@type": "Offer",
       "price": "0",
-      "priceCurrency": "USD"
+      "priceCurrency": "USD",
+      "description": "Free to download. Premium unlocks unlimited alarms and custom messages — weekly with a 3-day free trial, or yearly."
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "dezeo",
-      "url": "https://dezeo.lat/"
-    }
+    "inLanguage": ["en", "es", "pt", "fr", "de", "it"]
   }
   </script>
-
-  <link rel="icon" href="assets/icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <style>
-    :root {
-      --bg: #000;
-      --fg: #ffffff;
-      --muted: rgba(255, 255, 255, .55);
-      --faint: rgba(255, 255, 255, .35);
-      --card: rgba(255, 255, 255, .05);
-      --stroke: rgba(255, 255, 255, .10);
-      --accent: #ff3b3b;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--fg);
-      font-family: 'Hanken Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .wrap {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Top bar */
-    .topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 22px 0;
-    }
-
-    .topbar .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    .topbar .brand img {
-      width: 28px;
-      height: 28px;
-      border-radius: 7px;
-    }
-
-    .topbar .nav {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 24px;
-    }
-
-    .topbar .nav a {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--faint);
-    }
-
-    .topbar .nav a:hover {
-      color: var(--fg);
-    }
-
-    /* Hero */
-    .hero {
-      text-align: center;
-      padding: 70px 0 40px;
-    }
-
-    .hero .appicon {
-      width: 108px;
-      height: 108px;
-      border-radius: 26px;
-      margin: 0 auto 28px;
-      display: block;
-      box-shadow: 0 12px 40px rgba(0, 0, 0, .6);
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 7vw, 64px);
-      font-weight: 800;
-      letter-spacing: -.02em;
-      line-height: 1.05;
-    }
-
-    .hero .tagline {
-      font-size: clamp(17px, 2.5vw, 21px);
-      color: var(--muted);
-      margin-top: 14px;
-    }
-
-    .hero .pitch {
-      max-width: 620px;
-      margin: 26px auto 0;
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    /* App Store button */
-    .cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 34px;
-      background: #fff;
-      color: #000;
-      padding: 14px 26px;
-      border-radius: 14px;
-      font-weight: 700;
-      font-size: 16px;
-      transition: transform .15s ease, opacity .15s ease;
-    }
-
-    .cta:hover {
-      transform: translateY(-2px);
-    }
-
-    .cta svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    .cta small {
-      display: block;
-      font-size: 10px;
-      font-weight: 500;
-      opacity: .6;
-      line-height: 1;
-      margin-bottom: 2px;
-    }
-
-    .cta .big {
-      font-size: 17px;
-      line-height: 1;
-    }
-
-    /* Showcase: compact, centered screenshot + text rows */
-    .showcase {
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 30px 24px 10px;
-    }
-
-    .row {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 42px;
-      padding: 42px 0;
-    }
-
-    .row:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-
-    .row .shot {
-      flex: 0 0 auto;
-    }
-
-    /* iPhone device frame */
-    .phone {
-      position: relative;
-      width: 248px;
-      padding: 11px;
-      border-radius: 46px;
-      background: linear-gradient(155deg, #313133 0%, #161617 46%, #050506 100%);
-      box-shadow: 0 28px 60px rgba(0, 0, 0, .6), inset 0 0 0 1px rgba(255, 255, 255, .08), inset 0 0 0 2.5px rgba(0, 0, 0, .65);
-    }
-
-    .phone .screen {
-      position: relative;
-      border-radius: 36px;
-      overflow: hidden;
-      background: #000;
-      display: block;
-    }
-
-    .phone .screen img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .phone .island {
-      position: absolute;
-      top: 14px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 24px;
-      background: #000;
-      border-radius: 13px;
-      z-index: 2;
-    }
-
-    .row .txt {
-      flex: 0 1 340px;
-    }
-
-    /* Widget close-up: wide floating card, no phone frame */
-    .shot-wide {
-      flex: 0 1 400px;
-      border-radius: 24px;
-      overflow: hidden;
-      border: 1px solid var(--stroke);
-      box-shadow: 0 24px 60px rgba(0, 0, 0, .6);
-    }
-
-    .shot-wide img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .row .txt .ic {
-      width: 40px;
-      height: 40px;
-      border-radius: 11px;
-      background: rgba(255, 59, 59, .12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-    }
-
-    .row .txt .ic svg {
-      width: 21px;
-      height: 21px;
-      color: var(--accent);
-    }
-
-    .row .txt h3 {
-      font-size: clamp(22px, 3vw, 28px);
-      font-weight: 800;
-      letter-spacing: -.02em;
-      line-height: 1.12;
-      margin-bottom: 12px;
-    }
-
-    .row .txt p {
-      color: var(--muted);
-      font-size: 16px;
-    }
-
-    /* Philosophy band */
-    .band {
-      position: relative;
-      text-align: center;
-      padding: 84px 24px 84px;
-    }
-
-    .band::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: min(980px, 100%);
-      height: 1px;
-      background: var(--stroke);
-    }
-
-    .band p {
-      max-width: 640px;
-      margin: 0 auto;
-      font-size: clamp(20px, 3vw, 28px);
-      font-weight: 600;
-      letter-spacing: -.01em;
-      line-height: 1.4;
-      text-wrap: balance;
-    }
-
-    .band .small {
-      max-width: 560px;
-      font-size: 15px;
-      font-weight: 400;
-      color: var(--muted);
-      margin-top: 18px;
-      text-wrap: balance;
-    }
-
-    /* Footer */
-    footer {
-      padding: 92px 116px;
-      text-align: center;
-      color: var(--faint);
-      font-size: 13px;
-      border-top: 1px solid var(--stroke);
-    }
-
-    footer .foot-links {
-      margin-bottom: 40px;
-    }
-
-    footer .foot-links {
-      margin-top: 40px;
-    }
-
-    footer .foot-links a {
-      color: rgba(255, 255, 255, .55);
-      margin: 0 9px;
-    }
-
-    footer .foot-links a:hover {
-      color: var(--fg);
-    }
-
-    footer .copy {
-      font-size: 13px;
-      margin-bottom: 40px;
-    }
-
-    @media (max-width: 720px) {
-      .topbar {
-        display: none;
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Fix Your Life?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Fix Your Life (FYL) is an iPhone alarm app that replaces the generic beep with confronting, reflective questions like “Are you doing everything necessary to achieve your goals?”. When the alarm rings you answer in one line, your answer is saved to a journal, and every day you show up grows your streak." }
+      },
+      {
+        "@type": "Question",
+        "name": "How is Fix Your Life different from a normal alarm clock app?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A normal alarm interrupts your sleep; Fix Your Life interrupts your autopilot. Its alarms ring until you face a question and answer it — there is no snooze-and-forget. Instead of puzzles or math problems, it uses reflection: a question you answer honestly in one line." }
+      },
+      {
+        "@type": "Question",
+        "name": "What kind of questions does the alarm ask?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Built-in questions are short and confronting: “Are you doing everything necessary to achieve your goals?”, “Are you spending time on things you truly want?”. You can pick one, write your own, or turn on Surprise mode to get a different question every day." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I write my own alarm messages?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can write and save unlimited custom messages and reuse them across alarms. Personal questions in your own words tend to hit harder than any preset." }
+      },
+      {
+        "@type": "Question",
+        "name": "How does the streak and heatmap work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Every day you answer at least one alarm question, your streak grows by one. The Journal shows a heatmap of every day you showed up, so consistency becomes something you can see — and something you won't want to break." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Fix Your Life have iPhone home screen widgets?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Home screen widgets show your current streak and the question of the day, so your practice stays in sight before you even open the app." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Fix Your Life a journaling app?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It's a one-line-a-day journal built on top of alarms. Every answer you give is saved with its question and date, you can reread everything in the Journal, and you can share any reflection as a clean black and white image." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Fix Your Life help me stop living on autopilot?",
+        "acceptedAnswer": { "@type": "Answer", "text": "That is exactly what it's built for. Research suggests people spend almost half the day on mental autopilot. A well-timed, confronting question forces a moment of awareness — and answering it anchors you back in the present." }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does Fix Your Life cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Fix Your Life is free to download. Premium unlocks unlimited alarms, custom messages and every feature — weekly with a 3-day free trial, or yearly (best value). There are no ads, ever, on any plan." }
+      },
+      {
+        "@type": "Question",
+        "name": "What languages is Fix Your Life available in?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Fix Your Life is available in 6 languages, so it can confront you in the words that hit home." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does Fix Your Life show ads or sell my data?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No ads. Ever. Your reflections are personal — the app keeps a clean, distraction-free black and white design with nothing competing for your attention." }
       }
-
-      .row,
-      .row:nth-child(even) {
-        flex-direction: column;
-        text-align: center;
-        gap: 26px;
-        padding: 36px 0;
-      }
-
-      .row .txt {
-        flex: 0 1 auto;
-      }
-
-      .row .txt .ic {
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      .phone {
-        width: 232px;
-      }
-
-      .shot-wide {
-        flex: 0 1 auto;
-        width: 100%;
-        max-width: 340px;
-      }
-
-      .hero {
-        padding: 56px 0 24px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .hero h1 {
-        order: -2;
-      }
-
-      .hero .appicon {
-        order: -1;
-        margin: 24px auto 0;
-      }
-    }
-  </style>
+    ]
+  }
+  </script>
 </head>
-
 <body>
 
-  <div class="wrap">
-    <div class="topbar">
-      <a class="brand" href="/fixyourlife"><img src="assets/icon.png" alt="Fix Your Life">Fix Your Life</a>
-      <nav class="nav">
-        <a href="privacypolicy/">Privacy Policy</a>
-        <a href="terms/">Terms of Use</a>
-        <a href="support/">Support</a>
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="./">
+        <img src="assets/img/fyl-logo.svg" alt="Fix Your Life app logo" width="30" height="30">
+        Fix Your Life
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <nav class="site-nav" aria-label="Main">
+        <a href="#inside-the-app">Inside the App</a>
+        <a href="#how-it-works">How it works</a>
+        <a href="guides/">Guides</a>
+        <a href="#faq">FAQ</a>
         <a href="/projects.html">All projects</a>
+        <a class="nav-cta" href="#download">Download</a>
       </nav>
+      <label for="nav-toggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
     </div>
-  </div>
-
-  <!-- HERO -->
-  <header class="hero wrap">
-    <img class="appicon" src="assets/icon.png" alt="Fix Your Life app icon">
-    <h1>Fix Your Life</h1>
-    <p class="tagline">Wake up to the present moment.</p>
-    <p class="pitch">An alarm that doesn't just wake you up — it wakes you up to your life. Instead of a sound you
-      silence and forget, Fix Your Life interrupts your day with confronting questions that pull you back into the
-      present. Answer them, and turn every alarm into a daily reflection practice.</p>
-    <a class="cta" href="https://apps.apple.com/app/id6777588712">
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path
-          d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.1-2.01-3.77-2.04-1.6-.16-3.13.94-3.94.94-.81 0-2.07-.92-3.41-.89-1.75.03-3.37 1.02-4.27 2.59-1.82 3.16-.47 7.83 1.31 10.39.87 1.25 1.9 2.66 3.26 2.61 1.31-.05 1.8-.85 3.39-.85 1.58 0 2.03.85 3.41.82 1.41-.03 2.3-1.28 3.16-2.54.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.73-1.05-2.76-4.16M14.5 4.79c.72-.88 1.21-2.1 1.08-3.31-1.04.04-2.3.69-3.05 1.56-.67.77-1.25 2.01-1.09 3.19 1.16.09 2.34-.59 3.06-1.44" />
-      </svg>
-      <span><small>Download on the</small><span class="big">App Store</span></span>
-    </a>
   </header>
 
-  <!-- SHOWCASE: screenshot + feature text, alternating -->
-  <section class="showcase">
+  <main>
+    <!-- ================= Hero ================= -->
+    <section class="hero" id="top">
+      <div class="container">
+        <span class="eyebrow">Mindful alarms · One-line journal · Streaks &amp; widgets</span>
+        <h1>The alarm that asks you <span class="accent">questions</span>, not one you snooze.</h1>
+        <p class="sub">Fix Your Life interrupts your day with confronting questions that pull you back into the present. Answer in one line. Keep the streak. Stop living on autopilot.</p>
+        <div class="hero-ctas">
+          <!-- TODO: replace with your real App Store URL -->
+          <a class="appstore-badge" href="https://apps.apple.com/app/id6777588712" rel="noopener">
+            <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            <span class="badge-text"><small>Download on the</small><strong>App Store</strong></span>
+          </a>
+          <a class="btn btn-outline" href="#how-it-works">See how it works</a>
+        </div>
+        <p class="micro">Free to download · 3-day free trial · No ads. Ever.</p>
+        <div class="hero-phone">
+          <img src="assets/img/alarm-reflection-question.png" alt="Fix Your Life alarm screen asking the reflective question: Are you doing everything necessary to achieve your goals?" width="430" fetchpriority="high">
+        </div>
+      </div>
+    </section>
 
-    <div class="row">
-      <div class="shot">
-        <div class="phone"><span class="island"></span>
-          <div class="screen"><img src="assets/app-message.png" alt="Full-screen reflective question" loading="lazy">
+    <!-- ================= Download strip ================= -->
+    <section class="section-panel center" id="download" style="padding:64px 0;">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:32px;">
+          <h2>Your alarm just became a practice.</h2>
+          <p>Confronting questions, one-line answers, a streak you won't want to break — and widgets that keep it in sight.</p>
+        </div>
+        <!-- TODO: replace with your real App Store URL -->
+        <a class="appstore-badge" href="https://apps.apple.com/app/id6777588712" rel="noopener">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="badge-text"><small>Download on the</small><strong>App Store</strong></span>
+        </a>
+        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;">iPhone · Available in 6 languages · Premium from a 3-day free trial</p>
+      </div>
+    </section>
+
+    <!-- ================= Screenshots / features ================= -->
+    <section id="inside-the-app">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Inside the app</p>
+          <h2>Confronting questions, not snooze buttons.</h2>
+          <p>Every screen is built for one thing: waking you up to your own life — in a clean, distraction-free black &amp; white design.</p>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot">
+            <img src="assets/img/alarm-app-confronting-questions.png" alt="Alarm list in the Fix Your Life app with reflective questions scheduled at 7:00 AM and 9:30 AM" loading="lazy" width="330">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Alarms with meaning</p>
+            <h3>Set alarms that ring until you face them.</h3>
+            <p>Schedule confronting questions for any time and any days — a 7:00 AM goals check, a 1:00 PM focus reset. No snoozing past your intentions: the alarm keeps ringing until you show up.</p>
+            <a class="feature-link" href="guides/reminders-you-cant-ignore.html">Why ignorable reminders fail →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot">
+            <img src="assets/img/journal-streak-heatmap.png" alt="Journal screen in Fix Your Life showing a day streak counter and heatmap calendar" loading="lazy" width="330">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Answer it. Keep the streak</p>
+            <h3>One honest line a day becomes a journal — and a streak.</h3>
+            <p>Each answer is saved with its question and date. The heatmap shows every day you showed up, and the streak makes consistency something you can feel — and protect.</p>
+            <a class="feature-link" href="guides/build-a-journaling-streak.html">How to build a journaling streak →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot">
+            <img src="assets/img/write-your-own-alarm-messages.png" alt="Writing a custom alarm message in Fix Your Life: I'm doing whatever I want" loading="lazy" width="330">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Make it personal</p>
+            <h3>Write &amp; save your own messages.</h3>
+            <p>The question that changes your day is usually the one you write yourself. Save unlimited custom messages and reuse them across alarms — your words, your confrontation.</p>
+            <a class="feature-link" href="guides/diary-with-prompts.html">What to write when you don't know what to write →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot">
+            <img src="assets/img/surprise-mode-different-question-every-day.png" alt="Surprise mode in Fix Your Life picking a different reflective question each day" loading="lazy" width="330">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Surprise mode</p>
+            <h3>A different question every day.</h3>
+            <p>Repetition becomes background noise. Surprise mode pulls a fresh question each day — from the presets and your own saved messages — so the alarm never loses its edge.</p>
+            <a class="feature-link" href="guides/daily-check-in-questions.html">Daily check-in questions that work →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot">
+            <img src="assets/img/streak-widget-iphone-home-screen.png" alt="Fix Your Life iPhone home screen widgets showing a day streak and the question of the day" loading="lazy" width="330">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Widgets</p>
+            <h3>Right on your home screen.</h3>
+            <p>Streak and question-of-the-day widgets keep the practice in sight. It confronts you before you even open the app — every time you unlock your phone.</p>
+            <a class="feature-link" href="guides/streak-widget-iphone.html">Set up the streak widget →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot">
+            <img src="assets/img/share-reflection-image.png" alt="Sharing a reflection from Fix Your Life as a clean black and white image" loading="lazy" width="330">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Share the wins</p>
+            <h3>Share what you're proud of.</h3>
+            <p>Turn any reflection into a clean black &amp; white image and share it anywhere. Your answers are proof you showed up — some of them deserve daylight.</p>
+            <a class="feature-link" href="guides/one-line-a-day-journaling.html">The one-line-a-day method →</a>
           </div>
         </div>
       </div>
-      <div class="txt">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M12 22a2.5 2.5 0 0 0 2.45-2h-4.9A2.5 2.5 0 0 0 12 22zm6-6v-5a6 6 0 0 0-5-5.91V4a1 1 0 0 0-2 0v1.09A6 6 0 0 0 6 11v5l-2 2v1h16v-1z" />
-          </svg></div>
-        <h3>Messages that wake you to the present</h3>
-        <p>Confronting, reflective questions instead of a generic beep — the kind you can't ignore.</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="row">
-      <div class="shot">
-        <div class="phone"><span class="island"></span>
-          <div class="screen"><img src="assets/app-journal.png" alt="Journal with streak and heatmap" loading="lazy">
+    <!-- ================= How it works ================= -->
+    <section class="section-panel" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">How it works</p>
+          <h2>Four steps. One honest answer at a time.</h2>
+          <p>Build awareness. Interrupt autopilot. Live in the present.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="num">1</span>
+            <h3>Set an alarm</h3>
+            <p>Pick any time and any days — morning intention, midday reset, evening review.</p>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <h3>Pick your question</h3>
+            <p>Choose a built-in confronting question, write your own, or let Surprise mode choose daily.</p>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <h3>Face it &amp; answer</h3>
+            <p>When it rings, there's no snooze escape — answer the question with one honest line.</p>
+          </div>
+          <div class="step">
+            <span class="num">4</span>
+            <h3>Watch your streak grow</h3>
+            <p>Your answers become a journal, your consistency becomes a heatmap you won't want to break.</p>
           </div>
         </div>
       </div>
-      <div class="txt">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-          </svg></div>
-        <h3>Answer it. Keep the streak.</h3>
-        <p>When the alarm asks, write a one-line answer. Your reflections become a journal — with a streak and a
-          heatmap of every day you showed up. Share the ones that hit as a clean black &amp; white image.</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="row">
-      <div class="shot">
-        <div class="phone"><span class="island"></span>
-          <div class="screen"><img src="assets/app-custom.png" alt="Create your own message" loading="lazy"></div>
+    <!-- ================= Guides ================= -->
+    <section id="guides">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Guides</p>
+          <h2>Learn the practice behind the app.</h2>
+          <p>Short, practical guides on mindfulness, journaling, streaks and self-reflection — and how to run each one with Fix Your Life.</p>
+        </div>
+        <div class="guide-grid">
+          <a class="guide-card" href="guides/stop-living-on-autopilot.html">
+            <span class="tag">Mindfulness</span>
+            <h3>How to Stop Living on Autopilot</h3>
+            <p>Research says almost half your day runs on autopilot. Here's a practical system of interruptions that brings you back.</p>
+            <span class="read">Read the guide</span>
+          </a>
+          <a class="guide-card" href="guides/daily-check-in-questions.html">
+            <span class="tag">Productivity</span>
+            <h3>Daily Check-In Questions That Keep You on Track</h3>
+            <p>The exact questions to ask yourself every day — and when to ask them — so your goals survive contact with your calendar.</p>
+            <span class="read">Read the guide</span>
+          </a>
+          <a class="guide-card" href="guides/one-line-a-day-journaling.html">
+            <span class="tag">Journal</span>
+            <h3>One Line a Day: Journaling for People Who Quit Journals</h3>
+            <p>Why the smallest journaling method is the one that sticks, and how to make it automatic.</p>
+            <span class="read">Read the guide</span>
+          </a>
+          <a class="guide-card" href="guides/build-a-journaling-streak.html">
+            <span class="tag">Streak</span>
+            <h3>How to Build a Journaling Streak You Won't Break</h3>
+            <p>Streaks work because losing them hurts. How to start one, protect it, and use the heatmap to stay honest.</p>
+            <span class="read">Read the guide</span>
+          </a>
+          <a class="guide-card" href="guides/daily-stoic-questions.html">
+            <span class="tag">Stoicism</span>
+            <h3>Daily Stoic Questions: A Morning &amp; Evening Practice</h3>
+            <p>The questions Marcus Aurelius asked himself — turned into a modern alarm-based routine.</p>
+            <span class="read">Read the guide</span>
+          </a>
+          <a class="guide-card" href="guides/motivational-alarm-clock.html">
+            <span class="tag">Motivation</span>
+            <h3>Motivational Alarm Clock: Wake Up With a Reason</h3>
+            <p>Your first thought of the day is up for grabs. Claim it with a question instead of a ringtone.</p>
+            <span class="read">Read the guide</span>
+          </a>
+        </div>
+        <p class="center mt-40"><a class="btn btn-outline" href="guides/">View all 11 guides</a></p>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section-panel" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">FAQ</p>
+          <h2>Questions, answered. <span style="color:var(--red)">Fitting.</span></h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>What is Fix Your Life?</summary>
+            <div class="faq-body">Fix Your Life (FYL) is an iPhone alarm app that replaces the generic beep with confronting, reflective questions — like <em>“Are you doing everything necessary to achieve your goals?”</em>. When the alarm rings you answer in one line, the answer is saved to your journal, and every day you show up grows your streak. <a href="guides/stop-living-on-autopilot.html">Learn more</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>How is Fix Your Life different from a normal alarm clock app?</summary>
+            <div class="faq-body">A normal alarm interrupts your sleep. Fix Your Life interrupts your <strong>autopilot</strong>. Its alarms ring until you face a question and answer it — no snooze-and-forget, no math puzzles, just a moment of honest reflection. <a href="guides/motivational-alarm-clock.html">Learn more</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>What kind of questions does the alarm ask?</summary>
+            <div class="faq-body">Short, confronting ones: <em>“Are you doing everything necessary to achieve your goals?”</em>, <em>“Are you spending time on things you truly want?”</em>. Pick a preset, write your own, or let Surprise mode pull a different question every day. <a href="guides/daily-check-in-questions.html">Learn more</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>Can I write my own alarm messages?</summary>
+            <div class="faq-body">Yes — write and save unlimited custom messages and reuse them across alarms. Personal questions in your own words hit harder than any preset. <a href="guides/diary-with-prompts.html">Learn more</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>How does the streak and heatmap work?</summary>
+            <div class="faq-body">Answer at least one alarm question a day and your streak grows. The Journal's heatmap shows every day you showed up, so consistency becomes visible — and worth protecting. <a href="guides/build-a-journaling-streak.html">Learn more</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>Does Fix Your Life have iPhone home screen widgets?</summary>
+            <div class="faq-body">Yes. Widgets show your current streak and the question of the day right on your home screen, so the practice confronts you before you even open the app. <a href="guides/streak-widget-iphone.html">Learn more</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>Is Fix Your Life a journaling app?</summary>
+            <div class="faq-body">It's a one-line-a-day journal built on top of alarms. Every answer is saved with its question and date, you can reread everything in the Journal, and share any reflection as a clean black &amp; white image. <a href="guides/one-line-a-day-journaling.html">Learn more</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>Can Fix Your Life help me stop living on autopilot?</summary>
+            <div class="faq-body">That's exactly what it's built for. Research suggests we spend almost half the day on mental autopilot. A well-timed question forces a moment of awareness — and answering it anchors you in the present. <a href="guides/stop-living-on-autopilot.html">Learn more</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>How much does Fix Your Life cost?</summary>
+            <div class="faq-body">Free to download. Premium unlocks unlimited alarms, custom messages and every feature — weekly with a <strong>3-day free trial</strong>, or yearly (best value). Subscriptions auto-renew unless cancelled at least 24 hours before the period ends; manage anytime in your App Store settings.</div>
+          </details>
+          <details class="faq-item">
+            <summary>What languages is Fix Your Life available in?</summary>
+            <div class="faq-body">Six languages — so it can confront you in the words that hit home.</div>
+          </details>
+          <details class="faq-item">
+            <summary>Does Fix Your Life show ads or sell my data?</summary>
+            <div class="faq-body">No ads. Ever. Your reflections are personal, and the app stays a clean, distraction-free black &amp; white space with nothing competing for your attention.</div>
+          </details>
         </div>
       </div>
-      <div class="txt">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M12 20h9" />
-            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4z" />
-          </svg></div>
-        <h3>Write &amp; save your own</h3>
-        <p>Create your own reflective messages and reuse them anytime. Make them personal.</p>
-      </div>
-    </div>
+    </section>
 
-    <div class="row">
-      <div class="shot">
-        <div class="phone"><span class="island"></span>
-          <div class="screen"><img src="assets/app-surprise.png" alt="Surprise mode, a different question every day"
-              loading="lazy"></div>
+    <!-- ================= Final CTA ================= -->
+    <section class="cta">
+      <div class="container">
+        <blockquote>“If someone filmed the last two hours of your life — would they conclude <span class="accent">you want what you say you want?</span>”</blockquote>
+        <p class="cta-sub">Most of us drift through the day on autopilot. A well-timed question can wake you up far more than any ringtone.</p>
+        <!-- TODO: replace with your real App Store URL -->
+        <a class="appstore-badge" href="https://apps.apple.com/app/id6777588712" rel="noopener">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="badge-text"><small>Download on the</small><strong>App Store</strong></span>
+        </a>
+        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;">Free to download · 3-day free trial · No ads. Ever.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="./">
+            <img src="assets/img/fyl-logo.svg" alt="Fix Your Life logo" width="30" height="30">
+            Fix Your Life
+          </a>
+          <p>Wake up to the present moment. An alarm app for mindfulness, daily reflection, journaling streaks and living on purpose.</p>
+        </div>
+        <div>
+          <h4>App</h4>
+          <ul>
+            <li><a href="#download">Download</a></li>
+            <li><a href="#inside-the-app">Inside the App</a></li>
+            <li><a href="#how-it-works">How it works</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="guides/stop-living-on-autopilot.html">Stop living on autopilot</a></li>
+            <li><a href="guides/one-line-a-day-journaling.html">One line a day journaling</a></li>
+            <li><a href="guides/daily-stoic-questions.html">Daily stoic questions</a></li>
+            <li><a href="guides/streak-widget-iphone.html">iPhone streak widget</a></li>
+            <li><a href="guides/">All guides →</a></li>
+          </ul>
         </div>
       </div>
-      <div class="txt">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="16 3 21 3 21 8" />
-            <line x1="4" y1="20" x2="21" y2="3" />
-            <polyline points="21 16 21 21 16 21" />
-            <line x1="15" y1="15" x2="21" y2="21" />
-            <line x1="4" y1="4" x2="9" y2="9" />
-          </svg></div>
-        <h3>A different question every day</h3>
-        <p>Turn on Surprise mode and each alarm pulls a fresh question — from the presets or your own — so it never
-          becomes background noise.</p>
+      <div class="footer-bottom">
+        <span>© 2026 Fix Your Life. All rights reserved.</span>
+        <span><a href="privacypolicy/" style="color:var(--muted-2);text-decoration:none;">Privacy Policy</a> · <a href="terms/" style="color:var(--muted-2);text-decoration:none;">Terms of Use</a> · <a href="support/" style="color:var(--muted-2);text-decoration:none;">Support</a></span>
       </div>
     </div>
-
-    <div class="row">
-      <div class="shot">
-        <div class="phone"><span class="island"></span>
-          <div class="screen"><img src="assets/app-list.png" alt="Clean black and white alarm list" loading="lazy">
-          </div>
-        </div>
-      </div>
-      <div class="txt">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="18" height="18" rx="4" />
-          </svg></div>
-        <h3>Minimal &amp; distraction-free</h3>
-        <p>A clean black &amp; white design. No clutter, no ads — ever. And everything stays private on your device.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="shot-wide">
-        <img src="assets/app-widget.jpg" alt="Home screen widget with streak and daily question" loading="lazy">
-      </div>
-      <div class="txt">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <rect x="3" y="3" width="7" height="7" rx="1" />
-            <rect x="14" y="3" width="7" height="7" rx="1" />
-            <rect x="14" y="14" width="7" height="7" rx="1" />
-            <rect x="3" y="14" width="7" height="7" rx="1" />
-          </svg></div>
-        <h3>Right on your home screen</h3>
-        <p>Widgets keep your streak 🔥 and the question of the day in sight — it confronts you before you even open
-          the app.</p>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="shot">
-        <div class="phone"><span class="island"></span>
-          <div class="screen"><img src="assets/app-lang.png" alt="Language picker in Settings" loading="lazy"></div>
-        </div>
-      </div>
-      <div class="txt">
-        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="9" />
-            <path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18" />
-          </svg></div>
-        <h3>Speaks your language</h3>
-        <p>Available in 6 languages, so it confronts you in the words that hit home.</p>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- PHILOSOPHY -->
-  <section class="band">
-    <p>"If someone filmed the last two hours of your life — what would they conclude you want?"</p>
-    <p class="small">Most of us drift through the day on autopilot. A well-timed question can wake you up far more than
-      any ringtone.</p>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="wrap">
-    <nav class="foot-links">
-      <a href="privacypolicy/">Privacy Policy</a> ·
-      <a href="terms/">Terms of Use</a> ·
-      <a href="support/">Support</a>
-    </nav>
-    <p class="copy">© 2026 Nicolas Gula · Fix Your Life</p>
   </footer>
 
 </body>
-
 </html>

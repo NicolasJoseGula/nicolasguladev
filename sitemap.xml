@@ -18,53 +18,87 @@
   <!-- Fix Your Life -->
   <url>
     <loc>https://dezeo.lat/fixyourlife/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://dezeo.lat/fixyourlife/support/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://dezeo.lat/fixyourlife/privacypolicy/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://dezeo.lat/fixyourlife/terms/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://dezeo.lat/fixyourlife/guides/</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/stop-living-on-autopilot.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/daily-check-in-questions.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/one-line-a-day-journaling.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/build-a-journaling-streak.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/daily-reflection-habit.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/reminders-you-cant-ignore.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/refocus-during-the-day.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/motivational-alarm-clock.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/daily-stoic-questions.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/streak-widget-iphone.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/guides/diary-with-prompts.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Block&Read -->
   <url>
     <loc>https://dezeo.lat/blockandread/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://dezeo.lat/blockandread/support/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://dezeo.lat/blockandread/privacypolicy/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://dezeo.lat/blockandread/terms/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url>
+    <loc>https://dezeo.lat/blockandread/guides/</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url><loc>https://dezeo.lat/blockandread/guides/app-blocker-that-makes-you-read.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/blockandread/guides/reduce-screen-time-iphone.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/blockandread/guides/how-to-focus.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/blockandread/guides/free-epub-reader-iphone.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/blockandread/guides/how-to-read-more-books.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/blockandread/guides/cant-finish-a-book.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/blockandread/guides/daily-reading-habit.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/blockandread/guides/stop-phone-distraction.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/blockandread/guides/how-to-block-apps-iphone.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/blockandread/guides/free-classic-books.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/blockandread/guides/study-without-phone-distractions.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
 </urlset>
