@@ -15,6 +15,13 @@
 // ----------------------------------------------------------------
 var projects = [
   {
+    name: "Guardian Reader",
+    image: "assets/guardianreader.png",
+    description: "Kids earn their screen time by reading real books out loud, verified on the iPhone.",
+    url: "guardianreader/",
+    platform: "ios"
+  },
+  {
     name: "Block&Read",
     image: "assets/blockandread.png",
     description: "Blocks your distracting apps until you read a few pages of a good book.",

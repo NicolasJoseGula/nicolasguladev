@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardian Reader：音読を確認するペアレンタルコントロール</title>
+  <meta name="description" content="お子さまが紙の本を声に出して読むまでアプリをロックする iPhone 用ペアレンタルコントロール。端末上で一語ずつ聞き取り、確認します。アカウント不要、オフライン対応。">
+  <link rel="canonical" href="https://dezeo.lat/guardianreader/ja/">
+  <link rel="alternate" hreflang="en" href="https://dezeo.lat/guardianreader/">
+  <link rel="alternate" hreflang="es" href="https://dezeo.lat/guardianreader/es/">
+  <link rel="alternate" hreflang="pt" href="https://dezeo.lat/guardianreader/pt/">
+  <link rel="alternate" hreflang="fr" href="https://dezeo.lat/guardianreader/fr/">
+  <link rel="alternate" hreflang="de" href="https://dezeo.lat/guardianreader/de/">
+  <link rel="alternate" hreflang="it" href="https://dezeo.lat/guardianreader/it/">
+  <link rel="alternate" hreflang="ja" href="https://dezeo.lat/guardianreader/ja/">
+  <link rel="alternate" hreflang="ko" href="https://dezeo.lat/guardianreader/ko/">
+  <link rel="alternate" hreflang="zh" href="https://dezeo.lat/guardianreader/zh/">
+  <link rel="alternate" hreflang="x-default" href="https://dezeo.lat/guardianreader/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0a1c">
+  <link rel="icon" type="image/png" href="../assets/img/guardian-reader-icon.png">
+  <link rel="apple-touch-icon" href="../assets/img/guardian-reader-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Guardian Reader">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="Guardian Reader：音読でスクリーンタイムを獲得">
+  <meta property="og:description" content="保護者が選んだアプリをロックし、お子さまが紙の本を音読するのを聞いて、iPhone 上で一語ずつ確認します。アカウント不要。オフラインで動作します。">
+  <meta property="og:url" content="https://dezeo.lat/guardianreader/ja/">
+  <meta property="og:image" content="https://dezeo.lat/guardianreader/assets/img/og-guardian-reader.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Guardian Reader：音読でスクリーンタイムを獲得">
+  <meta name="twitter:description" content="お子さまが紙の本を音読するまで、選んだアプリをロック。iPhone 上で一語ずつ確認します。">
+  <meta name="twitter:image" content="https://dezeo.lat/guardianreader/assets/img/og-guardian-reader.png">
+
+  <!-- Structured data: app + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Guardian Reader",
+    "operatingSystem": "iOS 18.0 or later",
+    "applicationCategory": "EducationalApplication",
+    "description": "Guardian Reader は iPhone 用のペアレンタルコントロールアプリです。保護者がロックするアプリを選び、お子さまは紙の本を声に出して読むことでスクリーンタイムを解除します。アプリはまず各ページを撮影し、お子さまが通して読むあいだ聞き取り、その音読を端末上だけで確認します。",
+    "url": "https://dezeo.lat/guardianreader/ja/",
+    "image": "https://dezeo.lat/guardianreader/assets/img/guardian-reader-icon.png",
+    "screenshot": [
+      "https://dezeo.lat/guardianreader/assets/img/earn-screen-time-by-reading-ja.jpg",
+      "https://dezeo.lat/guardianreader/assets/img/reading-aloud-verification-ja.jpg",
+      "https://dezeo.lat/guardianreader/assets/img/reading-progress-charts.jpg",
+      "https://dezeo.lat/guardianreader/assets/img/personalized-reading-plan.jpg"
+    ],
+    "inLanguage": ["en", "es", "pt", "fr", "de", "it", "ja", "ko", "zh"],
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "0",
+      "highPrice": "49.99",
+      "priceCurrency": "USD",
+      "offerCount": "3",
+      "description": "無料: 確認済みの音読、スクリーンタイムのごほうび、連続記録、メダル、すべての進捗履歴、ロックできるアプリは1つ。Premium: ロックするアプリは無制限、PDF の読書レポート付き。7日間無料体験のある年額サブスクリプション、または買い切り。"
+    },
+    "author": { "@type": "Person", "name": "Nicolas Gula", "url": "https://dezeo.lat/" },
+    "publisher": { "@type": "Person", "name": "Nicolas Gula", "url": "https://dezeo.lat/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "子どもが本当に本を読んだかどうか、Guardian Reader はどうやって確認しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "お子さまが読むページを1ページずつ撮影します。アプリはその写真から本文を取り出し、通して音読するあいだ聞き取った内容をその本文と一語ずつ照合します。正直に読めば基準をはるかに超え、別のことを話せばほぼゼロになります。すべて iPhone の中で行われます。詳しく見る" } },
+      { "@type": "Question", "name": "読んだふりをしてごまかせますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ふりをするのでは通りません。アプリは話した言葉を、スキャンした当のページと順番どおりに照合します。その場しのぎ、口ごもり、飛ばし読みは本文と一致せず、同じセッションで一度スキャンしたページは二度は数えません。確認しているのは、その言葉が声に出して読まれたかどうかであって、誰が読んだかではありません。話者を識別する仕組みはありません。次の質問もご覧ください。 詳しく見る" } },
+      { "@type": "Question", "name": "AI の音声が子どもの代わりにページを読むことはできますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "できます。そう書くほうを選びます。Guardian Reader はマイクが聞き取った内容をスキャンしたページと照合するだけで、誰が話しているかは判別しません。別の端末で合成音声が同じ本文を読み上げれば通りますし、年上のきょうだいが読んでも通ります。アプリが確実に防げるのは日常の抜け道のほうです。飛ばし読み、その場しのぎ、読んだという申告。ページを撮影し、打ち直して音声生成に入れ、再生するところまでやる子には、そもそもアプリで解ける問題ではありません。" } },
+      { "@type": "Question", "name": "Guardian Reader は保護者のスマホと子どものスマホ、どちらに入れますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "ロックしたいアプリが入っている、お子さまの iPhone です。保護者のスマホから遠隔操作するダッシュボードはありません。設定はお子さまの端末で行い、保護者しか知らない保護者用 PIN の内側に保たれます。ファミリー共有は不要です。詳しく見る" } },
+      { "@type": "Question", "name": "子どもの iPhone でどのアプリをロックできますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "Apple のスクリーンタイムを通じて、iPhone 上のどのアプリでもカテゴリ全体でもロックできます。YouTube、TikTok、Instagram、ゲーム、あるいは SNS をまとめて。無料版では1つ、Premium では必要な数だけロックできます。詳しく見る" } },
+      { "@type": "Question", "name": "Guardian Reader は子どもの声を録音しますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "いいえ。マイクはセッション中の音読を端末上で文字に起こすために使います。アカウントもサーバーもアップロードもありません。声が iPhone の外に出ることはなく、追跡も販売も共有もしません。詳しく見る" } },
+      { "@type": "Question", "name": "どんな本が使えますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "文字が読み取れる紙の本、雑誌、マンガであれば使えます。枠に合わせて1ページずつ撮影するので、枠の中の文字だけが対象になります。日本語、英語、スペイン語、ポルトガル語、フランス語、ドイツ語、イタリア語、韓国語、中国語に対応しています。詳しく見る" } },
+      { "@type": "Question", "name": "Guardian Reader は何歳向けですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "おおよそ4歳から16歳までです。設定時に年齢層を選ぶと、1セッションのページ数と照合の厳しさが調整され、読み始めたばかりの子がティーンと同じ基準で測られることはありません。詳しく見る" } },
+      { "@type": "Question", "name": "Guardian Reader の料金は？",
+        "acceptedAnswer": { "@type": "Answer", "text": "無料：音読の確認、ごほうびのスクリーンタイム、連続日数、メダル、記録の履歴すべて。ロックできるアプリは1つです。Premium：ロックするアプリは無制限、PDF の読書レポート付き。年額プラン（19.99ドル/年）は7日間無料、または49.99ドルの買い切りで永久に使えます。" } },
+      { "@type": "Question", "name": "学校に出す読書記録はもらえますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい。Premium では各セッションを PDF で書き出せます。日付、時刻、ページ数、分数、一致率、そしてお子さまが実際に声に出して読んだ本文まで含まれます。家庭での音読の記録として、そのまま先生に渡せます。詳しく見る" } },
+      { "@type": "Question", "name": "インターネットがなくても使えますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "はい。ページの読み取り、確認、スクリーンタイムの解除はすべてオフラインで動きます。文字認識も音声の書き起こしも iPhone 本体で処理されるためです。詳しく見る" } },
+      { "@type": "Question", "name": "子どもがアプリを消したり設定を変えたりできますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "設定は保護者用 PIN の内側にあり、この PIN は端末のパスコードとも Face ID とも別なので、お子さまは入れません。ロック自体は Apple のスクリーンタイムが適用し、獲得した分が終わればアプリは自動で再びロックされます。Guardian Reader を閉じていても同じです。詳しく見る" } }
+    ]
+  }
+  </script>
+</head>
+<body data-active="ja">
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/guardianreader/ja/">
+        <img src="../assets/img/guardian-reader-icon.png" alt="開いた本を読むフクロウの Guardian Reader アプリアイコン" width="32" height="32">
+        Guardian Reader
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <nav class="site-nav" aria-label="メイン">
+        <a href="#inside-the-app">アプリの中身</a>
+        <a href="#how-it-works">使い方</a>
+        <a href="/guardianreader/ja/guide/">ガイド</a>
+        <a href="#faq">FAQ</a>
+        <a href="/projects.html">プロジェクト</a>
+        <select class="langselect" onchange="location.href=this.value" autocomplete="off" aria-label="日本語">
+          <option value="/guardianreader/" >English</option>
+          <option value="/guardianreader/es/" >Español</option>
+          <option value="/guardianreader/pt/" >Português</option>
+          <option value="/guardianreader/fr/" >Français</option>
+          <option value="/guardianreader/de/" >Deutsch</option>
+          <option value="/guardianreader/it/" >Italiano</option>
+          <option value="/guardianreader/ja/" selected>日本語</option>
+          <option value="/guardianreader/ko/" >한국어</option>
+          <option value="/guardianreader/zh/" >简体中文</option>
+        </select>
+        <a class="nav-cta" href="#download">ダウンロード</a>
+      </nav>
+      <label for="nav-toggle" class="nav-burger" aria-label="メニュー"><span></span><span></span><span></span></label>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= Hero ================= -->
+    <section class="hero" id="top">
+      <div class="container">
+        <span class="eyebrow">ペアレンタルコントロール · 音読の確認 · スクリーンタイム</span>
+        <h1>音読を<span class="accent">聞いて確かめる</span><span class="nowrap">見守りアプリ。</span></h1>
+        <p class="sub">Guardian Reader は、保護者が選んだアプリをロックします。お子さまが紙の本を声に出して読み、iPhone が一語ずつ照合し、獲得したスクリーンタイムが解除されます。保護者にもお子さまにも、意志の力は必要ありません。</p>
+        <div class="hero-ctas">
+          <a class="appstore-badge js-appstore" href="https://apps.apple.com/app/idXXXXXXXXXX" rel="noopener">
+            <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            <span class="badge-text"><small>ダウンロード</small><strong>App Store</strong></span>
+          </a>
+          <a class="btn btn-outline" href="#how-it-works">使い方を見る</a>
+        </div>
+        <p class="micro">無料 · お子さまの iPhone 用、iOS 18 以降 · アカウント不要、追跡なし · 9言語対応</p>
+        <div class="hero-phone device">
+          <img class="device-screen" src="../assets/img/earn-screen-time-by-reading-ja.jpg" alt="Instagram、TikTok、WhatsApp がロックされ、16日間の連続記録と45分のスクリーンタイムを獲得する目標が表示された iPhone のホーム画面" width="640" height="1388" fetchpriority="high">
+          <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Download strip ================= -->
+    <section class="section-panel center" id="download" style="padding:64px 0;">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:32px;">
+          <h2>読んでから、遊ぶ。</h2>
+          <p>Guardian Reader は、お子さまとアプリのあいだに本物の本を置きます。数ページを声に出して読み、一語ずつ確認されると、画面が開きます。</p>
+        </div>
+        <a class="appstore-badge js-appstore" href="https://apps.apple.com/app/idXXXXXXXXXX" rel="noopener">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="badge-text"><small>ダウンロード</small><strong>App Store</strong></span>
+        </a>
+        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;">iPhone · iOS 18 以降 · 無料版：音読の確認とアプリ1つのロック · Premium は7日間無料</p>
+      </div>
+    </section>
+
+    <!-- ================= Inside the app ================= -->
+    <section id="inside-the-app">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">アプリの中身</p>
+          <h2>読み終えるまで、アプリはロックされたまま。</h2>
+          <p>ペアレンタルコントロールと音読コーチが一つに。操作はお子さま一人でできて、確認は iPhone が行います。</p>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <video class="device-screen" autoplay muted loop playsinline poster="../assets/img/live-reading-verification-ja-poster.jpg" src="../assets/img/live-reading-verification-ja.mp4" aria-label="子どもが紙の本を音読するのを Guardian Reader が聞き取り、一致率がその場で上がっていく実際の録画"></video>
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">リアルタイムの確認</p>
+            <h3>一語ずつ確認していく様子。</h3>
+            <p>お子さまが音読するあいだ、アプリは聞き取った内容をスキャンしたページと照合し、一致率がその場で上がっていきます。これは実際のセッションで、紙の本を iPhone に向けて読んでいます。正直に読めば基準をはるかに超え、別のことを話せばほぼゼロになります。</p>
+            <a class="feature-link" href="/guardianreader/ja/guide/reading-fluency-practice-at-home.html">音読こそが練習になる →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/scan-book-page-camera-ja.jpg" alt="Guardian Reader のカメラと枠線を使って紙の本のページをスキャンする子ども" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">ページのスキャン</p>
+            <h3>どんな紙の本も、鍵になる。</h3>
+            <p>お子さまは読むページを1ページずつ撮影し、そのあと本物の本と同じように通して読みます。枠の中の文字だけが対象で、同じセッションですでにスキャンしたページは自動的に弾かれます。</p>
+            <a class="feature-link" href="/guardianreader/ja/guide/how-to-get-kids-to-read-more.html">子どもにもっと読んでもらうには →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/reading-verification-detects-cheating-ja.jpg" alt="スキャンしたページからまだ何も読まれていないため、164語中0パーセントの一致率で聞き取り中の Guardian Reader" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">ごまかしは通らない</p>
+            <h3>子どもが実際に使う近道を見抜く。</h3>
+            <p>当てられるクイズも、自己申告もありません。話した言葉は、スキャンした当のページと順番どおりに照合されます。飛ばし読み、その場しのぎ、読んだという申告では通りません。つっかえや小さな間違いは通ります。見ているのは読んだかどうかで、完璧かどうかではありません。合格ラインの厳しさはスライダーで決められます。</p>
+            <a class="feature-link" href="/guardianreader/ja/guide/earn-screen-time-by-reading.html">獲得型スクリーンタイムの仕組み →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/apps-unlocked-screen-time-reward-ja.jpg" alt="獲得したスクリーンタイム44分59秒がカウントダウンし、アプリが解除された Guardian Reader" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">ごほうび</p>
+            <h3>音読クリア。スマホ解禁。</h3>
+            <p>獲得した分だけアプリが開き、残り時間が表示されます。ゼロになると自動で再びロックされます。Apple のスクリーンタイムが適用するので、Guardian Reader を閉じていても有効です。</p>
+            <a class="feature-link" href="/guardianreader/ja/guide/how-to-limit-youtube-and-tiktok-for-kids.html">YouTube と TikTok を制限する →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/parental-controls-settings-ja.jpg" alt="ロックしたアプリ、1セッションのページ数、ごほうびの分数、厳しさのスライダーが並ぶペアレンタルコントロールの設定" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">保護者が決めるルール</p>
+            <h3>交換レートは保護者が決める。</h3>
+            <p>入るのはページ数、出るのは分数です。4〜6歳なら1ページで約15分、ティーンなら4ページまでで約45分。年齢に応じた目安が最初に提案され、どの数値も保護者用 PIN の内側で変更できます。この PIN は端末のパスコードとは別です。</p>
+            <a class="feature-link" href="/guardianreader/ja/guide/screen-time-rules-that-work.html">続くスクリーンタイムのルール →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/reading-streak-achievements-ja.jpg" alt="初日から2週間までに獲得した連続記録のメダル、最高記録は16日間" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">記録と連続日数</p>
+            <h3>また戻ってきたくなるメダル。</h3>
+            <p>お子さまには連続日数、スター、メダル。保護者には日ごと・月ごと・年ごとのページ数。Premium では各セッションの PDF レポートも作成できます。日付、分数、一致率、そして実際に読んだ本文まで含まれ、先生にそのまま渡せます。</p>
+            <a class="feature-link" href="/guardianreader/ja/guide/reading-log-for-school.html">学校に出す読書記録 →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/private-offline-no-account-ja.jpg" alt="Guardian Reader のプライバシー画面：アカウント不要、iPhone 上でオフラインで音読を確認、追跡なし" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">設計からプライベート</p>
+            <h3>子どもに向けたマイクには、説明の義務がある。</h3>
+            <p>カメラがページを読み取り、マイクが音読を文字に起こします。そのどちらも端末の中だけで動きます。アカウントもサーバーも解析も、外部 SDK もありません。声が iPhone の外に出ることはなく、すべてオフラインで動作します。</p>
+            <a class="feature-link" href="/guardianreader/ja/privacy/">プライバシーポリシー全文を読む →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 使い方 ================= -->
+    <section class="section-panel" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">How it works</p>
+          <h2>4つのステップ。交渉の余地なし。</h2>
+          <p>最初にお子さまと一緒に設定するだけ。あとは約束が自動で回ります。境界線はアプリの中にあって、保護者の声にはありません。</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="num">1</span>
+            <h3>アプリをロック</h3>
+            <p>YouTube、TikTok、ゲームなど、ロックするアプリやカテゴリ全体を選び、設定を保護者用 PIN で守ります。</p>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <h3>ページをスキャン</h3>
+            <p>お子さまが読む本物の本のページを、1ページずつ撮影します。</p>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <h3>声に出して読む</h3>
+            <p>通して読むあいだ、iPhone が聞き取り、スキャンした本文と一語ずつ照合します。</p>
+          </div>
+          <div class="step">
+            <span class="num">4</span>
+            <h3>スクリーンタイムが解除</h3>
+            <p>音読をクリアするとアプリが開き、獲得した分だけ使えます。ゼロになると自動でロックされます。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ガイド ================= -->
+    <section id="guides">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Guides</p>
+          <h2>つまずきやすいところへの手引き。</h2>
+          <p>スクリーンタイム、アプリのロック、読書習慣についての実践的なガイドと、そのそれぞれで Guardian Reader がどう役立つか。</p>
+        </div>
+        <div class="guide-grid">
+          <a class="guide-card" href="/guardianreader/ja/guide/how-to-get-kids-to-read-more.html">
+            <span class="tag">読書</span>
+            <h3>子どもにもっと読んでもらうには</h3>
+            <p>画面のほうが好きな子に効く7つの方法と、そのうち保護者の意志の力を必要としない一つ。</p>
+            <span class="read">ガイドを読む</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/ja/guide/earn-screen-time-by-reading.html">
+            <span class="tag">スクリーンタイム</span>
+            <h3>読書でスクリーンタイムを獲得する仕組み</h3>
+            <p>スクリーンタイムを当たり前のものから獲得するものに変える方法と、見張らなくてもルールが続く理由。</p>
+            <span class="read">ガイドを読む</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/ja/guide/how-to-block-apps-on-childs-iphone.html">
+            <span class="tag">ペアレンタルコントロール</span>
+            <h3>お子さまの iPhone でアプリをロックする</h3>
+            <p>Apple のスクリーンタイムでできること・できないこと、子どもが見つける抜け道、そしてその塞ぎ方。</p>
+            <span class="read">ガイドを読む</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/ja/guide/how-to-limit-youtube-and-tiktok-for-kids.html">
+            <span class="tag">YouTube · TikTok</span>
+            <h3>子ども向けに YouTube と TikTok を制限する</h3>
+            <p>時間制限だけでは無限フィードに勝てない理由と、アプリの手前に置くべきもの。</p>
+            <span class="read">ガイドを読む</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/ja/guide/reading-fluency-practice-at-home.html">
+            <span class="tag">読みの流暢さ</span>
+            <h3>家庭で読みの流暢さを鍛える</h3>
+            <p>先生が言う「流暢さ」の意味、音読が練習になる理由、そして普通の夜に10分を組み込む方法。</p>
+            <span class="read">ガイドを読む</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/ja/guide/screen-time-rules-that-work.html">
+            <span class="tag">家庭のルール</span>
+            <h3>本当に続くスクリーンタイムのルール</h3>
+            <p>家庭のルールの多くが2週間で崩れる理由と、生き残ったルールに共通する3つの性質。</p>
+            <span class="read">ガイドを読む</span>
+          </a>
+        </div>
+        <p class="center mt-40"><a class="btn btn-outline" href="/guardianreader/ja/guide/">ガイド8本すべてを見る</a></p>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section-panel" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">FAQ</p>
+          <h2>よくある質問</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>子どもが本当に本を読んだかどうか、Guardian Reader はどうやって確認しますか？</summary>
+            <div class="faq-body">お子さまが読むページを1ページずつ撮影します。アプリはその写真から本文を取り出し、通して音読するあいだ聞き取った内容をその本文と<strong>一語ずつ</strong>照合します。正直に読めば基準をはるかに超え、別のことを話せばほぼゼロになります。すべて iPhone の中で行われます。<a href="/guardianreader/ja/guide/reading-fluency-practice-at-home.html">詳しく見る</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>読んだふりをしてごまかせますか？</summary>
+            <div class="faq-body">ふりをするのでは通りません。アプリは話した言葉を、スキャンした当のページと順番どおりに照合します。その場しのぎ、口ごもり、飛ばし読みは本文と一致せず、同じセッションで一度スキャンしたページは二度は数えません。確認しているのは、その言葉が声に出して読まれたかどうかであって、誰が読んだかではありません。話者を識別する仕組みはありません。次の質問もご覧ください。 <a href="/guardianreader/ja/guide/earn-screen-time-by-reading.html">詳しく見る</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>AI の音声が子どもの代わりにページを読むことはできますか？</summary>
+            <div class="faq-body">できます。そう書くほうを選びます。Guardian Reader はマイクが聞き取った内容をスキャンしたページと照合するだけで、誰が話しているかは判別しません。別の端末で合成音声が同じ本文を読み上げれば通りますし、年上のきょうだいが読んでも通ります。アプリが確実に防げるのは日常の抜け道のほうです。飛ばし読み、その場しのぎ、読んだという申告。ページを撮影し、打ち直して音声生成に入れ、再生するところまでやる子には、そもそもアプリで解ける問題ではありません。</div>
+          </details>
+          <details class="faq-item">
+            <summary>Guardian Reader は保護者のスマホと子どものスマホ、どちらに入れますか？</summary>
+            <div class="faq-body">ロックしたいアプリが入っている、お子さまの iPhone です。保護者のスマホから遠隔操作するダッシュボードはありません。設定はお子さまの端末で行い、保護者しか知らない<strong>保護者用 PIN</strong> の内側に保たれます。ファミリー共有は不要です。<a href="/guardianreader/ja/guide/screen-time-rules-that-work.html">詳しく見る</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>子どもの iPhone でどのアプリをロックできますか？</summary>
+            <div class="faq-body">Apple のスクリーンタイムを通じて、iPhone 上のどのアプリでもカテゴリ全体でもロックできます。YouTube、TikTok、Instagram、ゲーム、あるいは SNS をまとめて。無料版では<strong>1つ</strong>、Premium では<strong>必要な数だけ</strong>ロックできます。<a href="/guardianreader/ja/guide/how-to-block-apps-on-childs-iphone.html">詳しく見る</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>Guardian Reader は子どもの声を録音しますか？</summary>
+            <div class="faq-body">いいえ。マイクはセッション中の音読を端末上で文字に起こすために使います。アカウントもサーバーもアップロードもありません。声が iPhone の外に出ることはなく、追跡も販売も共有もしません。<a href="/guardianreader/ja/privacy/">詳しく見る</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>どんな本が使えますか？</summary>
+            <div class="faq-body">文字が読み取れる紙の本、雑誌、マンガであれば使えます。枠に合わせて1ページずつ撮影するので、枠の中の文字だけが対象になります。日本語、英語、スペイン語、ポルトガル語、フランス語、ドイツ語、イタリア語、韓国語、中国語に対応しています。<a href="/guardianreader/ja/guide/help-for-reluctant-readers.html">詳しく見る</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>Guardian Reader は何歳向けですか？</summary>
+            <div class="faq-body">おおよそ4歳から16歳までです。設定時に年齢層を選ぶと、1セッションのページ数と照合の厳しさが調整され、読み始めたばかりの子がティーンと同じ基準で測られることはありません。<a href="/guardianreader/ja/guide/how-to-get-kids-to-read-more.html">詳しく見る</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>Guardian Reader の料金は？</summary>
+            <div class="faq-body"><strong>無料：</strong>音読の確認、ごほうびのスクリーンタイム、連続日数、メダル、記録の履歴すべて。ロックできるアプリは1つです。<strong>Premium：</strong>ロックするアプリは無制限、PDF の読書レポート付き。年額プラン（19.99ドル/年）は7日間無料、または49.99ドルの買い切りで永久に使えます。</div>
+          </details>
+          <details class="faq-item">
+            <summary>学校に出す読書記録はもらえますか？</summary>
+            <div class="faq-body">はい。Premium では各セッションを PDF で書き出せます。日付、時刻、ページ数、分数、一致率、そしてお子さまが実際に声に出して読んだ本文まで含まれます。家庭での音読の記録として、そのまま先生に渡せます。<a href="/guardianreader/ja/guide/reading-log-for-school.html">詳しく見る</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>インターネットがなくても使えますか？</summary>
+            <div class="faq-body">はい。ページの読み取り、確認、スクリーンタイムの解除はすべてオフラインで動きます。文字認識も音声の書き起こしも iPhone 本体で処理されるためです。<a href="/guardianreader/ja/guide/screen-time-rules-that-work.html">詳しく見る</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>子どもがアプリを消したり設定を変えたりできますか？</summary>
+            <div class="faq-body">設定は保護者用 PIN の内側にあり、この PIN は端末のパスコードとも Face ID とも別なので、お子さまは入れません。ロック自体は Apple のスクリーンタイムが適用し、獲得した分が終わればアプリは自動で再びロックされます。Guardian Reader を閉じていても同じです。<a href="/guardianreader/ja/guide/how-to-limit-youtube-and-tiktok-for-kids.html">詳しく見る</a></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Final CTA ================= -->
+    <section class="cta">
+      <div class="container">
+        <blockquote>今夜は、<span class="accent">読書が先</span>。</blockquote>
+        <p class="cta-sub">設定は2分。お子さまが声に出して読み、自分でスクリーンタイムを獲得します。保護者が悪者になる必要はもうありません。</p>
+        <a class="appstore-badge js-appstore" href="https://apps.apple.com/app/idXXXXXXXXXX" rel="noopener">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="badge-text"><small>ダウンロード</small><strong>App Store</strong></span>
+        </a>
+        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;">無料 · 広告なし、アカウント不要、追跡なし</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="/guardianreader/ja/">
+            <img src="../assets/img/guardian-reader-icon.png" alt="Guardian Reader のロゴ" width="32" height="32">
+            Guardian Reader
+          </a>
+          <p>本物の本を声に出して読んで、お子さまが自分で獲得するスクリーンタイム。iPhone 上で一語ずつ確認します。開発者は <a href="/blockandread/" style="color:var(--muted);">Block&amp;Read</a> と同じです。</p>
+        </div>
+        <div>
+          <h4>App</h4>
+          <ul>
+            <li><a href="#download">ダウンロード</a></li>
+            <li><a href="#inside-the-app">アプリの中身</a></li>
+            <li><a href="#how-it-works">使い方</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="/projects.html">プロジェクト</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>ガイド</h4>
+          <ul>
+            <li><a href="/guardianreader/ja/guide/earn-screen-time-by-reading.html">読書でスクリーンタイムを獲得する</a></li>
+            <li><a href="/guardianreader/ja/guide/how-to-block-apps-on-childs-iphone.html">iPhone でアプリをロックする</a></li>
+            <li><a href="/guardianreader/ja/guide/reading-log-for-school.html">学校に出す読書記録</a></li>
+            <li><a href="/guardianreader/ja/guide/help-for-reluctant-readers.html">読書を嫌がる子への手引き</a></li>
+            <li><a href="/guardianreader/ja/guide/">ガイド一覧 →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Guardian Reader · Nicolas Gula. 無断転載を禁じます。</span>
+        <span><a href="/guardianreader/ja/privacy/" style="color:var(--muted-2);text-decoration:none;">プライバシーポリシー</a> · <a href="/guardianreader/ja/terms/" style="color:var(--muted-2);text-decoration:none;">利用規約</a> · <a href="/guardianreader/ja/support/" style="color:var(--muted-2);text-decoration:none;">サポート</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Un único lugar para el link de la App Store. Al publicar la app:
+       1. Reemplazar idXXXXXXXXXX por el App ID real en APP_STORE_URL: todos los
+          CTAs .js-appstore pasan a apuntar directo al App Store.
+       2. Recordar agregar <meta name="apple-itunes-app"> con el App ID. */
+    var APP_STORE_URL = "https://apps.apple.com/app/idXXXXXXXXXX";
+    if (APP_STORE_URL.indexOf("XXXX") === -1) {
+      document.querySelectorAll(".js-appstore").forEach(function (el) {
+        el.setAttribute("href", APP_STORE_URL);
+        el.setAttribute("rel", "noopener");
+      });
+    }
+  </script>
+
+</body>
+</html>

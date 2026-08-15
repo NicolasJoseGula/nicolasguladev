@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardian Reader: el control parental que verifica la lectura</title>
+  <meta name="description" content="Control parental para iPhone que bloquea apps hasta que tu hijo lee un libro de verdad en voz alta. Escucha y verifica cada palabra en el dispositivo. Sin cuenta, funciona sin internet.">
+  <link rel="canonical" href="https://dezeo.lat/guardianreader/es/">
+  <link rel="alternate" hreflang="en" href="https://dezeo.lat/guardianreader/">
+  <link rel="alternate" hreflang="es" href="https://dezeo.lat/guardianreader/es/">
+  <link rel="alternate" hreflang="pt" href="https://dezeo.lat/guardianreader/pt/">
+  <link rel="alternate" hreflang="fr" href="https://dezeo.lat/guardianreader/fr/">
+  <link rel="alternate" hreflang="de" href="https://dezeo.lat/guardianreader/de/">
+  <link rel="alternate" hreflang="it" href="https://dezeo.lat/guardianreader/it/">
+  <link rel="alternate" hreflang="ja" href="https://dezeo.lat/guardianreader/ja/">
+  <link rel="alternate" hreflang="ko" href="https://dezeo.lat/guardianreader/ko/">
+  <link rel="alternate" hreflang="zh" href="https://dezeo.lat/guardianreader/zh/">
+  <link rel="alternate" hreflang="x-default" href="https://dezeo.lat/guardianreader/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0a1c">
+  <link rel="icon" type="image/png" href="../assets/img/guardian-reader-icon.png">
+  <link rel="apple-touch-icon" href="../assets/img/guardian-reader-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Guardian Reader">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:title" content="Guardian Reader: los chicos ganan pantalla leyendo en voz alta">
+  <meta property="og:description" content="La app bloquea lo que elijas, escucha mientras tu hijo lee un libro de papel en voz alta, y verifica cada palabra en el iPhone. Sin cuenta. Funciona sin internet.">
+  <meta property="og:url" content="https://dezeo.lat/guardianreader/es/">
+  <meta property="og:image" content="https://dezeo.lat/guardianreader/assets/img/og-guardian-reader.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Guardian Reader: los chicos ganan pantalla leyendo en voz alta">
+  <meta name="twitter:description" content="Bloquea las apps que elijas hasta que tu hijo lea un libro de verdad en voz alta, verificado palabra por palabra en el iPhone.">
+  <meta name="twitter:image" content="https://dezeo.lat/guardianreader/assets/img/og-guardian-reader.png">
+
+  <!-- Structured data: app + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Guardian Reader",
+    "operatingSystem": "iOS 18.0 or later",
+    "applicationCategory": "EducationalApplication",
+    "description": "Guardian Reader es una app de control parental para iPhone. Los padres eligen qué apps se bloquean; los chicos desbloquean tiempo de pantalla leyendo un libro físico en voz alta. La app fotografía cada página primero, escucha mientras el chico las lee todas de corrido, y verifica la lectura entera en el dispositivo.",
+    "url": "https://dezeo.lat/guardianreader/es/",
+    "image": "https://dezeo.lat/guardianreader/assets/img/guardian-reader-icon.png",
+    "screenshot": [
+      "https://dezeo.lat/guardianreader/assets/img/earn-screen-time-by-reading-es.jpg",
+      "https://dezeo.lat/guardianreader/assets/img/reading-aloud-verification-es.jpg",
+      "https://dezeo.lat/guardianreader/assets/img/reading-progress-charts.jpg",
+      "https://dezeo.lat/guardianreader/assets/img/personalized-reading-plan.jpg"
+    ],
+    "inLanguage": ["en", "es", "pt", "fr", "de", "it", "ja", "ko", "zh"],
+    "offers": {
+      "@type": "AggregateOffer",
+      "lowPrice": "0",
+      "highPrice": "49.99",
+      "priceCurrency": "USD",
+      "offerCount": "3",
+      "description": "Gratis: lectura en voz alta verificada, recompensas de tiempo de pantalla, rachas, medallas e historial completo de progreso, con una app bloqueada. Premium: apps bloqueadas sin límite e informes de lectura en PDF, como suscripción anual con 7 días de prueba gratis o como compra única de por vida."
+    },
+    "author": { "@type": "Person", "name": "Nicolas Gula", "url": "https://dezeo.lat/" },
+    "publisher": { "@type": "Person", "name": "Nicolas Gula", "url": "https://dezeo.lat/" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "¿Cómo verifica que mi hijo leyó de verdad?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tu hijo fotografía todas las páginas que va a leer, una foto por página. La app extrae el texto de esas fotos, después escucha mientras lee todo en voz alta, de corrido, y compara lo que oye contra ese texto, palabra por palabra. Leer de verdad queda muy por encima del mínimo; hablar de otra cosa queda cerca de cero. Todo pasa en el iPhone. Leer más" } },
+      { "@type": "Question", "name": "¿Puede hacer trampa fingiendo que lee?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Fingiendo, no. La app compara lo que dice contra las páginas exactas que escaneó, en orden, así que improvisar, mascullar o saltear no coincide con el texto, y una página ya escaneada en la misma sesión no cuenta dos veces. Lo que verifica es que esas palabras se leyeron en voz alta, no quién las dijo: no hay reconocimiento de voz. Mira la pregunta siguiente. Leer más" } },
+      { "@type": "Question", "name": "¿Puede una voz de IA leer la página en lugar de mi hijo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí, y preferimos decirlo. Guardian Reader compara lo que oye el micrófono contra la página escaneada; no identifica quién habla. Una voz sintética leyendo ese mismo texto en un segundo dispositivo pasaría, y un hermano mayor también. Lo que la app sí frena de forma confiable es la versión de todos los días: hojear, improvisar o decir que ya está. Un chico dispuesto a fotografiar una página, volver a tipearla en un generador de voz y reproducirla tiene un problema que la app nunca iba a resolver." } },
+      { "@type": "Question", "name": "¿La instalo en mi teléfono o en el de mi hijo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "En el iPhone de tu hijo, el que tiene las apps que quieres bloquear. No hay panel remoto en tu teléfono: configuras todo en su dispositivo, y la configuración queda detrás de un PIN parental que solo sabes tú. No hace falta Family Sharing. Leer más" } },
+      { "@type": "Question", "name": "¿Qué apps puedo bloquear?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cualquier app o categoría entera instalada en el iPhone, usando el sistema Screen Time de Apple: YouTube, TikTok, Instagram, juegos, o todas las redes de una vez. El plan gratis bloquea una app; Premium bloquea las que necesites. Leer más" } },
+      { "@type": "Question", "name": "¿Graba la voz de mi hijo?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. El micrófono se usa para transcribir la lectura en el dispositivo mientras dura la sesión. No hay cuenta, ni servidor, ni subida de nada: la voz nunca sale del iPhone, y no se rastrea, vende ni comparte nada. Leer más" } },
+      { "@type": "Question", "name": "¿Qué libros sirven?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Cualquier libro impreso, revista o historieta con texto legible. El chico fotografía una página por vez con una guía de encuadre, así solo cuenta el texto dentro del marco. Funciona en español, inglés, portugués, francés, alemán, italiano, japonés, coreano y chino. Leer más" } },
+      { "@type": "Question", "name": "¿Para qué edades es?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Aproximadamente de 4 a 16 años. En la configuración eliges un rango de edad y la app ajusta las páginas por sesión y la exigencia, así un chico que está aprendiendo a leer no se mide con la vara de un adolescente. Leer más" } },
+      { "@type": "Question", "name": "¿Cuánto cuesta?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Gratis: lectura verificada, recompensa en tiempo de pantalla, rachas, medallas y todo el historial, con una app bloqueada. Premium: apps bloqueadas sin límite y reportes de lectura en PDF, con 7 días de prueba en el plan anual ($19.99/año) o una opción de $49.99 por única vez." } },
+      { "@type": "Question", "name": "¿Puedo tener un registro de lectura para la escuela?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Premium exporta un PDF con cada sesión: fecha, hora, páginas, minutos, porcentaje de coincidencia y el texto que tu hijo leyó en voz alta. Listo para darle a la maestra como evidencia de la práctica en casa. Leer más" } },
+      { "@type": "Question", "name": "¿Funciona sin internet?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Sí. Leer las páginas, verificarlas y desbloquear la pantalla funcionan sin conexión, porque el reconocimiento de texto y la transcripción de voz corren en el mismo iPhone. Leer más" } },
+      { "@type": "Question", "name": "¿Puede desinstalarla o cambiar la configuración?",
+        "acceptedAnswer": { "@type": "Answer", "text": "La configuración está detrás de un PIN parental, distinto del código del teléfono y de Face ID, así que el chico no puede abrirla. El bloqueo lo aplica el sistema Screen Time de Apple, y cuando se acaban los minutos ganados las apps se bloquean solas, aunque Guardian Reader esté cerrada. Leer más" } }
+    ]
+  }
+  </script>
+</head>
+<body data-active="es">
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/guardianreader/es/">
+        <img src="../assets/img/guardian-reader-icon.png" alt="Ícono de la app Guardian Reader, un búho leyendo un libro abierto" width="32" height="32">
+        Guardian Reader
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <nav class="site-nav" aria-label="Principal">
+        <a href="#inside-the-app">Dentro de la app</a>
+        <a href="#how-it-works">Cómo funciona</a>
+        <a href="/guardianreader/es/guias/">Guías</a>
+        <a href="#faq">FAQ</a>
+        <a href="/projects.html">Proyectos</a>
+        <select class="langselect" onchange="location.href=this.value" autocomplete="off" aria-label="Español">
+          <option value="/guardianreader/" >English</option>
+          <option value="/guardianreader/es/" selected>Español</option>
+          <option value="/guardianreader/pt/" >Português</option>
+          <option value="/guardianreader/fr/" >Français</option>
+          <option value="/guardianreader/de/" >Deutsch</option>
+          <option value="/guardianreader/it/" >Italiano</option>
+          <option value="/guardianreader/ja/" >日本語</option>
+          <option value="/guardianreader/ko/" >한국어</option>
+          <option value="/guardianreader/zh/" >简体中文</option>
+        </select>
+        <a class="nav-cta" href="#download">Descargar</a>
+      </nav>
+      <label for="nav-toggle" class="nav-burger" aria-label="Menú"><span></span><span></span><span></span></label>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= Hero ================= -->
+    <section class="hero" id="top">
+      <div class="container">
+        <span class="eyebrow">Control parental · Lectura verificada · Tiempo de pantalla</span>
+        <h1>El control parental que <span class="accent">escucha a tus hijos leer</span>.</h1>
+        <p class="sub">Guardian Reader bloquea las apps que elijas. Tu hijo lee un libro de verdad en voz alta, el iPhone verifica cada palabra, y se desbloquea el tiempo de pantalla que se ganó. Sin fuerza de voluntad, ni la suya ni la tuya.</p>
+        <div class="hero-ctas">
+          <a class="appstore-badge js-appstore" href="https://apps.apple.com/app/idXXXXXXXXXX" rel="noopener">
+            <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            <span class="badge-text"><small>Descargar en el</small><strong>App Store</strong></span>
+          </a>
+          <a class="btn btn-outline" href="#how-it-works">Ver cómo funciona</a>
+        </div>
+        <p class="micro">Gratis · Para el iPhone del chico, iOS 18+ · Sin cuentas ni rastreo · 9 idiomas</p>
+        <div class="hero-phone device">
+          <img class="device-screen" src="../assets/img/earn-screen-time-by-reading-es.jpg" alt="Pantalla principal de Guardian Reader en el iPhone con Instagram, TikTok y WhatsApp bloqueadas, una racha de lectura de 16 días y la meta que gana 45 minutos de pantalla" width="640" height="1388" fetchpriority="high">
+          <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Download strip ================= -->
+    <section class="section-panel center" id="download" style="padding:64px 0;">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:32px;">
+          <h2>Leer para jugar.</h2>
+          <p>Guardian Reader pone un libro de verdad entre tu hijo y sus apps. Unas páginas leídas en voz alta, verificadas palabra por palabra, y la pantalla se abre.</p>
+        </div>
+        <a class="appstore-badge js-appstore" href="https://apps.apple.com/app/idXXXXXXXXXX" rel="noopener">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="badge-text"><small>Descargar en el</small><strong>App Store</strong></span>
+        </a>
+        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;">iPhone · iOS 18+ · Gratis: lectura verificada + una app bloqueada · Premium con 7 días de prueba</p>
+      </div>
+    </section>
+
+    <!-- ================= Inside the app ================= -->
+    <section id="inside-the-app">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Dentro de la app</p>
+          <h2>Bloquea apps hasta que la lectura esté hecha.</h2>
+          <p>Un control parental y un entrenador de lectura en uno. Tu hijo la usa solo; el que controla es el iPhone.</p>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <video class="device-screen" autoplay muted loop playsinline poster="../assets/img/live-reading-verification-es-poster.jpg" src="../assets/img/live-reading-verification-es.mp4" aria-label="Grabación real de Guardian Reader escuchando mientras un niño lee un libro de papel en voz alta, con el porcentaje de coincidencia subiendo en vivo"></video>
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Verificación en vivo</p>
+            <h3>Mira cómo verifica, palabra por palabra.</h3>
+            <p>Mientras tu hijo lee en voz alta, la app compara lo que oye con las páginas escaneadas y el porcentaje sube en vivo. Esta es una sesión real, leyéndole un libro de papel a un iPhone. Leer de verdad queda muy por encima del mínimo; hablar de otra cosa queda cerca de cero.</p>
+            <a class="feature-link" href="/guardianreader/es/guias/practica-de-fluidez-lectora-en-casa.html">Leer en voz alta es el ejercicio →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/scan-book-page-camera-es.jpg" alt="Niño escaneando la página de un libro impreso con la cámara de Guardian Reader y su guía de encuadre" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Escanea las páginas</p>
+            <h3>Cualquier libro de papel se vuelve la llave.</h3>
+            <p>Tu hijo fotografía todas las páginas que va a leer, una foto por página, y después las lee todas de corrido, como un libro de verdad. Solo cuenta el texto dentro de la guía de encuadre, y una página ya escaneada en esa sesión se rechaza automáticamente.</p>
+            <a class="feature-link" href="/guardianreader/es/guias/como-lograr-que-tus-hijos-lean-mas.html">Cómo lograr que tus hijos lean más →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/reading-verification-detects-cheating-es.jpg" alt="Guardian Reader escuchando con la coincidencia en 0 por ciento de 164 palabras, porque todavía no se leyó nada en voz alta de la página escaneada" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Anti-trampa</p>
+            <h3>Detecta los atajos que los chicos realmente usan.</h3>
+            <p>Sin un quiz que se pueda adivinar, sin sistema de confianza. Lo que dice se compara contra las páginas exactas que escaneó, en orden, así que hojear, improvisar o decir que ya está no aprueba. Los tropiezos y errores chicos sí: verifica que leyó, no que fue perfecto. Con un control defines qué tan exigente es el mínimo.</p>
+            <a class="feature-link" href="/guardianreader/es/guias/ganar-tiempo-de-pantalla-leyendo.html">Cómo funciona ganar pantalla →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/apps-unlocked-screen-time-reward-es.jpg" alt="Guardian Reader con las apps desbloqueadas y 44 minutos y 59 segundos de pantalla ganada en cuenta regresiva" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">La recompensa</p>
+            <h3>Aprueba la lectura. Desbloquea el teléfono.</h3>
+            <p>Las apps se abren por los minutos exactos que ganó, con una cuenta regresiva a la vista. Cuando llega a cero se bloquean solas: lo aplica el sistema Screen Time de Apple, aunque Guardian Reader esté cerrada.</p>
+            <a class="feature-link" href="/guardianreader/es/guias/como-limitar-youtube-y-tiktok.html">Cómo limitar YouTube y TikTok →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/parental-controls-settings-es.jpg" alt="Ajustes de control parental con apps bloqueadas, páginas por sesión, minutos de premio y control de exigencia" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Reglas del padre</p>
+            <h3>Tú pones el precio del canje.</h3>
+            <p>Páginas que entran, minutos que salen: una página gana unos 15 minutos de los 4 a los 6 años, hasta cuatro páginas por unos 45 minutos para adolescentes. El plan sugiere un punto de partida según la edad, y cada número se cambia detrás de un PIN parental distinto del código del teléfono.</p>
+            <a class="feature-link" href="/guardianreader/es/guias/reglas-de-pantalla-que-funcionan.html">Reglas de pantalla que funcionan de verdad →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/reading-streak-achievements-es.jpg" alt="Medallas de racha de lectura ganadas desde el primer día hasta las dos semanas, con una mejor racha de 16 días" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Progreso y rachas</p>
+            <h3>Medallas que los hacen volver.</h3>
+            <p>Rachas, estrellas y medallas para el chico; páginas por día, mes y año para ti. Premium agrega un reporte en PDF de cada sesión: fecha, minutos, porcentaje y el texto que leyó de verdad, listo para darle a la maestra.</p>
+            <a class="feature-link" href="/guardianreader/es/guias/registro-de-lectura-para-la-escuela.html">Un registro de lectura escolar →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/private-offline-no-account-es.jpg" alt="Pantalla de privacidad de Guardian Reader: sin cuenta, lectura verificada en el iPhone sin conexión, nada rastreado" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">Privada por diseño</p>
+            <h3>Un micrófono apuntando a un chico tiene que dar explicaciones.</h3>
+            <p>La cámara lee la página, el micrófono transcribe la lectura, y los dos trabajan solo en el dispositivo. Sin cuenta, sin servidor, sin analytics, sin SDKs de terceros: la voz nunca sale del iPhone, y todo funciona sin internet.</p>
+            <a class="feature-link" href="/guardianreader/es/privacidad/">Lee la política de privacidad completa →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Cómo funciona ================= -->
+    <section class="section-panel" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">How it works</p>
+          <h2>Cuatro pasos. Nada que negociar.</h2>
+          <p>Configuralo una vez con tu hijo. Después el trato funciona solo: el límite vive en la app, no en tu voz.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="num">1</span>
+            <h3>Bloquea las apps</h3>
+            <p>Elige las apps o categorías enteras a bloquear, como YouTube, TikTok o juegos, y protege la configuración con tu PIN parental.</p>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <h3>Escanea las páginas</h3>
+            <p>Tu hijo fotografía las páginas del libro de verdad que va a leer, una foto por página.</p>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <h3>Lee en voz alta</h3>
+            <p>Lee todo de corrido mientras el iPhone escucha y verifica cada palabra contra el texto escaneado.</p>
+          </div>
+          <div class="step">
+            <span class="num">4</span>
+            <h3>Se desbloquea la pantalla</h3>
+            <p>Si aprueba, las apps se abren por los minutos ganados. Al llegar a cero, se bloquean solas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Guías ================= -->
+    <section id="guides">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Guides</p>
+          <h2>Ayuda para lo difícil.</h2>
+          <p>Guías prácticas sobre tiempo de pantalla, bloquear apps y lograr que los chicos lean, y cómo usar Guardian Reader en cada una.</p>
+        </div>
+        <div class="guide-grid">
+          <a class="guide-card" href="/guardianreader/es/guias/como-lograr-que-tus-hijos-lean-mas.html">
+            <span class="tag">Lectura</span>
+            <h3>Cómo lograr que tus hijos lean más</h3>
+            <p>Siete enfoques que funcionan con un chico que prefiere la pantalla, y el que no te pide fuerza de voluntad.</p>
+            <span class="read">Leer la guía</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/es/guias/ganar-tiempo-de-pantalla-leyendo.html">
+            <span class="tag">Pantalla</span>
+            <h3>Cómo pueden ganar pantalla leyendo</h3>
+            <p>Convertir la pantalla en algo que se gana en vez de algo dado, y cómo sostener la regla sin vigilarla.</p>
+            <span class="read">Leer la guía</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/es/guias/como-bloquear-apps-en-el-iphone-de-tu-hijo.html">
+            <span class="tag">Control parental</span>
+            <h3>Cómo bloquear apps en el iPhone de tu hijo</h3>
+            <p>Qué puede y qué no puede Screen Time, dónde encuentran los huecos los chicos, y cómo cerrarlos de una vez.</p>
+            <span class="read">Leer la guía</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/es/guias/como-limitar-youtube-y-tiktok.html">
+            <span class="tag">YouTube · TikTok</span>
+            <h3>Cómo limitar YouTube y TikTok</h3>
+            <p>Por qué los límites de tiempo solos fallan contra los feeds infinitos, y qué poner delante de la app.</p>
+            <span class="read">Leer la guía</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/es/guias/practica-de-fluidez-lectora-en-casa.html">
+            <span class="tag">Fluidez</span>
+            <h3>Práctica de fluidez lectora en casa</h3>
+            <p>Qué quieren decir los maestros con fluidez, por qué leer en voz alta es el ejercicio, y cómo meter diez minutos en una tarde normal.</p>
+            <span class="read">Leer la guía</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/es/guias/reglas-de-pantalla-que-funcionan.html">
+            <span class="tag">Reglas familiares</span>
+            <h3>Reglas de pantalla que funcionan de verdad</h3>
+            <p>Por qué la mayoría de las reglas familiares se caen en dos semanas, y las tres propiedades que comparten las que sobreviven.</p>
+            <span class="read">Leer la guía</span>
+          </a>
+        </div>
+        <p class="center mt-40"><a class="btn btn-outline" href="/guardianreader/es/guias/">Ver las 8 guías</a></p>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section-panel" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">FAQ</p>
+          <h2>Preguntas, respondidas.</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>¿Cómo verifica que mi hijo leyó de verdad?</summary>
+            <div class="faq-body">Tu hijo fotografía todas las páginas que va a leer, una foto por página. La app extrae el texto de esas fotos, después escucha mientras lee todo en voz alta, de corrido, y compara lo que oye contra ese texto, <strong>palabra por palabra</strong>. Leer de verdad queda muy por encima del mínimo; hablar de otra cosa queda cerca de cero. Todo pasa en el iPhone. <a href="/guardianreader/es/guias/practica-de-fluidez-lectora-en-casa.html">Leer más</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Puede hacer trampa fingiendo que lee?</summary>
+            <div class="faq-body">Fingiendo, no. La app compara lo que dice contra las páginas exactas que escaneó, en orden, así que improvisar, mascullar o saltear no coincide con el texto, y una página ya escaneada en la misma sesión no cuenta dos veces. Lo que verifica es que esas palabras se leyeron en voz alta, no quién las dijo: no hay reconocimiento de voz. Mira la pregunta siguiente. <a href="/guardianreader/es/guias/ganar-tiempo-de-pantalla-leyendo.html">Leer más</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Puede una voz de IA leer la página en lugar de mi hijo?</summary>
+            <div class="faq-body">Sí, y preferimos decirlo. Guardian Reader compara lo que oye el micrófono contra la página escaneada; no identifica quién habla. Una voz sintética leyendo ese mismo texto en un segundo dispositivo pasaría, y un hermano mayor también. Lo que la app sí frena de forma confiable es la versión de todos los días: hojear, improvisar o decir que ya está. Un chico dispuesto a fotografiar una página, volver a tipearla en un generador de voz y reproducirla tiene un problema que la app nunca iba a resolver.</div>
+          </details>
+          <details class="faq-item">
+            <summary>¿La instalo en mi teléfono o en el de mi hijo?</summary>
+            <div class="faq-body">En el iPhone de tu hijo, el que tiene las apps que quieres bloquear. No hay panel remoto en tu teléfono: configuras todo en su dispositivo, y la configuración queda detrás de un <strong>PIN parental</strong> que solo sabes tú. No hace falta Family Sharing. <a href="/guardianreader/es/guias/reglas-de-pantalla-que-funcionan.html">Leer más</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Qué apps puedo bloquear?</summary>
+            <div class="faq-body">Cualquier app o categoría entera instalada en el iPhone, usando el sistema Screen Time de Apple: YouTube, TikTok, Instagram, juegos, o todas las redes de una vez. El plan gratis bloquea <strong>una app</strong>; Premium bloquea <strong>las que necesites</strong>. <a href="/guardianreader/es/guias/como-bloquear-apps-en-el-iphone-de-tu-hijo.html">Leer más</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Graba la voz de mi hijo?</summary>
+            <div class="faq-body">No. El micrófono se usa para transcribir la lectura en el dispositivo mientras dura la sesión. No hay cuenta, ni servidor, ni subida de nada: la voz nunca sale del iPhone, y no se rastrea, vende ni comparte nada. <a href="/guardianreader/es/privacidad/">Leer más</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Qué libros sirven?</summary>
+            <div class="faq-body">Cualquier libro impreso, revista o historieta con texto legible. El chico fotografía una página por vez con una guía de encuadre, así solo cuenta el texto dentro del marco. Funciona en español, inglés, portugués, francés, alemán, italiano, japonés, coreano y chino. <a href="/guardianreader/es/guias/ayuda-para-un-lector-reacio.html">Leer más</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Para qué edades es?</summary>
+            <div class="faq-body">Aproximadamente de 4 a 16 años. En la configuración eliges un rango de edad y la app ajusta las páginas por sesión y la exigencia, así un chico que está aprendiendo a leer no se mide con la vara de un adolescente. <a href="/guardianreader/es/guias/como-lograr-que-tus-hijos-lean-mas.html">Leer más</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Cuánto cuesta?</summary>
+            <div class="faq-body"><strong>Gratis:</strong> lectura verificada, recompensa en tiempo de pantalla, rachas, medallas y todo el historial, con una app bloqueada. <strong>Premium:</strong> apps bloqueadas sin límite y reportes de lectura en PDF, con 7 días de prueba en el plan anual ($19.99/año) o una opción de $49.99 por única vez.</div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Puedo tener un registro de lectura para la escuela?</summary>
+            <div class="faq-body">Sí. Premium exporta un PDF con cada sesión: fecha, hora, páginas, minutos, porcentaje de coincidencia y el texto que tu hijo leyó en voz alta. Listo para darle a la maestra como evidencia de la práctica en casa. <a href="/guardianreader/es/guias/registro-de-lectura-para-la-escuela.html">Leer más</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Funciona sin internet?</summary>
+            <div class="faq-body">Sí. Leer las páginas, verificarlas y desbloquear la pantalla funcionan sin conexión, porque el reconocimiento de texto y la transcripción de voz corren en el mismo iPhone. <a href="/guardianreader/es/guias/reglas-de-pantalla-que-funcionan.html">Leer más</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>¿Puede desinstalarla o cambiar la configuración?</summary>
+            <div class="faq-body">La configuración está detrás de un PIN parental, distinto del código del teléfono y de Face ID, así que el chico no puede abrirla. El bloqueo lo aplica el sistema Screen Time de Apple, y cuando se acaban los minutos ganados las apps se bloquean solas, aunque Guardian Reader esté cerrada. <a href="/guardianreader/es/guias/como-limitar-youtube-y-tiktok.html">Leer más</a></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Final CTA ================= -->
+    <section class="cta">
+      <div class="container">
+        <blockquote>Esta noche, <span class="accent">primero se lee</span>.</blockquote>
+        <p class="cta-sub">Dos minutos de configuración. Tu hijo lee en voz alta, se gana su pantalla, y dejas de ser el malo de la película.</p>
+        <a class="appstore-badge js-appstore" href="https://apps.apple.com/app/idXXXXXXXXXX" rel="noopener">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="badge-text"><small>Descargar en el</small><strong>App Store</strong></span>
+        </a>
+        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;">Gratis · Sin anuncios, sin cuentas, sin rastreo</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="/guardianreader/es/">
+            <img src="../assets/img/guardian-reader-icon.png" alt="Logo de Guardian Reader" width="32" height="32">
+            Guardian Reader
+          </a>
+          <p>Tiempo de pantalla que tu hijo se gana leyendo libros de verdad en voz alta, verificado palabra por palabra en el iPhone. Del desarrollador de <a href="/blockandread/" style="color:var(--muted);">Block&amp;Read</a>.</p>
+        </div>
+        <div>
+          <h4>App</h4>
+          <ul>
+            <li><a href="#download">Descargar</a></li>
+            <li><a href="#inside-the-app">Dentro de la app</a></li>
+            <li><a href="#how-it-works">Cómo funciona</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="/projects.html">Proyectos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Guías</h4>
+          <ul>
+            <li><a href="/guardianreader/es/guias/ganar-tiempo-de-pantalla-leyendo.html">Ganar pantalla leyendo</a></li>
+            <li><a href="/guardianreader/es/guias/como-bloquear-apps-en-el-iphone-de-tu-hijo.html">Bloquear apps en un iPhone</a></li>
+            <li><a href="/guardianreader/es/guias/registro-de-lectura-para-la-escuela.html">Registro de lectura escolar</a></li>
+            <li><a href="/guardianreader/es/guias/ayuda-para-un-lector-reacio.html">Ayuda para lectores reacios</a></li>
+            <li><a href="/guardianreader/es/guias/">Todas las guías →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Guardian Reader · Nicolas Gula. Todos los derechos reservados.</span>
+        <span><a href="/guardianreader/es/privacidad/" style="color:var(--muted-2);text-decoration:none;">Privacidad</a> · <a href="/guardianreader/es/terminos/" style="color:var(--muted-2);text-decoration:none;">Términos</a> · <a href="/guardianreader/es/soporte/" style="color:var(--muted-2);text-decoration:none;">Soporte</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Un único lugar para el link de la App Store. Al publicar la app:
+       1. Reemplazar idXXXXXXXXXX por el App ID real en APP_STORE_URL: todos los
+          CTAs .js-appstore pasan a apuntar directo al App Store.
+       2. Recordar agregar <meta name="apple-itunes-app"> con el App ID. */
+    var APP_STORE_URL = "https://apps.apple.com/app/idXXXXXXXXXX";
+    if (APP_STORE_URL.indexOf("XXXX") === -1) {
+      document.querySelectorAll(".js-appstore").forEach(function (el) {
+        el.setAttribute("href", APP_STORE_URL);
+        el.setAttribute("rel", "noopener");
+      });
+    }
+  </script>
+
+</body>
+</html>
