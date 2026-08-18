@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Make a Bar Chart Race from Excel or Google Sheets</title>
+<meta name="description" content="Turn an Excel or Google Sheets table into an animated bar chart race video: how to lay out the sheet, export it as CSV, and what the importer handles for you.">
+<link rel="canonical" href="https://dezeo.lat/chartmaker/guides/bar-chart-race-from-excel/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#080c0a">
+<link rel="icon" type="image/png" href="../../assets/img/chart-maker-app-icon.png">
+<link rel="apple-touch-icon" href="../../assets/img/chart-maker-app-icon.png">
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Chart Maker">
+<meta property="og:title" content="How to Make a Bar Chart Race from Excel or Google Sheets">
+<meta property="og:description" content="Turn an Excel or Google Sheets table into an animated bar chart race video: how to lay out the sheet, export it as CSV, and what the importer handles for you.">
+<meta property="og:url" content="https://dezeo.lat/chartmaker/guides/bar-chart-race-from-excel/">
+<meta property="og:image" content="https://dezeo.lat/chartmaker/assets/img/chart-maker-social-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Make a Bar Chart Race from Excel or Google Sheets">
+<meta name="twitter:description" content="Turn an Excel or Google Sheets table into an animated bar chart race video: how to lay out the sheet, export it as CSV, and what the importer handles for you.">
+<meta name="twitter:image" content="https://dezeo.lat/chartmaker/assets/img/chart-maker-social-card.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Make a Bar Chart Race from Excel or Google Sheets",
+  "description": "Turn an Excel or Google Sheets table into an animated bar chart race video: how to lay out the sheet, export it as CSV, and what the importer handles for you.",
+  "image": "https://dezeo.lat/chartmaker/assets/img/chart-maker-social-card.jpg",
+  "inLanguage": [
+    "en",
+    "es"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Nicolas Gula"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Nicolas Gula",
+    "url": "https://dezeo.lat/"
+  },
+  "mainEntityOfPage": "https://dezeo.lat/chartmaker/guides/bar-chart-race-from-excel/",
+  "dateModified": "2026-08-08"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Chart Maker",
+      "item": "https://dezeo.lat/chartmaker/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://dezeo.lat/chartmaker/guides/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "From Excel"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I import an .xlsx file directly?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not today - save or export it as CSV first. Every spreadsheet app does it in two clicks."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "My accented names came out wrong. What happened?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The file was not saved as UTF-8. Re-export it choosing CSV UTF-8; the app warns you when it has had to fall back to Latin-1."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body data-active="en">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../">
+      <img src="../../assets/img/chart-maker-app-icon.png" alt="Chart Maker app icon" width="34" height="34">
+      Chart Maker
+    </a>
+    <nav class="nav">
+      <a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a>
+      <a href="../../#screenshots"><span data-lang="en">Screenshots</span><span data-lang="es" lang="es">Pantallas</span></a>
+      <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
+      <a href="../../#faq">FAQ</a>
+      <a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a>
+      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language / Idioma">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+      <a class="btn btn-primary btn-sm" href="../../#download">
+        <span data-lang="en">Get the app</span><span data-lang="es" lang="es">Descargar</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<article class="article wrap">
+  <p class="breadcrumb"><a href="../../">Chart Maker</a> ›
+    <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a></p>
+  <h1><span data-lang="en">Make a bar chart race from Excel or Google Sheets</span><span data-lang="es" lang="es">Hacer un bar chart race desde Excel o Google Sheets</span></h1>
+  <p class="meta"><span data-lang="en">Updated 2026-08-08 · Chart Maker for Mac</span><span data-lang="es" lang="es">Actualizado 2026-08-08 · Chart Maker para Mac</span></p>
+  <p class="lead"><span data-lang="en">Your sheet is already most of the way there. Here is the layout, the export, and the traps that come with spreadsheet files.</span><span data-lang="es" lang="es">Tu planilla ya está casi lista. Acá está la estructura, la exportación, y las trampas que traen los archivos de planilla.</span></p>
+
+<h2><span data-lang="en">Lay the sheet out wide</span><span data-lang="es" lang="es">Armá la planilla a lo ancho</span></h2>
+<p><span data-lang="en">Put <strong>one row per competitor and one column per point in time</strong>. Row 1 is the headings; column A is the name. If your data is currently long &mdash; one row per name-and-year pair &mdash; a pivot table turns it into this shape in about thirty seconds.</span><span data-lang="es" lang="es">Poné <strong>una fila por competidor y una columna por punto en el tiempo</strong>. La fila 1 son los encabezados; la columna A es el nombre. Si tus datos están en formato largo &mdash; una fila por par nombre-año &mdash; una tabla dinámica los pasa a esta forma en unos treinta segundos.</span></p>
+<h3><span data-lang="en">Cumulative or not?</span><span data-lang="es" lang="es">¿Acumulado o no?</span></h3>
+<p><span data-lang="en">For the classic &ldquo;piling up over time&rdquo; race, make the figures running totals. In Excel or Sheets that is one formula dragged across: <code>=SUM($B2:C2)</code> for the cell under the second year, and so on.</span><span data-lang="es" lang="es">Para la carrera clásica de &ldquo;acumular con el tiempo&rdquo;, hacé que las cifras sean totales acumulados. En Excel o Sheets es una fórmula arrastrada: <code>=SUMA($B2:C2)</code> para la celda del segundo año, y así.</span></p>
+<h3><span data-lang="en">Leave the blanks blank</span><span data-lang="es" lang="es">Dejá los vacíos vacíos</span></h3>
+<p><span data-lang="en">Do not fill empty cells with zeros to tidy the sheet. A blank means &ldquo;not in the race yet&rdquo;; a zero means &ldquo;in the race with nothing&rdquo;, and the second one parks a bar on the baseline from the first frame.</span><span data-lang="es" lang="es">No llenes las celdas vacías con ceros para ordenar la planilla. Un vacío significa &ldquo;todavía no está en la carrera&rdquo;; un cero significa &ldquo;está en la carrera con nada&rdquo;, y el segundo deja una barra apoyada en la base desde el primer cuadro.</span></p>
+<h2><span data-lang="en">Export as CSV</span><span data-lang="es" lang="es">Exportá como CSV</span></h2>
+<ul>
+  <li><span data-lang="en"><strong>Excel:</strong> File &rarr; Save As &rarr; <em>CSV UTF-8 (Comma delimited)</em>. Pick the UTF-8 variant if it is offered &mdash; it is what keeps accented names intact.</span><span data-lang="es" lang="es"><strong>Excel:</strong> Archivo &rarr; Guardar como &rarr; <em>CSV UTF-8 (delimitado por comas)</em>. Elegí la variante UTF-8 si aparece: es lo que mantiene intactos los nombres con acentos.</span></li>
+  <li><span data-lang="en"><strong>Google Sheets:</strong> File &rarr; Download &rarr; <em>Comma-separated values (.csv)</em>.</span><span data-lang="es" lang="es"><strong>Google Sheets:</strong> Archivo &rarr; Descargar &rarr; <em>Valores separados por comas (.csv)</em>.</span></li>
+  <li><span data-lang="en"><strong>Numbers:</strong> File &rarr; Export To &rarr; CSV.</span><span data-lang="es" lang="es"><strong>Numbers:</strong> Archivo &rarr; Exportar a &rarr; CSV.</span></li>
+</ul>
+<p><span data-lang="en">Only the active sheet is exported, so make sure the one you want is in front.</span><span data-lang="es" lang="es">Sólo se exporta la hoja activa, así que fijate que esté adelante la que querés.</span></p>
+<h2><span data-lang="en">What the importer sorts out for you</span><span data-lang="es" lang="es">Qué resuelve el importador por vos</span></h2>
+<p><span data-lang="en">Spreadsheet exports are messier than they look, and the reader is built for the real ones rather than the ideal ones. It copes with semicolons or tabs instead of commas (which is what Excel writes in much of Europe and Latin America), with <code>1.234,56</code> as well as <code>1,234.56</code>, with currency symbols, with Windows line endings, and with the byte order mark Excel puts at the front of a UTF-8 file.</span><span data-lang="es" lang="es">Las exportaciones de planilla son más sucias de lo que parecen, y el lector está hecho para las reales, no para las ideales. Se banca punto y coma o tabulaciones en vez de comas (que es lo que escribe Excel en buena parte de Europa y Latinoamérica), <code>1.234,56</code> tanto como <code>1,234.56</code>, símbolos de moneda, saltos de línea de Windows, y la marca de orden de bytes que Excel pone al principio de un archivo UTF-8.</span></p>
+<div class="callout">
+<h3><span data-lang="en">Check the read, not the file</span><span data-lang="es" lang="es">Revisá la lectura, no el archivo</span></h3>
+<p><span data-lang="en"><em>View data</em> shows the numbers as the chart will receive them and lists which of your columns became the name, the picture, the flag code and the group. A decimal comma misread as a thousands separator is invisible in the chart, where it just looks like a very good year.</span><span data-lang="es" lang="es"><em>View data</em> muestra los números como los va a recibir el gráfico y lista cuál de tus columnas quedó como nombre, imagen, código de bandera y grupo. Una coma decimal leída como separador de miles es invisible en el gráfico, donde simplemente parece un año muy bueno.</span></p>
+</div>
+
+<h2><span data-lang="en">Questions</span><span data-lang="es" lang="es">Preguntas</span></h2>
+<div class="faq">
+  <details><summary><span data-lang="en">Can I import an .xlsx file directly?</span><span data-lang="es" lang="es">¿Puedo importar un .xlsx directamente?</span></summary><div class="answer"><p><span data-lang="en">Not today - save or export it as CSV first. Every spreadsheet app does it in two clicks.</span><span data-lang="es" lang="es">Hoy no: guardalo o exportalo como CSV primero. Toda app de planillas lo hace en dos clics.</span></p></div></details>
+  <details><summary><span data-lang="en">My accented names came out wrong. What happened?</span><span data-lang="es" lang="es">Mis nombres con acentos salieron mal. ¿Qué pasó?</span></summary><div class="answer"><p><span data-lang="en">The file was not saved as UTF-8. Re-export it choosing CSV UTF-8; the app warns you when it has had to fall back to Latin-1.</span><span data-lang="es" lang="es">El archivo no se guardó como UTF-8. Volvé a exportarlo eligiendo CSV UTF-8; la app te avisa cuando tuvo que caer a Latin-1.</span></p></div></details>
+</div>
+
+  <div class="cta-band" style="margin-top:46px">
+    <h2><span data-lang="en">Make one from your own data</span><span data-lang="es" lang="es">Hacé uno con tus propios datos</span></h2>
+    <p><span data-lang="en">A native Mac app. Free to download, free to export at full resolution, one payment to remove the mark.</span><span data-lang="es" lang="es">Una app nativa de Mac. Gratis para bajar, gratis para exportar a resolución completa, un pago para sacar la marca.</span></p>
+    <a class="btn btn-lime" href="https://apps.apple.com/app/chart-maker-animated-videos/id0000000000"><span data-lang="en">Download on the Mac App Store</span><span data-lang="es" lang="es">Descargar en la Mac App Store</span></a>
+  </div>
+
+  <div class="related">
+    <h2><span data-lang="en">Keep reading</span><span data-lang="es" lang="es">Seguir leyendo</span></h2>
+    <ul>
+    <li><a href="../how-to-make-a-bar-chart-race-video/"><span data-lang="en">How to make a bar chart race video</span><span data-lang="es" lang="es">Cómo hacer un video de bar chart race</span></a></li>
+    <li><a href="../bar-chart-race-csv-format/"><span data-lang="en">Bar chart race CSV format</span><span data-lang="es" lang="es">Formato CSV para un bar chart race</span></a></li>
+    <li><a href="../export-bar-chart-race-mp4/"><span data-lang="en">Export a bar chart race as an MP4</span><span data-lang="es" lang="es">Exportar un bar chart race como MP4</span></a></li>
+    <li><a href="../bar-chart-race-youtube-shorts-tiktok/"><span data-lang="en">Vertical bar chart races for Shorts, TikTok and Reels</span><span data-lang="es" lang="es">Bar chart races verticales para Shorts, TikTok y Reels</span></a></li>
+    </ul>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Chart Maker</h4>
+        <ul>
+          <li><a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a></li>
+          <li><a href="../../#screenshots"><span data-lang="en">Screenshots</span><span data-lang="es" lang="es">Pantallas</span></a></li>
+          <li><a href="../../#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></h4>
+        <ul>
+          <li><a href="../../guides/how-to-make-a-bar-chart-race-video/"><span data-lang="en">Make one</span><span data-lang="es" lang="es">Hacer uno</span></a></li>
+          <li><a href="../../guides/bar-chart-race-csv-format/"><span data-lang="en">CSV format</span><span data-lang="es" lang="es">Formato CSV</span></a></li>
+          <li><a href="../../guides/export-bar-chart-race-mp4/"><span data-lang="en">Export to MP4</span><span data-lang="es" lang="es">Exportar a MP4</span></a></li>
+          <li><a href="../../guides/"><span data-lang="en">All guides</span><span data-lang="es" lang="es">Todas las guías</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="en">Where it goes</span><span data-lang="es" lang="es">Dónde se publica</span></h4>
+        <ul>
+          <li><a href="../../guides/bar-chart-race-youtube-shorts-tiktok/">YouTube Shorts &amp; TikTok</a></li>
+          <li><a href="../../guides/bar-chart-race-from-excel/">Excel</a></li>
+          <li><a href="../../guides/bar-chart-race-flags-logos/"><span data-lang="en">Flags &amp; logos</span><span data-lang="es" lang="es">Banderas y escudos</span></a></li>
+          <li><a href="../../guides/bar-chart-race-no-watermark/"><span data-lang="en">No watermark</span><span data-lang="es" lang="es">Sin marca de agua</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>dezeo</h4>
+        <ul>
+          <li><a href="/"><span data-lang="en">Home</span><span data-lang="es" lang="es">Inicio</span></a></li>
+          <li><a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a></li>
+          <li><a href="../../support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a></li>
+          <li><a href="../../privacypolicy/"><span data-lang="en">Privacy</span><span data-lang="es" lang="es">Privacidad</span></a></li>
+          <li><a href="../../terms/"><span data-lang="en">Terms</span><span data-lang="es" lang="es">Términos</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nicolas Gula · Chart Maker</span>
+      <span class="small"><span data-lang="en">Made in Argentina</span><span data-lang="es" lang="es">Hecho en Argentina</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(l) {
+    document.body.setAttribute("data-active", l);
+    document.documentElement.lang = l;
+    var sel = document.getElementById("langselect");
+    if (sel) sel.value = l;
+    try { localStorage.setItem("bcr-lang", l); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem("bcr-lang"); } catch (e) {}
+    var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
+    setLang(lang);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bar Chart Race CSV Format: How to Structure Your Data</title>
+<meta name="description" content="The exact CSV layout a bar chart race needs: one row per competitor, one column per year or season, plus the optional columns for flags and logos.">
+<link rel="canonical" href="https://dezeo.lat/chartmaker/guides/bar-chart-race-csv-format/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#080c0a">
+<link rel="icon" type="image/png" href="../../assets/img/chart-maker-app-icon.png">
+<link rel="apple-touch-icon" href="../../assets/img/chart-maker-app-icon.png">
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Chart Maker">
+<meta property="og:title" content="Bar Chart Race CSV Format: How to Structure Your Data">
+<meta property="og:description" content="The exact CSV layout a bar chart race needs: one row per competitor, one column per year or season, plus the optional columns for flags and logos.">
+<meta property="og:url" content="https://dezeo.lat/chartmaker/guides/bar-chart-race-csv-format/">
+<meta property="og:image" content="https://dezeo.lat/chartmaker/assets/img/chart-maker-social-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bar Chart Race CSV Format: How to Structure Your Data">
+<meta name="twitter:description" content="The exact CSV layout a bar chart race needs: one row per competitor, one column per year or season, plus the optional columns for flags and logos.">
+<meta name="twitter:image" content="https://dezeo.lat/chartmaker/assets/img/chart-maker-social-card.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Bar Chart Race CSV Format: How to Structure Your Data",
+  "description": "The exact CSV layout a bar chart race needs: one row per competitor, one column per year or season, plus the optional columns for flags and logos.",
+  "image": "https://dezeo.lat/chartmaker/assets/img/chart-maker-social-card.jpg",
+  "inLanguage": [
+    "en",
+    "es"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Nicolas Gula"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Nicolas Gula",
+    "url": "https://dezeo.lat/"
+  },
+  "mainEntityOfPage": "https://dezeo.lat/chartmaker/guides/bar-chart-race-csv-format/",
+  "dateModified": "2026-08-08"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Chart Maker",
+      "item": "https://dezeo.lat/chartmaker/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://dezeo.lat/chartmaker/guides/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "CSV format"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I use dates instead of years?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Dates in yyyy-MM-dd, dd/MM/yyyy, MM/dd/yyyy and yyyy-MM are all recognised, as are seasons like 2025/26."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the first column have to be called Name?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. If no column announces itself, the first column that is not a point in time is taken as the name."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body data-active="en">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../">
+      <img src="../../assets/img/chart-maker-app-icon.png" alt="Chart Maker app icon" width="34" height="34">
+      Chart Maker
+    </a>
+    <nav class="nav">
+      <a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a>
+      <a href="../../#screenshots"><span data-lang="en">Screenshots</span><span data-lang="es" lang="es">Pantallas</span></a>
+      <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
+      <a href="../../#faq">FAQ</a>
+      <a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a>
+      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language / Idioma">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+      <a class="btn btn-primary btn-sm" href="../../#download">
+        <span data-lang="en">Get the app</span><span data-lang="es" lang="es">Descargar</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<article class="article wrap">
+  <p class="breadcrumb"><a href="../../">Chart Maker</a> ›
+    <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a></p>
+  <h1><span data-lang="en">Bar chart race CSV format</span><span data-lang="es" lang="es">Formato CSV para un bar chart race</span></h1>
+  <p class="meta"><span data-lang="en">Updated 2026-08-08 · Chart Maker for Mac</span><span data-lang="es" lang="es">Actualizado 2026-08-08 · Chart Maker para Mac</span></p>
+  <p class="lead"><span data-lang="en">The layout, the column names that are recognised, and the two mistakes that make a finished chart look wrong.</span><span data-lang="es" lang="es">La estructura, los nombres de columna que se reconocen, y los dos errores que hacen que un gráfico terminado se vea mal.</span></p>
+
+<h2><span data-lang="en">The basic shape</span><span data-lang="es" lang="es">La forma básica</span></h2>
+<p><span data-lang="en">A bar chart race needs a <strong>wide</strong> table: one row per competitor, one column per point in time. The first column carries the name; every column whose heading looks like a year, a season or a date is read as a point on the timeline.</span><span data-lang="es" lang="es">Un bar chart race necesita una tabla <strong>ancha</strong>: una fila por competidor, una columna por punto en el tiempo. La primera columna lleva el nombre; toda columna cuyo encabezado parezca un año, una temporada o una fecha se lee como un punto de la línea de tiempo.</span></p>
+<pre><code>Nation,ISO2,1924,1928,1932,1936
+United States,us,1,2,4,4
+Norway,no,,3,5,6
+Austria,at,3,3,3,4</code></pre>
+<p><span data-lang="en">Headings that count as time: a plain year (<code>1924</code>), a season (<code>1992-93</code>, <code>2025/26</code>), or a date (<code>2026-03-01</code>, <code>01/03/2026</code>). Everything else is treated as a property of the competitor.</span><span data-lang="es" lang="es">Encabezados que cuentan como tiempo: un año simple (<code>1924</code>), una temporada (<code>1992-93</code>, <code>2025/26</code>), o una fecha (<code>2026-03-01</code>, <code>01/03/2026</code>). Todo lo demás se trata como una propiedad del competidor.</span></p>
+<h2><span data-lang="en">The optional columns</span><span data-lang="es" lang="es">Las columnas opcionales</span></h2>
+<table><thead><tr><th><span data-lang="en">Role</span><span data-lang="es" lang="es">Rol</span></th><th><span data-lang="en">Call the column</span><span data-lang="es" lang="es">Llamá a la columna</span></th><th><span data-lang="en">What it does</span><span data-lang="es" lang="es">Qué hace</span></th></tr></thead><tbody><tr><td><span data-lang="en">Name</span><span data-lang="es" lang="es">Nombre</span></td><td><span data-lang="en">Name, Nation, Country, Team, Club, Company, Player</span><span data-lang="es" lang="es">Name, Nation, Country, Team, Club, Company, Player</span></td><td><span data-lang="en">The label on the bar</span><span data-lang="es" lang="es">La etiqueta de la barra</span></td></tr><tr><td><span data-lang="en">Flag code</span><span data-lang="es" lang="es">Código de bandera</span></td><td><span data-lang="en">ISO2, ISO, Code, Country Code</span><span data-lang="es" lang="es">ISO2, ISO, Code, Country Code</span></td><td><span data-lang="en">Draws a bundled round flag</span><span data-lang="es" lang="es">Dibuja una bandera circular incluida</span></td></tr><tr><td><span data-lang="en">Picture</span><span data-lang="es" lang="es">Imagen</span></td><td><span data-lang="en">Image, Logo, Badge, Crest, Photo, Icon</span><span data-lang="es" lang="es">Image, Logo, Badge, Crest, Photo, Icon</span></td><td><span data-lang="en">A web address, drawn on the bar</span><span data-lang="es" lang="es">Una dirección web, dibujada en la barra</span></td></tr><tr><td><span data-lang="en">Group</span><span data-lang="es" lang="es">Grupo</span></td><td><span data-lang="en">Region, Continent, Group, Category, League</span><span data-lang="es" lang="es">Region, Continent, Group, Category, League</span></td><td><span data-lang="en">Colours the bars and fills the legend</span><span data-lang="es" lang="es">Colorea las barras y arma la leyenda</span></td></tr><tr><td><span data-lang="en">Short name</span><span data-lang="es" lang="es">Nombre corto</span></td><td><span data-lang="en">Short, Abbr, Abbreviation</span><span data-lang="es" lang="es">Short, Abbr, Abbreviation</span></td><td><span data-lang="en">Used in the vertical cut only</span><span data-lang="es" lang="es">Sólo en el corte vertical</span></td></tr></tbody></table>
+<p><span data-lang="en">Matching is case-insensitive and none of these are required &mdash; a file with nothing but a name column and some years works. If a column is not recognised, the app says so: <em>View data</em> lists every role it looked for, which heading answered to it, and which found nothing.</span><span data-lang="es" lang="es">La coincidencia no distingue mayúsculas y ninguna es obligatoria: un archivo con sólo una columna de nombre y algunos años funciona. Si una columna no se reconoce, la app te lo dice: <em>View data</em> lista cada rol que buscó, qué encabezado respondió, y cuáles no encontraron nada.</span></p>
+<h2><span data-lang="en">Mistake one: zeros where there is no reading</span><span data-lang="es" lang="es">Error uno: ceros donde no hay dato</span></h2>
+<p><span data-lang="en">A zero is a statement &mdash; it says this competitor was in the race and had none. A blank says it was not in the race yet. If you fill your blanks with zeros, every future competitor sits on the baseline from the first frame, and a chart that should start with three bars starts with forty.</span><span data-lang="es" lang="es">Un cero es una afirmación: dice que este competidor estaba en la carrera y no tenía nada. Un vacío dice que todavía no estaba en la carrera. Si llenás los vacíos con ceros, cada competidor futuro queda apoyado en la base desde el primer cuadro, y un gráfico que debería empezar con tres barras empieza con cuarenta.</span></p>
+<h2><span data-lang="en">Mistake two: the wrong kind of number</span><span data-lang="es" lang="es">Error dos: el tipo de número equivocado</span></h2>
+<p><span data-lang="en">Decide whether your column is a <strong>running total</strong> or a <strong>per-period figure</strong>. Medals won <em>in total by 1936</em> and medals won <em>during 1936</em> are different charts. In a spreadsheet a running total is one <code>SUM</code> away.</span><span data-lang="es" lang="es">Decidí si tu columna es un <strong>total acumulado</strong> o una <strong>cifra por período</strong>. Medallas ganadas <em>en total hasta 1936</em> y medallas ganadas <em>durante 1936</em> son gráficos distintos. En una planilla, un acumulado está a un <code>SUMA</code> de distancia.</span></p>
+<h2><span data-lang="en">What the reader copes with on its own</span><span data-lang="es" lang="es">Con qué se arregla solo el lector</span></h2>
+<ul>
+  <li><span data-lang="en">Commas, semicolons, tabs or pipes as the separator &mdash; detected, not asked about.</span><span data-lang="es" lang="es">Comas, punto y coma, tabulaciones o barras como separador: se detecta, no se pregunta.</span></li>
+  <li><span data-lang="en">Quoted fields containing commas: <code>"Korea, Republic of"</code>.</span><span data-lang="es" lang="es">Campos entre comillas que contienen comas: <code>"Korea, Republic of"</code>.</span></li>
+  <li><span data-lang="en">Both thousands conventions, guessed per cell: <code>1,234.56</code> and <code>1.234,56</code>.</span><span data-lang="es" lang="es">Las dos convenciones de miles, adivinadas celda por celda: <code>1,234.56</code> y <code>1.234,56</code>.</span></li>
+  <li><span data-lang="en">Currency symbols, per-cent signs and spaces used as group markers.</span><span data-lang="es" lang="es">Símbolos de moneda, signos de porcentaje y espacios usados como separadores.</span></li>
+  <li><span data-lang="en">Accounting parentheses for negatives: <code>(1200)</code>.</span><span data-lang="es" lang="es">Paréntesis contables para negativos: <code>(1200)</code>.</span></li>
+  <li><span data-lang="en"><code>n/a</code>, <code>NA</code>, <code>null</code> and <code>-</code> as &ldquo;no reading&rdquo;.</span><span data-lang="es" lang="es"><code>n/a</code>, <code>NA</code>, <code>null</code> y <code>-</code> como &ldquo;sin dato&rdquo;.</span></li>
+  <li><span data-lang="en">Windows line endings and Excel&rsquo;s byte order mark.</span><span data-lang="es" lang="es">Saltos de línea de Windows y la marca de orden de bytes de Excel.</span></li>
+</ul>
+<h2><span data-lang="en">How many rows can it take?</span><span data-lang="es" lang="es">¿Cuántas filas soporta?</span></h2>
+<p><span data-lang="en">As many as you like. On import, a row is kept if it reaches the top at any single point in time &mdash; a few places deeper than the bars on screen &mdash; and the rest are dropped with a note saying how many. That keeps every overtake while sparing the render two hundred competitors who were never in shot.</span><span data-lang="es" lang="es">Las que quieras. Al importar, una fila se conserva si llega al tope en cualquier punto del tiempo &mdash; unos puestos más abajo de las barras en pantalla &mdash; y el resto se descarta con un aviso de cuántas fueron. Así se conservan todos los sobrepasos sin hacerle renderizar doscientos competidores que nunca entraron en cuadro.</span></p>
+
+<h2><span data-lang="en">Questions</span><span data-lang="es" lang="es">Preguntas</span></h2>
+<div class="faq">
+  <details><summary><span data-lang="en">Can I use dates instead of years?</span><span data-lang="es" lang="es">¿Puedo usar fechas en vez de años?</span></summary><div class="answer"><p><span data-lang="en">Yes. Dates in yyyy-MM-dd, dd/MM/yyyy, MM/dd/yyyy and yyyy-MM are all recognised, as are seasons like 2025/26.</span><span data-lang="es" lang="es">Sí. Fechas en yyyy-MM-dd, dd/MM/yyyy, MM/dd/yyyy y yyyy-MM se reconocen todas, y las temporadas tipo 2025/26 también.</span></p></div></details>
+  <details><summary><span data-lang="en">Does the first column have to be called Name?</span><span data-lang="es" lang="es">¿La primera columna tiene que llamarse Name?</span></summary><div class="answer"><p><span data-lang="en">No. If no column announces itself, the first column that is not a point in time is taken as the name.</span><span data-lang="es" lang="es">No. Si ninguna columna se anuncia, se toma como nombre la primera que no sea un punto en el tiempo.</span></p></div></details>
+</div>
+
+  <div class="cta-band" style="margin-top:46px">
+    <h2><span data-lang="en">Make one from your own data</span><span data-lang="es" lang="es">Hacé uno con tus propios datos</span></h2>
+    <p><span data-lang="en">A native Mac app. Free to download, free to export at full resolution, one payment to remove the mark.</span><span data-lang="es" lang="es">Una app nativa de Mac. Gratis para bajar, gratis para exportar a resolución completa, un pago para sacar la marca.</span></p>
+    <a class="btn btn-lime" href="https://apps.apple.com/app/chart-maker-animated-videos/id0000000000"><span data-lang="en">Download on the Mac App Store</span><span data-lang="es" lang="es">Descargar en la Mac App Store</span></a>
+  </div>
+
+  <div class="related">
+    <h2><span data-lang="en">Keep reading</span><span data-lang="es" lang="es">Seguir leyendo</span></h2>
+    <ul>
+    <li><a href="../how-to-make-a-bar-chart-race-video/"><span data-lang="en">How to make a bar chart race video</span><span data-lang="es" lang="es">Cómo hacer un video de bar chart race</span></a></li>
+    <li><a href="../export-bar-chart-race-mp4/"><span data-lang="en">Export a bar chart race as an MP4</span><span data-lang="es" lang="es">Exportar un bar chart race como MP4</span></a></li>
+    <li><a href="../bar-chart-race-youtube-shorts-tiktok/"><span data-lang="en">Vertical bar chart races for Shorts, TikTok and Reels</span><span data-lang="es" lang="es">Bar chart races verticales para Shorts, TikTok y Reels</span></a></li>
+    <li><a href="../bar-chart-race-from-excel/"><span data-lang="en">Make a bar chart race from Excel or Google Sheets</span><span data-lang="es" lang="es">Hacer un bar chart race desde Excel o Google Sheets</span></a></li>
+    </ul>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Chart Maker</h4>
+        <ul>
+          <li><a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a></li>
+          <li><a href="../../#screenshots"><span data-lang="en">Screenshots</span><span data-lang="es" lang="es">Pantallas</span></a></li>
+          <li><a href="../../#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></h4>
+        <ul>
+          <li><a href="../../guides/how-to-make-a-bar-chart-race-video/"><span data-lang="en">Make one</span><span data-lang="es" lang="es">Hacer uno</span></a></li>
+          <li><a href="../../guides/bar-chart-race-csv-format/"><span data-lang="en">CSV format</span><span data-lang="es" lang="es">Formato CSV</span></a></li>
+          <li><a href="../../guides/export-bar-chart-race-mp4/"><span data-lang="en">Export to MP4</span><span data-lang="es" lang="es">Exportar a MP4</span></a></li>
+          <li><a href="../../guides/"><span data-lang="en">All guides</span><span data-lang="es" lang="es">Todas las guías</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="en">Where it goes</span><span data-lang="es" lang="es">Dónde se publica</span></h4>
+        <ul>
+          <li><a href="../../guides/bar-chart-race-youtube-shorts-tiktok/">YouTube Shorts &amp; TikTok</a></li>
+          <li><a href="../../guides/bar-chart-race-from-excel/">Excel</a></li>
+          <li><a href="../../guides/bar-chart-race-flags-logos/"><span data-lang="en">Flags &amp; logos</span><span data-lang="es" lang="es">Banderas y escudos</span></a></li>
+          <li><a href="../../guides/bar-chart-race-no-watermark/"><span data-lang="en">No watermark</span><span data-lang="es" lang="es">Sin marca de agua</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>dezeo</h4>
+        <ul>
+          <li><a href="/"><span data-lang="en">Home</span><span data-lang="es" lang="es">Inicio</span></a></li>
+          <li><a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a></li>
+          <li><a href="../../support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a></li>
+          <li><a href="../../privacypolicy/"><span data-lang="en">Privacy</span><span data-lang="es" lang="es">Privacidad</span></a></li>
+          <li><a href="../../terms/"><span data-lang="en">Terms</span><span data-lang="es" lang="es">Términos</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nicolas Gula · Chart Maker</span>
+      <span class="small"><span data-lang="en">Made in Argentina</span><span data-lang="es" lang="es">Hecho en Argentina</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(l) {
+    document.body.setAttribute("data-active", l);
+    document.documentElement.lang = l;
+    var sel = document.getElementById("langselect");
+    if (sel) sel.value = l;
+    try { localStorage.setItem("bcr-lang", l); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem("bcr-lang"); } catch (e) {}
+    var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
+    setLang(lang);
+  })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Export a Bar Chart Race as an MP4 Video (4K)</title>
+<meta name="description" content="Export a bar chart race to a real MP4 file at up to 4K, 30 or 60fps, without screen recording. What the settings mean and how long a render takes.">
+<link rel="canonical" href="https://dezeo.lat/chartmaker/guides/export-bar-chart-race-mp4/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#080c0a">
+<link rel="icon" type="image/png" href="../../assets/img/chart-maker-app-icon.png">
+<link rel="apple-touch-icon" href="../../assets/img/chart-maker-app-icon.png">
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Chart Maker">
+<meta property="og:title" content="How to Export a Bar Chart Race as an MP4 Video (4K)">
+<meta property="og:description" content="Export a bar chart race to a real MP4 file at up to 4K, 30 or 60fps, without screen recording. What the settings mean and how long a render takes.">
+<meta property="og:url" content="https://dezeo.lat/chartmaker/guides/export-bar-chart-race-mp4/">
+<meta property="og:image" content="https://dezeo.lat/chartmaker/assets/img/chart-maker-social-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Export a Bar Chart Race as an MP4 Video (4K)">
+<meta name="twitter:description" content="Export a bar chart race to a real MP4 file at up to 4K, 30 or 60fps, without screen recording. What the settings mean and how long a render takes.">
+<meta name="twitter:image" content="https://dezeo.lat/chartmaker/assets/img/chart-maker-social-card.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Export a Bar Chart Race as an MP4 Video (4K)",
+  "description": "Export a bar chart race to a real MP4 file at up to 4K, 30 or 60fps, without screen recording. What the settings mean and how long a render takes.",
+  "image": "https://dezeo.lat/chartmaker/assets/img/chart-maker-social-card.jpg",
+  "inLanguage": [
+    "en",
+    "es"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Nicolas Gula"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Nicolas Gula",
+    "url": "https://dezeo.lat/"
+  },
+  "mainEntityOfPage": "https://dezeo.lat/chartmaker/guides/export-bar-chart-race-mp4/",
+  "dateModified": "2026-08-08"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Chart Maker",
+      "item": "https://dezeo.lat/chartmaker/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://dezeo.lat/chartmaker/guides/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Export to MP4"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I export a transparent background?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not today. The export is H.264 in an .mp4, which has no alpha channel. You can set the background to any colour, or put a photograph behind the chart."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does 60fps make the animation smoother?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Slightly, and it doubles the export time. The smoothness of the movement is set by the interpolation between points in time, not by the frame rate."
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body data-active="en">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="../../">
+      <img src="../../assets/img/chart-maker-app-icon.png" alt="Chart Maker app icon" width="34" height="34">
+      Chart Maker
+    </a>
+    <nav class="nav">
+      <a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a>
+      <a href="../../#screenshots"><span data-lang="en">Screenshots</span><span data-lang="es" lang="es">Pantallas</span></a>
+      <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
+      <a href="../../#faq">FAQ</a>
+      <a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a>
+      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language / Idioma">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+      <a class="btn btn-primary btn-sm" href="../../#download">
+        <span data-lang="en">Get the app</span><span data-lang="es" lang="es">Descargar</span>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<article class="article wrap">
+  <p class="breadcrumb"><a href="../../">Chart Maker</a> ›
+    <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a></p>
+  <h1><span data-lang="en">Export a bar chart race as an MP4</span><span data-lang="es" lang="es">Exportar un bar chart race como MP4</span></h1>
+  <p class="meta"><span data-lang="en">Updated 2026-08-08 · Chart Maker for Mac</span><span data-lang="es" lang="es">Actualizado 2026-08-08 · Chart Maker para Mac</span></p>
+  <p class="lead"><span data-lang="en">A real video file, up to 3840&times;2160, written frame by frame &mdash; not a recording of a browser window.</span><span data-lang="es" lang="es">Un archivo de video real, hasta 3840&times;2160, escrito cuadro por cuadro: no una grabación de una ventana del navegador.</span></p>
+
+<h2><span data-lang="en">Why screen recording is the wrong tool</span><span data-lang="es" lang="es">Por qué grabar la pantalla es la herramienta equivocada</span></h2>
+<p><span data-lang="en">Most bar chart race tools live in a browser and hand you an embed or a GIF. To get a video, people screen-record the animation. That has three costs, and all three end up in the finished upload: the frame is the size of a window rather than the size of the format, the frame rate wobbles with whatever else the machine is doing, and every re-record comes out slightly different.</span><span data-lang="es" lang="es">Casi todas las herramientas de bar chart race viven en un navegador y te dan un embed o un GIF. Para tener un video, la gente graba la pantalla. Eso tiene tres costos, y los tres terminan en lo que subís: el cuadro es del tamaño de una ventana y no del formato, los fps bailan con lo que sea que esté haciendo la máquina, y cada regrabación sale un poco distinta.</span></p>
+<p><span data-lang="en">Chart Maker records the chart the way an offline renderer does: it loads the page at the exact size of the finished frame, asks it for one position on its timeline, captures that frame, and asks for the next &mdash; however long each one takes.</span><span data-lang="es" lang="es">Chart Maker graba el gráfico como lo haría un renderizador offline: carga la página al tamaño exacto del cuadro final, le pide una posición de su línea de tiempo, captura ese cuadro, y pide el siguiente, tarde lo que tarde cada uno.</span></p>
+<h2><span data-lang="en">The settings</span><span data-lang="es" lang="es">Los ajustes</span></h2>
+<table><thead><tr><th><span data-lang="en">Setting</span><span data-lang="es" lang="es">Ajuste</span></th><th><span data-lang="en">Options</span><span data-lang="es" lang="es">Opciones</span></th><th><span data-lang="en">What to pick</span><span data-lang="es" lang="es">Qué elegir</span></th></tr></thead><tbody><tr><td><span data-lang="en">Shape</span><span data-lang="es" lang="es">Forma</span></td><td><span data-lang="en">16:9 or 9:16</span><span data-lang="es" lang="es">16:9 o 9:16</span></td><td><span data-lang="en">YouTube, or Shorts / TikTok / Reels</span><span data-lang="es" lang="es">YouTube, o Shorts / TikTok / Reels</span></td></tr><tr><td><span data-lang="en">Size</span><span data-lang="es" lang="es">Tamaño</span></td><td><span data-lang="en">3840×2160 or 1920×1080</span><span data-lang="es" lang="es">3840×2160 o 1920×1080</span></td><td><span data-lang="en">Full for YouTube, half for short-form</span><span data-lang="es" lang="es">Completo para YouTube, mitad para formato corto</span></td></tr><tr><td><span data-lang="en">Frames per second</span><span data-lang="es" lang="es">Cuadros por segundo</span></td><td><span data-lang="en">30 or 60</span><span data-lang="es" lang="es">30 o 60</span></td><td><span data-lang="en">30 is plenty; 60 doubles the export time</span><span data-lang="es" lang="es">30 alcanza; 60 duplica el tiempo de exportación</span></td></tr></tbody></table>
+<h2><span data-lang="en">How long it takes</span><span data-lang="es" lang="es">Cuánto tarda</span></h2>
+<p><span data-lang="en">Measured on an Apple silicon Mac, a 4K export runs at roughly five frames a second, so a minute of finished video is around six minutes of exporting. Half size is four times fewer pixels and correspondingly quicker &mdash; and 1920&times;1080 is what a Short needs anyway. The app stays usable while it runs, and Stop leaves no half-written file behind.</span><span data-lang="es" lang="es">Medido en una Mac con Apple silicon, una exportación en 4K va a unos cinco cuadros por segundo, así que un minuto de video son unos seis minutos de exportación. La mitad de tamaño son cuatro veces menos píxeles y va proporcionalmente más rápido &mdash; y 1920&times;1080 es lo que necesita un Short igual. La app sigue usable mientras corre, y Stop no deja ningún archivo a medio escribir.</span></p>
+<div class="callout">
+<h3><span data-lang="en">Codec</span><span data-lang="es" lang="es">Códec</span></h3>
+<p><span data-lang="en">H.264 in an .mp4, generously bitrated. The file exists to be uploaded, and flat colour with hard edges is where compression shows first. Every platform and every editor takes it without conversion.</span><span data-lang="es" lang="es">H.264 en un .mp4, con bitrate generoso. El archivo existe para subirse, y el color plano con bordes duros es donde primero se nota la compresión. Toda plataforma y todo editor lo toman sin convertir.</span></p>
+</div>
+<h2><span data-lang="en">Getting the length right</span><span data-lang="es" lang="es">Acertar la duración</span></h2>
+<p><span data-lang="en">The runtime is the number of points in time multiplied by the pace. Drag the pace slider and the finished length updates beside it, so you can aim at a target &mdash; under a minute for a Short, one to three minutes for YouTube &mdash; before you spend the render.</span><span data-lang="es" lang="es">La duración es la cantidad de puntos en el tiempo por el ritmo. Arrastrá el control de ritmo y la duración final se actualiza al lado, así apuntás a un objetivo &mdash; menos de un minuto para un Short, uno a tres minutos para YouTube &mdash; antes de gastar el render.</span></p>
+
+<h2><span data-lang="en">Questions</span><span data-lang="es" lang="es">Preguntas</span></h2>
+<div class="faq">
+  <details><summary><span data-lang="en">Can I export a transparent background?</span><span data-lang="es" lang="es">¿Puedo exportar con fondo transparente?</span></summary><div class="answer"><p><span data-lang="en">Not today. The export is H.264 in an .mp4, which has no alpha channel. You can set the background to any colour, or put a photograph behind the chart.</span><span data-lang="es" lang="es">Hoy no. La exportación es H.264 en .mp4, que no tiene canal alfa. Podés poner el fondo del color que quieras, o una fotografía detrás del gráfico.</span></p></div></details>
+  <details><summary><span data-lang="en">Does 60fps make the animation smoother?</span><span data-lang="es" lang="es">¿60fps hace la animación más fluida?</span></summary><div class="answer"><p><span data-lang="en">Slightly, and it doubles the export time. The smoothness of the movement is set by the interpolation between points in time, not by the frame rate.</span><span data-lang="es" lang="es">Un poco, y duplica el tiempo de exportación. La fluidez del movimiento la define la interpolación entre puntos en el tiempo, no los fps.</span></p></div></details>
+</div>
+
+  <div class="cta-band" style="margin-top:46px">
+    <h2><span data-lang="en">Make one from your own data</span><span data-lang="es" lang="es">Hacé uno con tus propios datos</span></h2>
+    <p><span data-lang="en">A native Mac app. Free to download, free to export at full resolution, one payment to remove the mark.</span><span data-lang="es" lang="es">Una app nativa de Mac. Gratis para bajar, gratis para exportar a resolución completa, un pago para sacar la marca.</span></p>
+    <a class="btn btn-lime" href="https://apps.apple.com/app/chart-maker-animated-videos/id0000000000"><span data-lang="en">Download on the Mac App Store</span><span data-lang="es" lang="es">Descargar en la Mac App Store</span></a>
+  </div>
+
+  <div class="related">
+    <h2><span data-lang="en">Keep reading</span><span data-lang="es" lang="es">Seguir leyendo</span></h2>
+    <ul>
+    <li><a href="../how-to-make-a-bar-chart-race-video/"><span data-lang="en">How to make a bar chart race video</span><span data-lang="es" lang="es">Cómo hacer un video de bar chart race</span></a></li>
+    <li><a href="../bar-chart-race-csv-format/"><span data-lang="en">Bar chart race CSV format</span><span data-lang="es" lang="es">Formato CSV para un bar chart race</span></a></li>
+    <li><a href="../bar-chart-race-youtube-shorts-tiktok/"><span data-lang="en">Vertical bar chart races for Shorts, TikTok and Reels</span><span data-lang="es" lang="es">Bar chart races verticales para Shorts, TikTok y Reels</span></a></li>
+    <li><a href="../bar-chart-race-from-excel/"><span data-lang="en">Make a bar chart race from Excel or Google Sheets</span><span data-lang="es" lang="es">Hacer un bar chart race desde Excel o Google Sheets</span></a></li>
+    </ul>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Chart Maker</h4>
+        <ul>
+          <li><a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a></li>
+          <li><a href="../../#screenshots"><span data-lang="en">Screenshots</span><span data-lang="es" lang="es">Pantallas</span></a></li>
+          <li><a href="../../#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a></li>
+          <li><a href="../../#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></h4>
+        <ul>
+          <li><a href="../../guides/how-to-make-a-bar-chart-race-video/"><span data-lang="en">Make one</span><span data-lang="es" lang="es">Hacer uno</span></a></li>
+          <li><a href="../../guides/bar-chart-race-csv-format/"><span data-lang="en">CSV format</span><span data-lang="es" lang="es">Formato CSV</span></a></li>
+          <li><a href="../../guides/export-bar-chart-race-mp4/"><span data-lang="en">Export to MP4</span><span data-lang="es" lang="es">Exportar a MP4</span></a></li>
+          <li><a href="../../guides/"><span data-lang="en">All guides</span><span data-lang="es" lang="es">Todas las guías</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4><span data-lang="en">Where it goes</span><span data-lang="es" lang="es">Dónde se publica</span></h4>
+        <ul>
+          <li><a href="../../guides/bar-chart-race-youtube-shorts-tiktok/">YouTube Shorts &amp; TikTok</a></li>
+          <li><a href="../../guides/bar-chart-race-from-excel/">Excel</a></li>
+          <li><a href="../../guides/bar-chart-race-flags-logos/"><span data-lang="en">Flags &amp; logos</span><span data-lang="es" lang="es">Banderas y escudos</span></a></li>
+          <li><a href="../../guides/bar-chart-race-no-watermark/"><span data-lang="en">No watermark</span><span data-lang="es" lang="es">Sin marca de agua</span></a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>dezeo</h4>
+        <ul>
+          <li><a href="/"><span data-lang="en">Home</span><span data-lang="es" lang="es">Inicio</span></a></li>
+          <li><a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a></li>
+          <li><a href="../../support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a></li>
+          <li><a href="../../privacypolicy/"><span data-lang="en">Privacy</span><span data-lang="es" lang="es">Privacidad</span></a></li>
+          <li><a href="../../terms/"><span data-lang="en">Terms</span><span data-lang="es" lang="es">Términos</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Nicolas Gula · Chart Maker</span>
+      <span class="small"><span data-lang="en">Made in Argentina</span><span data-lang="es" lang="es">Hecho en Argentina</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(l) {
+    document.body.setAttribute("data-active", l);
+    document.documentElement.lang = l;
+    var sel = document.getElementById("langselect");
+    if (sel) sel.value = l;
+    try { localStorage.setItem("bcr-lang", l); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem("bcr-lang"); } catch (e) {}
+    var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
+    setLang(lang);
+  })();
+</script>
+
+</body>
+</html>
