@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guardian Reader：會核驗朗讀的家長控制</title>
+  <meta name="description" content="iPhone 家長控制 App，在孩子朗讀一本紙質書之前鎖住 App。在設備本機上逐字聆聽並核驗。無需賬號，可離線使用。">
+  <link rel="canonical" href="https://dezeo.lat/guardianreader/zh-hant/">
+  <link rel="alternate" hreflang="en" href="https://dezeo.lat/guardianreader/">
+  <link rel="alternate" hreflang="es" href="https://dezeo.lat/guardianreader/es/">
+  <link rel="alternate" hreflang="pt" href="https://dezeo.lat/guardianreader/pt/">
+  <link rel="alternate" hreflang="fr" href="https://dezeo.lat/guardianreader/fr/">
+  <link rel="alternate" hreflang="de" href="https://dezeo.lat/guardianreader/de/">
+  <link rel="alternate" hreflang="it" href="https://dezeo.lat/guardianreader/it/">
+  <link rel="alternate" hreflang="ja" href="https://dezeo.lat/guardianreader/ja/">
+  <link rel="alternate" hreflang="ko" href="https://dezeo.lat/guardianreader/ko/">
+  <link rel="alternate" hreflang="zh-Hans" href="https://dezeo.lat/guardianreader/zh/">
+  <link rel="alternate" hreflang="zh-Hant" href="https://dezeo.lat/guardianreader/zh-hant/">
+  <link rel="alternate" hreflang="x-default" href="https://dezeo.lat/guardianreader/">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0b0a1c">
+  <link rel="icon" type="image/png" href="../assets/img/guardian-reader-icon.png">
+  <link rel="apple-touch-icon" href="../assets/img/guardian-reader-icon.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Guardian Reader">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:title" content="Guardian Reader：孩子靠朗讀賺取螢幕使用時間">
+  <meta property="og:description" content="鎖住你選擇的 App，聆聽孩子朗讀紙質書，並在 iPhone 上逐字核驗。無需賬號，可離線使用。">
+  <meta property="og:url" content="https://dezeo.lat/guardianreader/zh-hant/">
+  <meta property="og:image" content="https://dezeo.lat/guardianreader/assets/img/og-guardian-reader.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Guardian Reader：孩子靠朗讀賺取螢幕使用時間">
+  <meta name="twitter:description" content="在孩子朗讀一本真書之前鎖住你選擇的 App，在 iPhone 上逐字核驗。">
+  <meta name="twitter:image" content="https://dezeo.lat/guardianreader/assets/img/og-guardian-reader.png">
+
+  <!-- Structured data: app + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Guardian Reader",
+    "operatingSystem": "iOS 18.0 or later",
+    "applicationCategory": "EducationalApplication",
+    "description": "Guardian Reader 是一款 iPhone 家長控制 App。家長選擇要鎖定的 App；孩子通過朗讀紙質書來解鎖螢幕使用時間。App 會先拍下每一頁，在孩子連著朗讀時聆聽，並完全在設備本機上核驗這次朗讀。",
+    "url": "https://dezeo.lat/guardianreader/zh-hant/",
+    "image": "https://dezeo.lat/guardianreader/assets/img/guardian-reader-icon.png",
+    "screenshot": [
+        "https://dezeo.lat/guardianreader/assets/img/earn-screen-time-by-reading-zh.jpg",
+        "https://dezeo.lat/guardianreader/assets/img/reading-aloud-verification-zh.jpg",
+        "https://dezeo.lat/guardianreader/assets/img/reading-progress-charts.jpg",
+        "https://dezeo.lat/guardianreader/assets/img/personalized-reading-plan.jpg"
+    ],
+    "inLanguage": [
+        "en",
+        "es",
+        "pt",
+        "fr",
+        "de",
+        "it",
+        "ja",
+        "ko",
+        "zh"
+    ],
+    "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "0",
+        "highPrice": "49.99",
+        "priceCurrency": "USD",
+        "offerCount": "3",
+        "description": "免費：核驗過的朗讀、螢幕使用時間獎勵、連續記錄、獎章和完整進度歷史，可鎖定一個 App。高級版：不限數量的鎖定 App 和 PDF 閱讀報告，提供含 7 天免費試用的年度訂閱或一次性買斷。"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Nicolas Gula",
+        "url": "https://dezeo.lat/"
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Nicolas Gula",
+        "url": "https://dezeo.lat/"
+    }
+}
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Guardian Reader 怎麼確認孩子真的讀了這本書？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "孩子把要讀的每一頁拍下來，一頁一張。App 從這些照片中提取文字，然後在孩子連著朗讀時聆聽，並把聽到的內容與這些文字逐字比對。認真讀會遠超及格線，說別的內容則接近於零。整個過程都在 iPhone 上完成。瞭解更多"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "孩子能裝作在讀來蒙混過關嗎？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "裝是裝不過去的。App 會把說出的詞和掃描的那幾頁按順序比對，所以臨場編造、含糊帶過或跳讀都對不上原文，同一次朗讀中已掃描過的頁面也不會算兩次。它核驗的是那些詞被朗讀出來了，而不是誰讀的：沒有聲紋識別。請看下一個問題。 瞭解更多"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "AI 語音能代替孩子朗讀那一頁嗎？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "可以，而且我們寧願把這一點說出來。Guardian Reader 只是把麥克風聽到的內容和掃描的那一頁比對，並不判斷說話的是誰。用另一台設備讓合成語音朗讀同一段文字會通過，哥哥姐姐代讀也會通過。App 能可靠攔住的是日常那一種：略讀、臨場編造、口頭聲稱讀完。一個願意把書頁拍下來、重新打字、送進語音生成器再播放的孩子，面對的問題本來就不是 App 能解決的。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Guardian Reader 裝在我的手機上還是孩子的手機上？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "裝在孩子的 iPhone 上，也就是有你想鎖定的那些 App 的那台。沒有可以在你手機上遠程操作的面板：你在孩子的設備上完成設置，設置本身留在只有你知道的家長 PIN 之後。不需要家人共享。瞭解更多"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "我能在孩子的 iPhone 上鎖定哪些 App？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "通過 Apple 的螢幕使用時間，iPhone 上任何 App 或整個類別都可以鎖定：YouTube、TikTok、Instagram、遊戲，或者一次鎖上全部社交 App。免費版鎖定一個 App；Premium 想鎖多少就鎖多少。瞭解更多"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Guardian Reader 會錄下孩子的聲音嗎？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "不會。麥克風只用於在朗讀過程中於設備本機上把朗讀轉成文字。沒有賬號，沒有伺服器，也沒有任何上傳：聲音從不離開這台 iPhone，不會被追蹤、出售或分享。瞭解更多"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "哪些書可以用？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "任何文字清晰可辨的紙質書、雜誌或漫畫都可以。孩子對著取景框一頁一頁地拍，因此只有框內的文字才算數。支持中文、英語、西班牙語、葡萄牙語、法語、德語、意大利語、日語和韓語。瞭解更多"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Guardian Reader 適合多大的孩子？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "大約 4 到 16 歲。設置時選擇一個年齡段，App 會相應調整每次朗讀的頁數和匹配的嚴格程度，剛學會認字的孩子不會被拿去和青少年比。瞭解更多"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Guardian Reader 多少錢？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "免費：朗讀核驗、作為獎勵的螢幕使用時間、連續天數、獎章和完整的進度記錄，可鎖定一個 App。Premium：不限數量的 App 鎖定和 PDF 閱讀報告，年度訂閱（19.99 美元/年）含 7 天免費，或一次性 49.99 美元永久使用。"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "能拿到交給學校的閱讀記錄嗎？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "可以。Premium 會把每次朗讀導出成 PDF：日期、時間、頁數、分鐘、匹配度，以及孩子實際朗讀出的文字。可以直接交給老師，作為在家練習朗讀的憑證。瞭解更多"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "沒有網路也能用嗎？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "可以。識別書頁、核驗朗讀和解鎖螢幕使用時間全都能離線完成，因為文字識別和語音轉寫都在 iPhone 本機上運行。瞭解更多"
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "孩子能直接刪掉 App 或者改設置嗎？",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "設置在家長 PIN 之後，這個 PIN 與設備密碼和面容 ID 都是分開的，孩子進不去。鎖定本身由 Apple 的螢幕使用時間強制執行，賺到的分鐘用完後 App 會自動重新鎖上，即使 Guardian Reader 已關閉也一樣。瞭解更多"
+            }
+        }
+    ]
+}
+  </script>
+</head>
+<body data-active="zh">
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="/guardianreader/zh/">
+        <img src="../assets/img/guardian-reader-icon.png" alt="Guardian Reader 應用圖標：一隻正在讀開卷書的貓頭鷹" width="32" height="32">
+        Guardian Reader
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <nav class="site-nav" aria-label="主導航">
+        <a href="#inside-the-app">App 內部</a>
+        <a href="#how-it-works">使用方法</a>
+        <a href="/guardianreader/zh/guide/">指南</a>
+        <a href="#faq">FAQ</a>
+        <a href="/projects.html">項目</a>
+        <select class="langselect" onchange="location.href=this.value" autocomplete="off" aria-label="簡體中文">
+          <option value="/guardianreader/" >English</option>
+          <option value="/guardianreader/es/" >Español</option>
+          <option value="/guardianreader/pt/" >Português</option>
+          <option value="/guardianreader/fr/" >Français</option>
+          <option value="/guardianreader/de/" >Deutsch</option>
+          <option value="/guardianreader/it/" >Italiano</option>
+          <option value="/guardianreader/ja/" >日本語</option>
+          <option value="/guardianreader/ko/" >한국어</option>
+          <option value="/guardianreader/zh/" selected>簡體中文</option>
+          <option value="/guardianreader/zh-hant/" >繁體中文</option>
+        </select>
+        <a class="nav-cta" href="#download">下載</a>
+      </nav>
+      <label for="nav-toggle" class="nav-burger" aria-label="菜單"><span></span><span></span><span></span></label>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= Hero ================= -->
+    <section class="hero" id="top">
+      <div class="container">
+        <span class="eyebrow">家長控制 · 朗讀核驗 · 螢幕使用時間</span>
+        <h1>會<span class="accent">聽孩子朗讀</span>的家長控制。</h1>
+        <p class="sub">Guardian Reader 會鎖住你選擇的 App。孩子朗讀一本紙質書，iPhone 逐字核驗，賺到的螢幕使用時間隨之解鎖。不需要你的意志力，也不需要孩子的。</p>
+        <div class="hero-ctas">
+          <a class="appstore-badge js-appstore" href="https://apps.apple.com/app/idXXXXXXXXXX" rel="noopener">
+            <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            <span class="badge-text"><small>下載</small><strong>App Store</strong></span>
+          </a>
+          <a class="btn btn-outline" href="#how-it-works">看看怎麼用</a>
+        </div>
+        <p class="micro">免費 · 用於孩子的 iPhone，iOS 18 及以上 · 無需賬號，不做追蹤 · 支持 9 種語言</p>
+        <div class="hero-phone device">
+          <img class="device-screen" src="../assets/img/earn-screen-time-by-reading-zh.jpg" alt="iPhone 上的 Guardian Reader 主界面，顯示 Instagram、TikTok 和 WhatsApp 已鎖定、16 天連續閱讀記錄，以及可賺取 45 分鐘螢幕使用時間的目標" width="640" height="1388" fetchpriority="high">
+          <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Download strip ================= -->
+    <section class="section-panel center" id="download" style="padding:64px 0;">
+      <div class="container">
+        <div class="section-head" style="margin-bottom:32px;">
+          <h2>先閱讀，再玩。</h2>
+          <p>Guardian Reader 在孩子和 App 之間放上一本真書。朗讀幾頁，逐字核驗通過，螢幕就打開了。</p>
+        </div>
+        <a class="appstore-badge js-appstore" href="https://apps.apple.com/app/idXXXXXXXXXX" rel="noopener">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="badge-text"><small>下載</small><strong>App Store</strong></span>
+        </a>
+        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;">iPhone · iOS 18 及以上 · 免費版：朗讀核驗 + 鎖定一個 App · Premium 含 7 天免費</p>
+      </div>
+    </section>
+
+    <!-- ================= Inside the app ================= -->
+    <section id="inside-the-app">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">App 內部</p>
+          <h2>讀完之前，App 一直鎖著。</h2>
+          <p>家長控制和朗讀教練合二為一。孩子自己就能操作，核驗交給 iPhone。</p>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <video class="device-screen" autoplay muted loop playsinline poster="../assets/img/live-reading-verification-zh-poster.jpg" src="../assets/img/live-reading-verification-zh.mp4" aria-label="Guardian Reader 聆聽孩子朗讀紙質書的真實錄屏，匹配度實時上升"></video>
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">實時核驗</p>
+            <h3>看它逐字核驗的過程。</h3>
+            <p>孩子朗讀時，App 會把聽到的內容與掃描的書頁比對，匹配度實時上升。這是一次真實的朗讀，一本紙質書讀給 iPhone 聽。認真讀會遠超及格線，說別的內容則接近於零。</p>
+            <a class="feature-link" href="/guardianreader/zh/guide/reading-fluency-practice-at-home.html">朗讀才是真正的練習 →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/scan-book-page-camera-zh.jpg" alt="孩子用 Guardian Reader 的攝像頭和取景框掃描一頁印刷書" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">掃描書頁</p>
+            <h3>任何一本紙質書都能變成鑰匙。</h3>
+            <p>孩子把要讀的每一頁拍下來，一頁一張，然後像讀真書一樣連著讀完。只有取景框內的文字才算數，同一次朗讀中已經掃過的頁會被自動拒絕。</p>
+            <a class="feature-link" href="/guardianreader/zh/guide/how-to-get-kids-to-read-more.html">怎樣讓孩子讀得更多 →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/reading-verification-detects-cheating-zh.jpg" alt="Guardian Reader 正在聆聽，匹配度為 164 個詞中的 0%，因為掃描頁上的內容還沒有被讀出來" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">糊弄不過去</p>
+            <h3>抓得住孩子真正會用的捷徑。</h3>
+            <p>沒有可以猜的測驗，也不靠自覺。說出的詞會和掃描的那幾頁按順序比對，所以略讀、臨場編造、口頭聲稱讀完都過不了。磕巴和小錯誤可以過：它看的是有沒有讀，不是讀得完不完美。及格線的嚴格程度由一個滑塊決定。</p>
+            <a class="feature-link" href="/guardianreader/zh/guide/earn-screen-time-by-reading.html">賺取螢幕使用時間的原理 →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/apps-unlocked-screen-time-reward-zh.jpg" alt="Guardian Reader 顯示 App 已解鎖，賺得的 44 分 59 秒螢幕使用時間正在倒計時" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">獎勵</p>
+            <h3>朗讀通過，手機解鎖。</h3>
+            <p>App 會按賺到的分鐘數打開，倒計時清晰可見。歸零後自動重新鎖上，由 Apple 的螢幕使用時間強制執行，即使 Guardian Reader 已關閉也一樣。</p>
+            <a class="feature-link" href="/guardianreader/zh/guide/how-to-limit-youtube-and-tiktok-for-kids.html">限制 YouTube 和 TikTok →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/parental-controls-settings-zh.jpg" alt="家長控制設置：已鎖定的 App、每次朗讀的頁數、獎勵分鐘數和嚴格程度滑塊" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">家長規則</p>
+            <h3>兌換比例由你來定。</h3>
+            <p>進去的是頁數，出來的是分鐘：4 到 6 歲一頁約 15 分鐘，青少年最多四頁約 45 分鐘。App 會按年齡給出起點建議，每一個數值都能在家長 PIN 之後修改，這個 PIN 與設備密碼是分開的。</p>
+            <a class="feature-link" href="/guardianreader/zh/guide/screen-time-rules-that-work.html">能堅持下去的螢幕使用時間規則 →</a>
+          </div>
+        </div>
+
+        <div class="feature-row flip">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/reading-streak-achievements-zh.jpg" alt="從第一天到兩周獲得的連續閱讀獎章，最佳記錄為 16 天" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">進度與連續天數</p>
+            <h3>讓他們願意回來的獎章。</h3>
+            <p>給孩子的是連續天數、星星和獎章；給你的是每日、每月、每年的頁數。Premium 還會生成每次朗讀的 PDF 報告：日期、分鐘、匹配度，以及實際讀出的文字，可以直接交給老師。</p>
+            <a class="feature-link" href="/guardianreader/zh/guide/reading-log-for-school.html">給學校的閱讀記錄 →</a>
+          </div>
+        </div>
+
+        <div class="feature-row">
+          <div class="shot device">
+            <img class="device-screen" src="../assets/img/private-offline-no-account-zh.jpg" alt="Guardian Reader 隱私界面：無需賬號，在 iPhone 上離線核驗朗讀，不做任何追蹤" loading="lazy" width="640" height="1388">
+            <img class="device-frame" src="../assets/img/iphone-frame.png" alt="" aria-hidden="true" width="640" height="1270" loading="lazy">
+          </div>
+          <div class="feature-copy">
+            <p class="feature-kicker">從設計上就注重隱私</p>
+            <h3>對著孩子的麥克風，必須給出交代。</h3>
+            <p>攝像頭識別書頁，麥克風把朗讀轉成文字，兩者都只在設備本機上運行。沒有賬號，沒有伺服器，沒有分析，也沒有第三方 SDK：聲音從不離開這台 iPhone，全部功能都能離線使用。</p>
+            <a class="feature-link" href="/guardianreader/zh/privacy/">閱讀完整隱私政策 →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 使用方法 ================= -->
+    <section class="section-panel" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">How it works</p>
+          <h2>四個步驟，沒有商量的餘地。</h2>
+          <p>和孩子一起設置一次就行。之後這個約定會自己運轉：界線在 App 里，而不在你的嗓門裡。</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span class="num">1</span>
+            <h3>鎖定 App</h3>
+            <p>選擇要鎖定的 App 或整個類別，比如 YouTube、TikTok 或遊戲，並用家長 PIN 保護設置。</p>
+          </div>
+          <div class="step">
+            <span class="num">2</span>
+            <h3>掃描書頁</h3>
+            <p>孩子把要讀的那本真書的書頁拍下來，一頁一張。</p>
+          </div>
+          <div class="step">
+            <span class="num">3</span>
+            <h3>朗讀出來</h3>
+            <p>連著讀完，iPhone 在一旁聆聽，把每個詞與掃描到的文字比對。</p>
+          </div>
+          <div class="step">
+            <span class="num">4</span>
+            <h3>螢幕使用時間解鎖</h3>
+            <p>朗讀通過，App 按賺到的分鐘數打開。歸零後自動鎖上。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= 指南 ================= -->
+    <section id="guides">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Guides</p>
+          <h2>難處都有對應的辦法。</h2>
+          <p>關於螢幕使用時間、鎖定 App 和培養閱讀興趣的實用指南，以及 Guardian Reader 在每一件事上能幫上什麼忙。</p>
+        </div>
+        <div class="guide-grid">
+          <a class="guide-card" href="/guardianreader/zh/guide/how-to-get-kids-to-read-more.html">
+            <span class="tag">閱讀</span>
+            <h3>怎樣讓孩子讀得更多</h3>
+            <p>對更喜歡螢幕的孩子有效的七種做法，以及其中唯一不需要你消耗意志力的一種。</p>
+            <span class="read">閱讀指南</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/zh/guide/earn-screen-time-by-reading.html">
+            <span class="tag">螢幕使用時間</span>
+            <h3>孩子如何用閱讀賺取螢幕使用時間</h3>
+            <p>把螢幕使用時間從理所當然變成需要賺取的東西，以及這條規則為什麼不用你盯著也能維持。</p>
+            <span class="read">閱讀指南</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/zh/guide/how-to-block-apps-on-childs-iphone.html">
+            <span class="tag">家長控制</span>
+            <h3>在孩子的 iPhone 上鎖定 App</h3>
+            <p>Apple 的螢幕使用時間能做什麼、不能做什麼，孩子會找到哪些漏洞，以及怎樣把它們徹底堵上。</p>
+            <span class="read">閱讀指南</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/zh/guide/how-to-limit-youtube-and-tiktok-for-kids.html">
+            <span class="tag">YouTube · TikTok</span>
+            <h3>為孩子限制 YouTube 和 TikTok</h3>
+            <p>為什麼單靠時間限制贏不了無限訊息流，以及應該在 App 前面放上什麼。</p>
+            <span class="read">閱讀指南</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/zh/guide/reading-fluency-practice-at-home.html">
+            <span class="tag">閱讀流暢度</span>
+            <h3>在家練習閱讀流暢度</h3>
+            <p>老師說的流暢度是什麼意思，為什麼朗讀就是那個練習，以及怎樣把十分鐘塞進平常的一個晚上。</p>
+            <span class="read">閱讀指南</span>
+          </a>
+          <a class="guide-card" href="/guardianreader/zh/guide/screen-time-rules-that-work.html">
+            <span class="tag">家庭規則</span>
+            <h3>真正能堅持下去的螢幕使用時間規則</h3>
+            <p>為什麼大多數家庭規則兩周後就散了，以及活下來的那些規則共有的三個特點。</p>
+            <span class="read">閱讀指南</span>
+          </a>
+        </div>
+        <p class="center mt-40"><a class="btn btn-outline" href="/guardianreader/zh/guide/">查看全部 8 篇指南</a></p>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="section-panel" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">FAQ</p>
+          <h2>常見問題</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Guardian Reader 怎麼確認孩子真的讀了這本書？</summary>
+            <div class="faq-body">孩子把要讀的每一頁拍下來，一頁一張。App 從這些照片中提取文字，然後在孩子連著朗讀時聆聽，並把聽到的內容與這些文字<strong>逐字</strong>比對。認真讀會遠超及格線，說別的內容則接近於零。整個過程都在 iPhone 上完成。<a href="/guardianreader/zh/guide/reading-fluency-practice-at-home.html">瞭解更多</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>孩子能裝作在讀來蒙混過關嗎？</summary>
+            <div class="faq-body">裝是裝不過去的。App 會把說出的詞和掃描的那幾頁按順序比對，所以臨場編造、含糊帶過或跳讀都對不上原文，同一次朗讀中已掃描過的頁面也不會算兩次。它核驗的是那些詞被朗讀出來了，而不是誰讀的：沒有聲紋識別。請看下一個問題。 <a href="/guardianreader/zh/guide/earn-screen-time-by-reading.html">瞭解更多</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>AI 語音能代替孩子朗讀那一頁嗎？</summary>
+            <div class="faq-body">可以，而且我們寧願把這一點說出來。Guardian Reader 只是把麥克風聽到的內容和掃描的那一頁比對，並不判斷說話的是誰。用另一台設備讓合成語音朗讀同一段文字會通過，哥哥姐姐代讀也會通過。App 能可靠攔住的是日常那一種：略讀、臨場編造、口頭聲稱讀完。一個願意把書頁拍下來、重新打字、送進語音生成器再播放的孩子，面對的問題本來就不是 App 能解決的。</div>
+          </details>
+          <details class="faq-item">
+            <summary>Guardian Reader 裝在我的手機上還是孩子的手機上？</summary>
+            <div class="faq-body">裝在孩子的 iPhone 上，也就是有你想鎖定的那些 App 的那台。沒有可以在你手機上遠程操作的面板：你在孩子的設備上完成設置，設置本身留在只有你知道的<strong>家長 PIN</strong> 之後。不需要家人共享。<a href="/guardianreader/zh/guide/screen-time-rules-that-work.html">瞭解更多</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>我能在孩子的 iPhone 上鎖定哪些 App？</summary>
+            <div class="faq-body">通過 Apple 的螢幕使用時間，iPhone 上任何 App 或整個類別都可以鎖定：YouTube、TikTok、Instagram、遊戲，或者一次鎖上全部社交 App。免費版鎖定<strong>一個 App</strong>；Premium <strong>想鎖多少就鎖多少</strong>。<a href="/guardianreader/zh/guide/how-to-block-apps-on-childs-iphone.html">瞭解更多</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>Guardian Reader 會錄下孩子的聲音嗎？</summary>
+            <div class="faq-body">不會。麥克風只用於在朗讀過程中於設備本機上把朗讀轉成文字。沒有賬號，沒有伺服器，也沒有任何上傳：聲音從不離開這台 iPhone，不會被追蹤、出售或分享。<a href="/guardianreader/zh/privacy/">瞭解更多</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>哪些書可以用？</summary>
+            <div class="faq-body">任何文字清晰可辨的紙質書、雜誌或漫畫都可以。孩子對著取景框一頁一頁地拍，因此只有框內的文字才算數。支持中文、英語、西班牙語、葡萄牙語、法語、德語、意大利語、日語和韓語。<a href="/guardianreader/zh/guide/help-for-reluctant-readers.html">瞭解更多</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>Guardian Reader 適合多大的孩子？</summary>
+            <div class="faq-body">大約 4 到 16 歲。設置時選擇一個年齡段，App 會相應調整每次朗讀的頁數和匹配的嚴格程度，剛學會認字的孩子不會被拿去和青少年比。<a href="/guardianreader/zh/guide/how-to-get-kids-to-read-more.html">瞭解更多</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>Guardian Reader 多少錢？</summary>
+            <div class="faq-body"><strong>免費：</strong>朗讀核驗、作為獎勵的螢幕使用時間、連續天數、獎章和完整的進度記錄，可鎖定一個 App。<strong>Premium：</strong>不限數量的 App 鎖定和 PDF 閱讀報告，年度訂閱（19.99 美元/年）含 7 天免費，或一次性 49.99 美元永久使用。</div>
+          </details>
+          <details class="faq-item">
+            <summary>能拿到交給學校的閱讀記錄嗎？</summary>
+            <div class="faq-body">可以。Premium 會把每次朗讀導出成 PDF：日期、時間、頁數、分鐘、匹配度，以及孩子實際朗讀出的文字。可以直接交給老師，作為在家練習朗讀的憑證。<a href="/guardianreader/zh/guide/reading-log-for-school.html">瞭解更多</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>沒有網路也能用嗎？</summary>
+            <div class="faq-body">可以。識別書頁、核驗朗讀和解鎖螢幕使用時間全都能離線完成，因為文字識別和語音轉寫都在 iPhone 本機上運行。<a href="/guardianreader/zh/guide/screen-time-rules-that-work.html">瞭解更多</a></div>
+          </details>
+          <details class="faq-item">
+            <summary>孩子能直接刪掉 App 或者改設置嗎？</summary>
+            <div class="faq-body">設置在家長 PIN 之後，這個 PIN 與設備密碼和面容 ID 都是分開的，孩子進不去。鎖定本身由 Apple 的螢幕使用時間強制執行，賺到的分鐘用完後 App 會自動重新鎖上，即使 Guardian Reader 已關閉也一樣。<a href="/guardianreader/zh/guide/how-to-limit-youtube-and-tiktok-for-kids.html">瞭解更多</a></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Final CTA ================= -->
+    <section class="cta">
+      <div class="container">
+        <blockquote>今晚，<span class="accent">先讀書</span>。</blockquote>
+        <p class="cta-sub">兩分鐘完成設置。孩子朗讀，自己賺到螢幕使用時間，你也不用再當那個壞人。</p>
+        <a class="appstore-badge js-appstore" href="https://apps.apple.com/app/idXXXXXXXXXX" rel="noopener">
+          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+          <span class="badge-text"><small>下載</small><strong>App Store</strong></span>
+        </a>
+        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;">免費 · 無廣告，無需賬號，不做追蹤</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <a class="brand" href="/guardianreader/zh/">
+            <img src="../assets/img/guardian-reader-icon.png" alt="Guardian Reader 標誌" width="32" height="32">
+            Guardian Reader
+          </a>
+          <p>孩子朗讀真書賺來的螢幕使用時間，在 iPhone 上逐字核驗。來自 <a href="/blockandread/" style="color:var(--muted);">Block&amp;Read</a> 的開發者。</p>
+        </div>
+        <div>
+          <h4>App</h4>
+          <ul>
+            <li><a href="#download">下載</a></li>
+            <li><a href="#inside-the-app">App 內部</a></li>
+            <li><a href="#how-it-works">使用方法</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="/projects.html">項目</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>指南</h4>
+          <ul>
+            <li><a href="/guardianreader/zh/guide/earn-screen-time-by-reading.html">用閱讀賺取螢幕使用時間</a></li>
+            <li><a href="/guardianreader/zh/guide/how-to-block-apps-on-childs-iphone.html">在 iPhone 上鎖定 App</a></li>
+            <li><a href="/guardianreader/zh/guide/reading-log-for-school.html">給學校的閱讀記錄</a></li>
+            <li><a href="/guardianreader/zh/guide/help-for-reluctant-readers.html">幫助不愛讀書的孩子</a></li>
+            <li><a href="/guardianreader/zh/guide/">全部指南 →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Guardian Reader · Nicolas Gula. 版權所有。</span>
+        <span><a href="/guardianreader/zh/privacy/" style="color:var(--muted-2);text-decoration:none;">隱私政策</a> · <a href="/guardianreader/zh/terms/" style="color:var(--muted-2);text-decoration:none;">服務條款</a> · <a href="/guardianreader/zh/support/" style="color:var(--muted-2);text-decoration:none;">支持</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* Un único lugar para el link de la App Store. Al publicar la app:
+       1. Reemplazar idXXXXXXXXXX por el App ID real en APP_STORE_URL: todos los
+          CTAs .js-appstore pasan a apuntar directo al App Store.
+       2. Recordar agregar <meta name="apple-itunes-app"> con el App ID. */
+    var APP_STORE_URL = "https://apps.apple.com/app/idXXXXXXXXXX";
+    if (APP_STORE_URL.indexOf("XXXX") === -1) {
+      document.querySelectorAll(".js-appstore").forEach(function (el) {
+        el.setAttribute("href", APP_STORE_URL);
+        el.setAttribute("rel", "noopener");
+      });
+    }
+  </script>
+
+</body>
+</html>
