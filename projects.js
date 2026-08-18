@@ -12,8 +12,19 @@
 //   url:         where the card links to (the project landing page)
 //   platform:    one of "ios", "extension" or "steam" (shows a small logo).
 //                omit it if the project has no platform tag.
+//   background:  optional CSS background for the image area. Use it when the
+//                icon has its own backdrop, so the card blends with it instead
+//                of showing a square floating on black.
 // ----------------------------------------------------------------
 var projects = [
+  {
+    name: "Chart Maker",
+    image: "assets/chartmaker.png",
+    description: "Turns a CSV into an animated ranking video. Exports a real 4K MP4 for YouTube and a 9:16 cut for Shorts.",
+    url: "chartmaker/",
+    platform: "mac",
+    background: "#131c18"
+  },
   {
     name: "Guardian Reader",
     image: "assets/guardianreader.png",
@@ -110,6 +121,10 @@ var projects = [
 
 // Platform logos (monochrome, inherit the text color).
 var PLATFORMS = {
+  mac: {
+    label: "Mac app",
+    svg: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21 3H3c-1.1 0-2 .9-2 2v11c0 1.1.9 2 2 2h6l-1 2v1h8v-1l-1-2h6c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 13H3V5h18v11z"/></svg>'
+  },
   ios: {
     label: "iOS app",
     svg: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.1-2.01-3.77-2.04-1.6-.16-3.13.94-3.94.94-.81 0-2.07-.92-3.41-.89-1.75.03-3.37 1.02-4.27 2.59-1.82 3.16-.47 7.83 1.31 10.39.87 1.25 1.9 2.66 3.26 2.61 1.31-.05 1.8-.85 3.39-.85 1.58 0 2.03.85 3.41.82 1.41-.03 2.3-1.28 3.16-2.54.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.73-1.05-2.76-4.16M14.5 4.79c.72-.88 1.21-2.1 1.08-3.31-1.04.04-2.3.69-3.05 1.56-.67.77-1.25 2.01-1.09 3.19 1.16.09 2.34-.59 3.06-1.44"/></svg>'
@@ -144,6 +159,7 @@ var PLATFORMS = {
 
     var imageWrap = document.createElement("div");
     imageWrap.className = "card-image";
+    if (p.background) imageWrap.style.background = p.background;
 
     // Placeholder shown when there is no image (or it fails to load).
     var mono = document.createElement("span");
@@ -158,6 +174,9 @@ var PLATFORMS = {
       img.loading = "lazy";
       img.onerror = function () { img.remove(); };
       if (p.imageFit === "contain") img.className = "fit-contain";
+      // "fit-contain" pinta negro por defecto; si el proyecto trae su propio
+      // fondo, gana el suyo para que el ícono no se vea pegado sobre un cuadro.
+      if (p.background) img.style.background = p.background;
       imageWrap.appendChild(img);
     }
 
