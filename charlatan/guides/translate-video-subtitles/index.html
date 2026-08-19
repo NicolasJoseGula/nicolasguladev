@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Translate Your Video&#x27;s Subtitles</title>
+<meta name="description" content="Record in one language and publish in another: how subtitle translation works, what breaks when you do it, and how to keep the captions readable after the text changes length.">
+<link rel="canonical" href="https://dezeo.lat/charlatan/guides/translate-video-subtitles/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0a12">
+<link rel="icon" type="image/png" href="../../assets/img/charlatan-app-icon.png">
+<link rel="apple-touch-icon" href="../../assets/img/charlatan-app-icon.png">
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charlatan">
+<meta property="og:title" content="How to Translate Your Video&#x27;s Subtitles">
+<meta property="og:description" content="Record in one language and publish in another: how subtitle translation works, what breaks when you do it, and how to keep the captions readable after the text changes length.">
+<meta property="og:url" content="https://dezeo.lat/charlatan/guides/translate-video-subtitles/">
+<meta property="og:image" content="https://dezeo.lat/charlatan/assets/img/charlatan-social-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Charlatan app screens on iPhone">
+<meta name="twitter:image:alt" content="Charlatan app screens on iPhone">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Translate Your Video&#x27;s Subtitles">
+<meta name="twitter:description" content="Record in one language and publish in another: how subtitle translation works, what breaks when you do it, and how to keep the captions readable after the text changes length.">
+<meta name="twitter:image" content="https://dezeo.lat/charlatan/assets/img/charlatan-social-card.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Translate Your Video's Subtitles",
+  "description": "Record in one language and publish in another: how subtitle translation works, what breaks when you do it, and how to keep the captions readable after the text changes length.",
+  "inLanguage": [
+    "en",
+    "es"
+  ],
+  "image": "https://dezeo.lat/charlatan/assets/img/subtitle-audio-language.png",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dezeo.lat/charlatan/guides/translate-video-subtitles/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Nicolas Gula"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Nicolas Gula",
+    "url": "https://dezeo.lat/"
+  },
+  "about": {
+    "@type": "MobileApplication",
+    "name": "Charlatan",
+    "url": "https://dezeo.lat/charlatan/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Can I translate subtitles without re-recording the video?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The audio stays as it is; only the caption text changes. The viewer hears the original language and reads the translation, which is how most subtitled content has always worked."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do my translated captions no longer fit?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because most languages are not the same length as English. Spanish and French run 15 to 25% longer, so lines that fit before now wrap. Reduce the size slightly or move the caption further from the edges after translating."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Charlatan",
+      "item": "https://dezeo.lat/charlatan/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://dezeo.lat/charlatan/guides/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to Translate Your Video's Subtitles",
+      "item": "https://dezeo.lat/charlatan/guides/translate-video-subtitles/"
+    }
+  ]
+}
+</script>
+</head>
+<body data-active="en">
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../">
+      <img src="../../assets/img/charlatan-app-icon.png" alt="Charlatan app icon" width="32" height="32">
+      <span>Charla<span class="tan">tan</span></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <nav class="site-nav" aria-label="Main">
+      <a href="../../#inside-the-app"><span data-lang="en">Inside the app</span><span data-lang="es" lang="es">La app por dentro</span></a>
+      <a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a>
+      <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
+      <a href="../../#faq">FAQ</a>
+      <a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a>
+      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language / Idioma">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+      <a class="nav-cta js-appstore" href="../../#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a>
+    </nav>
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+<main>
+
+
+<article class="article container">
+<p class="breadcrumb"><a href="../../">Charlatan</a> › <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a></p>
+<h1><span data-lang="en">How to translate your video's subtitles</span><span data-lang="es" lang="es">Cómo traducir los subtítulos de tu video</span></h1>
+<p class="meta"><span data-lang="en">Updated 2026-08-07 · Charlatan for iPhone</span><span data-lang="es" lang="es">Actualizado 2026-08-07 · Charlatan para iPhone</span></p>
+<p><span data-lang="en">Translating your captions is the cheapest way to reach an audience that does not speak your language. You do not re-record, you do not re-edit — the same clip goes out with different words on it.</span><span data-lang="es" lang="es">Traducir tus subtítulos es la forma más barata de llegar a una audiencia que no habla tu idioma. No volvés a grabar, no volvés a editar — el mismo clip sale con palabras distintas encima.</span></p>
+<p><span data-lang="en">There are two things that go wrong when people do this quickly, and both are easy to avoid once you know them.</span><span data-lang="es" lang="es">Hay dos cosas que salen mal cuando esto se hace apurado, y las dos son fáciles de evitar una vez que las conocés.</span></p>
+<figure><div class="phone"><img src="../../assets/img/subtitle-audio-language.png" width="655" height="1300" loading="lazy" alt="Choosing the audio language for transcription and translation in Charlatan on an iPhone"></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
+<h2><span data-lang="en">Get the source language right first</span><span data-lang="es" lang="es">Primero acertá el idioma de origen</span></h2>
+<p><span data-lang="en">Translation quality is capped by transcription quality. If the app transcribed your Spanish as if it were English, the translation is working from nonsense and there is no fixing it downstream.</span><span data-lang="es" lang="es">La calidad de la traducción está limitada por la calidad de la transcripción. Si la app transcribió tu español como si fuera inglés, la traducción está trabajando sobre un disparate y no hay forma de arreglarlo después.</span></p>
+<p><span data-lang="en">Set the audio language before transcribing, not after. It takes one tap and it is the difference between a usable caption track and a comedy of errors.</span><span data-lang="es" lang="es">Elegí el idioma del audio antes de transcribir, no después. Es un toque y es la diferencia entre una pista de subtítulos usable y una comedia de errores.</span></p>
+<h2><span data-lang="en">Text changes length, and your layout has to survive it</span><span data-lang="es" lang="es">El texto cambia de largo, y tu diseño tiene que sobrevivirlo</span></h2>
+<p><span data-lang="en">Spanish and French run roughly 15 to 25% longer than English. German can be worse. A caption that fit on one line in the original will wrap onto two or three in translation, and a layout tuned to the shorter version breaks.</span><span data-lang="es" lang="es">El español y el francés corren aproximadamente entre 15 y 25% más largo que el inglés. El alemán puede ser peor. Un subtítulo que entraba en una línea en el original se va a partir en dos o tres traducido, y un diseño ajustado a la versión corta se rompe.</span></p>
+<p><span data-lang="en">The fix is to re-check placement and size after translating, not before. If your captions sat close to an edge, they will now cross it.</span><span data-lang="es" lang="es">La solución es volver a revisar posición y tamaño después de traducir, no antes. Si tus subtítulos estaban cerca de un borde, ahora lo van a cruzar.</span></p>
+<h2><span data-lang="en">One video, several versions</span><span data-lang="es" lang="es">Un video, varias versiones</span></h2>
+<p><span data-lang="en">The strongest use of this is not one translated video — it is the same clip exported two or three times with different caption languages, posted to accounts or markets that each get their own.</span><span data-lang="es" lang="es">El uso más fuerte de esto no es un video traducido — es el mismo clip exportado dos o tres veces con distintos idiomas de subtítulo, publicado en cuentas o mercados que reciben cada uno el suyo.</span></p>
+<p><span data-lang="en">The footage cost you once. Every extra language after that is a couple of minutes.</span><span data-lang="es" lang="es">El material te costó una vez. Cada idioma extra después de eso son un par de minutos.</span></p>
+<div class="callout">
+<h3><span data-lang="en">How to do it in Charlatan</span><span data-lang="es" lang="es">Cómo hacerlo en Charlatan</span></h3>
+<ol>
+  <li><span data-lang="en">Set the audio language on the home screen before you pick the clip, so the transcription starts from the right place.</span><span data-lang="es" lang="es">Elegí el idioma del audio en la pantalla de inicio antes de elegir el clip, para que la transcripción arranque del lugar correcto.</span></li>
+  <li><span data-lang="en">Let it transcribe, then read through the caption list and fix anything misheard. Errors here get multiplied by translation.</span><span data-lang="es" lang="es">Dejá que transcriba, después leé la lista de subtítulos y corregí lo que haya entendido mal. Los errores acá los multiplica la traducción.</span></li>
+  <li><span data-lang="en">Open the translate sheet and choose the target language.</span><span data-lang="es" lang="es">Abrí la hoja de traducción y elegí el idioma de destino.</span></li>
+  <li><span data-lang="en">Re-check size and position — translated lines are usually longer, and this is where layouts break.</span><span data-lang="es" lang="es">Volvé a revisar tamaño y posición — las líneas traducidas suelen ser más largas, y ahí es donde se rompen los diseños.</span></li>
+  <li><span data-lang="en">Export. Then, if you want another language, go back, translate again and export a second file from the same project.</span><span data-lang="es" lang="es">Exportá. Después, si querés otro idioma, volvé, traducí de nuevo y exportá un segundo archivo desde el mismo proyecto.</span></li>
+</ol>
+<p><a class="btn btn-primary js-appstore" href="../../#download"><span data-lang="en">Download Charlatan free</span><span data-lang="es" lang="es">Descargar Charlatan gratis</span></a></p>
+</div>
+<h2><span data-lang="en">Questions people also ask</span><span data-lang="es" lang="es">Lo que también preguntan</span></h2>
+<h3><span data-lang="en">Can I translate subtitles without re-recording the video?</span><span data-lang="es" lang="es">¿Puedo traducir los subtítulos sin volver a grabar el video?</span></h3>
+<p><span data-lang="en">Yes. The audio stays as it is; only the caption text changes. The viewer hears the original language and reads the translation, which is how most subtitled content has always worked.</span><span data-lang="es" lang="es">Sí. El audio queda como está; solo cambia el texto del subtítulo. El que mira escucha el idioma original y lee la traducción, que es como funcionó siempre casi todo el contenido subtitulado.</span></p>
+<h3><span data-lang="en">Why do my translated captions no longer fit?</span><span data-lang="es" lang="es">¿Por qué mis subtítulos traducidos ya no entran?</span></h3>
+<p><span data-lang="en">Because most languages are not the same length as English. Spanish and French run 15 to 25% longer, so lines that fit before now wrap. Reduce the size slightly or move the caption further from the edges after translating.</span><span data-lang="es" lang="es">Porque casi ningún idioma tiene el mismo largo que el inglés. El español y el francés corren entre 15 y 25% más largo, así que líneas que entraban ahora se parten. Bajá un poco el tamaño o alejá el subtítulo de los bordes después de traducir.</span></p>
+<div class="related"><h2><span data-lang="en">Keep reading</span><span data-lang="es" lang="es">Seguir leyendo</span></h2><ul>
+  <li><a href="../../guides/how-to-add-subtitles-to-video-on-iphone/"><span data-lang="en">How to add subtitles to a video on iPhone</span><span data-lang="es" lang="es">Cómo poner subtítulos a un video en iPhone</span> →</a></li>
+  <li><a href="../../guides/subtitles-without-internet/"><span data-lang="en">How to add subtitles without internet</span><span data-lang="es" lang="es">Cómo poner subtítulos sin internet</span> →</a></li>
+  <li><a href="../../guides/best-fonts-for-subtitles/"><span data-lang="en">The best fonts for subtitles</span><span data-lang="es" lang="es">Las mejores tipografías para subtítulos</span> →</a></li>
+</ul></div>
+</article>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="../../">
+          <img src="../../assets/img/charlatan-app-icon.png" alt="Charlatan app icon" width="32" height="32">
+          <span>Charla<span class="tan">tan</span></span>
+        </a>
+        <p>
+          <span data-lang="en">Automatic subtitles in any font you like, entirely on your iPhone. From the developer of <a class="inline" href="/guardianreader/">Guardian Reader</a>.</span>
+          <span data-lang="es" lang="es">Subtítulos automáticos con la tipografía que quieras, enteramente en tu iPhone. Del creador de <a class="inline" href="/guardianreader/">Guardian Reader</a>.</span>
+        </p>
+      </div>
+      <div>
+        <h4>App</h4>
+        <ul>
+          <li><a href="../../#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a></li>
+          <li><a href="../../#inside-the-app"><span data-lang="en">Inside the app</span><span data-lang="es" lang="es">La app por dentro</span></a></li>
+          <li><a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a></li>
+          <li><a href="../../#pricing"><span data-lang="en">Pricing</span><span data-lang="es" lang="es">Precios</span></a></li>
+          <li><a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></h4>
+        <ul>
+          <li><a href="../../guides/how-to-add-subtitles-to-video-on-iphone/"><span data-lang="en">Subtitles on iPhone</span><span data-lang="es" lang="es">Subtítulos en iPhone</span></a></li>
+          <li><a href="../../guides/best-fonts-for-subtitles/"><span data-lang="en">Best subtitle fonts</span><span data-lang="es" lang="es">Mejores tipografías</span></a></li>
+          <li><a href="../../guides/word-by-word-karaoke-captions/"><span data-lang="en">Karaoke captions</span><span data-lang="es" lang="es">Subtítulos karaoke</span></a></li>
+          <li><a href="../../guides/"><span data-lang="en">All guides →</span><span data-lang="es" lang="es">Todas las guías →</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Charlatan · Nicolas Gula · <span data-lang="en">Made in Argentina</span><span data-lang="es" lang="es">Hecho en Argentina</span></span>
+      <span>
+        <a href="../../privacypolicy/"><span data-lang="en">Privacy Policy</span><span data-lang="es" lang="es">Privacidad</span></a> ·
+        <a href="../../terms/"><span data-lang="en">Terms of Use</span><span data-lang="es" lang="es">Términos</span></a> ·
+        <a href="../../support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var APP_STORE_URL = "https://apps.apple.com/app/idXXXXXXXXXX";
+  if (APP_STORE_URL.indexOf("XXXX") === -1) {
+    document.querySelectorAll(".js-appstore").forEach(function (el) {
+      el.setAttribute("href", APP_STORE_URL);
+      el.setAttribute("rel", "noopener");
+    });
+  }
+  function setLang(l) {
+    document.body.setAttribute("data-active", l);
+    document.documentElement.lang = l;
+    var sel = document.getElementById("langselect");
+    if (sel) sel.value = l;
+    try { localStorage.setItem("ch-lang", l); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
+    var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
+    setLang(lang);
+  })();
+</script>
+
+</body>
+</html>

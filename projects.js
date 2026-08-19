@@ -26,6 +26,13 @@ var projects = [
     background: "#131c18"
   },
   {
+    name: "Charlatan",
+    image: "assets/charlatan.png",
+    description: "Automatic subtitles for your videos, in any of 71 fonts. Everything runs on the iPhone.",
+    url: "charlatan/",
+    platform: "ios"
+  },
+  {
     name: "Guardian Reader",
     image: "assets/guardianreader.png",
     description: "Kids earn their screen time by reading real books out loud, verified on the iPhone.",

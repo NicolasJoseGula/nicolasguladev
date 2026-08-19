@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How to Add Subtitles Without Internet (On-Device Transcription)</title>
+<meta name="description" content="What on-device transcription means, why it matters for footage you would rather not upload, and how to caption a video with no connection at all.">
+<link rel="canonical" href="https://dezeo.lat/charlatan/guides/subtitles-without-internet/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#0a0a12">
+<link rel="icon" type="image/png" href="../../assets/img/charlatan-app-icon.png">
+<link rel="apple-touch-icon" href="../../assets/img/charlatan-app-icon.png">
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Charlatan">
+<meta property="og:title" content="How to Add Subtitles Without Internet (On-Device Transcription)">
+<meta property="og:description" content="What on-device transcription means, why it matters for footage you would rather not upload, and how to caption a video with no connection at all.">
+<meta property="og:url" content="https://dezeo.lat/charlatan/guides/subtitles-without-internet/">
+<meta property="og:image" content="https://dezeo.lat/charlatan/assets/img/charlatan-social-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Charlatan app screens on iPhone">
+<meta name="twitter:image:alt" content="Charlatan app screens on iPhone">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Add Subtitles Without Internet (On-Device Transcription)">
+<meta name="twitter:description" content="What on-device transcription means, why it matters for footage you would rather not upload, and how to caption a video with no connection at all.">
+<meta name="twitter:image" content="https://dezeo.lat/charlatan/assets/img/charlatan-social-card.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Add Subtitles Without Internet (On-Device Transcription)",
+  "description": "What on-device transcription means, why it matters for footage you would rather not upload, and how to caption a video with no connection at all.",
+  "inLanguage": [
+    "en",
+    "es"
+  ],
+  "image": "https://dezeo.lat/charlatan/assets/img/transcribing-video-on-iphone.png",
+  "datePublished": "2026-08-07",
+  "dateModified": "2026-08-07",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dezeo.lat/charlatan/guides/subtitles-without-internet/"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Nicolas Gula"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Nicolas Gula",
+    "url": "https://dezeo.lat/"
+  },
+  "about": {
+    "@type": "MobileApplication",
+    "name": "Charlatan",
+    "url": "https://dezeo.lat/charlatan/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Do subtitle apps upload my video?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most do. If an app requires an account and stops working in airplane mode, your audio is being processed on a server. Apps that use the phone's own speech recognition do not need either."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is on-device transcription as accurate as cloud transcription?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Close, and for a single speaker talking to camera the gap is small. Large server models still have an edge on difficult audio: strong accents, overlapping voices, or heavy background noise."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Charlatan",
+      "item": "https://dezeo.lat/charlatan/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Guides",
+      "item": "https://dezeo.lat/charlatan/guides/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How to Add Subtitles Without Internet (On-Device Transcription)",
+      "item": "https://dezeo.lat/charlatan/guides/subtitles-without-internet/"
+    }
+  ]
+}
+</script>
+</head>
+<body data-active="en">
+
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="../../">
+      <img src="../../assets/img/charlatan-app-icon.png" alt="Charlatan app icon" width="32" height="32">
+      <span>Charla<span class="tan">tan</span></span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <nav class="site-nav" aria-label="Main">
+      <a href="../../#inside-the-app"><span data-lang="en">Inside the app</span><span data-lang="es" lang="es">La app por dentro</span></a>
+      <a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a>
+      <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
+      <a href="../../#faq">FAQ</a>
+      <a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a>
+      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language / Idioma">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+      <a class="nav-cta js-appstore" href="../../#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a>
+    </nav>
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+<main>
+
+
+<article class="article container">
+<p class="breadcrumb"><a href="../../">Charlatan</a> › <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a></p>
+<h1><span data-lang="en">How to add subtitles without internet</span><span data-lang="es" lang="es">Cómo poner subtítulos sin internet</span></h1>
+<p class="meta"><span data-lang="en">Updated 2026-08-07 · Charlatan for iPhone</span><span data-lang="es" lang="es">Actualizado 2026-08-07 · Charlatan para iPhone</span></p>
+<p><span data-lang="en">Most caption tools upload your video to a server, transcribe it there and send the text back. That is why they need a connection, why they can be slow on a bad one, and why there is a copy of your footage on someone else's machine.</span><span data-lang="es" lang="es">La mayoría de las herramientas de subtítulos suben tu video a un servidor, lo transcriben ahí y te devuelven el texto. Por eso necesitan conexión, por eso pueden ser lentas con una mala, y por eso hay una copia de tu material en la máquina de otro.</span></p>
+<p><span data-lang="en">On-device transcription does the same job using the phone's own speech recognition. Nothing is sent anywhere.</span><span data-lang="es" lang="es">La transcripción en el dispositivo hace el mismo trabajo usando el reconocimiento de voz del propio teléfono. No se manda nada a ningún lado.</span></p>
+<figure><div class="phone"><img src="../../assets/img/transcribing-video-on-iphone.png" width="655" height="1300" loading="lazy" alt="Charlatan transcribing a video's audio entirely on the iPhone, progress at 100%"></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
+<h2><span data-lang="en">What on-device actually means</span><span data-lang="es" lang="es">Qué significa en el dispositivo, de verdad</span></h2>
+<p><span data-lang="en">The speech recognition model runs inside the phone. Your audio is read by the iPhone's processor and turned into text there, and the text never leaves the device unless you export it yourself.</span><span data-lang="es" lang="es">El modelo de reconocimiento de voz corre dentro del teléfono. Tu audio lo lee el procesador del iPhone y lo convierte en texto ahí, y ese texto nunca sale del dispositivo salvo que lo exportes vos.</span></p>
+<p><span data-lang="en">The practical tests are simple: does it work in airplane mode, and is there an account to create? If it works offline and there is no sign-up, nothing is being uploaded, because there is nowhere for it to go.</span><span data-lang="es" lang="es">Las pruebas prácticas son simples: ¿funciona en modo avión, y hay que crear una cuenta? Si funciona sin conexión y no hay registro, no se está subiendo nada, porque no hay a dónde.</span></p>
+<h2><span data-lang="en">When this is the deciding factor</span><span data-lang="es" lang="es">Cuándo esto es lo que decide</span></h2>
+<ul>
+  <li><span data-lang="en">Client work, unreleased material, or anything under an NDA.</span><span data-lang="es" lang="es">Trabajo para clientes, material sin publicar, o cualquier cosa bajo acuerdo de confidencialidad.</span></li>
+  <li><span data-lang="en">Video of children, of your home, or of anyone who did not agree to be uploaded to a service.</span><span data-lang="es" lang="es">Video de chicos, de tu casa, o de cualquiera que no aceptó ser subido a un servicio.</span></li>
+  <li><span data-lang="en">Filming somewhere with no signal — a plane, the mountains, a basement, another country before you buy a SIM.</span><span data-lang="es" lang="es">Filmar en un lugar sin señal — un avión, la montaña, un sótano, otro país antes de comprar un chip.</span></li>
+  <li><span data-lang="en">Long clips, where uploading and downloading is slower than just processing them locally.</span><span data-lang="es" lang="es">Clips largos, donde subir y bajar es más lento que simplemente procesarlos ahí mismo.</span></li>
+  <li><span data-lang="en">Anywhere data is expensive enough that uploading a 400 MB video is a real decision.</span><span data-lang="es" lang="es">Cualquier lado donde los datos son lo bastante caros como para que subir un video de 400 MB sea una decisión real.</span></li>
+</ul>
+<h2><span data-lang="en">The trade-off</span><span data-lang="es" lang="es">El costo</span></h2>
+<p><span data-lang="en">On-device recognition is very good, and on a recent iPhone it is fast, but a large server model can still be more accurate on hard audio — heavy accents, several people talking over each other, wind and traffic.</span><span data-lang="es" lang="es">El reconocimiento en el dispositivo es muy bueno, y en un iPhone reciente es rápido, pero un modelo grande de servidor todavía puede ser más preciso con audio difícil — acentos marcados, varias personas hablando encima, viento y tráfico.</span></p>
+<p><span data-lang="en">For one person speaking to a camera, which is what most short-form video is, the difference is small enough that the privacy and the speed win.</span><span data-lang="es" lang="es">Para una persona hablándole a la cámara, que es lo que es la mayoría del video corto, la diferencia es lo bastante chica como para que ganen la privacidad y la velocidad.</span></p>
+<div class="callout">
+<h3><span data-lang="en">How to do it in Charlatan</span><span data-lang="es" lang="es">Cómo hacerlo en Charlatan</span></h3>
+<ol>
+  <li><span data-lang="en">Put the phone in airplane mode if you want to see it for yourself.</span><span data-lang="es" lang="es">Poné el teléfono en modo avión si querés comprobarlo vos mismo.</span></li>
+  <li><span data-lang="en">Open Charlatan and pick a clip, or record one.</span><span data-lang="es" lang="es">Abrí Charlatan y elegí un clip, o grabá uno.</span></li>
+  <li><span data-lang="en">Set the audio language and let it transcribe. It will run exactly as it does online, because it was never using the connection.</span><span data-lang="es" lang="es">Elegí el idioma del audio y dejá que transcriba. Va a correr exactamente igual que con internet, porque nunca estuvo usando la conexión.</span></li>
+  <li><span data-lang="en">Style and export as usual. There is no account, no upload and no sign-in at any point.</span><span data-lang="es" lang="es">Estilá y exportá como siempre. No hay cuenta, ni subida, ni inicio de sesión en ningún momento.</span></li>
+  <li><span data-lang="en">The only thing that needs a connection is the App Store purchase, if you decide to unlock Pro.</span><span data-lang="es" lang="es">Lo único que necesita conexión es la compra en la App Store, si decidís desbloquear Pro.</span></li>
+</ol>
+<p><a class="btn btn-primary js-appstore" href="../../#download"><span data-lang="en">Download Charlatan free</span><span data-lang="es" lang="es">Descargar Charlatan gratis</span></a></p>
+</div>
+<h2><span data-lang="en">Questions people also ask</span><span data-lang="es" lang="es">Lo que también preguntan</span></h2>
+<h3><span data-lang="en">Do subtitle apps upload my video?</span><span data-lang="es" lang="es">¿Las apps de subtítulos suben mi video?</span></h3>
+<p><span data-lang="en">Most do. If an app requires an account and stops working in airplane mode, your audio is being processed on a server. Apps that use the phone's own speech recognition do not need either.</span><span data-lang="es" lang="es">La mayoría sí. Si una app exige cuenta y deja de funcionar en modo avión, tu audio se está procesando en un servidor. Las apps que usan el reconocimiento de voz del propio teléfono no necesitan ninguna de las dos cosas.</span></p>
+<h3><span data-lang="en">Is on-device transcription as accurate as cloud transcription?</span><span data-lang="es" lang="es">¿La transcripción en el dispositivo es tan precisa como la de la nube?</span></h3>
+<p><span data-lang="en">Close, and for a single speaker talking to camera the gap is small. Large server models still have an edge on difficult audio: strong accents, overlapping voices, or heavy background noise.</span><span data-lang="es" lang="es">Cerca, y para una sola persona hablándole a la cámara la diferencia es chica. Los modelos grandes de servidor todavía sacan ventaja con audio difícil: acentos marcados, voces superpuestas o mucho ruido de fondo.</span></p>
+<div class="related"><h2><span data-lang="en">Keep reading</span><span data-lang="es" lang="es">Seguir leyendo</span></h2><ul>
+  <li><a href="../../guides/how-to-add-subtitles-to-video-on-iphone/"><span data-lang="en">How to add subtitles to a video on iPhone</span><span data-lang="es" lang="es">Cómo poner subtítulos a un video en iPhone</span> →</a></li>
+  <li><a href="../../guides/translate-video-subtitles/"><span data-lang="en">How to translate your video's subtitles</span><span data-lang="es" lang="es">Cómo traducir los subtítulos de tu video</span> →</a></li>
+  <li><a href="../../guides/burn-subtitles-into-video/"><span data-lang="en">How to burn subtitles into a video</span><span data-lang="es" lang="es">Cómo quemar subtítulos en un video</span> →</a></li>
+</ul></div>
+</article>
+
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="../../">
+          <img src="../../assets/img/charlatan-app-icon.png" alt="Charlatan app icon" width="32" height="32">
+          <span>Charla<span class="tan">tan</span></span>
+        </a>
+        <p>
+          <span data-lang="en">Automatic subtitles in any font you like, entirely on your iPhone. From the developer of <a class="inline" href="/guardianreader/">Guardian Reader</a>.</span>
+          <span data-lang="es" lang="es">Subtítulos automáticos con la tipografía que quieras, enteramente en tu iPhone. Del creador de <a class="inline" href="/guardianreader/">Guardian Reader</a>.</span>
+        </p>
+      </div>
+      <div>
+        <h4>App</h4>
+        <ul>
+          <li><a href="../../#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a></li>
+          <li><a href="../../#inside-the-app"><span data-lang="en">Inside the app</span><span data-lang="es" lang="es">La app por dentro</span></a></li>
+          <li><a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a></li>
+          <li><a href="../../#pricing"><span data-lang="en">Pricing</span><span data-lang="es" lang="es">Precios</span></a></li>
+          <li><a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></h4>
+        <ul>
+          <li><a href="../../guides/how-to-add-subtitles-to-video-on-iphone/"><span data-lang="en">Subtitles on iPhone</span><span data-lang="es" lang="es">Subtítulos en iPhone</span></a></li>
+          <li><a href="../../guides/best-fonts-for-subtitles/"><span data-lang="en">Best subtitle fonts</span><span data-lang="es" lang="es">Mejores tipografías</span></a></li>
+          <li><a href="../../guides/word-by-word-karaoke-captions/"><span data-lang="en">Karaoke captions</span><span data-lang="es" lang="es">Subtítulos karaoke</span></a></li>
+          <li><a href="../../guides/"><span data-lang="en">All guides →</span><span data-lang="es" lang="es">Todas las guías →</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Charlatan · Nicolas Gula · <span data-lang="en">Made in Argentina</span><span data-lang="es" lang="es">Hecho en Argentina</span></span>
+      <span>
+        <a href="../../privacypolicy/"><span data-lang="en">Privacy Policy</span><span data-lang="es" lang="es">Privacidad</span></a> ·
+        <a href="../../terms/"><span data-lang="en">Terms of Use</span><span data-lang="es" lang="es">Términos</span></a> ·
+        <a href="../../support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  var APP_STORE_URL = "https://apps.apple.com/app/idXXXXXXXXXX";
+  if (APP_STORE_URL.indexOf("XXXX") === -1) {
+    document.querySelectorAll(".js-appstore").forEach(function (el) {
+      el.setAttribute("href", APP_STORE_URL);
+      el.setAttribute("rel", "noopener");
+    });
+  }
+  function setLang(l) {
+    document.body.setAttribute("data-active", l);
+    document.documentElement.lang = l;
+    var sel = document.getElementById("langselect");
+    if (sel) sel.value = l;
+    try { localStorage.setItem("ch-lang", l); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
+    var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
+    setLang(lang);
+  })();
+</script>
+
+</body>
+</html>
