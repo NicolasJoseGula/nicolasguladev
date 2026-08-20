@@ -153,6 +153,16 @@ body[data-active="es"] [data-lang="es"] { display: revert; }
 .hero-mac { max-width: 980px; margin: 42px auto 0; }
 .mac-tall { max-width: 380px; margin: 0 auto; }
 
+/* ---------- Equipo con carcasa ----------
+   Las imágenes nuevas ya traen el equipo dibujado, así que no llevan marco:
+   .mac les pondría un borde alrededor de un borde. Sólo una sombra que las
+   apoye sobre el fondo, sin recorte ni fondo negro. */
+
+.device { filter: drop-shadow(0 30px 60px rgba(0,0,0,.55)); }
+.device img { display: block; width: 100%; height: auto; }
+.hero-device { max-width: 1000px; margin: 42px auto 0; }
+.device-tall { max-width: 300px; margin: 0 auto; }
+
 /* ---------- Secciones ---------- */
 
 section { padding: 74px 0; }
@@ -194,6 +204,34 @@ section { padding: 74px 0; }
   scroll-snap-type: x mandatory; scrollbar-width: thin;
 }
 .gallery figure { margin: 0; scroll-snap-align: center; }
+/* Mezclar un teléfono vertical con equipos apaisados descuadra la fila: sin
+   tope de alto, el teléfono se come la galería y el Mac queda diminuto. */
+.gallery { align-items: center; }
+/* La galería se sale del ancho de lectura: los equipos con carcasa necesitan
+   tamaño para que se vea la pantalla, y encajonados en 1120px quedaban a un
+   tercio. El teléfono lleva su propio tope o descuadra la fila. */
+#screenshots .wrap { max-width: min(1680px, 94vw); }
+.gallery { grid-auto-columns: minmax(260px, 640px); }
+.gallery .device-tall { max-width: 300px; }
+
+/* ---------- Equipo con video ----------
+   El PNG del marco tiene la pantalla recortada y va encima; el video se
+   coloca debajo, en el hueco, con las medidas en porcentaje para que el
+   conjunto escale sin desalinearse. */
+
+.screen { position: relative; margin: 0 auto;
+  filter: drop-shadow(0 26px 52px rgba(0,0,0,.6)); }
+.screen img { display: block; width: 100%; height: auto; position: relative; z-index: 2; }
+.screen video { position: absolute; z-index: 1; object-fit: cover; border: 0; }
+.screen-mac    { max-width: 640px; }
+.screen-ipad   { max-width: 340px; }
+.screen-iphone { max-width: 236px; }
+.screen-mac    video { left: 10.255%; top: 3.700%; width: 79.490%; height: 82.542%; }
+.screen-ipad   video { left:  6.284%; top: 4.035%; width: 87.648%; height: 92.031%; }
+.screen-iphone video { left:  4.202%; top: 1.727%; width: 91.595%; height: 96.593%; }
+
+/* Quien pidió menos movimiento ve el primer cuadro y nada más. */
+@media (prefers-reduced-motion: reduce) { .screen video { animation: none; } }
 .gallery figcaption { margin-top: 12px; font-size: .88rem; color: var(--muted); text-align: center; }
 
 /* ---------- Cards ---------- */
@@ -302,7 +340,14 @@ section { padding: 74px 0; }
 .callout h3 { margin-top: 0; }
 .callout p:last-child { margin-bottom: 0; }
 .article figure { margin: 30px 0; }
-.article figure img { border-radius: 14px; border: 1px solid var(--line); }
+/* Sólo las imágenes sueltas llevan marco. Las que ya vienen con la carcasa
+   del equipo van dentro de un div y tienen fondo transparente: el borde les
+   dibujaría un rectángulo alrededor del aire. */
+.article figure > img { border-radius: 14px; border: 1px solid var(--line); }
+.article figure .screen { margin: 0 auto; }
+.article .screen-mac { max-width: 760px; }
+.article .screen-ipad { max-width: 380px; }
+.article .screen-iphone { max-width: 260px; }
 .article figcaption { text-align: center; color: var(--dim); font-size: .87rem; margin-top: 10px; }
 
 /* Tablas de datos dentro de una guía: se desplazan solas en pantalla chica. */
