@@ -16,8 +16,12 @@
   --accent: #c084fc;
   --grad-brand: linear-gradient(120deg, #7C3AED, #EC4899 60%, #FB6E3C);
   --grad-text: linear-gradient(120deg, #2F6BFF, #7C3AED, #EC4899, #FB6E3C);
-  --font-head: "Space Grotesk", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  /* Los "fallback" son Arial con las métricas ajustadas para ocupar lo mismo
+     que la fuente real (ver assets/fonts/fonts.css). Van antes de system-ui
+     para que, mientras el woff2 viaja, el texto ya ocupe su lugar definitivo
+     y al llegar la fuente no se corra nada. */
+  --font-head: "Space Grotesk", "Space Grotesk fallback", system-ui, sans-serif;
+  --font-body: "Inter", "Inter fallback", system-ui, sans-serif;
 }
 
 /* ----------------------------------------------------------------

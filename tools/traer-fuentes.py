@@ -31,6 +31,25 @@ ARCHIVOS = {
     ('Space Grotesk', 'latin-ext'): 'space-grotesk-latin-ext.woff2',
 }
 
+# Respaldos con métricas ajustadas. Sin esto, la página pinta primero en la
+# fuente del sistema y, cuando llega Inter, el texto cambia de ancho y todo lo
+# que está debajo se corre: Lighthouse medía 0,158 de CLS en /projects.html y
+# señalaba inter-latin.woff2 como la causa.
+#
+# El truco es un @font-face que toma Arial y la estira hasta ocupar exactamente
+# lo mismo que la fuente real, así el intercambio no mueve nada.
+#
+#   size-adjust       = ancho medio de la fuente / ancho medio de Arial
+#   ascent-override   = ascent / unitsPerEm / size-adjust   (idem descent y gap)
+#
+# Los anchos se midieron en el navegador con canvas measureText sobre el texto
+# real del sitio; ascent, descent y unitsPerEm salen de los propios woff2. Si
+# Google publica una versión nueva de las fuentes, hay que recalcularlos.
+RESPALDOS = (
+    ("Inter fallback", "106.533%", "90.934%", "22.642%", "0%"),
+    ("Space Grotesk fallback", "108.781%", "90.457%", "26.843%", "0%"),
+)
+
 CABECERA = """/* ----------------------------------------------------------------
    Fuentes propias. Generado por tools/traer-fuentes.py: no editar a mano.
 
@@ -38,6 +57,10 @@ CABECERA = """/* ---------------------------------------------------------------
    assets/fonts/. Se replican tal cual, una por peso, en vez de usar un rango
    variable: así el resultado es idéntico al de antes, sea la fuente variable
    o estática.
+
+   Los dos últimos bloques no son fuentes: son Arial estirada para ocupar lo
+   mismo que Inter y Space Grotesk, para que el cambio de fuente no corra el
+   texto. Van en el stack de styles.css, entre la fuente real y system-ui.
 
    Space Grotesk e Inter son SIL Open Font License 1.1; ver OFL.txt.
    ---------------------------------------------------------------- */
@@ -80,6 +103,18 @@ def main():
     faltan = set(ARCHIVOS.values()) - set(bajados)
     if faltan:
         raise SystemExit(f'Google no devolvió estos subconjuntos: {sorted(faltan)}')
+
+    for familia, ajuste, asc, desc, gap in RESPALDOS:
+        bloques.append(
+            "@font-face {\n"
+            f"  font-family: '{familia}';\n"
+            "  src: local('Arial');\n"
+            f"  size-adjust: {ajuste};\n"
+            f"  ascent-override: {asc};\n"
+            f"  descent-override: {desc};\n"
+            f"  line-gap-override: {gap};\n"
+            "}"
+        )
 
     (DESTINO / 'fonts.css').write_text(CABECERA + '\n' + '\n\n'.join(bloques) + '\n', encoding='utf-8')
     for nombre, peso in sorted(bajados.items()):
