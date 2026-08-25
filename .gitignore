@@ -1,2 +1,5 @@
 .DS_Store
 WinterGames/
+
+# Claude Code: worktrees temporales y config local
+.claude/

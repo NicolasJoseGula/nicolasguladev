@@ -6,8 +6,11 @@
 // the HTML or CSS.
 //
 //   name:        the project title
-//   image:       path to a screenshot or icon (put the file in assets/)
-//                if it is missing, the card shows the first letter instead
+//   image:       path to a screenshot or icon (put the file in assets/).
+//                Point it at the .jpg; the card also serves the .webp of the
+//                same name when the browser accepts it. Run
+//                tools/optimizar-assets.py after adding a new original.
+//                If the file is missing, the card shows the first letter instead
 //   description: one short line about the project
 //   url:         where the card links to (the project landing page)
 //   platform:    one of "ios", "extension" or "steam" (shows a small logo).
@@ -19,7 +22,7 @@
 var projects = [
   {
     name: "Chart Maker",
-    image: "assets/chartmaker.png",
+    image: "assets/chartmaker.jpg",
     description: "Turns a CSV into an animated ranking video. Exports a real 4K MP4 for YouTube and a 9:16 cut for Shorts.",
     url: "chartmaker/",
     platform: "mac",
@@ -27,21 +30,21 @@ var projects = [
   },
   {
     name: "Charlatan",
-    image: "assets/charlatan.png",
+    image: "assets/charlatan.jpg",
     description: "Automatic subtitles for your videos, in any of 71 fonts. Everything runs on the iPhone.",
     url: "charlatan/",
     platform: "ios"
   },
   {
     name: "Guardian Reader",
-    image: "assets/guardianreader.png",
+    image: "assets/guardianreader.jpg",
     description: "Kids earn their screen time by reading real books out loud, verified on the iPhone.",
     url: "guardianreader/",
     platform: "ios"
   },
   {
     name: "Block&Read",
-    image: "assets/blockandread.png",
+    image: "assets/blockandread.jpg",
     description: "Blocks your distracting apps until you read a few pages of a good book.",
     url: "blockandread/",
     platform: "ios",
@@ -49,7 +52,7 @@ var projects = [
   },
   {
     name: "Fix Your Life",
-    image: "assets/fixyourlife.png",
+    image: "assets/fixyourlife.jpg",
     description: "An alarm that wakes you to the present with confronting questions.",
     url: "fixyourlife/",
     platform: "ios"
@@ -175,16 +178,30 @@ var PLATFORMS = {
     imageWrap.appendChild(mono);
 
     if (p.image) {
+      // <picture>: webp para quien lo acepte, jpg para el resto. El <picture>
+      // no tiene posición propia, así que el img sigue colocándose contra
+      // .card-image igual que antes.
+      var pic = document.createElement("picture");
+      var webp = p.image.replace(/\.(jpg|jpeg|png)$/i, ".webp");
+      if (webp !== p.image) {
+        var fuente = document.createElement("source");
+        fuente.type = "image/webp";
+        fuente.srcset = webp;
+        pic.appendChild(fuente);
+      }
+
       var img = document.createElement("img");
       img.src = p.image;
       img.alt = p.name;
       img.loading = "lazy";
-      img.onerror = function () { img.remove(); };
+      img.decoding = "async";
+      img.onerror = function () { pic.remove(); };
       if (p.imageFit === "contain") img.className = "fit-contain";
       // "fit-contain" pinta negro por defecto; si el proyecto trae su propio
       // fondo, gana el suyo para que el ícono no se vea pegado sobre un cuadro.
       if (p.background) img.style.background = p.background;
-      imageWrap.appendChild(img);
+      pic.appendChild(img);
+      imageWrap.appendChild(pic);
     }
 
     var body = document.createElement("div");

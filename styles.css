@@ -9,7 +9,10 @@
   --border-strong: #30303c;
   --text: #f4f4f7;
   --text-2: #9a9aa6;
-  --text-3: #6c6c78;
+  /* #6c6c78 daba 3,86:1 sobre el fondo: por debajo del 4,5:1 que pide
+     WCAG AA para texto normal. #7c7c88 da 4,85:1 sobre el fondo y
+     4,56:1 sobre las tarjetas, sin cambiar el tono del gris. */
+  --text-3: #7c7c88;
   --accent: #c084fc;
   --grad-brand: linear-gradient(120deg, #7C3AED, #EC4899 60%, #FB6E3C);
   --grad-text: linear-gradient(120deg, #2F6BFF, #7C3AED, #EC4899, #FB6E3C);
