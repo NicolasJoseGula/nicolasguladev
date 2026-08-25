@@ -225,7 +225,35 @@ body[data-active="es"] [data-lang="es"] { display: revert; }
   width: 100%; height: 100%;
   object-fit: contain;
 }
-.ba .with { clip-path: inset(0 calc(100% - var(--cut)) 0 0); }
+.ba .with {
+  position: absolute; inset: 0; pointer-events: none;
+  clip-path: inset(0 calc(100% - var(--cut)) 0 0);
+}
+/* La marca, donde la deja una exportación gratis. */
+.ba-mark {
+  position: absolute; top: 4.5%; left: 6%;
+  font-weight: 900; font-size: clamp(11px, 3.2cqw, 15px); letter-spacing: .02em;
+  color: rgba(255,255,255,.92); text-shadow: 0 1px 6px rgba(0,0,0,.55);
+}
+.ba-mark b { background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+/* El subtítulo, en el estilo Creator de la app: blanco, contorno rosa, y la
+   palabra que suena sobre lima. El contorno son ocho sombras porque
+   text-stroke pinta por encima del relleno en algunos motores. */
+.ba-cap {
+  position: absolute; left: 6%; right: 6%; top: 72%;
+  text-align: center; text-transform: uppercase;
+  font-weight: 900; font-size: clamp(15px, 5.4cqw, 26px); line-height: 1.25;
+  color: #fff;
+  --o: 1.5px; --oc: #FF2D8A;
+  text-shadow:
+    calc(var(--o) * -1) 0 var(--oc), var(--o) 0 var(--oc),
+    0 calc(var(--o) * -1) var(--oc), 0 var(--o) var(--oc),
+    calc(var(--o) * -1) calc(var(--o) * -1) var(--oc), var(--o) var(--o) var(--oc),
+    calc(var(--o) * -1) var(--o) var(--oc), var(--o) calc(var(--o) * -1) var(--oc),
+    0 3px 10px rgba(0,0,0,.45);
+}
+.ba-cap.cjk { text-transform: none; }
+.ba-cap mark { background: #C9FF3D; color: inherit; text-shadow: inherit; padding: 0 .08em; border-radius: 2px; }
 .ba-divider {
   position: absolute; top: 0; bottom: 0; left: var(--cut);
   width: 2px; background: #fff; transform: translateX(-1px);
