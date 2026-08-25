@@ -15,7 +15,12 @@ import re
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
 PAGINAS = ('index.html', 'projects.html')
 HOJAS = ('assets/fonts/fonts.css', 'styles.css')
-MARCA = re.compile(r'(<style id="css-del-sitio">)(.*?)(</style>)', re.S)
+MARCA_CSS = re.compile(r'(<style id="css-del-sitio">)(.*?)(</style>)', re.S)
+# projects.js dibuja la grilla. Si viaja en un pedido aparte, el navegador
+# alcanza a pintar la página con la grilla vacía y, cuando el script llega,
+# las tarjetas empujan el pie hacia abajo: eso era 0,149 de CLS.
+MARCA_JS = re.compile(r'(<script id="js-del-sitio">)(.*?)(</script>)', re.S)
+GUION = 'projects.js'
 
 
 def comprimir(css):
@@ -29,16 +34,23 @@ def comprimir(css):
 
 def main():
     css = comprimir('\n'.join((RAIZ / h).read_text(encoding='utf-8') for h in HOJAS))
+    js = (RAIZ / GUION).read_text(encoding='utf-8')
+    if '</script' in js:
+        raise SystemExit(f'{GUION} contiene "</script": no se puede insertar tal cual')
+
     for nombre in PAGINAS:
         p = RAIZ / nombre
         t = p.read_text(encoding='utf-8')
-        if not MARCA.search(t):
+        if not MARCA_CSS.search(t):
             raise SystemExit(f'{nombre}: falta <style id="css-del-sitio"></style>')
         antes = len(t)
-        t = MARCA.sub(lambda m: m.group(1) + '\n' + css + '\n  ' + m.group(3), t, count=1)
+        t = MARCA_CSS.sub(lambda m: m.group(1) + '\n' + css + '\n  ' + m.group(3), t, count=1)
+        if MARCA_JS.search(t):
+            t = MARCA_JS.sub(lambda m: m.group(1) + '\n' + js + '  ' + m.group(3), t, count=1)
         p.write_text(t, encoding='utf-8')
-        print(f'  {nombre}: {antes/1024:.1f} KB -> {len(t)/1024:.1f} KB con el CSS adentro')
-    print(f'  CSS insertado: {len(css)/1024:.1f} KB desde {", ".join(HOJAS)}')
+        print(f'  {nombre}: {antes/1024:.1f} KB -> {len(t)/1024:.1f} KB')
+    print(f'  CSS: {len(css)/1024:.1f} KB desde {", ".join(HOJAS)}')
+    print(f'  JS:  {len(js)/1024:.1f} KB desde {GUION} (solo en projects.html)')
 
 
 if __name__ == '__main__':
