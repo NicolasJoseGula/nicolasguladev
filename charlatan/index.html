@@ -12,6 +12,7 @@
 <link rel="icon" type="image/png" href="assets/img/charlatan-app-icon.png">
 <link rel="apple-touch-icon" href="assets/img/charlatan-app-icon.png">
 <link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/charlatan-i18n.js" defer></script>
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Charlatan">
@@ -124,9 +125,18 @@
       <a href="guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
       <a href="#faq">FAQ</a>
       <a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a>
-      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language / Idioma">
+      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language">
         <option value="en">English</option>
         <option value="es">Español</option>
+        <option value="pt-BR">Português (BR)</option>
+        <option value="pt-PT">Português (PT)</option>
+        <option value="it">Italiano</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+        <option value="zh-Hans">简体中文</option>
+        <option value="zh-Hant">繁體中文</option>
       </select>
       <a class="nav-cta js-appstore" href="#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a>
     </nav>
@@ -168,8 +178,16 @@
     <div class="device">
       <div class="device-screen">
         <div class="ba" id="ba">
-          <video class="without" muted loop playsinline autoplay preload="auto" poster="assets/video/poster.jpg" src="assets/video/charlatan-before.mp4" aria-hidden="true"></video>
-          <video class="with" muted loop playsinline autoplay preload="auto" src="assets/video/charlatan-after.mp4" aria-hidden="true"></video>
+          <!-- Un solo video limpio; el lado "con Charlatan" son los mismos
+               subtítulos que la app dibuja, puestos por el navegador desde los
+               .srt reales. Un video en vez de dos, y el texto siempre correcto:
+               los clips con subtítulos quemados traían los errores del motor
+               grabados en los píxeles. -->
+          <video class="without" id="bavideo" muted loop playsinline autoplay preload="auto" poster="assets/video/demo-en.jpg" src="assets/video/demo-en.mp4" aria-hidden="true"></video>
+          <div class="with" aria-hidden="true">
+            <span class="ba-mark">CHARLA<b>TAN</b></span>
+            <div class="ba-cap" id="bacap"></div>
+          </div>
           <span class="ba-label left on"><span data-lang="en">WITH CHARLATAN</span><span data-lang="es" lang="es">CON CHARLATAN</span></span>
           <span class="ba-label right"><span data-lang="en">WITHOUT</span><span data-lang="es" lang="es">SIN</span></span>
           <div class="ba-divider" aria-hidden="true"></div>
@@ -611,18 +629,72 @@
     });
   }
 
-  /* Cambio de idioma: body[data-active] decide qué spans se muestran. */
+  /* Once idiomas sobre el mecanismo de dos: inglés y español viven en el HTML
+     (los pares de spans de siempre); los otros nueve rellenan los spans de
+     español con su texto, alineado por orden de documento, y muestran ese
+     lado. El HTML no crece y el inglés queda intacto para los buscadores. */
+  var CH_LANGS = ["en","es","pt-BR","pt-PT","it","fr","de","ja","ko","zh-Hans","zh-Hant"];
+  var esSpans = null, esOriginal = null;
+
+  function fillSpans(l) {
+    if (!esSpans) {
+      esSpans = Array.prototype.slice.call(document.querySelectorAll('[data-lang="es"]'));
+      esOriginal = esSpans.map(function (n) { return n.innerHTML; });
+    }
+    var t = (l !== "es" && window.CH_I18N) ? window.CH_I18N[l] : null;
+    for (var i = 0; i < esSpans.length; i++) {
+      esSpans[i].innerHTML = t ? t[i] : esOriginal[i];
+    }
+  }
+
   function setLang(l) {
-    document.body.setAttribute("data-active", l);
+    if (CH_LANGS.indexOf(l) < 0) l = "en";
+    if (l === "en") {
+      document.body.setAttribute("data-active", "en");
+    } else {
+      fillSpans(l);
+      document.body.setAttribute("data-active", "es");
+    }
     document.documentElement.lang = l;
     var sel = document.getElementById("langselect");
     if (sel) sel.value = l;
     try { localStorage.setItem("ch-lang", l); } catch (e) {}
+    if (window.chSetDemo) window.chSetDemo(l);
+  }
+
+  /* El idioma inicial sale de la lista del sistema, en su orden — el primero
+     que la página habla. El chino decide por escritura y región, y Hong Kong
+     además se lleva el demo en cantonés. */
+  var CH_VIDEO_OVERRIDE = null;
+  function detectLang() {
+    var list = navigator.languages || [navigator.language || "en"];
+    for (var i = 0; i < list.length; i++) {
+      var tag = String(list[i]);
+      var lower = tag.toLowerCase();
+      var code = lower.split("-")[0];
+      if (code === "zh" || code === "yue") {
+        var hant = /hant|tw|hk|mo/.test(lower);
+        if (code === "yue" || /hk|mo/.test(lower)) CH_VIDEO_OVERRIDE = "yue";
+        return hant || code === "yue" ? "zh-Hant" : "zh-Hans";
+      }
+      /* Solo la region Portugal va a pt-PT: "pt" a secas es Brasil, que es
+         donde esta casi todo el portugues del mundo. */
+      if (code === "pt") return /-pt$/.test(lower) ? "pt-PT" : "pt-BR";
+      for (var j = 0; j < CH_LANGS.length; j++) {
+        if (CH_LANGS[j].toLowerCase() === lower || CH_LANGS[j].toLowerCase() === code) return CH_LANGS[j];
+      }
+    }
+    return "en";
   }
   (function () {
     var saved = null;
     try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
-    setLang(saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en"));
+    detectLang(); /* fija el override de video aunque haya idioma guardado */
+    var init = function () { setLang(saved && CH_LANGS.indexOf(saved) >= 0 ? saved : detectLang()); };
+    /* Las traducciones cargan con defer y corren antes de DOMContentLoaded:
+       si aún no están, se espera a ese evento y no antes. */
+    if (window.CH_I18N) init();
+    else document.addEventListener("DOMContentLoaded", init);
   })();
 
   /* Slider antes/después: el range invisible maneja puntero y teclado; los dos
@@ -631,8 +703,7 @@
     var ba = document.getElementById("ba");
     if (!ba) return;
     var range = ba.querySelector("input");
-    var withV = ba.querySelector(".with");
-    var baseV = ba.querySelector(".without");
+    var baseV = document.getElementById("bavideo");
     var left = ba.querySelector(".ba-label.left");
     var right = ba.querySelector(".ba-label.right");
     var touched = false;
@@ -649,18 +720,9 @@
 
     /* El atributo autoplay no alcanza en todos los contextos: el empujón
        explícito cubre los navegadores que esperan un play() programático. */
-    function nudge() {
-      baseV.play().catch(function () {});
-      withV.play().catch(function () {});
-    }
+    function nudge() { baseV.play().catch(function () {}); }
     nudge();
     document.addEventListener("pointerdown", nudge, { once: true });
-
-    baseV.addEventListener("timeupdate", function () {
-      if (Math.abs(baseV.currentTime - withV.currentTime) > 0.3) {
-        withV.currentTime = baseV.currentTime;
-      }
-    });
 
     /* Nadie arrastra algo que parece una foto: un barrido inicial enseña que
        se mueve — salvo que el usuario ya lo haya agarrado o pida menos movimiento. */
@@ -678,6 +740,76 @@
       }
       requestAnimationFrame(sweep);
     }
+  })();
+
+  /* El demo habla el idioma del visitante: un clip limpio por idioma, y los
+     subtítulos — los mismos .srt que usa la app — dibujados encima con el
+     estilo Creator, palabra por palabra. */
+  (function () {
+    var video = document.getElementById("bavideo");
+    var cap = document.getElementById("bacap");
+    if (!video || !cap) return;
+    var cues = [], spaced = true, lastKey = "";
+
+    window.chSetDemo = function (lang) {
+      var code = (CH_VIDEO_OVERRIDE === "yue" && lang === "zh-Hant") ? "yue" : lang;
+      if (!(window.CH_CUES && window.CH_CUES[code])) code = "en";
+      cues = window.CH_CUES[code] || [];
+      spaced = cues.some(function (c) { return c[2].indexOf(" ") >= 0; });
+      cap.classList.toggle("cjk", !spaced);
+      lastKey = "";
+      var src = "assets/video/demo-" + code + ".mp4";
+      if (!video.src || video.src.indexOf(src) < 0) {
+        video.poster = "assets/video/demo-" + code + ".jpg";
+        video.src = src;
+        video.load();
+        var resume = function () { video.play().catch(function () {}); };
+        video.addEventListener("canplay", resume, { once: true });
+        resume();
+      }
+    };
+
+    function paint() {
+      var t = video.currentTime || 0;
+      var cue = null;
+      for (var i = 0; i < cues.length; i++) {
+        if (t >= cues[i][0] && t < cues[i][1]) { cue = cues[i]; break; }
+      }
+      if (!cue) {
+        if (lastKey !== "") { cap.textContent = ""; lastKey = ""; }
+      } else if (!spaced) {
+        if (lastKey !== cue[2]) { cap.textContent = cue[2]; lastKey = cue[2]; }
+      } else {
+        /* La palabra activa se reparte por peso de caracteres dentro del cue,
+           igual que hace la app cuando el motor no trae tiempos por palabra. */
+        var words = cue[2].split(" ");
+        var weights = words.map(function (w) { return w.length + 2.5; });
+        var total = weights.reduce(function (a, b) { return a + b; }, 0);
+        var into = (t - cue[0]) / (cue[1] - cue[0]) * total;
+        var acc = 0, active = 0;
+        for (var k = 0; k < weights.length; k++) {
+          acc += weights[k];
+          if (into < acc) { active = k; break; }
+          active = k;
+        }
+        var key = cue[2] + "|" + active;
+        if (key !== lastKey) {
+          lastKey = key;
+          cap.textContent = "";
+          words.forEach(function (w, idx) {
+            var node = idx === active ? document.createElement("mark") : document.createElement("span");
+            node.textContent = w;
+            cap.appendChild(node);
+            if (idx < words.length - 1) cap.appendChild(document.createTextNode(" "));
+          });
+        }
+      }
+    }
+    function render() { paint(); requestAnimationFrame(render); }
+    requestAnimationFrame(render);
+    /* rAF se congela con la pestaña oculta o en ahorro de energía; el video
+       sigue anunciando su avance, así que el subtítulo no se queda pegado. */
+    video.addEventListener("timeupdate", paint);
   })();
 </script>
 
