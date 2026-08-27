@@ -51,7 +51,7 @@ def main():
     filas.append(('dezeotransparent.png -> dezeo-mark.png', antes, p))
 
     # --- imágenes de las tarjetas de Work: webp con respaldo jpg ---
-    for nombre in ('chartmaker', 'charlatan', 'guardianreader', 'blockandread', 'fixyourlife'):
+    for nombre in ('facecheck', 'chartmaker', 'charlatan', 'guardianreader', 'blockandread', 'fixyourlife'):
         src = fuente(f'{nombre}.png')
         if not src.exists():
             continue

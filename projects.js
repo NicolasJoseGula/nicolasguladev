@@ -21,6 +21,14 @@
 // ----------------------------------------------------------------
 var projects = [
   {
+    name: "FaceCheck",
+    image: "assets/facecheck.jpg",
+    description: "Face symmetry test and photo score, analyzed 100% on your iPhone. Your photo never leaves your phone.",
+    url: "facecheck/",
+    platform: "ios",
+    background: "#1a090f"
+  },
+  {
     name: "Chart Maker",
     image: "assets/chartmaker.jpg",
     description: "Turns a CSV into an animated ranking video. Exports a real 4K MP4 for YouTube and a 9:16 cut for Shorts.",
