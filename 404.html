@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — dezeo</title>
+  <meta name="description" content="This page does not exist. Here is the way back to dezeo.">
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/favicon.png">
+  <!-- Todo apunta a la raíz con "/". GitHub Pages sirve este archivo para
+       cualquier ruta que no exista —incluida /blockandread/guides/loquesea— y
+       el navegador deja esa ruta en la barra, así que una ruta relativa
+       buscaría los assets al lado de la página que no existe. -->
+  <style>
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/assets/fonts/space-grotesk-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/assets/fonts/inter-latin.woff2) format('woff2');
+}
+:root {
+  --bg: #08080c;
+  --surface: #111119;
+  --border: #23232e;
+  --border-strong: #30303c;
+  --text: #f4f4f7;
+  --text-2: #9a9aa6;
+  --text-3: #7c7c88;
+  --grad-brand: linear-gradient(120deg, #7C3AED, #EC4899 60%, #FB6E3C);
+  --grad-text: linear-gradient(120deg, #2F6BFF, #7C3AED, #EC4899, #FB6E3C);
+  --font-head: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { min-height: 100%; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  display: flex; flex-direction: column; min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+
+/* El resplandor de marca, el mismo gesto que la portada. */
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(60% 45% at 50% 0%, rgba(124,58,237,.20), transparent 70%),
+    radial-gradient(45% 35% at 85% 20%, rgba(236,72,153,.14), transparent 70%),
+    radial-gradient(40% 30% at 10% 30%, rgba(251,110,60,.10), transparent 70%);
+}
+.wrap { position: relative; z-index: 1; width: 100%; max-width: 940px; margin: 0 auto; padding: 40px 24px 64px; }
+
+header { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-head); font-weight: 700; letter-spacing: -.02em; }
+.brand img { width: 34px; height: 34px; border-radius: 9px; }
+header nav { display: flex; gap: 20px; color: var(--text-2); font-size: 15px; }
+header nav a:hover { color: var(--text); }
+
+main { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 56px 0 8px; }
+
+.code {
+  font-family: var(--font-head); font-weight: 700; letter-spacing: -.04em;
+  font-size: clamp(96px, 22vw, 200px); line-height: .9;
+  background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+h1 { font-family: var(--font-head); font-weight: 700; letter-spacing: -.02em;
+     font-size: clamp(26px, 4.4vw, 40px); line-height: 1.15; margin-top: 18px; }
+.lead { color: var(--text-2); margin-top: 14px; max-width: 54ch; }
+.path {
+  margin-top: 18px; display: none; font-size: 14px; color: var(--text-3);
+  word-break: break-all;
+}
+.path code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--text-2); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.btn { display: inline-flex; align-items: center; gap: 6px; font-size: 16px; font-weight: 500;
+       padding: 14px 26px; border-radius: 12px; transition: box-shadow .25s ease, border-color .15s ease, background .15s ease; }
+.btn-primary { background: var(--grad-brand); color: #fff; }
+.btn-primary:hover { box-shadow: 0 6px 30px rgba(236,72,153,.42); }
+.btn-ghost { border: 1px solid var(--border-strong); color: var(--text); }
+.btn-ghost:hover { background: var(--surface); border-color: #3d3d4c; }
+
+.divider { height: 1px; background: var(--border); margin: 54px 0 26px; }
+.kicker { font-family: var(--font-head); font-weight: 700; font-size: 12px; letter-spacing: .12em;
+          text-transform: uppercase; color: var(--text-3); }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; margin-top: 16px; }
+.card { border: 1px solid var(--border); background: var(--surface); border-radius: 14px; padding: 16px 18px;
+        transition: border-color .15s ease, transform .15s ease; }
+.card:hover { border-color: var(--border-strong); transform: translateY(-2px); }
+.card b { font-family: var(--font-head); font-weight: 700; font-size: 15px; letter-spacing: -.01em; }
+.card span { display: block; margin-top: 3px; color: var(--text-3); font-size: 13.5px; line-height: 1.45; }
+
+footer { color: var(--text-3); font-size: 14px; margin-top: 40px; display: flex; gap: 18px; flex-wrap: wrap; }
+footer a:hover { color: var(--text-2); }
+
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/">
+        <img src="/assets/dezeo-mark.png" alt="" width="34" height="34">
+        dezeo
+      </a>
+      <nav>
+        <a href="/projects.html">Work</a>
+        <a href="mailto:hola@dezeo.lat">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <p class="code">404</p>
+      <h1 id="titulo">This page never shipped.</h1>
+      <p class="lead" id="bajada">The link is broken, the page moved, or it was never here to begin with. Everything we have actually built is one click away.</p>
+      <p class="path" id="ruta">You asked for <code></code></p>
+
+      <div class="actions">
+        <a class="btn btn-primary" id="principal" href="/projects.html">See our work →</a>
+        <a class="btn btn-ghost" href="/">Go to dezeo.lat</a>
+      </div>
+
+      <div class="divider"></div>
+
+      <p class="kicker">Our apps</p>
+      <div class="grid">
+        <a class="card" href="/blockandread/"><b>Block&amp;Read</b><span>Blocks your apps until you read a few pages.</span></a>
+        <a class="card" href="/facecheck/"><b>FaceCheck</b><span>Face symmetry, analyzed on your iPhone.</span></a>
+        <a class="card" href="/charlatan/"><b>Charlatan</b><span>Automatic subtitles for your videos.</span></a>
+        <a class="card" href="/guardianreader/"><b>Guardian Reader</b><span>Kids earn screen time by reading out loud.</span></a>
+        <a class="card" href="/fixyourlife/"><b>Fix Your Life</b><span>An alarm that asks you the hard questions.</span></a>
+        <a class="card" href="/chartmaker/"><b>Chart Maker</b><span>Turns a CSV into an animated ranking video.</span></a>
+      </div>
+
+      <footer>
+        <a href="/projects.html">All projects</a>
+        <a href="mailto:hola@dezeo.lat">hola@dezeo.lat</a>
+        <a href="https://www.instagram.com/dezeocreativestudio/" target="_blank" rel="noopener">Instagram</a>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+  // Quien cae acá venía a alguna parte. Si esa parte era una de nuestras
+  // landings, el primer botón lo devuelve ahí y no a la portada del estudio.
+  (function () {
+    var CONOCIDOS = {
+      blockandread: 'Block&Read',
+      facecheck: 'FaceCheck',
+      charlatan: 'Charlatan',
+      guardianreader: 'Guardian Reader',
+      fixyourlife: 'Fix Your Life',
+      chartmaker: 'Chart Maker',
+      currencyflow: 'CurrencyFlow'
+    };
+    var ruta = location.pathname.replace(/^\/+/, '');
+    var seccion = ruta.split('/')[0];
+    var nombre = CONOCIDOS[seccion];
+
+    if (nombre) {
+      var b = document.getElementById('principal');
+      b.textContent = 'Back to ' + nombre + ' →';
+      b.setAttribute('href', '/' + seccion + '/');
+      document.getElementById('titulo').textContent = 'That ' + nombre + ' page never shipped.';
+      document.getElementById('bajada').textContent =
+        'The link is broken, the page moved, or it was never here to begin with. ' +
+        nombre + ' itself is alive and well.';
+    }
+
+    if (ruta) {
+      var p = document.getElementById('ruta');
+      // Una ruta puede venir de cualquier largo; sin recortar, un enlace roto
+      // absurdamente largo empuja media página hacia abajo.
+      var visible = '/' + ruta;
+      if (visible.length > 90) visible = visible.slice(0, 90) + '…';
+      // textContent, no innerHTML: la ruta la escribe quien visita, no nosotros.
+      p.querySelector('code').textContent = visible;
+      p.style.display = 'block';
+    }
+  })();
+  </script>
+</body>
+</html>
