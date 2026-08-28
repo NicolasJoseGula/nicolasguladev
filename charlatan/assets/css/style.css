@@ -537,14 +537,18 @@ section { padding: 78px 0; }
   .site-header .container { height: 56px; padding-left: 16px; }
 }
 
-/* La barra flotante es transparente, asi que el borde superior del hero quedaba
-   a la vista como una linea. El hero se sube por detras de la pastilla con un
-   margen negativo y recupera su posicion con un borde superior transparente:
-   el fondo se pinta por debajo del borde, asi que el degradado sube con el. */
+/* La barra sale del flujo (fixed), asi el hero empieza en el tope de la pagina
+   y su fondo es continuo: no hay franja por encima con la que hacer costura.
+   El borde superior transparente devuelve al contenido su posicion, y
+   background-origin: border-box hace que el degradado se calcule sobre la caja
+   completa — sin eso, se calcula sobre la caja interna y el area del borde
+   queda pintada distinto, que era justo la raya que se veia. */
 :root { --nav-h: 94px; }
+.site-header { position: fixed; top: 0; left: 0; right: 0; }
 .hero, .article-hero {
-  margin-top: calc(-1 * var(--nav-h));
   border-top: var(--nav-h) solid transparent;
+  background-origin: border-box;
+  background-clip: border-box;
 }
 @media (max-width: 560px) { :root { --nav-h: 76px; } }
 
@@ -554,3 +558,8 @@ section { padding: 78px 0; }
 .site-nav a { white-space: nowrap; }
 .site-header .container, .site-header .wrap { max-width: 1140px; }
 @media (min-width: 1024px) { .site-nav { gap: 20px; } }
+
+/* La barra fija ocupa todo el ancho pero solo se ve la pastilla: sin esto, la
+   franja transparente de los costados se comeria los clics del hero. */
+.site-header { pointer-events: none; }
+.site-header .container, .site-header .wrap { pointer-events: auto; }
