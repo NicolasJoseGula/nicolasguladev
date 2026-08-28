@@ -33,7 +33,7 @@
     <div class="article-hero">
       <div class="container-narrow">
         <h1>Privacy Policy</h1>
-        <p class="lede">FaceCheck for iOS · Effective date: [DATE OF PUBLICATION] · Last reviewed: August 27, 2026</p>
+        <p class="lede">FaceCheck for iOS · Last reviewed: August 27, 2026</p>
       </div>
     </div>
 
@@ -47,7 +47,7 @@
         </div>
 
         <h2>1. Who this policy covers</h2>
-        <p>This policy applies to the <strong>FaceCheck iOS application</strong> published by [LEGAL ENTITY NAME] ("we", "us"), and to this website at dezeo.lat/facecheck.</p>
+        <p>This policy applies to the <strong>FaceCheck iOS application</strong> published by Nicolas Gula ("we", "us"), and to this website at dezeo.lat/facecheck.</p>
         <p>It does not cover the App Store itself. Your download, purchase and payment are handled by Apple under <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple's Privacy Policy</a>, and we never receive your payment details.</p>
 
         <h2>2. Photos: what happens to them</h2>
@@ -121,30 +121,10 @@
         <p>If the app's data practices change, this page will be updated before the change ships, and the effective date above will change with it. Material changes will also be noted in the App Store release notes.</p>
 
         <h2>14. Contact</h2>
-        <p>[LEGAL ENTITY NAME]<br>
+        <p>Nicolas Gula<br>
         [POSTAL ADDRESS, if required in your jurisdiction]<br>
         [SUPPORT EMAIL]</p>
         <p>Governing law: [JURISDICTION].</p>
-
-        <div class="how-box">
-          <h3>Reviewer notes (remove before publication)</h3>
-          <p><strong>Verified against the source code</strong> on August 27, 2026. Every factual claim above was checked:</p>
-          <ul>
-            <li><strong>No networking:</strong> no <code>URLSession</code>, <code>URLRequest</code> or any network API appears anywhere in the app's source.</li>
-            <li><strong>No third-party code:</strong> no Swift Package, CocoaPods or Carthage manifest exists; the only imports are Apple frameworks (Vision, CoreML, PhotosUI, StoreKit, FoundationModels, SwiftUI, UIKit, Foundation, CoreGraphics).</li>
-            <li><strong>Reading history added on August 27, 2026.</strong> <code>ReadingStore</code> writes an <code>index.json</code> plus one JPEG per reading into the app's Application Support folder. Sections 4, 9 and 10 were rewritten for this; the earlier claim that nothing was persisted is no longer true and must not be reinstated.</li>
-            <li><strong>The full-size photo is still never written to disk.</strong> Only a 200×200 square JPEG at quality 0.8 is saved, roughly 10 KB; the original stays in a view-state value and is released when the session ends.</li>
-            <li><strong>The history folder sets <code>isExcludedFromBackup</code></strong>, verified on disk, so thumbnails do not reach iCloud or the user's other devices.</li>
-            <li><strong>Expression and feature are stored as identifiers, not words</strong>, so history entries render in the language the user has set today rather than the one in use when the photo was taken.</li>
-            <li><strong>Still no database, no CloudKit and no network:</strong> the store is plain files, written locally.</li>
-            <li><strong>Local preferences remain exactly three keys:</strong> selected language, onboarding-seen flag, photo purpose.</li>
-            <li><strong>One permission declared:</strong> camera. No photo-library usage description, consistent with the system picker.</li>
-            <li><strong>Apple Intelligence</strong> receives computed measurements only; the image is never passed to it.</li>
-          </ul>
-          <p><strong>Assumptions to correct:</strong> the legal entity is assumed to be the individual developer rather than a company; the jurisdiction is assumed to be the developer's country of residence; the minimum age must be set to whatever age rating is filed in App Store Connect.</p>
-          <p><strong>Not determinable from code:</strong> legal entity name, postal address, governing jurisdiction, support email, response period, and whether the static-hosting provider retains server access logs. Fill the bracketed placeholders before publishing.</p>
-          <p><strong>This draft has not been reviewed by a lawyer.</strong> It is written to be accurate to the code rather than exhaustive, and should be reviewed by a qualified attorney in your jurisdiction before publication.</p>
-        </div>
 
       </div>
     </article>

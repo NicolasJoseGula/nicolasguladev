@@ -33,7 +33,7 @@
     <div class="article-hero">
       <div class="container-narrow">
         <h1>Terms of Use</h1>
-        <p class="lede">FaceCheck for iOS · Effective date: [DATE OF PUBLICATION] · Last reviewed: August 27, 2026</p>
+        <p class="lede">FaceCheck for iOS · Last reviewed: August 27, 2026</p>
       </div>
     </div>
 
@@ -46,7 +46,7 @@
         </div>
 
         <h2>1. Acceptance of these terms</h2>
-        <p>These Terms of Use ("Terms") are an agreement between you and [LEGAL ENTITY NAME] ("we", "us"), the developer of the <strong>FaceCheck</strong> iOS application ("the App") and the operator of this website at dezeo.lat/facecheck ("the Site"). By downloading, installing or using the App, you accept these Terms. If you do not accept them, do not use the App.</p>
+        <p>These Terms of Use ("Terms") are an agreement between you and Nicolas Gula ("we", "us"), the developer of the <strong>FaceCheck</strong> iOS application ("the App") and the operator of this website at dezeo.lat/facecheck ("the Site"). By downloading, installing or using the App, you accept these Terms. If you do not accept them, do not use the App.</p>
         <p>Your download and any purchase are also governed by Apple's <a href="https://www.apple.com/legal/internet-services/itunes/" rel="noopener">Media Services Terms and Conditions</a>, including the Licensed Application End User License Agreement. Where Apple's terms conflict with these Terms in relation to your App Store transaction, Apple's terms control.</p>
 
         <h2>2. Eligibility</h2>
@@ -156,35 +156,10 @@
         <p>If any provision of these Terms is held unenforceable, the rest remains in force. Our failure to enforce a provision is not a waiver of it. These Terms, together with the <a href="../privacypolicy/">Privacy Policy</a>, are the entire agreement between us regarding the App.</p>
 
         <h2>19. Contact</h2>
-        <p>[LEGAL ENTITY NAME]<br>
+        <p>Nicolas Gula<br>
         [POSTAL ADDRESS, if required in your jurisdiction]<br>
         [SUPPORT EMAIL]</p>
         <p>We aim to respond within [RESPONSE PERIOD, e.g. 30 days].</p>
-
-        <div class="how-box">
-          <h3>Reviewer notes (remove before publication)</h3>
-          <p><strong>Verified against the source code</strong> on August 26, 2026. Each commercial and functional claim above traces to a specific finding:</p>
-          <ul>
-            <li><strong>Two non-consumable products, no subscription:</strong> <code>Tier</code> declares exactly <code>quickread</code> and <code>complete</code> in <code>FaceCheck/Store/Store.swift:5-10</code>; <code>Products.storekit</code> lists both as <code>NonConsumable</code> at 4.99 and 6.99, with no subscription group.</li>
-            <li><strong>What each tier unlocks:</strong> five cards gate on <code>hasQuickAccess</code> and one, the facial signature, on <code>hasFullAccess</code> (<code>FaceCheck/Views/ResultsView.swift:192-196</code>). Section 8 lists them exactly as gated.</li>
-            <li><strong>Apple verifies entitlements, we do not:</strong> <code>Transaction.currentEntitlements</code> and <code>AppStore.sync()</code> in <code>Store.swift:56-75</code>. There is no receipt-validation server.</li>
-            <li><strong>Revocation relocks features:</strong> <code>refreshEntitlements()</code> skips transactions with a non-nil <code>revocationDate</code> (<code>Store.swift:58</code>), which is what section 8's last-but-one paragraph describes.</li>
-            <li><strong>No accounts, no termination mechanism:</strong> no authentication, no user record and no remote kill switch exists anywhere in the source. Section 15 is written to match, rather than claiming a suspension right the App cannot exercise.</li>
-            <li><strong>No networking:</strong> the only URL in the entire app is the App Store review link (<code>FaceCheck/Settings/AppInfo.swift:23</code>). No <code>URLSession</code>, no analytics, no tracking.</li>
-            <li><strong>No third-party dependencies:</strong> <code>project.yml</code> declares no packages; only Apple frameworks are imported.</li>
-            <li><strong>Photos are never transmitted.</strong> Since August 27, 2026 the App does persist a reading history on device: a 200×200 thumbnail plus the numeric result per reading, capped at 100 and excluded from backups. Section 5 was rewritten for this; the full-size image is still never written to disk.</li>
-            <li><strong>The language model never sees the photo:</strong> <code>CopyWriter</code> passes computed measurements as text only, with a non-AI fallback path (<code>FaceCheck/Analysis/CopyWriter.swift:33-162</code>). Section 6 states this as a design constraint because it is one.</li>
-            <li><strong>Analysis can fail:</strong> <code>FaceAnalysisError.noFaceDetected</code> and <code>.noLandmarks</code> (<code>FaceCheck/Analysis/FaceAnalyzer.swift:31-62</code>) support the last paragraph of section 4.</li>
-            <li><strong>Sharing is user-initiated:</strong> a <code>ShareLink</code> over a rendered card (<code>ResultsView.swift:122</code>), never automatic.</li>
-            <li><strong>iOS 18 minimum:</strong> <code>project.yml:4-5</code>.</li>
-            <li><strong>Scores are provisional:</strong> the scoring engine documents its anchors and percentile distribution as v0 pending calibration (<code>FaceCheck/Analysis/ScoreEngine.swift:56-58</code>), which is why section 4 disclaims comparability between versions.</li>
-          </ul>
-          <p><strong>Rights deliberately not asserted:</strong> no licence to your photos (we never receive them), no account-suspension right (no accounts exist), no right to disable the App remotely (no such mechanism), and no promise of future features beyond the honest caveat in section 8.</p>
-          <p><strong>Assumptions to correct:</strong> the legal entity is assumed to be the individual developer rather than a company; the jurisdiction and venue are assumed to be the developer's country of residence; no arbitration clause is included; the minimum age must match whatever rating is filed in App Store Connect, and must be at least 13 in the United States and at least 16 in parts of the EEA unless you handle parental consent.</p>
-          <p><strong>Not determinable from code:</strong> legal entity name, postal address, governing law, venue, support email, response period, minimum age, arbitration preference, and whether you want to offer any goodwill remedy beyond Apple's refund process. Fill every bracketed placeholder before publishing.</p>
-          <p><strong>Consistency check:</strong> the placeholders here use the same names as the Privacy Policy, so fill both pages with the same values.</p>
-          <p><strong>This draft has not been reviewed by a lawyer.</strong> It is written to be accurate to the code rather than exhaustive, and should be reviewed by a qualified attorney in your jurisdiction before publication, particularly the liability, warranty and governing-law sections, whose enforceability varies significantly by country.</p>
-        </div>
 
       </div>
     </article>
