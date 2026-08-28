@@ -3,6 +3,3 @@ WinterGames/
 
 # Claude Code: worktrees temporales y config local
 .claude/
-# FaceCheck todavia no se anuncia: vive en el disco, no en el repo.
-facecheck/
-assets/facecheck.*
