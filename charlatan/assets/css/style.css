@@ -82,14 +82,26 @@ body[data-active="es"] [data-lang="es"] { display: revert; }
 
 /* ---------- Header ---------- */
 
+/* Barra flotante: pastilla centrada en vez de franja de borde a borde. */
 .site-header {
   position: sticky; top: 0; z-index: 60;
-  background: rgba(10, 10, 18, .85);
-  backdrop-filter: saturate(160%) blur(14px);
-  -webkit-backdrop-filter: saturate(160%) blur(14px);
-  border-bottom: 1px solid var(--border);
+  background: transparent;
+  border-bottom: none;
+  padding: 16px 0;
 }
-.site-header .container { display: flex; align-items: center; gap: 20px; height: 64px; }
+.site-header .container {
+  position: relative;
+  display: flex; align-items: center; gap: 20px;
+  height: 62px;
+  max-width: 1000px;
+  padding: 0 10px 0 20px;
+  background: rgba(18, 18, 22, .72);
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, .38);
+}
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 19px; letter-spacing: -.02em; color: var(--text); }
 .brand img { width: 32px; height: 32px; border-radius: 8px; }
 .brand .tan { color: var(--pink); }
@@ -511,3 +523,34 @@ section { padding: 78px 0; }
   * { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* El menu desplegable cuelga de la pastilla, no del ancho de la pagina. */
+@media (max-width: 1023px) {
+  .site-nav {
+    top: calc(100% + 8px); left: 0; right: 0;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+  }
+}
+@media (max-width: 560px) {
+  .site-header { padding: 10px 0; }
+  .site-header .container { height: 56px; padding-left: 16px; }
+}
+
+/* La barra flotante es transparente, asi que el borde superior del hero quedaba
+   a la vista como una linea. El hero se sube por detras de la pastilla con un
+   margen negativo y recupera su posicion con un borde superior transparente:
+   el fondo se pinta por debajo del borde, asi que el degradado sube con el. */
+:root { --nav-h: 94px; }
+.hero, .article-hero {
+  margin-top: calc(-1 * var(--nav-h));
+  border-top: var(--nav-h) solid transparent;
+}
+@media (max-width: 560px) { :root { --nav-h: 76px; } }
+
+/* Los enlaces no se parten: en espanol algunos son largos ("La app por dentro")
+   y al envolverse rompian el alto de la pastilla. La pastilla es un poco mas
+   ancha y el espacio entre enlaces algo menor para que entren en una linea. */
+.site-nav a { white-space: nowrap; }
+.site-header .container, .site-header .wrap { max-width: 1140px; }
+@media (min-width: 1024px) { .site-nav { gap: 20px; } }

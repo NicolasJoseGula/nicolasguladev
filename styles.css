@@ -68,16 +68,27 @@ a { color: inherit; text-decoration: none; }
 /* ----------------------------------------------------------------
    Header
    ---------------------------------------------------------------- */
+/* Barra flotante: pastilla centrada, separada del borde, con fondo
+   translucido propio. El header ya no es una franja transparente. */
 .site-header {
-  position: relative;
-  z-index: 1;
+  position: sticky; top: 16px;
+  z-index: 50;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 24px 32px;
+  gap: 20px;
+  width: calc(100% - 40px);
+  max-width: 1000px;
+  margin: 16px auto 0;
+  /* Mas aire a la derecha: el ultimo enlace es texto suelto, no un boton,
+     y pegado al borde de la pastilla se lee apretado. */
+  padding: 10px 28px;
+  background: rgba(18, 18, 22, .72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--line, rgba(255,255,255,.09));
+  border-radius: 18px;
+  box-shadow: 0 10px 34px rgba(0, 0, 0, .38);
 }
 
 .brand { display: flex; align-items: center; gap: 10px; }
@@ -339,7 +350,7 @@ a { color: inherit; text-decoration: none; }
    Small screens
    ---------------------------------------------------------------- */
 @media (max-width: 560px) {
-  .site-header { padding: 20px; }
+  .site-header { padding: 8px 18px; width: calc(100% - 24px); margin-top: 10px; }
   .site-nav { gap: 18px; }
   .hero { padding: 24px 20px 70px; }
   .work { padding: 24px 20px 64px; }
@@ -351,3 +362,12 @@ a { color: inherit; text-decoration: none; }
   padding: 2%;
   background: #000;
 }
+
+/* Misma correccion que en las landings: el hero sube por detras de la pastilla
+   flotante para que no se vea el corte de su fondo. */
+:root { --nav-h: 90px; }
+.hero { margin-top: calc(-1 * var(--nav-h)); border-top: var(--nav-h) solid transparent; }
+@media (max-width: 560px) { :root { --nav-h: 70px; } }
+
+.site-nav a { white-space: nowrap; }
+.site-header { max-width: 1140px; }
