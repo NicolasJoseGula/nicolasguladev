@@ -563,3 +563,9 @@ section { padding: 78px 0; }
    franja transparente de los costados se comeria los clics del hero. */
 .site-header { pointer-events: none; }
 .site-header .container, .site-header .wrap { pointer-events: auto; }
+
+/* Redes, en la columna de marca del pie. */
+.socials { display: flex; gap: 22px; margin-top: 18px; }
+.social-link { color: var(--muted); display: inline-flex; transition: color .18s ease; }
+.social-link:hover { color: var(--pink); }
+.social-link:focus-visible { outline: 2px solid var(--pink); outline-offset: 4px; border-radius: 4px; }
