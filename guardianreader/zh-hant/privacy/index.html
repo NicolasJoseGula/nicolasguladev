@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>隱私政策 — Guardian Reader</title>
-<meta name="description" content="Guardian Reader 不收集任何個人數據。沒有帳戶，沒有伺服器，不做追蹤。孩子的聲音和書頁照片絕不會離開 iPhone。">
+<meta name="description" content="Guardian Reader 不收集任何個人數據。沒有帳戶，沒有伺服器，不做追蹤。孩子的聲音和書頁照片絕不會離開手機。">
 <link rel="canonical" href="https://dezeo.lat/guardianreader/zh-hant/privacy/">
 <link rel="alternate" hreflang="en" href="https://dezeo.lat/guardianreader/privacypolicy/">
 <link rel="alternate" hreflang="es" href="https://dezeo.lat/guardianreader/es/privacidad/">
@@ -24,7 +24,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:title" content="隱私政策 — Guardian Reader">
-<meta property="og:description" content="Guardian Reader 不收集任何個人數據。沒有帳戶，沒有伺服器，不做追蹤。孩子的聲音和書頁照片絕不會離開 iPhone。">
+<meta property="og:description" content="Guardian Reader 不收集任何個人數據。沒有帳戶，沒有伺服器，不做追蹤。孩子的聲音和書頁照片絕不會離開手機。">
 <meta property="og:url" content="https://dezeo.lat/guardianreader/zh-hant/privacy/">
 <meta property="og:image" content="https://dezeo.lat/guardianreader/assets/img/guardian-reader-icon.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -55,8 +55,8 @@
         <a href="/guardianreader/zh/">首頁</a><span>/</span>隱私
       </nav>
       <h1>隱私政策</h1>
-      <p class="lede">Guardian Reader 不收集你的數據。沒有帳戶，沒有我們的伺服器，也沒有分析統計。App 所做的一切都發生在你的 iPhone 上。這一頁把這件事講清楚，因為一個會聽孩子朗讀的 App，本來就該給你一個準確的答復。</p>
-      <p class="meta">最後更新 2026-08-14</p>
+      <p class="lede">Guardian Reader 不收集你的數據。沒有帳戶，沒有我們的伺服器，也沒有分析統計。App 所做的一切都發生在你的手機上。這一頁把這件事講清楚，因為一個會聽孩子朗讀的 App，本來就該給你一個準確的答復。</p>
+      <p class="meta">最後更新 2026-09-05 · 涵蓋 iOS 與 Android 版 App</p>
     </div>
   </div>
   <article class="article">
@@ -70,32 +70,35 @@
         <li>閱讀記錄留在設備上。</li>
         <li>沒有廣告，沒有追蹤，也沒有第三方分析。</li>
         <li>設置里有一個按鈕，位於家長 PIN 之後，可以清除朗讀記錄。</li>
-        <li>朗讀記錄及其轉寫文字和孩子的照片不會進入 iPhone 備份；設置和孩子的名字仍會隨備份一起走。</li>
+        <li>在 iPhone 上，朗讀記錄和孩子的照片不會進入設備備份；設置和孩子的名字仍會隨備份一起走。在 Android 上，App 則完全退出設備備份。</li>
       </ul>
 
       <h2>麥克風</h2>
       <p>朗讀進行時，Guardian Reader 通過麥克風聆聽，把讀出的詞轉寫成文字。轉寫由 Apple 的設備端語音識別在本機完成。沒有音頻被寫入磁盤、發送給我們或發送給任何第三方。麥克風只在朗讀期間工作，朗讀結束就停止。</p>
       <p>一次朗讀轉寫出的文字會保存在設備上，用於顯示在你的閱讀記錄里，以及你自己選擇生成並分享的 PDF 導出中。</p>
       <p>在 iOS 26 及更高版本上，轉寫通過 Apple 的設備端語音分析器完成，只需要麥克風。在 iOS 18 到 25 上使用 Apple 早期的語音識別，iOS 將其視為單獨的權限，因此 App 還會請求「語音識別」；它被強制為設備端模式，所以音頻同樣不會發送給 Apple。App 還聲明瞭後台音頻模式，以便朗讀途中螢幕鎖定時會話仍能繼續聆聽。</p>
+      <p>在 Android 上，轉寫由手機的語音識別服務完成（在大多數手機上是 Google 的「語音服務」）。App 明確請求離線識別，並在初始設置時請你下載設備端語言模型，因此朗讀是在手機上用該模型轉寫的。音頻由該系統服務按其供應商自己的條款處理；Guardian Reader 本身絕不錄制、存儲或傳輸任何音頻。</p>
 
       <h2>相機</h2>
-      <p>相機用於拍攝孩子即將朗讀的書頁，讓 App 能提取其中的文字並與朗讀進行比對。文字識別在設備上完成。照片僅在內存中用於這一目的：不會保存到你的照片圖庫，App 不會存儲它，也不會傳輸到任何地方。</p>
+      <p>相機用於拍攝孩子即將朗讀的書頁，讓 App 能提取其中的文字並與朗讀進行比對。文字識別在設備上完成：iOS 上使用 Apple 的 Vision 框架，Android 上使用 Google 的 ML Kit 文字識別，其模型隨 App 一起打包，無需網絡即可運行。照片僅在內存中用於這一目的：不會保存到你的照片圖庫，App 不會存儲它，也不會傳輸到任何地方。</p>
 
-      <h2>螢幕使用時間與被鎖定的 App</h2>
-      <p>Guardian Reader 使用 Apple 的 Family Controls 和 Managed Settings 框架來鎖定和解鎖你選擇的 App。Apple 以不透明令牌的形式把這些選擇交給 App：App 可以對它們施加限制，但看不到具體是哪些 App，我們同樣看不到。通過 Family Controls 獲得的設備或使用數據，僅用於提供 App 的家長控制功能，絕不會與任何人分享。</p>
+      <h2>被鎖定的 App</h2>
+      <p>在 iOS 上，Guardian Reader 使用 Apple 的 Family Controls 和 Managed Settings 框架來鎖定和解鎖你選擇的 App。Apple 以不透明令牌的形式把這些選擇交給 App：App 可以對它們施加限制，但看不到具體是哪些 App，我們同樣看不到。通過 Family Controls 獲得的設備或使用數據，僅用於提供 App 的家長控制功能，絕不會與任何人分享。</p>
+      <p>Android 上沒有等效的框架，因此 Guardian Reader 在徵得你明確同意後，使用無障礙服務作為鎖定機制。當前台 App 發生變化時，Android 會通知該服務，服務只使用這一條訊息——當前螢幕上那個 App 的包名——把它與你的鎖定 App 列表比對，並在鎖定的 App 被打開時返回主螢幕。這就是它的全部用途：App 鎖定功能。這條訊息只在內存中處理，除當次檢查外絕不存儲，絕不離開手機，也不用於任何其他目的。App 還會請求「顯示在其他應用上層」的權限，僅用於在鎖定的 App 被攔下時顯示「該讀書了」的畫面。</p>
 
       <h2>保存在你設備上的數據</h2>
-      <p>以下內容留在你的 iPhone 上，不會發送到任何地方：你的朗讀記錄（日期、時長、頁數、一致率和轉寫文字）、你的設置、閱讀計劃的回答、你添加過的孩子姓名和照片，以及你的家長 PIN。PIN 僅以加密哈希的形式保存在 iOS 鑰匙串中。</p>
-      <p>刪除 App 會移除 App 本身及其容器內的一切：朗讀記錄、設置、計劃答案，以及孩子的名字和照片。家長 PIN 是例外，因為 iOS 在 App 被刪除後仍會保留鑰匙串項目，保存在該 iPhone 上的 PIN 可能在重新安裝後依然存在。要清除它，請在刪除前於 App 內更改 PIN，或抹掉設備。</p>
+      <p>以下內容留在你的手機上，不會發送到任何地方：你的朗讀記錄（日期、時長、頁數、一致率和轉寫文字）、你的設置、閱讀計劃的回答、你添加過的孩子姓名和照片，以及你的家長 PIN。PIN 僅以加密哈希的形式保存：iPhone 上存放在 iOS 鑰匙串中，Android 上存放在 App 的私有存儲中。</p>
+      <p>刪除 App 會移除 App 本身及其容器內的一切：朗讀記錄、設置、計劃答案，以及孩子的名字和照片。在 iPhone 上，家長 PIN 是例外，因為 iOS 在 App 被刪除後仍會保留鑰匙串項目，保存在該 iPhone 上的 PIN 可能在重新安裝後依然存在。要清除它，請在刪除前於 App 內更改 PIN，或抹掉設備。在 Android 上，卸載 App 會把 PIN 哈希連同其他一切一併移除。</p>
 
       <h2>設備備份</h2>
-      <p>Guardian Reader 不會向我們發送任何內容，而且現在會把自己的朗讀數據標記為排除在你為 iPhone 所做的備份之外：存放朗讀記錄及其轉寫文字的數據庫，以及孩子的照片，都帶有讓 iOS 把它們排除在 iCloud 和電腦備份之外的標記。仍會進入備份的是 App 的設置，iOS 把它們放在標準的偏好設置文件里，App 無法排除：頁數目標、獎勵時長、嚴格程度、語言、計劃答案，以及你填過的孩子的名字。家長 PIN 保存在 iOS 鑰匙串中，遵循 Apple 對鑰匙串的規則，而不是我們的規則。任何副本都屬於你，受你的 Apple 帳戶和 Apple 的條款約束。若要把 App 完全排除在備份之外，請依次進入「設置、你的姓名、iCloud、管理儲存空間、備份」，關閉 Guardian Reader。</p>
+      <p>Guardian Reader 不會向我們發送任何內容，而且在 iPhone 上會把自己的朗讀數據標記為排除在你為設備所做的備份之外：存放朗讀記錄及其轉寫文字的數據庫，以及孩子的照片，都帶有讓 iOS 把它們排除在 iCloud 和電腦備份之外的標記。仍會進入備份的是 App 的設置，iOS 把它們放在標準的偏好設置文件里，App 無法排除：頁數目標、獎勵時長、嚴格程度、語言、計劃答案，以及你填過的孩子的名字。家長 PIN 保存在 iOS 鑰匙串中，遵循 Apple 對鑰匙串的規則，而不是我們的規則。任何副本都屬於你，受你的 Apple 帳戶和 Apple 的條款約束。若要把 App 完全排除在備份之外，請依次進入「設置、你的姓名、iCloud、管理儲存空間、備份」，關閉 Guardian Reader。</p>
+      <p>在 Android 上，App 完全退出設備備份：Guardian Reader 存儲的任何內容，連設置也不例外，都不會進入 Google 或手機廠商的備份。</p>
 
       <h2>抹掉你的數據</h2>
       <p>設置里有一個「你的數據」欄目，其中的按鈕可以清除朗讀記錄。它位於家長 PIN 之後，會先要求確認，然後刪除設備上保存的所有朗讀記錄及其轉寫文字。同一個確認窗口還可以一並刪除孩子的名字和照片。刪除無法撤銷，其他地方也不會留下副本：由於我們這邊沒有任何伺服器，也就沒有可以提出刪除請求的對象。其餘內容在你刪除 App 時一並清除，PIN 的例外情況見上文。</p>
 
       <h2>購買</h2>
-      <p>Guardian Reader 高級版通過 Apple 的 App 內購買系統銷售。付款和訂閱管理完全由 Apple 處理，我們從不接觸你的支付訊息。App 會向 Apple 查詢購買是否有效。該交易適用 Apple 自己的隱私政策。</p>
+      <p>Guardian Reader 高級版在 iOS 上通過 Apple 的 App 內購買系統銷售，在 Android 上通過 Google Play 的結算系統銷售。付款和訂閱管理完全由 Apple 或 Google 處理，我們從不接觸你的支付訊息。App 會向商店查詢購買是否有效。這些交易適用 Apple 和 Google 各自的隱私政策。</p>
 
       <h2>兒童隱私</h2>
       <p>Guardian Reader 的設計前提是由家長或監護人設置、由孩子使用。由於 App 不從任何人收集個人訊息，自然也不會從兒童收集。我們不會有意收集、存儲或傳輸兒童的任何訊息，也沒有任何需要兒童註冊的東西。</p>

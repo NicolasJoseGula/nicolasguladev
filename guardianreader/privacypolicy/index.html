@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Privacy Policy — Guardian Reader</title>
-<meta name="description" content="Guardian Reader collects no personal data. No account, no servers, no tracking. Your child's voice and the photos of book pages never leave the iPhone.">
+<meta name="description" content="Guardian Reader collects no personal data. No account, no servers, no tracking. Your child's voice and the photos of book pages never leave the phone.">
 <link rel="canonical" href="https://dezeo.lat/guardianreader/privacypolicy/">
 <link rel="alternate" hreflang="en" href="https://dezeo.lat/guardianreader/privacypolicy/">
 <link rel="alternate" hreflang="es" href="https://dezeo.lat/guardianreader/es/privacidad/">
@@ -24,7 +24,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Privacy Policy — Guardian Reader">
-<meta property="og:description" content="Guardian Reader collects no personal data. No account, no servers, no tracking. Your child's voice and the photos of book pages never leave the iPhone.">
+<meta property="og:description" content="Guardian Reader collects no personal data. No account, no servers, no tracking. Your child's voice and the photos of book pages never leave the phone.">
 <meta property="og:url" content="https://dezeo.lat/guardianreader/privacypolicy/">
 <meta property="og:image" content="https://dezeo.lat/guardianreader/assets/img/guardian-reader-icon.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -55,8 +55,8 @@
         <a href="/guardianreader/">Home</a><span>/</span>Privacy Policy
       </nav>
       <h1>Privacy Policy</h1>
-      <p class="lede">Guardian Reader does not collect your data. There is no account, no server of ours, and no analytics. Everything the app does happens on your iPhone. This page explains that in detail, because an app that listens to a child reading owes you a precise answer.</p>
-      <p class="meta">Last updated 2026-08-14</p>
+      <p class="lede">Guardian Reader does not collect your data. There is no account, no server of ours, and no analytics. Everything the app does happens on your phone. This page explains that in detail, because an app that listens to a child reading owes you a precise answer.</p>
+      <p class="meta">Last updated 2026-09-05 · Covers the iOS and Android apps</p>
     </div>
   </div>
   <article class="article">
@@ -70,32 +70,35 @@
         <li>Reading history stays on the device.</li>
         <li>There is no advertising, no tracking and no third-party analytics.</li>
         <li>Settings has a button, behind the parent PIN, that erases the reading history.</li>
-        <li>Reading sessions and the child's photo are kept out of your iPhone's backup; your settings and the child's name still travel in it.</li>
+        <li>On iPhone, reading sessions and the child's photo are kept out of the device backup; your settings and the child's name still travel in it. On Android, the app opts out of device backups entirely.</li>
       </ul>
 
       <h2>Microphone</h2>
       <p>While a reading session is running, Guardian Reader listens through the microphone so it can transcribe the words being read. The transcription is performed on the device by Apple's on-device speech recognition. No audio is written to disk, sent to us, or sent to any third party. The microphone is active only during a session and stops when the session ends.</p>
       <p>The transcribed text of a session is stored on the device so it can appear in your reading history and in the optional PDF export that you choose to generate and share.</p>
       <p>On iOS 26 and later the transcription runs through Apple's on-device speech analyser and needs only the microphone. On iOS 18 to 25 it uses Apple's earlier speech recognition, which iOS treats as a separate permission, so the app also asks for Speech Recognition; it is forced into on-device mode, so no audio goes to Apple either. The app declares the background audio mode as well, which lets a session keep listening if the screen locks in the middle of a reading.</p>
+      <p>On Android the transcription is performed by the phone's speech recognition service (on most phones, Speech Services by Google). The app explicitly requests offline recognition and asks you to download the on-device language model during setup, so the reading is transcribed on the phone with that model. The audio is handled by that system service under its own vendor's terms; Guardian Reader itself never records, stores or transmits any audio.</p>
 
       <h2>Camera</h2>
-      <p>The camera is used to photograph the pages your child is about to read, so the app can extract their text and compare it with the reading. Text recognition happens on the device. The photo is used in memory for that purpose and is not saved to your photo library, not stored by the app and not transmitted anywhere.</p>
+      <p>The camera is used to photograph the pages your child is about to read, so the app can extract their text and compare it with the reading. Text recognition happens on the device: Apple's Vision framework on iOS, and Google's ML Kit text recognition on Android, whose models ship inside the app and run without a network. The photo is used in memory for that purpose and is not saved to your photo library, not stored by the app and not transmitted anywhere.</p>
 
-      <h2>Screen Time and blocked apps</h2>
-      <p>Guardian Reader uses Apple's Family Controls and Managed Settings frameworks to lock and unlock the apps you select. Apple provides these selections to the app as opaque tokens: the app can apply restrictions to them, but it cannot see which apps they are, and neither can we. Device or usage data obtained through the Family Controls framework is used solely to provide the app's parental control features, and is never shared with anyone.</p>
+      <h2>Blocked apps</h2>
+      <p>On iOS, Guardian Reader uses Apple's Family Controls and Managed Settings frameworks to lock and unlock the apps you select. Apple provides these selections to the app as opaque tokens: the app can apply restrictions to them, but it cannot see which apps they are, and neither can we. Device or usage data obtained through the Family Controls framework is used solely to provide the app's parental control features, and is never shared with anyone.</p>
+      <p>On Android there is no equivalent framework, so Guardian Reader uses an accessibility service, with your explicit consent, as its blocking mechanism. The service is notified by Android when the app in the foreground changes, and it uses that single piece of information, the package name of the app now on screen, to check it against your list of locked apps and return to the home screen when a locked app is opened. That is the entire use: the app blocking feature. The information is processed in memory, is never stored beyond the current check, never leaves the phone, and is not used for anything else. The app also asks for permission to display over other apps, which is used only to show the "time to read" screen when a locked app is blocked.</p>
 
       <h2>Data stored on your device</h2>
-      <p>The following stays on your iPhone and is not sent anywhere: your reading sessions (date, duration, pages, match percentage and transcribed text), your settings, your reading plan answers, the child's name and photo if you added them, and your parent PIN, which is stored only as a cryptographic hash in the iOS Keychain.</p>
-      <p>Deleting the app removes the app and everything inside its container: sessions, settings, plan answers, and the child's name and photo. The parent PIN is the exception, because iOS keeps Keychain items after an app is deleted, so a PIN saved on that iPhone can survive a reinstall. To clear it, change it from inside the app before deleting, or erase the device.</p>
+      <p>The following stays on your phone and is not sent anywhere: your reading sessions (date, duration, pages, match percentage and transcribed text), your settings, your reading plan answers, the child's name and photo if you added them, and your parent PIN, which is stored only as a cryptographic hash, in the iOS Keychain on iPhone and in the app's private storage on Android.</p>
+      <p>Deleting the app removes the app and everything inside its container: sessions, settings, plan answers, and the child's name and photo. On iPhone the parent PIN is the exception, because iOS keeps Keychain items after an app is deleted, so a PIN saved on that iPhone can survive a reinstall; to clear it, change it from inside the app before deleting, or erase the device. On Android uninstalling removes the PIN hash along with everything else.</p>
 
       <h2>Device backups</h2>
-      <p>Guardian Reader sends nothing to us, and it now marks its own reading data as excluded from the backup you make of your iPhone: the database that holds the reading sessions and their transcribed text, and the child's photo, carry the flag that tells iOS to leave them out of iCloud and computer backups. What still travels in the backup is the app's settings, which iOS keeps in the standard preferences file that an app cannot exclude: the page goal, the reward, the strictness, the language, the plan answers, and the child's name if you typed one. The parent PIN lives in the iOS Keychain and follows Apple's rules for the Keychain, not ours. Any copy is yours and sits under your Apple account and Apple's terms. To leave the app out of backups entirely, turn Guardian Reader off in Settings, your name, iCloud, Manage Storage, Backups.</p>
+      <p>Guardian Reader sends nothing to us, and on iPhone it marks its own reading data as excluded from the backup you make of the device: the database that holds the reading sessions and their transcribed text, and the child's photo, carry the flag that tells iOS to leave them out of iCloud and computer backups. What still travels in the backup is the app's settings, which iOS keeps in the standard preferences file that an app cannot exclude: the page goal, the reward, the strictness, the language, the plan answers, and the child's name if you typed one. The parent PIN lives in the iOS Keychain and follows Apple's rules for the Keychain, not ours. Any copy is yours and sits under your Apple account and Apple's terms. To leave the app out of backups entirely, turn Guardian Reader off in Settings, your name, iCloud, Manage Storage, Backups.</p>
+      <p>On Android the app opts out of device backups altogether: nothing Guardian Reader stores, not even its settings, is included in Google or manufacturer backups.</p>
 
       <h2>Erasing your data</h2>
       <p>Settings has a section, Your data, with a button that erases the reading history. It sits behind the parent PIN, it asks for confirmation, and it deletes every session saved on the device along with its transcribed text. The same confirmation can erase the child's name and photo as well. There is no undo and no copy anywhere else: because nothing sits on a server of ours, there is also nobody to write to for a deletion request. Deleting the app removes what is left, with the caveat about the PIN noted above.</p>
 
       <h2>Purchases</h2>
-      <p>Guardian Reader Premium is sold through Apple's In-App Purchase system. Payments and subscription management are handled entirely by Apple; we never see your payment details. The app checks with Apple whether a purchase is active. Apple's own privacy policy governs that transaction.</p>
+      <p>Guardian Reader Premium is sold through Apple's In-App Purchase system on iOS and through Google Play's billing system on Android. Payments and subscription management are handled entirely by Apple or Google; we never see your payment details. The app checks with the store whether a purchase is active. Apple's and Google's own privacy policies govern those transactions.</p>
 
       <h2>Children's privacy</h2>
       <p>Guardian Reader is designed to be configured by a parent or guardian and used by a child. Because the app collects no personal information from anyone, it collects none from children either. We do not knowingly gather, store or transmit any information from a child, and there is nothing for a child to sign up for.</p>
