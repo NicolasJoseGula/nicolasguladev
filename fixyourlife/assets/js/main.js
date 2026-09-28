@@ -3,6 +3,68 @@
 (function () {
   document.documentElement.classList.add("js");
 
+  // ---------------------------------------------------------------------
+  // Local prices. prices.json (written by sync_prices.py from App Store
+  // Connect) holds every country's weekly, yearly and lifetime price in its
+  // own currency. The visitor's country comes from the time zone, or failing
+  // that from the language region; with neither, the page keeps its USD
+  // prices and USD note.
+  // ---------------------------------------------------------------------
+  var scriptSrc = document.currentScript && document.currentScript.src;
+
+  function detectCountry(zones) {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+      if (tz && zones[tz]) return zones[tz];
+    } catch (e) {}
+    var langs = navigator.languages || [navigator.language || ""];
+    for (var i = 0; i < langs.length; i++) {
+      var m = /-([A-Za-z]{2})(?:-|$)/.exec(langs[i] || "");
+      if (m) return m[1].toUpperCase();
+    }
+    return null;
+  }
+
+  function applyPrices(data) {
+    var country = detectCountry(data.tz || {});
+    var row = country && data.prices && data.prices[country];
+    if (!row) return;
+    var lang = document.documentElement.lang || "en";
+    var currency = row[0];
+    function format(value) {
+      var opts = { style: "currency", currency: currency };
+      if (Math.round(value) === value) opts.minimumFractionDigits = 0;
+      try { return new Intl.NumberFormat(lang, opts).format(value); }
+      catch (e) { return currency + " " + value; }
+    }
+    var digits = 2;
+    try { digits = new Intl.NumberFormat("en", { style: "currency", currency: currency }).resolvedOptions().maximumFractionDigits; } catch (e) {}
+    var values = {
+      free: 0, weekly: row[1], yearly: row[2], lifetime: row[3],
+      perweek: Number((row[2] / 52).toFixed(digits))
+    };
+    document.querySelectorAll("[data-price]").forEach(function (el) {
+      var key = el.getAttribute("data-price");
+      if (key in values) el.textContent = format(values[key]);
+    });
+    var usd = document.querySelector('[data-note="usd"]');
+    var local = document.querySelector('[data-note="local"]');
+    if (usd && local) {
+      var name = country;
+      try { name = new Intl.DisplayNames([lang], { type: "region" }).of(country) || country; } catch (e) {}
+      local.textContent = (local.getAttribute("data-template") || "").replace("%@", name);
+      local.hidden = false;
+      usd.hidden = true;
+    }
+  }
+
+  if (scriptSrc && document.querySelector("[data-price]") && window.fetch) {
+    fetch(new URL("prices.json", scriptSrc))
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) { if (data) applyPrices(data); })
+      .catch(function () {});
+  }
+
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Deterministic noise (splitmix-style) so every visit draws the same year,
