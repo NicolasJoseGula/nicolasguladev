@@ -61,7 +61,7 @@ var projects = [
   {
     name: "Fix Your Life",
     image: "assets/fixyourlife.jpg",
-    description: "An alarm that wakes you to the present with confronting questions.",
+    description: "Alarms that ask you questions, and habits you can see: your own photos, streaks and the whole year in color.",
     url: "fixyourlife/",
     platform: "ios"
   },
