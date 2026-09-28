@@ -4,15 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Block&amp;Read — The App Blocker That Makes You Read</title>
-  <meta name="description" content="Block&amp;Read puts a book in front of Instagram, TikTok and the apps that eat your day. Read a few pages and your apps unlock. App blocker + EPUB reader in one. Free classics in English &amp; Spanish.">
+  <meta name="description" content="Block&amp;Read puts a book in front of Instagram, TikTok and the apps that eat your day. Read a few pages and your apps unlock. An app blocker and a reader for EPUB, PDF and comics, on wooden shelves. Free to start.">
   <link rel="canonical" href="https://dezeo.lat/blockandread/">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#0a0a0c">
+  <meta name="theme-color" content="#110b07">
   <link rel="icon" type="image/png" href="assets/img/blockread-icon.png">
   <link rel="apple-touch-icon" href="assets/img/blockread-icon.png">
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/landing.css">
+  <link rel="preload" as="image" href="assets/img/import-your-own-epubs.webp" type="image/webp">
 
-  <!-- Open Graph -->
+  <!-- Open Graph. Social crawlers still read PNG more reliably than WebP. -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Block&amp;Read">
   <meta property="og:title" content="Block&amp;Read — The App Blocker That Makes You Read">
@@ -25,29 +27,26 @@
   <meta name="twitter:image" content="https://dezeo.lat/blockandread/assets/img/app-blocker-read-to-unlock.png">
   <meta name="apple-itunes-app" content="app-id=6788574367">
 
-  <!-- Structured data: app + FAQ -->
+  <!-- Structured data: app + FAQ. The FAQ block mirrors the visible FAQ
+       below word for word; search engines ignore it when the two differ. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
     "name": "Block&Read",
-    "operatingSystem": "iOS",
+    "operatingSystem": "iOS, iPadOS",
     "applicationCategory": "UtilitiesApplication",
-    "description": "Block&Read puts a book in front of the apps that pull you in. Choose your distractions — Instagram, TikTok, whatever eats your day — and when you reach for one, a book appears instead. Read a few pages, and your apps unlock. A beautiful e-reader and an app blocker in one.",
+    "description": "Block&Read puts a book in front of the apps that pull you in. Choose your distractions and, when you reach for one, a book appears instead. Read a few pages and your apps unlock. An app blocker and a reader for EPUB, PDF and comics, with bookmarks, highlights and notes.",
     "url": "https://dezeo.lat/blockandread/",
     "image": "https://dezeo.lat/blockandread/assets/img/blockread-icon.png",
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "USD",
-      "description": "Free: block up to two apps, shelf of public-domain classics in English and Spanish, streaks and stats. Premium: unlimited apps, import your own EPUBs, search 75,000+ classics, schedules, themes and insights."
-    },
+    "offers": [
+      { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Premium Monthly", "price": "4.99", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Premium Yearly", "price": "24.99", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Premium Lifetime", "price": "39.99", "priceCurrency": "USD" }
+    ],
     "inLanguage": ["en", "es"],
-    "publisher": {
-      "@type": "Organization",
-      "name": "dezeo",
-      "url": "https://dezeo.lat/"
-    }
+    "publisher": { "@type": "Organization", "name": "dezeo", "url": "https://dezeo.lat/" }
   }
   </script>
   <script type="application/ld+json">
@@ -55,81 +54,54 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is Block&Read?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Block&Read is an iPhone app that combines an app blocker with a full EPUB reader. You choose the apps that eat your time — Instagram, TikTok, games — and when you try to open one, a book appears instead. Read a few pages to your daily goal and your apps unlock." }
-      },
-      {
-        "@type": "Question",
-        "name": "How does read-to-unlock work?",
-        "acceptedAnswer": { "@type": "Answer", "text": "When you tap a blocked app, Block&Read intercepts it and opens your current book. Read the pages you set as your daily goal — a page or two is enough — and every blocked app unlocks for the day. Finish the pages, unlock the world." }
-      },
-      {
-        "@type": "Question",
-        "name": "Which apps can I block?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Any app on your iPhone: social media, video, games, whatever pulls you in. The free plan blocks up to two apps; Premium blocks unlimited apps and adds blocking schedules." }
-      },
-      {
-        "@type": "Question",
-        "name": "What is Strict Mode?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Strict Mode removes the easy way out. Other blockers let you dismiss the block or wait a timer; with Strict Mode on, the only path to your apps is through the pages. No skip button, no override." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I import my own EPUB books?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Premium lets you import your own EPUB files and search a catalog of 75,000+ public-domain classics. Your library is backed up privately to your own iCloud." }
-      },
-      {
-        "@type": "Question",
-        "name": "What books are included for free?",
-        "acceptedAnswer": { "@type": "Answer", "text": "A curated shelf of public-domain classics in English and Spanish — Austen, Brontë, Cervantes and more — ready to read at no cost. Premium adds search across 75,000+ classics and your own EPUBs." }
-      },
-      {
-        "@type": "Question",
-        "name": "Does Block&Read track my data?",
-        "acceptedAnswer": { "@type": "Answer", "text": "No. There are no accounts, no analytics and no tracking. Everything stays on your device or in your own private iCloud. Your reading is nobody's business but yours." }
-      },
-      {
-        "@type": "Question",
-        "name": "How much does Block&Read cost?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Free: block up to two apps, read the classics shelf, and build your streak with stats and reminders. Premium unlocks unlimited apps, your own EPUBs, 75,000+ classics search, blocking schedules, extra reader themes, reading insights and private iCloud backup." }
-      },
-      {
-        "@type": "Question",
-        "name": "Can Block&Read reduce my screen time?",
-        "acceptedAnswer": { "@type": "Answer", "text": "That's the point — but instead of just cutting you off, it swaps scrolling minutes for reading pages. You don't lose the reach-for-the-phone habit; you redirect it into books." }
-      },
-      {
-        "@type": "Question",
-        "name": "Does it work for studying?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Block your distracting apps during study sessions and let the read-to-unlock friction keep you at your desk. Many students also load their course reading as EPUBs — the blocker becomes the study tool." }
-      },
-      {
-        "@type": "Question",
-        "name": "Is Block&Read available in Spanish?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The classics shelf comes in English and Spanish, with a dedicated Español library including Don Quijote, La Celestina, Lazarillo de Tormes and more." }
-      }
+      { "@type": "Question", "name": "What is Block&Read?",
+        "acceptedAnswer": { "@type": "Answer", "text": "An app for iPhone and iPad that combines an app blocker with a reader for EPUB, PDF and comics. You choose the apps that eat your time, and when you try to open one, a book appears instead. Read a few pages to your daily goal and your apps unlock." } },
+      { "@type": "Question", "name": "How does read-to-unlock work?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Tap a blocked app and Block&Read intercepts it, opening your current book at your exact page. Hit your daily reading goal — a page or two is enough — and every blocked app unlocks for the day." } },
+      { "@type": "Question", "name": "Which apps can I block?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Any app on your iPhone — social media, video, games. Free blocks one app, forever. Premium blocks every app and adds schedules, so the block turns itself on without you." } },
+      { "@type": "Question", "name": "What is Strict Mode?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The no-easy-way-out switch. Other blockers let you wait out a timer or tap ignore. With Strict Mode, the only way to your apps is through the pages." } },
+      { "@type": "Question", "name": "Can I read my own books?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes: EPUB, PDF and comics in CBZ. Your first book of your own is free, forever. Premium lets you bring as many as you like and search 75,000+ public-domain classics." } },
+      { "@type": "Question", "name": "Can I highlight and take notes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Select a passage to highlight it in one of eight colors, or any color you pick, and attach a note. Bookmarks save a page and bring you back to it, even after you change the text size." } },
+      { "@type": "Question", "name": "What books are included for free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "81 public-domain classics in English and Spanish — Austen, Brontë, Dickens, Cervantes and more — ready to read at no cost. Premium adds search across 75,000+ classics." } },
+      { "@type": "Question", "name": "Does it work on iPad?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The shelves, the reader and the widgets are laid out for the larger screen, with up to twelve books in the extra-large widget." } },
+      { "@type": "Question", "name": "Does Block&Read track my data?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. No accounts, no analytics, no tracking. Everything stays on your device or in your own private iCloud." } },
+      { "@type": "Question", "name": "How much does Block&Read cost?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Free covers one blocked app, one book of your own, the classics shelf, streaks and reminders. Premium is USD 4.99 a month, USD 24.99 a year with a 7-day free trial, or USD 39.99 once. Prices vary by country; the App Store shows yours." } },
+      { "@type": "Question", "name": "Is there a one-time purchase?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Lifetime gives you everything in Premium for a single payment: no subscription and nothing to renew." } },
+      { "@type": "Question", "name": "Can Block&Read reduce my screen time?",
+        "acceptedAnswer": { "@type": "Answer", "text": "That's the point — but instead of just cutting you off, it swaps scrolling minutes for reading pages. The reach-for-the-phone habit stays; it just delivers chapters now." } },
+      { "@type": "Question", "name": "Does it work for studying?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Block your distracting apps during study sessions, and load your course reading as PDFs or EPUBs so the blocker itself becomes the study tool. Highlights and notes stay with the text." } },
+      { "@type": "Question", "name": "Is Block&Read available in Spanish?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. The app speaks Spanish, and the classics shelf comes in English and Spanish, with a dedicated Spanish library — Don Quijote, La Celestina, Lazarillo de Tormes and more." } }
     ]
   }
   </script>
 </head>
-<body data-active="en">
+<body class="landing" data-active="en">
 
-  <!-- ================= Header ================= -->
+  <!-- ================= Header (shared with the guides) ================= -->
   <header class="site-header">
     <div class="container">
       <a class="brand" href="index.html">
-        <img src="assets/img/blockread-icon.png" alt="Block&Read app icon — a golden book with a keyhole" width="32" height="32">
+        <img src="assets/img/blockread-icon.png" alt="Block&amp;Read app icon — a golden book with a keyhole" width="32" height="32">
         Block&amp;Read
       </a>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
       <nav class="site-nav" aria-label="Main">
-        <a href="#inside-the-app"><span data-lang="en">Inside the App</span><span data-lang="es" lang="es">Dentro de la app</span></a>
         <a href="#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a>
+        <a href="#inside-the-app"><span data-lang="en">Inside the App</span><span data-lang="es" lang="es">Dentro de la app</span></a>
+        <a href="#pricing"><span data-lang="en">Pricing</span><span data-lang="es" lang="es">Precios</span></a>
         <a href="guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
         <a href="#faq">FAQ</a>
-        <a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a>
         <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language">
           <option value="en">English</option>
           <option value="es">Español</option>
@@ -144,9 +116,9 @@
     <!-- ================= Hero ================= -->
     <section class="hero" id="top">
       <div class="container">
-        <span class="eyebrow"><span data-lang="en">App blocker · EPUB reader · Reading streaks</span><span data-lang="es" lang="es">Bloqueador de apps · Lector EPUB · Rachas de lectura</span></span>
+        <span class="eyebrow"><span data-lang="en">App blocker · Book reader · For iPhone and iPad</span><span data-lang="es" lang="es">Bloqueador de apps · Lector de libros · Para iPhone y iPad</span></span>
         <h1><span data-lang="en">The app blocker that <span class="accent">makes you read</span>.</span><span data-lang="es" lang="es">El bloqueador de apps que <span class="accent">te hace leer</span>.</span></h1>
-        <p class="sub"><span data-lang="en">Reach for Instagram and a book appears instead. Read a few pages, and your apps unlock. No willpower required — just a page or two.</span><span data-lang="es" lang="es">Vas a abrir Instagram y aparece un libro. Lee unas páginas, y tus apps se desbloquean. No hace falta fuerza de voluntad — solo una página o dos.</span></p>
+        <p class="sub"><span data-lang="en">Reach for Instagram and a book opens instead. Read a few pages, and your apps unlock. No willpower required — just a page or two.</span><span data-lang="es" lang="es">Vas a abrir Instagram y se abre un libro. Lee unas páginas y tus apps se desbloquean. No hace falta fuerza de voluntad: solo una página o dos.</span></p>
         <div class="hero-ctas">
           <a class="appstore-badge" href="https://apps.apple.com/app/apple-store/id6788574367?pt=129004153&amp;ct=landingpage&amp;mt=8" rel="noopener">
             <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
@@ -154,119 +126,12 @@
           </a>
           <a class="btn btn-outline" href="#how-it-works"><span data-lang="en">See how it works</span><span data-lang="es" lang="es">Ver cómo funciona</span></a>
         </div>
-        <p class="micro"><span data-lang="en">Free to download · No accounts, no tracking · English &amp; Español</span><span data-lang="es" lang="es">Gratis · Sin cuentas ni rastreo · English &amp; Español</span></p>
-        <div class="hero-phone">
-          <img src="assets/img/app-blocker-read-to-unlock.png" alt="Read to unlock screen blocking a distracting app in Block&Read for iPhone" width="320" fetchpriority="high">
-        </div>
-      </div>
-    </section>
+        <p class="micro"><span data-lang="en">Free to start · No accounts, no tracking · English &amp; Español</span><span data-lang="es" lang="es">Gratis para empezar · Sin cuentas ni rastreo · English &amp; Español</span></p>
 
-    <!-- ================= Download strip ================= -->
-    <section class="section-panel center" id="download" style="padding:64px 0;">
-      <div class="container">
-        <div class="section-head" style="margin-bottom:32px;">
-          <h2><span data-lang="en">Earn the scroll.</span><span data-lang="es" lang="es">Gánate el scroll.</span></h2>
-          <p><span data-lang="en">Block&amp;Read puts a book between you and the apps that eat your day. A page or two, and they open.</span><span data-lang="es" lang="es">Block&amp;Read pone un libro entre tú y las apps que se comen tu día. Una página o dos, y se abren.</span></p>
-        </div>
-        <a class="appstore-badge" href="https://apps.apple.com/app/apple-store/id6788574367?pt=129004153&amp;ct=landingpage&amp;mt=8" rel="noopener">
-          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-          <span class="badge-text"><small><span data-lang="en">Download on the</span><span data-lang="es" lang="es">Descargar en el</span></small><strong>App Store</strong></span>
-        </a>
-        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;"><span data-lang="en">iPhone · iOS 26+ · Free: 2 blocked apps + classics shelf · Premium with free trial</span><span data-lang="es" lang="es">iPhone · iOS 26+ · Gratis: 2 apps bloqueadas + estante de clásicos · Premium con prueba gratis</span></p>
-      </div>
-    </section>
-
-    <!-- ================= Inside the app ================= -->
-    <section id="inside-the-app">
-      <div class="container">
-        <div class="section-head">
-          <p class="kicker"><span data-lang="en">Inside the App</span><span data-lang="es" lang="es">Dentro de la app</span></p>
-          <h2><span data-lang="en">Block the apps. Read the books.</span><span data-lang="es" lang="es">Bloquea las apps. Lee los libros.</span></h2>
-          <p><span data-lang="en">An app blocker and a beautiful e-reader in one — designed so the easiest thing on your phone is a book.</span><span data-lang="es" lang="es">Un bloqueador de apps y un lector hermoso en uno — diseñado para que lo más fácil de tu teléfono sea un libro.</span></p>
-        </div>
-
-        <div class="feature-row">
-          <div class="shot">
-            <img src="assets/img/today-continue-reading.png" alt="Today screen in Block&Read for iPhone with the current book and the reading list" loading="lazy" width="320">
-          </div>
-          <div class="feature-copy">
-            <p class="feature-kicker"><span data-lang="en">Your current book</span><span data-lang="es" lang="es">Tu libro actual</span></p>
-            <h3><span data-lang="en">Pick up where you left off.</span><span data-lang="es" lang="es">Retoma donde lo dejaste.</span></h3>
-            <p><span data-lang="en">Today opens on the book you are in the middle of, your page kept, the rest of your reading right below. When a blocked app sends you here there is nothing to decide — the book is already open.</span><span data-lang="es" lang="es">Today abre con el libro que estás leyendo, tu página guardada y el resto de tus lecturas justo debajo. Cuando una app bloqueada te manda ahí no hay nada que decidir: el libro ya está abierto.</span></p>
-            <a class="feature-link" href="guides/how-to-block-apps-iphone.html"><span data-lang="en">How to block apps on iPhone →</span><span data-lang="es" lang="es">Cómo bloquear apps en iPhone →</span></a>
-          </div>
-        </div>
-
-        <div class="feature-row flip">
-          <div class="shot">
-            <img src="assets/img/finish-pages-apps-unlocked.png" alt="Daily reading goal of five pages and the daily reminder in Block&Read for iPhone" loading="lazy" width="320">
-          </div>
-          <div class="feature-copy">
-            <p class="feature-kicker"><span data-lang="en">Daily goal</span><span data-lang="es" lang="es">Meta diaria</span></p>
-            <h3><span data-lang="en">Finish the pages. Unlock the world.</span><span data-lang="es" lang="es">Termina las páginas. Desbloquea el mundo.</span></h3>
-            <p><span data-lang="en">Set a daily goal you can actually keep — even five pages works. Hit it, and every blocked app opens for the day. Miss it, and the books wait patiently.</span><span data-lang="es" lang="es">Ponte una meta diaria que puedas cumplir — con cinco páginas alcanza. Cúmplela y todas tus apps bloqueadas se abren por el día. Si no, los libros esperan pacientes.</span></p>
-            <a class="feature-link" href="guides/reduce-screen-time-iphone.html"><span data-lang="en">Reduce screen time without deleting apps →</span><span data-lang="es" lang="es">Reduce el tiempo de pantalla sin borrar apps →</span></a>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="shot">
-            <img src="assets/img/book-library-iphone.png" alt="Block&Read library on iPhone with classic books by Jane Austen and search across 75,000 classics" loading="lazy" width="320">
-          </div>
-          <div class="feature-copy">
-            <p class="feature-kicker"><span data-lang="en">Your library</span><span data-lang="es" lang="es">Tu biblioteca</span></p>
-            <h3><span data-lang="en">A shelf of classics, ready to read.</span><span data-lang="es" lang="es">Un estante de clásicos, listos para leer.</span></h3>
-            <p><span data-lang="en">Public-domain classics in English and Spanish, beautifully typeset and free. Premium adds search across 75,000+ classics — Austen to Cervantes, one tap away.</span><span data-lang="es" lang="es">Clásicos de dominio público en inglés y español, bellamente tipografiados y gratis. Premium agrega búsqueda entre 75.000+ clásicos — de Austen a Cervantes, a un toque.</span></p>
-            <a class="feature-link" href="guides/free-classic-books.html"><span data-lang="en">Where to start with the classics →</span><span data-lang="es" lang="es">Por dónde empezar con los clásicos →</span></a>
-          </div>
-        </div>
-
-        <div class="feature-row flip">
-          <div class="shot">
-            <img src="assets/img/import-your-own-epubs.png" alt="My shelf in Block&Read for iPhone with imported EPUBs and the Add an EPUB button" loading="lazy" width="320">
-          </div>
-          <div class="feature-copy">
-            <p class="feature-kicker"><span data-lang="en">Your own books</span><span data-lang="es" lang="es">Tus propios libros</span></p>
-            <h3><span data-lang="en">Bring your EPUBs. Keep them private.</span><span data-lang="es" lang="es">Trae tus EPUB. Mantenlos privados.</span></h3>
-            <p><span data-lang="en">Import any EPUB and it joins your library — backed up to your own iCloud, never to our servers. Your current novel becomes the toll booth for your distractions.</span><span data-lang="es" lang="es">Importa cualquier EPUB y se suma a tu biblioteca — respaldada en tu propio iCloud, nunca en nuestros servidores. Tu novela actual se vuelve el peaje de tus distracciones.</span></p>
-            <a class="feature-link" href="guides/free-epub-reader-iphone.html"><span data-lang="en">The EPUB reader, explained →</span><span data-lang="es" lang="es">El lector EPUB, explicado →</span></a>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="shot">
-            <img src="assets/img/distraction-free-epub-reader.png" alt="Distraction-free e-reader in Block&Read showing a book chapter in dark mode" loading="lazy" width="320">
-          </div>
-          <div class="feature-copy">
-            <p class="feature-kicker"><span data-lang="en">The reader</span><span data-lang="es" lang="es">El lector</span></p>
-            <h3><span data-lang="en">Read anywhere. Distraction-free.</span><span data-lang="es" lang="es">Lee donde sea. Sin distracciones.</span></h3>
-            <p><span data-lang="en">Light, sepia and dark themes, adjustable text, and your exact page waiting for you. A reader made for the night — no notifications, no feed, no noise.</span><span data-lang="es" lang="es">Temas claro, sepia y oscuro, texto ajustable y tu página exacta esperándote. Un lector hecho para la noche — sin notificaciones, sin feed, sin ruido.</span></p>
-            <a class="feature-link" href="guides/cant-finish-a-book.html"><span data-lang="en">Rebuild your reading attention span →</span><span data-lang="es" lang="es">Recupera tu capacidad de atención →</span></a>
-          </div>
-        </div>
-
-        <div class="feature-row flip">
-          <div class="shot">
-            <img src="assets/img/reading-streak-stats.png" alt="Habit tab in Block&Read with the month calendar, the reading streak and the year" loading="lazy" width="320">
-          </div>
-          <div class="feature-copy">
-            <p class="feature-kicker"><span data-lang="en">Streaks &amp; stats</span><span data-lang="es" lang="es">Rachas y estadísticas</span></p>
-            <h3><span data-lang="en">Watch your reading streak grow.</span><span data-lang="es" lang="es">Mira crecer tu racha de lectura.</span></h3>
-            <p><span data-lang="en">Pages read, time won back, books finished, apps blocked — your progress at a glance, and a streak you won't want to break.</span><span data-lang="es" lang="es">Páginas leídas, tiempo recuperado, libros terminados, apps bloqueadas — tu progreso de un vistazo, y una racha que no vas a querer romper.</span></p>
-            <a class="feature-link" href="guides/daily-reading-habit.html"><span data-lang="en">Build a daily reading habit →</span><span data-lang="es" lang="es">Crea un hábito de lectura diario →</span></a>
-          </div>
-        </div>
-
-        <div class="feature-row">
-          <div class="shot">
-            <img src="assets/img/home-screen-streak-widget.png" alt="Block&Read widgets on the iPhone Home Screen showing the reading streak and pages read today" loading="lazy" width="320">
-          </div>
-          <div class="feature-copy">
-            <p class="feature-kicker"><span data-lang="en">Widgets</span><span data-lang="es" lang="es">Widgets</span></p>
-            <h3><span data-lang="en">Your streak, on your Home Screen.</span><span data-lang="es" lang="es">Tu racha, en tu pantalla de inicio.</span></h3>
-            <p><span data-lang="en">Your streak, your pages today and the week at a glance — without opening the app. A dedicated Spanish shelf sits beside the English one, so you can read in your language or use the blocker to finally practice the other.</span><span data-lang="es" lang="es">Tu racha, tus páginas de hoy y la semana de un vistazo — sin abrir la app. Y un estante dedicado en español junto al de inglés, para leer en tu idioma o usar el bloqueador para practicar el otro.</span></p>
-            <a class="feature-link" href="guides/how-to-read-more-books.html"><span data-lang="en">How to read more books →</span><span data-lang="es" lang="es">Cómo leer más libros →</span></a>
-          </div>
+        <div class="shelf trio">
+          <figure><img src="assets/img/today-continue-reading.webp" alt="Today screen in Block&amp;Read: the books you are reading on a wooden shelf, with your progress" width="640" height="1270"></figure>
+          <figure><img src="assets/img/import-your-own-epubs.webp" alt="My shelf in Block&amp;Read: your books standing on a wooden bookcase" width="640" height="1270" fetchpriority="high"></figure>
+          <figure><img src="assets/img/home-screen-streak-widget.webp" alt="Block&amp;Read widgets on the Home Screen: the reading streak and a shelf of covers" width="640" height="1270"></figure>
         </div>
       </div>
     </section>
@@ -276,36 +141,151 @@
       <div class="container">
         <div class="section-head">
           <p class="kicker"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></p>
-          <h2><span data-lang="en">Four steps. Zero willpower.</span><span data-lang="es" lang="es">Cuatro pasos. Cero fuerza de voluntad.</span></h2>
-          <p><span data-lang="en">The habit you already have — reaching for your phone — becomes the trigger for the habit you want.</span><span data-lang="es" lang="es">El hábito que ya tienes — agarrar el teléfono — se convierte en el disparador del hábito que quieres.</span></p>
+          <h2><span data-lang="en">Three steps. Zero willpower.</span><span data-lang="es" lang="es">Tres pasos. Cero fuerza de voluntad.</span></h2>
+          <p><span data-lang="en">The habit you already have — reaching for your phone — becomes the trigger for the one you want.</span><span data-lang="es" lang="es">El hábito que ya tienes —agarrar el teléfono— se convierte en el disparador del que quieres.</span></p>
         </div>
-        <div class="steps">
-          <div class="step">
-            <span class="num">1</span>
-            <h3><span data-lang="en">Pick your apps</span><span data-lang="es" lang="es">Elige tus apps</span></h3>
-            <p><span data-lang="en">Choose the apps that eat your time — Instagram, TikTok, whatever pulls you in.</span><span data-lang="es" lang="es">Elige las apps que se comen tu tiempo — Instagram, TikTok, lo que te atrape.</span></p>
+        <div class="shelf trio with-captions">
+          <figure>
+            <img src="assets/img/choose-apps-to-block.webp" alt="Choosing Instagram, TikTok and WhatsApp to block with Screen Time" width="640" height="1270" loading="lazy">
+            <figcaption><span data-lang="en"><strong>1.</strong> Pick the apps that eat your day.</span><span data-lang="es" lang="es"><strong>1.</strong> Elige las apps que se comen tu día.</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/app-blocker-read-to-unlock.webp" alt="The Block&amp;Read shield appears when you open a blocked app" width="640" height="1270" loading="lazy">
+            <figcaption><span data-lang="en"><strong>2.</strong> Open one, and a book is in the way.</span><span data-lang="es" lang="es"><strong>2.</strong> Abre una, y hay un libro en el camino.</span></figcaption>
+          </figure>
+          <figure>
+            <img src="assets/img/distraction-free-epub-reader.webp" alt="A page of Pride and Prejudice in the sepia reader" width="640" height="1270" loading="lazy">
+            <figcaption><span data-lang="en"><strong>3.</strong> Read a few pages. Your apps unlock.</span><span data-lang="es" lang="es"><strong>3.</strong> Lee unas páginas. Tus apps se abren.</span></figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Inside the app ================= -->
+    <section id="inside-the-app">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker"><span data-lang="en">Inside the App</span><span data-lang="es" lang="es">Dentro de la app</span></p>
+          <h2><span data-lang="en">Block the apps. Read the books.</span><span data-lang="es" lang="es">Bloquea las apps. Lee los libros.</span></h2>
+          <p><span data-lang="en">A blocker that only works if the reading is worth coming back to. So the reading got a bookcase.</span><span data-lang="es" lang="es">Un bloqueador solo funciona si vale la pena volver a leer. Por eso la lectura tiene su propia biblioteca.</span></p>
+        </div>
+
+        <!-- Shelves -->
+        <div class="shelf-block">
+          <div class="shelf-copy">
+            <p class="feature-kicker"><span data-lang="en">Your library</span><span data-lang="es" lang="es">Tu biblioteca</span></p>
+            <h3><span data-lang="en">Your books, on a real shelf.</span><span data-lang="es" lang="es">Tus libros, en un estante de verdad.</span></h3>
+            <p><span data-lang="en">Covers stand on wood, with warm light under every board. Pick walnut, oak, ebony or cherry, and sort your books into shelves of your own.</span><span data-lang="es" lang="es">Las tapas se paran sobre la madera, con luz cálida bajo cada tabla. Elige nogal, roble, ébano o cerezo, y ordena tus libros en estantes propios.</span></p>
           </div>
-          <div class="step">
-            <span class="num">2</span>
-            <h3><span data-lang="en">Open one</span><span data-lang="es" lang="es">Abre una</span></h3>
-            <p><span data-lang="en">A book takes its place. Your current page, right where you left it.</span><span data-lang="es" lang="es">Un libro toma su lugar. Tu página actual, justo donde la dejaste.</span></p>
+          <div class="shelf duo">
+            <figure><img src="assets/img/choose-your-wood.webp" alt="Choosing the wood of the bookcase: walnut, oak, ebony or cherry" width="640" height="1270" loading="lazy"></figure>
+            <figure><img src="assets/img/make-your-own-shelves.webp" alt="Moving a book to a shelf of your own" width="640" height="1270" loading="lazy"></figure>
           </div>
-          <div class="step">
-            <span class="num">3</span>
-            <h3><span data-lang="en">Read to your goal</span><span data-lang="es" lang="es">Lee hasta tu meta</span></h3>
-            <p><span data-lang="en">A few pages is enough. Hit your daily goal and your apps open.</span><span data-lang="es" lang="es">Con unas páginas alcanza. Cumple tu meta diaria y tus apps se abren.</span></p>
+        </div>
+
+        <!-- Reader -->
+        <div class="shelf-block">
+          <div class="shelf-copy">
+            <p class="feature-kicker"><span data-lang="en">The reader</span><span data-lang="es" lang="es">El lector</span></p>
+            <h3><span data-lang="en">Read it. Mark it. Keep it.</span><span data-lang="es" lang="es">Léelo. Márcalo. Guárdalo.</span></h3>
+            <p><span data-lang="en">Highlight a line in one of eight colors — or any color you like — and write a note on it. Bookmark a page and come back to it, even after you change the text size. Light, sepia or dark; paged or scroll.</span><span data-lang="es" lang="es">Subraya una frase en uno de ocho colores —o el que quieras— y escríbele una nota. Marca una página y vuelve a ella, aunque cambies el tamaño de letra. Claro, sepia u oscuro; por páginas o con scroll.</span></p>
           </div>
-          <div class="step">
-            <span class="num">4</span>
-            <h3><span data-lang="en">Build the streak</span><span data-lang="es" lang="es">Crea la racha</span></h3>
-            <p><span data-lang="en">Streaks, stats and gentle reminders keep you coming back to the page.</span><span data-lang="es" lang="es">Rachas, estadísticas y recordatorios amables te hacen volver a la página.</span></p>
+          <div class="shelf duo">
+            <figure><img src="assets/img/distraction-free-epub-reader.webp" alt="A page of Pride and Prejudice in the sepia reader, text at 150%" width="640" height="1270" loading="lazy"></figure>
+            <figure><img src="assets/img/highlights-and-notes.webp" alt="A highlighted passage with the eight-color palette and the Add Note button" width="640" height="1270" loading="lazy"></figure>
+          </div>
+        </div>
+
+        <!-- Formats and classics -->
+        <div class="shelf-block">
+          <div class="shelf-copy">
+            <p class="feature-kicker"><span data-lang="en">Your books, and ours</span><span data-lang="es" lang="es">Tus libros, y los nuestros</span></p>
+            <h3><span data-lang="en">Classics built in. Your own books too.</span><span data-lang="es" lang="es">Clásicos incluidos. Y tus libros también.</span></h3>
+            <p><span data-lang="en">81 public-domain classics in English and Spanish, ready to read. Bring your own — your first one is free — and search 75,000+ more with Premium. One reading menu for every format, showing only what each one can do.</span><span data-lang="es" lang="es">81 clásicos de dominio público en inglés y español, listos para leer. Trae los tuyos —el primero es gratis— y busca entre 75.000+ más con Premium. Un solo menú de lectura para todos los formatos, que muestra solo lo que cada uno puede hacer.</span></p>
+            <div class="chips">
+              <span class="chip">EPUB</span><span class="chip">PDF</span><span class="chip"><span data-lang="en">Comics (CBZ)</span><span data-lang="es" lang="es">Cómics (CBZ)</span></span>
+            </div>
+          </div>
+          <div class="shelf solo">
+            <figure><img src="assets/img/book-library-iphone.webp" alt="Free classics in Block&amp;Read: Austen, Brontë and more, with search in English and Spanish" width="640" height="1270" loading="lazy"></figure>
+          </div>
+        </div>
+
+        <!-- Habit -->
+        <div class="shelf-block">
+          <div class="shelf-copy">
+            <p class="feature-kicker"><span data-lang="en">The habit</span><span data-lang="es" lang="es">El hábito</span></p>
+            <h3><span data-lang="en">A streak you won't want to break.</span><span data-lang="es" lang="es">Una racha que no vas a querer romper.</span></h3>
+            <p><span data-lang="en">Every day you read fills a square, and the streak grows. The daily reminder rings like an alarm, even on silent — and your latest covers wait on your Home Screen, one tap from the page.</span><span data-lang="es" lang="es">Cada día que lees llena un casillero, y la racha crece. El recordatorio diario suena como una alarma, aunque esté en silencio, y tus últimas tapas esperan en la pantalla de inicio, a un toque de la página.</span></p>
+          </div>
+          <div class="shelf duo">
+            <figure><img src="assets/img/reading-streak-stats.webp" alt="The Habit tab: a month of reading days and the reading streak" width="640" height="1270" loading="lazy"></figure>
+            <figure><img src="assets/img/finish-pages-apps-unlocked.webp" alt="Daily goal and a reminder set to ring like an alarm" width="640" height="1270" loading="lazy"></figure>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ================= iPad ================= -->
+    <section class="section-panel" id="ipad">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">iPad</p>
+          <h2><span data-lang="en">A bigger shelf.</span><span data-lang="es" lang="es">Un estante más grande.</span></h2>
+          <p><span data-lang="en">On iPad the shelves widen, Today fits twice the books, and the extra-large widget holds twelve covers.</span><span data-lang="es" lang="es">En iPad los estantes se ensanchan, Today muestra el doble de libros y el widget más grande guarda doce tapas.</span></p>
+        </div>
+        <div class="shelf ipad-shot">
+          <figure><img src="assets/img/ipad-today.webp" alt="Block&amp;Read on iPad: the Today screen with a full carousel of books and reading progress" width="900" height="1163" loading="lazy"></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Pricing ================= -->
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker"><span data-lang="en">Pricing</span><span data-lang="es" lang="es">Precios</span></p>
+          <h2><span data-lang="en">Free to start. Yours to keep.</span><span data-lang="es" lang="es">Gratis para empezar. Tuyo para siempre.</span></h2>
+          <p><span data-lang="en">Most people only need to block one app. That part is free, and it stays free.</span><span data-lang="es" lang="es">A la mayoría le alcanza con bloquear una app. Eso es gratis, y lo sigue siendo.</span></p>
+        </div>
+        <div class="plans">
+          <div class="plan">
+            <h3><span data-lang="en">Free</span><span data-lang="es" lang="es">Gratis</span></h3>
+            <p class="plan-sub"><span data-lang="en">Everything you need to start.</span><span data-lang="es" lang="es">Todo lo que necesitas para empezar.</span></p>
+            <ul>
+              <li><span data-lang="en">Block one app, forever</span><span data-lang="es" lang="es">Bloquea una app, para siempre</span></li>
+              <li><span data-lang="en">One book of your own</span><span data-lang="es" lang="es">Un libro propio</span></li>
+              <li><span data-lang="en">81 classics in English and Spanish</span><span data-lang="es" lang="es">81 clásicos en inglés y español</span></li>
+              <li><span data-lang="en">Bookmarks, highlights and notes</span><span data-lang="es" lang="es">Marcadores, subrayados y notas</span></li>
+              <li><span data-lang="en">Streaks, stats and reminders</span><span data-lang="es" lang="es">Rachas, estadísticas y recordatorios</span></li>
+              <li><span data-lang="en">Strict Mode</span><span data-lang="es" lang="es">Modo Estricto</span></li>
+            </ul>
+            <p class="free-price">$0 <small><span data-lang="en">no account needed</span><span data-lang="es" lang="es">sin crear cuenta</span></small></p>
+          </div>
+          <div class="plan premium">
+            <h3>Premium</h3>
+            <p class="plan-sub"><span data-lang="en">For when one app isn't the whole problem.</span><span data-lang="es" lang="es">Para cuando una sola app no es todo el problema.</span></p>
+            <ul>
+              <li><span data-lang="en">Block every app</span><span data-lang="es" lang="es">Bloquea todas las apps</span></li>
+              <li><span data-lang="en">Blocks itself on a schedule</span><span data-lang="es" lang="es">Se bloquea sola en horario</span></li>
+              <li><span data-lang="en">All your own books — EPUB, PDF, comics</span><span data-lang="es" lang="es">Todos tus libros — EPUB, PDF, cómics</span></li>
+              <li><span data-lang="en">Search 75,000+ classics</span><span data-lang="es" lang="es">Busca entre 75.000+ clásicos</span></li>
+              <li><span data-lang="en">Private iCloud backup</span><span data-lang="es" lang="es">Respaldo privado en iCloud</span></li>
+              <li><span data-lang="en">The Modern Mono theme</span><span data-lang="es" lang="es">El tema Modern Mono</span></li>
+            </ul>
+            <div class="prices">
+              <div class="price best"><strong><span data-lang="en">Yearly</span><span data-lang="es" lang="es">Anual</span><span class="tag"><span data-lang="en">7 days free</span><span data-lang="es" lang="es">7 días gratis</span></span></strong><span class="amount">$24.99 <span data-lang="en">/ year</span><span data-lang="es" lang="es">/ año</span></span></div>
+              <div class="price"><strong><span data-lang="en">Monthly</span><span data-lang="es" lang="es">Mensual</span></strong><span class="amount">$4.99 <span data-lang="en">/ month</span><span data-lang="es" lang="es">/ mes</span></span></div>
+              <div class="price"><strong>Lifetime</strong><span class="amount">$39.99 <span data-lang="en">once · no renewal</span><span data-lang="es" lang="es">una vez · sin renovación</span></span></div>
+            </div>
+          </div>
+        </div>
+        <p class="price-note"><span data-lang="en">Prices in US dollars. The App Store shows the price for your country.</span><span data-lang="es" lang="es">Precios en dólares estadounidenses. La App Store te muestra el precio de tu país.</span></p>
+      </div>
+    </section>
+
     <!-- ================= Guides ================= -->
-    <section id="guides">
+    <section class="section-panel" id="guides">
       <div class="container">
         <div class="section-head">
           <p class="kicker"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></p>
@@ -355,7 +335,7 @@
     </section>
 
     <!-- ================= FAQ ================= -->
-    <section class="section-panel" id="faq">
+    <section id="faq">
       <div class="container">
         <div class="section-head">
           <p class="kicker">FAQ</p>
@@ -364,35 +344,47 @@
         <div class="faq-list">
           <details class="faq-item">
             <summary><span data-lang="en">What is Block&amp;Read?</span><span data-lang="es" lang="es">¿Qué es Block&amp;Read?</span></summary>
-            <div class="faq-body"><span data-lang="en">An iPhone app that combines an <strong>app blocker</strong> with a full <strong>EPUB reader</strong>. You choose the apps that eat your time, and when you try to open one, a book appears instead. Read a few pages to your daily goal and your apps unlock. <a href="guides/app-blocker-that-makes-you-read.html">Learn more</a></span><span data-lang="es" lang="es">Una app para iPhone que combina un <strong>bloqueador de apps</strong> con un <strong>lector EPUB</strong> completo. Eliges las apps que se comen tu tiempo y, cuando intentas abrir una, aparece un libro en su lugar. Lee unas páginas hasta tu meta diaria y tus apps se desbloquean. <a href="guides/app-blocker-that-makes-you-read.html">Leer más</a></span></div>
+            <div class="faq-body"><span data-lang="en">An app for iPhone and iPad that combines an <strong>app blocker</strong> with a reader for <strong>EPUB, PDF and comics</strong>. You choose the apps that eat your time, and when you try to open one, a book appears instead. Read a few pages to your daily goal and your apps unlock. <a href="guides/app-blocker-that-makes-you-read.html">Learn more</a></span><span data-lang="es" lang="es">Una app para iPhone y iPad que combina un <strong>bloqueador de apps</strong> con un lector de <strong>EPUB, PDF y cómics</strong>. Eliges las apps que se comen tu tiempo y, cuando intentas abrir una, aparece un libro en su lugar. Lee unas páginas hasta tu meta diaria y tus apps se desbloquean. <a href="guides/app-blocker-that-makes-you-read.html">Leer más</a></span></div>
           </details>
           <details class="faq-item">
             <summary><span data-lang="en">How does read-to-unlock work?</span><span data-lang="es" lang="es">¿Cómo funciona «leer para desbloquear»?</span></summary>
-            <div class="faq-body"><span data-lang="en">Tap a blocked app and Block&amp;Read intercepts it, opening your current book at your exact page. Hit your daily reading goal — a page or two is enough — and every blocked app unlocks for the day. <a href="guides/how-to-block-apps-iphone.html">Learn more</a></span><span data-lang="es" lang="es">Tocas una app bloqueada y Block&amp;Read la intercepta, abriendo tu libro actual en tu página exacta. Cumple tu meta de lectura diaria — con una página o dos alcanza — y todas las apps bloqueadas se desbloquean por el día. <a href="guides/how-to-block-apps-iphone.html">Leer más</a></span></div>
+            <div class="faq-body"><span data-lang="en">Tap a blocked app and Block&amp;Read intercepts it, opening your current book at your exact page. Hit your daily reading goal — a page or two is enough — and every blocked app unlocks for the day. <a href="guides/how-to-block-apps-iphone.html">Learn more</a></span><span data-lang="es" lang="es">Tocas una app bloqueada y Block&amp;Read la intercepta, abriendo tu libro actual en tu página exacta. Cumple tu meta de lectura diaria —con una página o dos alcanza— y todas las apps bloqueadas se desbloquean por el día. <a href="guides/how-to-block-apps-iphone.html">Leer más</a></span></div>
           </details>
           <details class="faq-item">
             <summary><span data-lang="en">Which apps can I block?</span><span data-lang="es" lang="es">¿Qué apps puedo bloquear?</span></summary>
-            <div class="faq-body"><span data-lang="en">Any app on your iPhone — social media, video, games. Free blocks up to <strong>two apps</strong>; Premium blocks <strong>unlimited apps</strong> and adds blocking schedules. <a href="guides/how-to-block-apps-iphone.html">Learn more</a></span><span data-lang="es" lang="es">Cualquier app de tu iPhone — redes, video, juegos. El plan gratis bloquea hasta <strong>dos apps</strong>; Premium bloquea <strong>apps ilimitadas</strong> y agrega horarios de bloqueo. <a href="guides/how-to-block-apps-iphone.html">Leer más</a></span></div>
+            <div class="faq-body"><span data-lang="en">Any app on your iPhone — social media, video, games. Free blocks <strong>one app, forever</strong>. Premium blocks <strong>every app</strong> and adds schedules, so the block turns itself on without you. <a href="guides/how-to-block-apps-iphone.html">Learn more</a></span><span data-lang="es" lang="es">Cualquier app de tu iPhone —redes, video, juegos—. El plan gratis bloquea <strong>una app, para siempre</strong>. Premium bloquea <strong>todas las apps</strong> y agrega horarios, para que el bloqueo se active solo. <a href="guides/how-to-block-apps-iphone.html">Leer más</a></span></div>
           </details>
           <details class="faq-item">
             <summary><span data-lang="en">What is Strict Mode?</span><span data-lang="es" lang="es">¿Qué es el Modo Estricto?</span></summary>
-            <div class="faq-body"><span data-lang="en">The no-easy-way-out switch. Other blockers let you wait out a timer or tap "ignore" — with Strict Mode, the only way to your apps is through the pages. <a href="guides/app-blocker-that-makes-you-read.html">Learn more</a></span><span data-lang="es" lang="es">El interruptor sin salida fácil. Otros bloqueadores te dejan esperar un temporizador o tocar «ignorar» — con el Modo Estricto, el único camino a tus apps es a través de las páginas. <a href="guides/app-blocker-that-makes-you-read.html">Leer más</a></span></div>
+            <div class="faq-body"><span data-lang="en">The no-easy-way-out switch. Other blockers let you wait out a timer or tap "ignore". With Strict Mode, the only way to your apps is through the pages. <a href="guides/app-blocker-that-makes-you-read.html">Learn more</a></span><span data-lang="es" lang="es">El interruptor sin salida fácil. Otros bloqueadores te dejan esperar un temporizador o tocar «ignorar». Con el Modo Estricto, el único camino a tus apps es a través de las páginas. <a href="guides/app-blocker-that-makes-you-read.html">Leer más</a></span></div>
           </details>
           <details class="faq-item">
-            <summary><span data-lang="en">Can I import my own EPUB books?</span><span data-lang="es" lang="es">¿Puedo importar mis propios libros EPUB?</span></summary>
-            <div class="faq-body"><span data-lang="en">Yes — Premium lets you import any EPUB and search 75,000+ public-domain classics. Your library is backed up to your own private iCloud, never to our servers. <a href="guides/free-epub-reader-iphone.html">Learn more</a></span><span data-lang="es" lang="es">Sí — Premium te deja importar cualquier EPUB y buscar entre 75.000+ clásicos de dominio público. Tu biblioteca se respalda en tu propio iCloud privado, nunca en nuestros servidores. <a href="guides/free-epub-reader-iphone.html">Leer más</a></span></div>
+            <summary><span data-lang="en">Can I read my own books?</span><span data-lang="es" lang="es">¿Puedo leer mis propios libros?</span></summary>
+            <div class="faq-body"><span data-lang="en">Yes: <strong>EPUB, PDF and comics</strong> in CBZ. Your first book of your own is free, forever. Premium lets you bring as many as you like and search 75,000+ public-domain classics. <a href="guides/free-epub-reader-iphone.html">Learn more</a></span><span data-lang="es" lang="es">Sí: <strong>EPUB, PDF y cómics</strong> en CBZ. Tu primer libro propio es gratis, para siempre. Premium te deja traer todos los que quieras y buscar entre 75.000+ clásicos de dominio público. <a href="guides/free-epub-reader-iphone.html">Leer más</a></span></div>
+          </details>
+          <details class="faq-item">
+            <summary><span data-lang="en">Can I highlight and take notes?</span><span data-lang="es" lang="es">¿Puedo subrayar y tomar notas?</span></summary>
+            <div class="faq-body"><span data-lang="en">Yes. Select a passage to highlight it in one of eight colors, or any color you pick, and attach a note. Bookmarks save a page and bring you back to it, even after you change the text size.</span><span data-lang="es" lang="es">Sí. Selecciona un pasaje para subrayarlo en uno de ocho colores, o el que elijas, y agrégale una nota. Los marcadores guardan una página y te devuelven a ella, aunque cambies el tamaño de letra.</span></div>
           </details>
           <details class="faq-item">
             <summary><span data-lang="en">What books are included for free?</span><span data-lang="es" lang="es">¿Qué libros vienen gratis?</span></summary>
-            <div class="faq-body"><span data-lang="en">A curated shelf of public-domain classics in <strong>English and Spanish</strong> — Austen, Brontë, Cervantes and more — beautifully typeset and ready to read. <a href="guides/free-classic-books.html">Learn more</a></span><span data-lang="es" lang="es">Un estante curado de clásicos de dominio público en <strong>inglés y español</strong> — Austen, Brontë, Cervantes y más — bellamente tipografiados y listos para leer. <a href="guides/free-classic-books.html">Leer más</a></span></div>
+            <div class="faq-body"><span data-lang="en"><strong>81 public-domain classics</strong> in English and Spanish — Austen, Brontë, Dickens, Cervantes and more — ready to read at no cost. Premium adds search across 75,000+ classics. <a href="guides/free-classic-books.html">Learn more</a></span><span data-lang="es" lang="es"><strong>81 clásicos de dominio público</strong> en inglés y español —Austen, Brontë, Dickens, Cervantes y más—, listos para leer sin costo. Premium agrega búsqueda entre 75.000+ clásicos. <a href="guides/free-classic-books.html">Leer más</a></span></div>
+          </details>
+          <details class="faq-item">
+            <summary><span data-lang="en">Does it work on iPad?</span><span data-lang="es" lang="es">¿Funciona en iPad?</span></summary>
+            <div class="faq-body"><span data-lang="en">Yes. The shelves, the reader and the widgets are laid out for the larger screen, with up to twelve books in the extra-large widget.</span><span data-lang="es" lang="es">Sí. Los estantes, el lector y los widgets están pensados para la pantalla grande, con hasta doce libros en el widget extragrande.</span></div>
           </details>
           <details class="faq-item">
             <summary><span data-lang="en">Does Block&amp;Read track my data?</span><span data-lang="es" lang="es">¿Block&amp;Read rastrea mis datos?</span></summary>
-            <div class="faq-body"><span data-lang="en">No. No accounts, no analytics, no tracking. Everything stays on your device or in your own private iCloud. Your reading is nobody's business but yours.</span><span data-lang="es" lang="es">No. Sin cuentas, sin analytics, sin rastreo. Todo queda en tu dispositivo o en tu propio iCloud privado. Lo que lees no es asunto de nadie más que tuyo.</span></div>
+            <div class="faq-body"><span data-lang="en">No. No accounts, no analytics, no tracking. Everything stays on your device or in your own private iCloud.</span><span data-lang="es" lang="es">No. Sin cuentas, sin analytics, sin rastreo. Todo queda en tu dispositivo o en tu propio iCloud privado.</span></div>
           </details>
           <details class="faq-item">
             <summary><span data-lang="en">How much does Block&amp;Read cost?</span><span data-lang="es" lang="es">¿Cuánto cuesta Block&amp;Read?</span></summary>
-            <div class="faq-body"><span data-lang="en"><strong>Free:</strong> block up to two apps, read the classics shelf, build streaks with stats and reminders, Strict Mode included. <strong>Premium:</strong> unlimited apps, your own EPUBs, 75,000+ classics search, blocking schedules, extra reader themes, reading insights and private iCloud backup.</span><span data-lang="es" lang="es"><strong>Gratis:</strong> bloquea hasta dos apps, lee el estante de clásicos, crea rachas con estadísticas y recordatorios, Modo Estricto incluido. <strong>Premium:</strong> apps ilimitadas, tus propios EPUB, búsqueda entre 75.000+ clásicos, horarios de bloqueo, temas extra del lector, estadísticas avanzadas y respaldo privado en iCloud.</span></div>
+            <div class="faq-body"><span data-lang="en"><strong>Free</strong> covers one blocked app, one book of your own, the classics shelf, streaks and reminders. <strong>Premium</strong> is USD 4.99 a month, USD 24.99 a year with a 7-day free trial, or USD 39.99 once. Prices vary by country; the App Store shows yours. <a href="#pricing">See pricing</a></span><span data-lang="es" lang="es"><strong>Gratis</strong> incluye una app bloqueada, un libro propio, el estante de clásicos, rachas y recordatorios. <strong>Premium</strong> cuesta USD 4,99 al mes, USD 24,99 al año con 7 días de prueba gratis, o USD 39,99 una sola vez. Los precios varían por país; la App Store te muestra el tuyo. <a href="#pricing">Ver precios</a></span></div>
+          </details>
+          <details class="faq-item">
+            <summary><span data-lang="en">Is there a one-time purchase?</span><span data-lang="es" lang="es">¿Hay un pago único?</span></summary>
+            <div class="faq-body"><span data-lang="en">Yes. <strong>Lifetime</strong> gives you everything in Premium for a single payment: no subscription and nothing to renew.</span><span data-lang="es" lang="es">Sí. <strong>Lifetime</strong> te da todo Premium con un solo pago: sin suscripción y sin nada que renovar.</span></div>
           </details>
           <details class="faq-item">
             <summary><span data-lang="en">Can Block&amp;Read reduce my screen time?</span><span data-lang="es" lang="es">¿Puede reducir mi tiempo de pantalla?</span></summary>
@@ -400,18 +392,18 @@
           </details>
           <details class="faq-item">
             <summary><span data-lang="en">Does it work for studying?</span><span data-lang="es" lang="es">¿Sirve para estudiar?</span></summary>
-            <div class="faq-body"><span data-lang="en">Yes — block your distracting apps during study sessions, and load your course reading as EPUBs so the blocker itself becomes the study tool. <a href="guides/study-without-phone-distractions.html">Learn more</a></span><span data-lang="es" lang="es">Sí — bloquea tus apps distractoras durante las sesiones de estudio, y carga tus lecturas del curso como EPUB para que el bloqueador mismo se convierta en la herramienta de estudio. <a href="guides/study-without-phone-distractions.html">Leer más</a></span></div>
+            <div class="faq-body"><span data-lang="en">Yes. Block your distracting apps during study sessions, and load your course reading as PDFs or EPUBs so the blocker itself becomes the study tool. Highlights and notes stay with the text. <a href="guides/study-without-phone-distractions.html">Learn more</a></span><span data-lang="es" lang="es">Sí. Bloquea tus apps distractoras durante las sesiones de estudio, y carga tus lecturas del curso como PDF o EPUB para que el bloqueador mismo sea la herramienta de estudio. Los subrayados y las notas quedan con el texto. <a href="guides/study-without-phone-distractions.html">Leer más</a></span></div>
           </details>
           <details class="faq-item">
             <summary><span data-lang="en">Is Block&amp;Read available in Spanish?</span><span data-lang="es" lang="es">¿Está disponible en español?</span></summary>
-            <div class="faq-body"><span data-lang="en">Sí. The classics shelf comes in English and Spanish, with a dedicated Español library — Don Quijote, La Celestina, Lazarillo de Tormes and more. <a href="guides/free-classic-books.html">Learn more</a></span><span data-lang="es" lang="es">Sí. El estante de clásicos viene en inglés y español, con una biblioteca dedicada en español — Don Quijote, La Celestina, Lazarillo de Tormes y más. <a href="guides/free-classic-books.html">Leer más</a></span></div>
+            <div class="faq-body"><span data-lang="en">Yes. The app speaks Spanish, and the classics shelf comes in English and Spanish, with a dedicated Spanish library — Don Quijote, La Celestina, Lazarillo de Tormes and more. <a href="guides/free-classic-books.html">Learn more</a></span><span data-lang="es" lang="es">Sí. La app está en español, y el estante de clásicos viene en inglés y español, con una biblioteca dedicada en español —Don Quijote, La Celestina, Lazarillo de Tormes y más—. <a href="guides/free-classic-books.html">Leer más</a></span></div>
           </details>
         </div>
       </div>
     </section>
 
     <!-- ================= Final CTA ================= -->
-    <section class="cta">
+    <section class="cta section-panel" id="download">
       <div class="container">
         <blockquote><span data-lang="en">Earn <span class="accent">the scroll</span>.</span><span data-lang="es" lang="es">Gánate <span class="accent">el scroll</span>.</span></blockquote>
         <p class="cta-sub"><span data-lang="en">Your apps aren't going anywhere. Neither are the books. The only question is which one opens first.</span><span data-lang="es" lang="es">Tus apps no se van a ninguna parte. Los libros tampoco. La única pregunta es cuál se abre primero.</span></p>
@@ -419,28 +411,29 @@
           <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
           <span class="badge-text"><small><span data-lang="en">Download on the</span><span data-lang="es" lang="es">Descargar en el</span></small><strong>App Store</strong></span>
         </a>
-        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;"><span data-lang="en">Free to download · No ads, no accounts, no tracking</span><span data-lang="es" lang="es">Gratis · Sin anuncios, sin cuentas, sin rastreo</span></p>
+        <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;"><span data-lang="en">iPhone and iPad · Free to start · No ads, no accounts, no tracking</span><span data-lang="es" lang="es">iPhone y iPad · Gratis para empezar · Sin anuncios, sin cuentas, sin rastreo</span></p>
       </div>
     </section>
   </main>
 
-  <!-- ================= Footer ================= -->
+  <!-- ================= Footer (shared with the guides) ================= -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-about">
           <a class="brand" href="index.html">
-            <img src="assets/img/blockread-icon.png" alt="Block&Read logo" width="32" height="32">
+            <img src="assets/img/blockread-icon.png" alt="Block&amp;Read logo" width="32" height="32">
             Block&amp;Read
           </a>
-          <p><span data-lang="en">An app blocker and e-reader in one. Block the apps that eat your day, read a few pages, and earn the scroll.</span><span data-lang="es" lang="es">Un bloqueador de apps y un lector en uno. Bloquea las apps que se comen tu día, lee unas páginas y gánate el scroll.</span></p>
+          <p><span data-lang="en">An app blocker and a reader in one. Block the apps that eat your day, read a few pages, and earn the scroll.</span><span data-lang="es" lang="es">Un bloqueador de apps y un lector en uno. Bloquea las apps que se comen tu día, lee unas páginas y gánate el scroll.</span></p>
         </div>
         <div>
           <h4>App</h4>
           <ul>
             <li><a href="#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a></li>
-            <li><a href="#inside-the-app"><span data-lang="en">Inside the App</span><span data-lang="es" lang="es">Dentro de la app</span></a></li>
             <li><a href="#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a></li>
+            <li><a href="#inside-the-app"><span data-lang="en">Inside the App</span><span data-lang="es" lang="es">Dentro de la app</span></a></li>
+            <li><a href="#pricing"><span data-lang="en">Pricing</span><span data-lang="es" lang="es">Precios</span></a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a></li>
           </ul>
