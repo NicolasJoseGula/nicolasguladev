@@ -345,4 +345,13 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <!-- Fix Your Life, localized landings -->
+  <url><loc>https://dezeo.lat/fixyourlife/es/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/pt/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/fr/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/de/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/ru/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/uk/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/ja/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://dezeo.lat/fixyourlife/vi/</loc><lastmod>2026-09-28</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
 </urlset>

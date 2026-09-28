@@ -6,6 +6,16 @@
   <title>Habit &amp; Alarm: Fix Your Life — Alarms That Ask, Habits You Can See</title>
   <meta name="description" content="Fix Your Life wakes you up with a question you can't snooze, then helps you keep what you decided to do: habits with your own photos, streaks and your whole year in color. Free to try, no ads, 45 languages.">
   <link rel="canonical" href="https://dezeo.lat/fixyourlife/">
+  <link rel="alternate" hreflang="en" href="https://dezeo.lat/fixyourlife/">
+  <link rel="alternate" hreflang="es" href="https://dezeo.lat/fixyourlife/es/">
+  <link rel="alternate" hreflang="pt" href="https://dezeo.lat/fixyourlife/pt/">
+  <link rel="alternate" hreflang="fr" href="https://dezeo.lat/fixyourlife/fr/">
+  <link rel="alternate" hreflang="de" href="https://dezeo.lat/fixyourlife/de/">
+  <link rel="alternate" hreflang="ru" href="https://dezeo.lat/fixyourlife/ru/">
+  <link rel="alternate" hreflang="uk" href="https://dezeo.lat/fixyourlife/uk/">
+  <link rel="alternate" hreflang="ja" href="https://dezeo.lat/fixyourlife/ja/">
+  <link rel="alternate" hreflang="vi" href="https://dezeo.lat/fixyourlife/vi/">
+  <link rel="alternate" hreflang="x-default" href="https://dezeo.lat/fixyourlife/">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#000000">
   <link rel="icon" type="image/svg+xml" href="assets/img/fyl-logo.svg">
@@ -20,6 +30,7 @@
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Fix Your Life">
+  <meta property="og:locale" content="en_US">
   <meta property="og:title" content="Habit &amp; Alarm: Fix Your Life — Alarms That Ask, Habits You Can See">
   <meta property="og:description" content="An alarm that asks you a question you can't snooze, and habits with your own photos, streaks and your whole year in color.">
   <meta property="og:url" content="https://dezeo.lat/fixyourlife/">
@@ -27,48 +38,146 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Habit &amp; Alarm: Fix Your Life">
+  <meta name="twitter:title" content="Habit &amp; Alarm: Fix Your Life — Alarms That Ask, Habits You Can See">
   <meta name="twitter:description" content="An alarm that asks you a question you can't snooze, and habits with your own photos, streaks and your whole year in color.">
   <meta name="twitter:image" content="https://dezeo.lat/fixyourlife/assets/img/og-image.png">
 
   <!-- Structured data: app + FAQ -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "Habit & Alarm: Fix Your Life",
-    "alternateName": ["Fix Your Life", "FYL"],
-    "operatingSystem": "iOS",
-    "applicationCategory": "LifestyleApplication",
-    "description": "Fix Your Life is an alarm and habit tracker for iPhone. Every alarm rings with a question you have to face instead of a sound you silence. Habits carry your own photos and colors, draw themselves as a grid of weeks, and show your whole year on one screen.",
-    "url": "https://dezeo.lat/fixyourlife/",
-    "image": "https://dezeo.lat/fixyourlife/assets/img/og-image.png",
-    "offers": [
-      { "@type": "Offer", "name": "Free", "price": "0", "priceCurrency": "USD", "description": "One alarm and one habit, with every question pack, the journal, streaks and widgets." },
-      { "@type": "Offer", "name": "Yearly", "price": "17.99", "priceCurrency": "USD", "description": "Unlimited alarms and habits. 3-day free trial for new subscribers." },
-      { "@type": "Offer", "name": "Lifetime", "price": "39.99", "priceCurrency": "USD", "description": "Unlimited alarms and habits, forever. One payment, no subscription." }
-    ],
-    "inLanguage": ["en","es","pt","pt-PT","fr","de","it","ca","nl","sv","da","nb","fi","pl","cs","sk","hr","sl","hu","ro","ms","vi","tr","id","el","ru","uk","ja","ko","zh-Hans","zh-Hant","th","he","ar","hi","ur","bn","mr","gu","ta","te","ml","kn","pa","or"]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "Habit & Alarm: Fix Your Life",
+  "alternateName": [
+    "Fix Your Life",
+    "FYL"
+  ],
+  "operatingSystem": "iOS",
+  "applicationCategory": "LifestyleApplication",
+  "description": "Fix Your Life is an alarm and habit tracker for iPhone. Every alarm rings with a question you have to face instead of a sound you silence. Habits carry your own photos and colors, draw themselves as a grid of weeks, and show your whole year on one screen.",
+  "url": "https://dezeo.lat/fixyourlife/",
+  "image": "https://dezeo.lat/fixyourlife/assets/img/og-image.png",
+  "inLanguage": "en",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Free",
+      "price": "0",
+      "priceCurrency": "USD",
+      "description": "One alarm and one habit, with every question pack, the journal, streaks and widgets."
+    },
+    {
+      "@type": "Offer",
+      "name": "Yearly",
+      "price": "17.99",
+      "priceCurrency": "USD",
+      "description": "Unlimited alarms and habits. 3-day free trial for new subscribers."
+    },
+    {
+      "@type": "Offer",
+      "name": "Lifetime",
+      "price": "39.99",
+      "priceCurrency": "USD",
+      "description": "Unlimited alarms and habits, forever. One payment, no subscription."
+    }
+  ]
+}
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      { "@type": "Question", "name": "What is Fix Your Life?", "acceptedAnswer": { "@type": "Answer", "text": "Fix Your Life is an iPhone app that combines alarms and habits. Each alarm rings with a question you answer in one line, like \"Are you doing everything necessary to achieve your goals?\". Habits carry your own photos and colors, and every day you keep one lights a square on its grid." } },
-      { "@type": "Question", "name": "How do habits work in Fix Your Life?", "acceptedAnswer": { "@type": "Answer", "text": "Add the things you want to keep, every day or on chosen days. Tick a habit off and its streak grows. Each habit draws itself as a grid of weeks in its own color, and the year view shows twelve months on a single screen." } },
-      { "@type": "Question", "name": "Can I use my own photos for habits?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Put a photo of your own on any habit: the dog you walk, the plant you water, the gym you swore you'd go back to. Or pick one of twenty symbols and one of eight colors." } },
-      { "@type": "Question", "name": "Can I fix a day I forgot to mark?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open a habit's calendar and mark or unmark any day already lived. The record should be true, not flattering." } },
-      { "@type": "Question", "name": "How is Fix Your Life different from a normal alarm clock app?", "acceptedAnswer": { "@type": "Answer", "text": "A normal alarm interrupts your sleep. Fix Your Life interrupts your autopilot: its alarms ring with a question you face and answer, instead of a sound you silence and forget." } },
-      { "@type": "Question", "name": "What kind of questions does the alarm ask?", "acceptedAnswer": { "@type": "Answer", "text": "Thirty-four questions in six packs: Essentials, Ambition, Time and Mortality, Identity, Honest Mirror and Aliveness. You can pick one, write your own, or let Surprise mode choose a different one for each day of the week." } },
-      { "@type": "Question", "name": "Can I write my own alarm messages?", "acceptedAnswer": { "@type": "Answer", "text": "Yes, and it's free. Write and save your own questions and reuse them across alarms." } },
-      { "@type": "Question", "name": "Does Fix Your Life have iPhone home screen widgets?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Widgets show your streak and the question of the day on your home screen." } },
-      { "@type": "Question", "name": "How much does Fix Your Life cost?", "acceptedAnswer": { "@type": "Answer", "text": "It's free to download, and one alarm and one habit are free forever with every feature. Premium unlocks unlimited alarms and habits: yearly at $17.99 with a 3-day free trial for new subscribers, weekly at $4.99, or a one-time Lifetime purchase at $39.99. Prices are in USD and vary by country." } },
-      { "@type": "Question", "name": "What languages is Fix Your Life available in?", "acceptedAnswer": { "@type": "Answer", "text": "Forty-five languages, and you can switch between them from Settings at any time." } },
-      { "@type": "Question", "name": "Does Fix Your Life show ads or sell my data?", "acceptedAnswer": { "@type": "Answer", "text": "No ads, ever. There is no account and no sign-up. Your alarms, habits, photos and answers stay on your device." } }
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Fix Your Life?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An iPhone app that combines alarms and habits. Each alarm rings with a question you answer in one line, like “Are you doing everything necessary to achieve your goals?”. Habits carry your own photos and colors, and every day you keep one lights a square on its grid."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do habits work in Fix Your Life?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Add the things you want to keep, every day or on chosen days. Tick a habit off and its streak grows. Each habit draws itself as a grid of weeks in its own color, and the year view shows twelve months on a single screen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use my own photos for habits?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Put a photo of your own on any habit: the dog you walk, the plant you water, the gym you swore you'd go back to. Or pick one of twenty symbols and one of eight colors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I fix a day I forgot to mark?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Open a habit's calendar and mark or unmark any day already lived. The record should be true, not flattering."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How is Fix Your Life different from a normal alarm clock app?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A normal alarm interrupts your sleep. Fix Your Life interrupts your autopilot: its alarms ring with a question you face and answer, instead of a sound you silence and forget."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What kind of questions does the alarm ask?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Thirty-four questions in six packs: Essentials, Ambition, Time and Mortality, Identity, Honest Mirror and Aliveness. Pick one, write your own, or let Surprise mode choose a different one for each day of the week."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I write my own alarm messages?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and it's free. Write and save your own questions and reuse them across alarms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Fix Your Life have iPhone home screen widgets?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Widgets show your streak and the question of the day on your home screen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does Fix Your Life cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Free to download, and one alarm and one habit are free forever with every feature. Premium unlocks unlimited alarms and habits: yearly at $17.99 with a 3-day free trial for new subscribers, weekly at $4.99, or a one-time Lifetime purchase at $39.99. Prices are in USD and vary by country. Subscriptions renew automatically unless cancelled at least 24 hours before the period ends; manage them anytime in your App Store settings."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What languages is Fix Your Life available in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Forty-five languages, and you can switch between them from Settings at any time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Fix Your Life show ads or sell my data?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No ads, ever. There is no account and no sign-up. Your alarms, habits, photos and answers stay on your device."
+      }
+    }
+  ]
+}
   </script>
 </head>
 <body class="fyl-home">
@@ -77,7 +186,7 @@
   <header class="site-header">
     <div class="container">
       <a class="brand" href="./">
-        <img src="assets/img/fyl-logo.svg" alt="Fix Your Life app logo" width="30" height="30">
+        <img src="assets/img/fyl-logo.svg" alt="Fix Your Life" width="30" height="30">
         Fix Your Life
       </a>
       <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
@@ -88,6 +197,17 @@
         <a href="guides/">Guides</a>
         <a href="#faq">FAQ</a>
         <a href="/projects.html">All projects</a>
+        <select class="langselect" onchange="location.href=this.value" autocomplete="off" aria-label="Language">
+          <option value="/fixyourlife/" selected>English</option>
+          <option value="/fixyourlife/es/">Español</option>
+          <option value="/fixyourlife/pt/">Português</option>
+          <option value="/fixyourlife/fr/">Français</option>
+          <option value="/fixyourlife/de/">Deutsch</option>
+          <option value="/fixyourlife/ru/">Русский</option>
+          <option value="/fixyourlife/uk/">Українська</option>
+          <option value="/fixyourlife/ja/">日本語</option>
+          <option value="/fixyourlife/vi/">Tiếng Việt</option>
+        </select>
         <a class="nav-cta" href="#download">Download</a>
       </nav>
       <label for="nav-toggle" class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></label>
@@ -243,26 +363,10 @@
           <p>A plan is ready before you finish the first minute.</p>
         </div>
         <div class="steps">
-          <div class="step reveal">
-            <span class="num">1</span>
-            <h3>Pick what to fix</h3>
-            <p>Mornings, discipline, health, focus, screen time or sleep. Your plan is built around them.</p>
-          </div>
-          <div class="step reveal">
-            <span class="num">2</span>
-            <h3>Set your alarm</h3>
-            <p>Choose the time. It rings every day with a question that fits what you picked.</p>
-          </div>
-          <div class="step reveal">
-            <span class="num">3</span>
-            <h3>Choose one habit</h3>
-            <p>Small, daily and yours. Add a photo, pick a color, tick it off.</p>
-          </div>
-          <div class="step reveal">
-            <span class="num">4</span>
-            <h3>Watch the year fill</h3>
-            <p>Every kept day lights a square. Miss one and it shows. Keep going and the year turns to color.</p>
-          </div>
+          <div class="step reveal"><span class="num">1</span><h3>Pick what to fix</h3><p>Mornings, discipline, health, focus, screen time or sleep. Your plan is built around them.</p></div>
+          <div class="step reveal"><span class="num">2</span><h3>Set your alarm</h3><p>Choose the time. It rings every day with a question that fits what you picked.</p></div>
+          <div class="step reveal"><span class="num">3</span><h3>Choose one habit</h3><p>Small, daily and yours. Add a photo, pick a color, tick it off.</p></div>
+          <div class="step reveal"><span class="num">4</span><h3>Watch the year fill</h3><p>Every kept day lights a square. Miss one and it shows. Keep going and the year turns to color.</p></div>
         </div>
       </div>
     </section>
@@ -280,42 +384,26 @@
             <h3>Free</h3>
             <p class="price">$0 <small>forever</small></p>
             <p class="price-note">No card, no trial needed</p>
-            <ul>
-              <li>One alarm with any question</li>
-              <li>One habit, with your own photo</li>
-              <li>Every question pack and Surprise mode</li>
-              <li>Journal, streaks and widgets</li>
-              <li>No ads, ever</li>
-            </ul>
+            <ul><li>One alarm with any question</li><li>One habit, with your own photo</li><li>Every question pack and Surprise mode</li><li>Journal, streaks and widgets</li><li>No ads, ever</li></ul>
           </div>
           <div class="plan featured reveal" style="--tone: var(--rose)">
             <span class="badge">Best value</span>
             <h3>Yearly</h3>
             <p class="price">$17.99 <small>/ year</small></p>
             <p class="price-note">3 days free · about $0.35 a week</p>
-            <ul>
-              <li>Unlimited alarms</li>
-              <li>Unlimited habits</li>
-              <li>Everything in Free</li>
-              <li>A reminder before the trial ends</li>
-              <li>Cancel anytime in App Store settings</li>
-            </ul>
+            <ul><li>Unlimited alarms</li><li>Unlimited habits</li><li>Everything in Free</li><li>A reminder before the trial ends</li><li>Cancel anytime in App Store settings</li></ul>
           </div>
           <div class="plan reveal" style="--tone: var(--violet)">
             <h3>Lifetime</h3>
             <p class="price">$39.99 <small>once</small></p>
             <p class="price-note">One payment, no subscription</p>
-            <ul>
-              <li>Unlimited alarms and habits, forever</li>
-              <li>Everything in Free</li>
-              <li>Every future update</li>
-              <li>Restore it on any of your iPhones</li>
-            </ul>
+            <ul><li>Unlimited alarms and habits, forever</li><li>Everything in Free</li><li>Every future update</li><li>Restore it on any of your iPhones</li></ul>
           </div>
         </div>
         <p class="plans-foot">Also available weekly at $4.99. Prices are in US dollars; the App Store shows the price for your country. The free trial is for new subscribers on the yearly plan.</p>
       </div>
     </section>
+
 
     <!-- ================= Guides ================= -->
     <section class="section-panel" id="guides" style="--tone: var(--indigo)">
@@ -366,6 +454,7 @@
         <p class="center mt-40"><a class="btn btn-outline" href="guides/">View all 11 guides</a></p>
       </div>
     </section>
+
 
     <!-- ================= FAQ ================= -->
     <section id="faq" style="--tone: var(--blue)">
@@ -429,10 +518,10 @@
         <div class="palette" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
         <blockquote>“If someone filmed the last two hours of your life, would they conclude <span class="c-amber">you want what you say you want?</span>”</blockquote>
         <p class="cta-sub">One question in the morning. One square a day. That's how a year changes color.</p>
-        <a class="appstore-badge" href="https://apps.apple.com/app/apple-store/id6777588712?pt=129004153&amp;ct=landingpage&amp;mt=8" rel="noopener">
-          <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
-          <span class="badge-text"><small>Download on the</small><strong>App Store</strong></span>
-        </a>
+          <a class="appstore-badge" href="https://apps.apple.com/app/apple-store/id6777588712?pt=129004153&amp;ct=landingpage&amp;mt=8" rel="noopener">
+            <svg viewBox="0 0 384 512" aria-hidden="true"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
+            <span class="badge-text"><small>Download on the</small><strong>App Store</strong></span>
+          </a>
         <p class="micro" style="margin-top:18px;color:var(--muted-2);font-size:14px;">Free to download · 45 languages · No ads. Ever.</p>
       </div>
     </section>
@@ -444,7 +533,7 @@
       <div class="footer-grid">
         <div class="footer-about">
           <a class="brand" href="./">
-            <img src="assets/img/fyl-logo.svg" alt="Fix Your Life logo" width="30" height="30">
+            <img src="assets/img/fyl-logo.svg" alt="Fix Your Life" width="30" height="30">
             Fix Your Life
           </a>
           <p>Alarms that ask you questions, and habits you can see. An iPhone app for waking up to your own life, one square a day.</p>
@@ -459,6 +548,7 @@
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
+
         <div>
           <h4>Guides</h4>
           <ul>
@@ -469,6 +559,7 @@
             <li><a href="guides/">All guides →</a></li>
           </ul>
         </div>
+
       </div>
       <div class="footer-bottom">
         <span>© 2026 Fix Your Life. All rights reserved.</span>
