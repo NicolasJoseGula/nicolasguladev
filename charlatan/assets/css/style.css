@@ -569,3 +569,7 @@ section { padding: 78px 0; }
 .social-link { color: var(--muted); display: inline-flex; transition: color .18s ease; }
 .social-link:hover { color: var(--pink); }
 .social-link:focus-visible { outline: 2px solid var(--pink); outline-offset: 4px; border-radius: 4px; }
+
+/* iPad: una sola captura grande, centrada bajo el título. */
+.ipad-shot { max-width: 620px; margin: 0 auto; }
+.ipad-shot img { width: 100%; height: auto; filter: drop-shadow(0 30px 60px rgba(0,0,0,.55)); }
