@@ -36,7 +36,7 @@
     "en",
     "es"
   ],
-  "image": "https://dezeo.lat/charlatan/assets/img/transcribing-video-on-iphone.png",
+  "image": "https://dezeo.lat/charlatan/assets/img/app/en/transcribing.webp",
   "datePublished": "2026-08-07",
   "dateModified": "2026-08-07",
   "mainEntityOfPage": {
@@ -144,7 +144,7 @@
 <p class="meta"><span data-lang="en">Updated 2026-08-07 · Charlatan for iPhone</span><span data-lang="es" lang="es">Actualizado 2026-08-07 · Charlatan para iPhone</span></p>
 <p><span data-lang="en">Most caption tools upload your video to a server, transcribe it there and send the text back. That is why they need a connection, why they can be slow on a bad one, and why there is a copy of your footage on someone else's machine.</span><span data-lang="es" lang="es">La mayoría de las herramientas de subtítulos suben tu video a un servidor, lo transcriben ahí y te devuelven el texto. Por eso necesitan conexión, por eso pueden ser lentas con una mala, y por eso hay una copia de tu material en la máquina de otro.</span></p>
 <p><span data-lang="en">On-device transcription does the same job using the phone's own speech recognition. Nothing is sent anywhere.</span><span data-lang="es" lang="es">La transcripción en el dispositivo hace el mismo trabajo usando el reconocimiento de voz del propio teléfono. No se manda nada a ningún lado.</span></p>
-<figure><div class="phone"><img src="../../assets/img/transcribing-video-on-iphone.png" width="655" height="1300" loading="lazy" alt="Charlatan transcribing a video's audio entirely on the iPhone, progress at 100%"></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
+<figure><div class="phone"><span data-lang="en"><img src="../../assets/img/app/en/transcribing.webp" width="640" height="1328" loading="lazy" alt="Charlatan transcribing a video's audio entirely on the iPhone"></span><span data-lang="es" lang="es"><img src="../../assets/img/app/es/transcribing.webp" width="640" height="1328" loading="lazy" alt="Charlatan transcribing a video's audio entirely on the iPhone"></span></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
 <h2><span data-lang="en">What on-device actually means</span><span data-lang="es" lang="es">Qué significa en el dispositivo, de verdad</span></h2>
 <p><span data-lang="en">The speech recognition model runs inside the phone. Your audio is read by the iPhone's processor and turned into text there, and the text never leaves the device unless you export it yourself.</span><span data-lang="es" lang="es">El modelo de reconocimiento de voz corre dentro del teléfono. Tu audio lo lee el procesador del iPhone y lo convierte en texto ahí, y ese texto nunca sale del dispositivo salvo que lo exportes vos.</span></p>
 <p><span data-lang="en">The practical tests are simple: does it work in airplane mode, and is there an account to create? If it works offline and there is no sign-up, nothing is being uploaded, because there is nowhere for it to go.</span><span data-lang="es" lang="es">Las pruebas prácticas son simples: ¿funciona en modo avión, y hay que crear una cuenta? Si funciona sin conexión y no hay registro, no se está subiendo nada, porque no hay a dónde.</span></p>
@@ -237,18 +237,23 @@
       el.setAttribute("rel", "noopener");
     });
   }
-  function setLang(l) {
+  /* Esta página habla inglés y español. La portada habla once idiomas y
+     guarda el elegido: uno que aquí no existe mostraba la página en blanco,
+     así que cae al inglés, y solo se guarda lo que se elige en esta página
+     para no pisar el idioma de la portada. */
+  function setLang(l, quiet) {
+    if (l !== "es") l = "en";
     document.body.setAttribute("data-active", l);
     document.documentElement.lang = l;
     var sel = document.getElementById("langselect");
     if (sel) sel.value = l;
-    try { localStorage.setItem("ch-lang", l); } catch (e) {}
+    if (!quiet) { try { localStorage.setItem("ch-lang", l); } catch (e) {} }
   }
   (function () {
     var saved = null;
     try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
     var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
-    setLang(lang);
+    setLang(lang, true);
   })();
 </script>
 

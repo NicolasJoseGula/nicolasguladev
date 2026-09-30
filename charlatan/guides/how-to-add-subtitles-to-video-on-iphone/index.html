@@ -36,7 +36,7 @@
     "en",
     "es"
   ],
-  "image": "https://dezeo.lat/charlatan/assets/img/charlatan-home-your-videos.png",
+  "image": "https://dezeo.lat/charlatan/assets/img/app/en/pace.webp",
   "datePublished": "2026-08-07",
   "dateModified": "2026-08-07",
   "mainEntityOfPage": {
@@ -144,7 +144,7 @@
 <p class="meta"><span data-lang="en">Updated 2026-08-07 · Charlatan for iPhone</span><span data-lang="es" lang="es">Actualizado 2026-08-07 · Charlatan para iPhone</span></p>
 <p><span data-lang="en">Most video is watched with the sound off. That is the whole reason this question gets asked so often — a clip without captions is a clip most people scroll past before they know what it was about.</span><span data-lang="es" lang="es">La mayoría del video se mira sin sonido. Esa es toda la razón por la que esta pregunta se hace tanto — un clip sin subtítulos es un clip que la mayoría pasa de largo antes de saber de qué se trataba.</span></p>
 <p><span data-lang="en">There are three real ways to do it on an iPhone alone, and they are not equivalent. Here is what each one actually gives you, and which one to pick.</span><span data-lang="es" lang="es">Hay tres formas reales de hacerlo solo con el iPhone, y no son equivalentes. Esto es lo que te da cada una, y cuál conviene.</span></p>
-<figure><div class="phone"><img src="../../assets/img/charlatan-home-your-videos.png" width="655" height="1300" loading="lazy" alt="Charlatan home screen on an iPhone with your captioned videos, choose video and record buttons"></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
+<figure><div class="phone"><span data-lang="en"><img src="../../assets/img/app/en/pace.webp" width="640" height="1328" loading="lazy" alt="Charlatan home screen on an iPhone: choose a video and pick the subtitle pace"></span><span data-lang="es" lang="es"><img src="../../assets/img/app/es/pace.webp" width="640" height="1328" loading="lazy" alt="Charlatan home screen on an iPhone: choose a video and pick the subtitle pace"></span></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
 <h2><span data-lang="en">Option 1: the platform's own captions</span><span data-lang="es" lang="es">Opción 1: los subtítulos de la propia plataforma</span></h2>
 <p><span data-lang="en">TikTok, Instagram and YouTube all generate captions for you after you upload. It is free and it takes one tap, and for a lot of people that is enough.</span><span data-lang="es" lang="es">TikTok, Instagram y YouTube generan subtítulos después de que subís el video. Es gratis, es un toque, y para mucha gente alcanza.</span></p>
 <p><span data-lang="en">The catch is that you are handing over the look. You get that platform's font, that platform's placement, and a caption that only exists on that platform — repost the same video somewhere else and it is bare again. You also cannot fix a misheard word without re-uploading.</span><span data-lang="es" lang="es">El problema es que estás entregando el aspecto. Te queda la tipografía de esa plataforma, su posición, y un subtítulo que solo existe ahí — reposteás el mismo video en otro lado y vuelve a estar pelado. Tampoco podés corregir una palabra mal entendida sin volver a subirlo.</span></p>
@@ -232,18 +232,23 @@
       el.setAttribute("rel", "noopener");
     });
   }
-  function setLang(l) {
+  /* Esta página habla inglés y español. La portada habla once idiomas y
+     guarda el elegido: uno que aquí no existe mostraba la página en blanco,
+     así que cae al inglés, y solo se guarda lo que se elige en esta página
+     para no pisar el idioma de la portada. */
+  function setLang(l, quiet) {
+    if (l !== "es") l = "en";
     document.body.setAttribute("data-active", l);
     document.documentElement.lang = l;
     var sel = document.getElementById("langselect");
     if (sel) sel.value = l;
-    try { localStorage.setItem("ch-lang", l); } catch (e) {}
+    if (!quiet) { try { localStorage.setItem("ch-lang", l); } catch (e) {} }
   }
   (function () {
     var saved = null;
     try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
     var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
-    setLang(lang);
+    setLang(lang, true);
   })();
 </script>
 

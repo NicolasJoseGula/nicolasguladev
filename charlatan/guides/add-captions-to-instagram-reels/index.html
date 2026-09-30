@@ -36,7 +36,7 @@
     "en",
     "es"
   ],
-  "image": "https://dezeo.lat/charlatan/assets/img/captions-fullscreen-preview.png",
+  "image": "https://dezeo.lat/charlatan/assets/img/app/en/fullscreen.webp",
   "datePublished": "2026-08-07",
   "dateModified": "2026-08-07",
   "mainEntityOfPage": {
@@ -144,7 +144,7 @@
 <p class="meta"><span data-lang="en">Updated 2026-08-07 · Charlatan for iPhone</span><span data-lang="es" lang="es">Actualizado 2026-08-07 · Charlatan para iPhone</span></p>
 <p><span data-lang="en">Instagram will caption a Reel for you. The question worth asking is whether you want it to, because the version it produces is not the version you designed.</span><span data-lang="es" lang="es">Instagram te va a subtitular el Reel. La pregunta que vale la pena hacerse es si querés que lo haga, porque la versión que produce no es la que vos diseñaste.</span></p>
 <p><span data-lang="en">Here is the difference, and where the text has to sit so it is actually visible.</span><span data-lang="es" lang="es">Esta es la diferencia, y dónde tiene que ir el texto para que se vea de verdad.</span></p>
-<figure><div class="phone"><img src="../../assets/img/captions-fullscreen-preview.png" width="655" height="1300" loading="lazy" alt="Vertical video with burned-in captions previewed fullscreen in Charlatan on an iPhone"></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
+<figure><div class="phone"><span data-lang="en"><img src="../../assets/img/app/en/fullscreen.webp" width="640" height="1328" loading="lazy" alt="Vertical video with burned-in captions, full screen in Charlatan"></span><span data-lang="es" lang="es"><img src="../../assets/img/app/es/fullscreen.webp" width="640" height="1328" loading="lazy" alt="Vertical video with burned-in captions, full screen in Charlatan"></span></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
 <h2><span data-lang="en">Built-in captions versus burned-in captions</span><span data-lang="es" lang="es">Subtítulos nativos contra subtítulos quemados</span></h2>
 <p><span data-lang="en">Instagram's sticker captions are generated after upload, in Instagram's fonts, with Instagram's animation. You get a handful of preset styles and you cannot move much beyond them. They also do not exist anywhere else — cross-post the same file to TikTok and it arrives bare.</span><span data-lang="es" lang="es">Los subtítulos sticker de Instagram se generan después de subir, con las tipografías de Instagram y su animación. Tenés un puñado de estilos preset y no te podés mover mucho de ahí. Además no existen en ningún otro lado — cruzás el mismo archivo a TikTok y llega pelado.</span></p>
 <p><span data-lang="en">Captions burned into the video are part of the image. Whatever you chose is what everyone sees, on every platform, forever. The trade-off is that you cannot edit them after export, which in practice matters less than it sounds because you still have the project.</span><span data-lang="es" lang="es">Los subtítulos quemados en el video son parte de la imagen. Lo que elegiste es lo que ve todo el mundo, en toda plataforma, para siempre. El costo es que no los podés editar después de exportar, que en la práctica importa menos de lo que suena porque el proyecto lo seguís teniendo.</span></p>
@@ -236,18 +236,23 @@
       el.setAttribute("rel", "noopener");
     });
   }
-  function setLang(l) {
+  /* Esta página habla inglés y español. La portada habla once idiomas y
+     guarda el elegido: uno que aquí no existe mostraba la página en blanco,
+     así que cae al inglés, y solo se guarda lo que se elige en esta página
+     para no pisar el idioma de la portada. */
+  function setLang(l, quiet) {
+    if (l !== "es") l = "en";
     document.body.setAttribute("data-active", l);
     document.documentElement.lang = l;
     var sel = document.getElementById("langselect");
     if (sel) sel.value = l;
-    try { localStorage.setItem("ch-lang", l); } catch (e) {}
+    if (!quiet) { try { localStorage.setItem("ch-lang", l); } catch (e) {} }
   }
   (function () {
     var saved = null;
     try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
     var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
-    setLang(lang);
+    setLang(lang, true);
   })();
 </script>
 

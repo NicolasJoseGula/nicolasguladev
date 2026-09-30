@@ -94,17 +94,22 @@
       el.setAttribute("rel", "noopener");
     });
   }
-  function setLang(l) {
+  /* Esta página habla inglés y español. La portada habla once idiomas y
+     guarda el elegido: uno que aquí no existe mostraba la página en blanco,
+     así que cae al inglés, y solo se guarda lo que se elige en esta página
+     para no pisar el idioma de la portada. */
+  function setLang(l, quiet) {
+    if (l !== "es") l = "en";
     document.body.setAttribute("data-active", l);
     document.documentElement.lang = l;
     var sel = document.getElementById("langselect");
     if (sel) sel.value = l;
-    try { localStorage.setItem("ch-lang", l); } catch (e) {}
+    if (!quiet) { try { localStorage.setItem("ch-lang", l); } catch (e) {} }
   }
   (function () {
     var saved = null;
     try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
-    setLang(saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en"));
+    setLang(saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en"), true);
   })();
 </script>
 

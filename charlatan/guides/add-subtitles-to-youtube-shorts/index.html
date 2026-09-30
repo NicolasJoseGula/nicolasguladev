@@ -36,7 +36,7 @@
     "en",
     "es"
   ],
-  "image": "https://dezeo.lat/charlatan/assets/img/captions-fullscreen-preview.png",
+  "image": "https://dezeo.lat/charlatan/assets/img/app/en/fullscreen.webp",
   "datePublished": "2026-08-07",
   "dateModified": "2026-08-07",
   "mainEntityOfPage": {
@@ -144,7 +144,7 @@
 <p class="meta"><span data-lang="en">Updated 2026-08-07 · Charlatan for iPhone</span><span data-lang="es" lang="es">Actualizado 2026-08-07 · Charlatan para iPhone</span></p>
 <p><span data-lang="en">YouTube generates automatic captions for Shorts, but they are closed captions — off by default for many viewers, styled by YouTube, and shown in a fixed position you do not control.</span><span data-lang="es" lang="es">YouTube genera subtítulos automáticos para Shorts, pero son subtítulos opcionales — apagados por defecto para mucha gente, estilados por YouTube, y mostrados en una posición fija que no controlás.</span></p>
 <p><span data-lang="en">For a format that autoplays muted, that is not the same thing as having captions.</span><span data-lang="es" lang="es">Para un formato que arranca solo y sin sonido, eso no es lo mismo que tener subtítulos.</span></p>
-<figure><div class="phone"><img src="../../assets/img/captions-fullscreen-preview.png" width="655" height="1300" loading="lazy" alt="Vertical video with captions placed clear of the Shorts interface, previewed in Charlatan"></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
+<figure><div class="phone"><span data-lang="en"><img src="../../assets/img/app/en/fullscreen.webp" width="640" height="1328" loading="lazy" alt="Vertical video with burned-in captions, full screen in Charlatan"></span><span data-lang="es" lang="es"><img src="../../assets/img/app/es/fullscreen.webp" width="640" height="1328" loading="lazy" alt="Vertical video with burned-in captions, full screen in Charlatan"></span></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
 <h2><span data-lang="en">Closed captions are opt-in, burned captions are not</span><span data-lang="es" lang="es">Los subtítulos opcionales dependen del que mira, los quemados no</span></h2>
 <p><span data-lang="en">YouTube's automatic captions have to be turned on. A large share of viewers never touch that setting, so for them your Short plays silent and wordless.</span><span data-lang="es" lang="es">Los subtítulos automáticos de YouTube hay que activarlos. Una buena parte de la gente nunca toca ese ajuste, así que para ellos tu Short se reproduce mudo y sin palabras.</span></p>
 <p><span data-lang="en">Burned-in captions do not ask. They are part of the picture, so the first second of your video communicates whether or not anyone has changed a setting.</span><span data-lang="es" lang="es">Los subtítulos quemados no piden permiso. Son parte de la imagen, así que el primer segundo de tu video comunica sin importar si alguien cambió un ajuste.</span></p>
@@ -236,18 +236,23 @@
       el.setAttribute("rel", "noopener");
     });
   }
-  function setLang(l) {
+  /* Esta página habla inglés y español. La portada habla once idiomas y
+     guarda el elegido: uno que aquí no existe mostraba la página en blanco,
+     así que cae al inglés, y solo se guarda lo que se elige en esta página
+     para no pisar el idioma de la portada. */
+  function setLang(l, quiet) {
+    if (l !== "es") l = "en";
     document.body.setAttribute("data-active", l);
     document.documentElement.lang = l;
     var sel = document.getElementById("langselect");
     if (sel) sel.value = l;
-    try { localStorage.setItem("ch-lang", l); } catch (e) {}
+    if (!quiet) { try { localStorage.setItem("ch-lang", l); } catch (e) {} }
   }
   (function () {
     var saved = null;
     try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
     var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
-    setLang(lang);
+    setLang(lang, true);
   })();
 </script>
 

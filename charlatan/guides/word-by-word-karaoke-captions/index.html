@@ -36,7 +36,7 @@
     "en",
     "es"
   ],
-  "image": "https://dezeo.lat/charlatan/assets/img/karaoke-caption-style.png",
+  "image": "https://dezeo.lat/charlatan/assets/img/app/en/karaoke.webp",
   "datePublished": "2026-08-07",
   "dateModified": "2026-08-07",
   "mainEntityOfPage": {
@@ -144,7 +144,7 @@
 <p class="meta"><span data-lang="en">Updated 2026-08-07 · Charlatan for iPhone</span><span data-lang="es" lang="es">Actualizado 2026-08-07 · Charlatan para iPhone</span></p>
 <p><span data-lang="en">Karaoke captions show a short phrase and light up each word at the exact moment it is spoken. It is the single most recognisable caption style in short-form video, and unlike most trends it has a reason behind it.</span><span data-lang="es" lang="es">Los subtítulos karaoke muestran una frase corta y encienden cada palabra en el momento exacto en que se dice. Es el estilo de subtítulo más reconocible del formato corto, y a diferencia de casi todas las modas tiene una razón detrás.</span></p>
 <p><span data-lang="en">Here is what it does, when to use it, and when it is the wrong choice.</span><span data-lang="es" lang="es">Esto es lo que hace, cuándo usarlo, y cuándo es la elección equivocada.</span></p>
-<figure><div class="phone"><img src="../../assets/img/karaoke-caption-style.png" width="655" height="1300" loading="lazy" alt="Word-by-word karaoke caption highlighted in yellow in the Charlatan editor on an iPhone"></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
+<figure><div class="phone"><span data-lang="en"><img src="../../assets/img/app/en/karaoke.webp" width="640" height="1328" loading="lazy" alt="Styling a word-by-word karaoke caption in the Charlatan editor"></span><span data-lang="es" lang="es"><img src="../../assets/img/app/es/karaoke.webp" width="640" height="1328" loading="lazy" alt="Styling a word-by-word karaoke caption in the Charlatan editor"></span></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
 <h2><span data-lang="en">Why it holds attention</span><span data-lang="es" lang="es">Por qué retiene la atención</span></h2>
 <p><span data-lang="en">A static caption gives the eye nothing to do. It lands, you read it in half a second, and then you are waiting — and waiting is where people swipe.</span><span data-lang="es" lang="es">Un subtítulo estático no le da nada que hacer al ojo. Aparece, lo leés en medio segundo, y después estás esperando — y esperando es donde la gente desliza.</span></p>
 <p><span data-lang="en">A moving highlight keeps the eye tracking left to right in time with the voice. Reading and listening stay synchronised instead of drifting, and there is never a moment where the screen has nothing happening on it.</span><span data-lang="es" lang="es">Un resaltado en movimiento mantiene el ojo yendo de izquierda a derecha al ritmo de la voz. Leer y escuchar quedan sincronizados en vez de separarse, y nunca hay un momento en que la pantalla no tenga nada pasando.</span></p>
@@ -235,18 +235,23 @@
       el.setAttribute("rel", "noopener");
     });
   }
-  function setLang(l) {
+  /* Esta página habla inglés y español. La portada habla once idiomas y
+     guarda el elegido: uno que aquí no existe mostraba la página en blanco,
+     así que cae al inglés, y solo se guarda lo que se elige en esta página
+     para no pisar el idioma de la portada. */
+  function setLang(l, quiet) {
+    if (l !== "es") l = "en";
     document.body.setAttribute("data-active", l);
     document.documentElement.lang = l;
     var sel = document.getElementById("langselect");
     if (sel) sel.value = l;
-    try { localStorage.setItem("ch-lang", l); } catch (e) {}
+    if (!quiet) { try { localStorage.setItem("ch-lang", l); } catch (e) {} }
   }
   (function () {
     var saved = null;
     try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
     var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
-    setLang(lang);
+    setLang(lang, true);
   })();
 </script>
 

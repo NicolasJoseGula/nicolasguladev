@@ -36,7 +36,7 @@
     "en",
     "es"
   ],
-  "image": "https://dezeo.lat/charlatan/assets/img/subtitle-fonts-picker.png",
+  "image": "https://dezeo.lat/charlatan/assets/img/app/en/fonts.webp",
   "datePublished": "2026-08-07",
   "dateModified": "2026-08-07",
   "mainEntityOfPage": {
@@ -144,7 +144,7 @@
 <p class="meta"><span data-lang="en">Updated 2026-08-07 · Charlatan for iPhone</span><span data-lang="es" lang="es">Actualizado 2026-08-07 · Charlatan para iPhone</span></p>
 <p><span data-lang="en">A subtitle has a harder job than almost any other type on screen. It sits on top of moving footage, it has to survive a bright background it cannot control, it is read on a phone held at arm's length, and it is gone in under two seconds.</span><span data-lang="es" lang="es">Un subtítulo tiene un trabajo más difícil que casi cualquier otro texto en pantalla. Está encima de imagen en movimiento, tiene que sobrevivir a un fondo brillante que no controla, se lee en un teléfono a distancia de brazo, y desaparece en menos de dos segundos.</span></p>
 <p><span data-lang="en">That job decides the answer. The best subtitle font is not the prettiest one — it is the one that stays legible under all of those conditions at once.</span><span data-lang="es" lang="es">Ese trabajo define la respuesta. La mejor tipografía para subtítulos no es la más linda — es la que se sigue leyendo bajo todas esas condiciones a la vez.</span></p>
-<figure><div class="phone"><img src="../../assets/img/subtitle-fonts-picker.png" width="655" height="1300" loading="lazy" alt="Charlatan font picker on an iPhone showing subtitle fonts grouped by impact, sans and condensed"></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
+<figure><div class="phone"><span data-lang="en"><img src="../../assets/img/app/en/fonts.webp" width="640" height="1328" loading="lazy" alt="Charlatan font picker on an iPhone with subtitle fonts grouped by style"></span><span data-lang="es" lang="es"><img src="../../assets/img/app/es/fonts.webp" width="640" height="1328" loading="lazy" alt="Charlatan font picker on an iPhone with subtitle fonts grouped by style"></span></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
 <h2><span data-lang="en">Weight matters more than the typeface</span><span data-lang="es" lang="es">El peso importa más que la tipografía</span></h2>
 <p><span data-lang="en">If you change one thing, change the weight. A bold or black cut of an ordinary sans will outperform a beautiful typeface set in regular, every time, because thin strokes disappear against busy footage.</span><span data-lang="es" lang="es">Si cambiás una sola cosa, cambiá el peso. Una sans común en bold o black le gana a una tipografía hermosa en regular, siempre, porque los trazos finos desaparecen contra imagen cargada.</span></p>
 <p><span data-lang="en">This is also why so many creators land on the same handful of faces without coordinating: Impact, Bebas Neue, Montserrat Bold, and heavy grotesques generally. They are not fashionable choices, they are survivable ones.</span><span data-lang="es" lang="es">También por eso tantos creadores terminan en el mismo puñado de tipografías sin ponerse de acuerdo: Impact, Bebas Neue, Montserrat Bold y grotescas pesadas en general. No son elecciones de moda, son elecciones que sobreviven.</span></p>
@@ -240,18 +240,23 @@
       el.setAttribute("rel", "noopener");
     });
   }
-  function setLang(l) {
+  /* Esta página habla inglés y español. La portada habla once idiomas y
+     guarda el elegido: uno que aquí no existe mostraba la página en blanco,
+     así que cae al inglés, y solo se guarda lo que se elige en esta página
+     para no pisar el idioma de la portada. */
+  function setLang(l, quiet) {
+    if (l !== "es") l = "en";
     document.body.setAttribute("data-active", l);
     document.documentElement.lang = l;
     var sel = document.getElementById("langselect");
     if (sel) sel.value = l;
-    try { localStorage.setItem("ch-lang", l); } catch (e) {}
+    if (!quiet) { try { localStorage.setItem("ch-lang", l); } catch (e) {} }
   }
   (function () {
     var saved = null;
     try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
     var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
-    setLang(lang);
+    setLang(lang, true);
   })();
 </script>
 

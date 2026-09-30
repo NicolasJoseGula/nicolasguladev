@@ -36,7 +36,7 @@
     "en",
     "es"
   ],
-  "image": "https://dezeo.lat/charlatan/assets/img/subtitle-audio-language.png",
+  "image": "https://dezeo.lat/charlatan/assets/img/app/en/translate.webp",
   "datePublished": "2026-08-07",
   "dateModified": "2026-08-07",
   "mainEntityOfPage": {
@@ -144,7 +144,7 @@
 <p class="meta"><span data-lang="en">Updated 2026-08-07 · Charlatan for iPhone</span><span data-lang="es" lang="es">Actualizado 2026-08-07 · Charlatan para iPhone</span></p>
 <p><span data-lang="en">Translating your captions is the cheapest way to reach an audience that does not speak your language. You do not re-record, you do not re-edit — the same clip goes out with different words on it.</span><span data-lang="es" lang="es">Traducir tus subtítulos es la forma más barata de llegar a una audiencia que no habla tu idioma. No volvés a grabar, no volvés a editar — el mismo clip sale con palabras distintas encima.</span></p>
 <p><span data-lang="en">There are two things that go wrong when people do this quickly, and both are easy to avoid once you know them.</span><span data-lang="es" lang="es">Hay dos cosas que salen mal cuando esto se hace apurado, y las dos son fáciles de evitar una vez que las conocés.</span></p>
-<figure><div class="phone"><img src="../../assets/img/subtitle-audio-language.png" width="655" height="1300" loading="lazy" alt="Choosing the audio language for transcription and translation in Charlatan on an iPhone"></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
+<figure><div class="phone"><span data-lang="en"><img src="../../assets/img/app/en/translate.webp" width="640" height="1328" loading="lazy" alt="Editing and translating subtitles in the Charlatan editor"></span><span data-lang="es" lang="es"><img src="../../assets/img/app/es/translate.webp" width="640" height="1328" loading="lazy" alt="Editing and translating subtitles in the Charlatan editor"></span></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
 <h2><span data-lang="en">Get the source language right first</span><span data-lang="es" lang="es">Primero acertá el idioma de origen</span></h2>
 <p><span data-lang="en">Translation quality is capped by transcription quality. If the app transcribed your Spanish as if it were English, the translation is working from nonsense and there is no fixing it downstream.</span><span data-lang="es" lang="es">La calidad de la traducción está limitada por la calidad de la transcripción. Si la app transcribió tu español como si fuera inglés, la traducción está trabajando sobre un disparate y no hay forma de arreglarlo después.</span></p>
 <p><span data-lang="en">Set the audio language before transcribing, not after. It takes one tap and it is the difference between a usable caption track and a comedy of errors.</span><span data-lang="es" lang="es">Elegí el idioma del audio antes de transcribir, no después. Es un toque y es la diferencia entre una pista de subtítulos usable y una comedia de errores.</span></p>
@@ -232,18 +232,23 @@
       el.setAttribute("rel", "noopener");
     });
   }
-  function setLang(l) {
+  /* Esta página habla inglés y español. La portada habla once idiomas y
+     guarda el elegido: uno que aquí no existe mostraba la página en blanco,
+     así que cae al inglés, y solo se guarda lo que se elige en esta página
+     para no pisar el idioma de la portada. */
+  function setLang(l, quiet) {
+    if (l !== "es") l = "en";
     document.body.setAttribute("data-active", l);
     document.documentElement.lang = l;
     var sel = document.getElementById("langselect");
     if (sel) sel.value = l;
-    try { localStorage.setItem("ch-lang", l); } catch (e) {}
+    if (!quiet) { try { localStorage.setItem("ch-lang", l); } catch (e) {} }
   }
   (function () {
     var saved = null;
     try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
     var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
-    setLang(lang);
+    setLang(lang, true);
   })();
 </script>
 
