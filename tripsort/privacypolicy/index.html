@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy · Trip Sort</title>
-  <meta name="description" content="Privacy policy for the Trip Sort game for iOS and Android. Your progress stays on your device and there are no accounts or servers. The game shows ads from Google AdMob, and purchases are handled by Apple and Google.">
+  <meta name="description" content="Privacy policy for the Trip Sort game for iOS and Android. Your progress stays on your device and there are no accounts or servers. The game sends play statistics and crash reports through Google Firebase, shows ads from Google AdMob, and purchases are handled by Apple and Google.">
   <link rel="canonical" href="https://dezeo.lat/tripsort/privacypolicy/">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#0a0a0c">
@@ -40,6 +40,7 @@
         <div class="how-box">
           <h3>Summary</h3>
           <p><strong>Trip Sort has no accounts and no servers of its own.</strong> Your progress, coins, boosters and settings live only on your device. We never receive them, and we cannot see who you are.</p>
+          <p>To fix crashes and make the game better, it sends us <strong>play statistics and crash reports through Google Firebase</strong>, tied to a random identifier rather than to you (section 3).</p>
           <p>The game is free and <strong>shows ads provided by Google AdMob</strong>. To serve and measure those ads, Google's advertising software inside the game receives some technical information from your device, described in section 5. <strong>Purchases are processed entirely by Apple or Google</strong>; we never see your payment details.</p>
           <p>You can play offline. Without a connection there are simply no ads and no store.</p>
         </div>
@@ -50,7 +51,7 @@
 
         <h2>2. The short version</h2>
         <ul>
-          <li><strong>We do not collect personal data ourselves.</strong> There is no sign-in, no account, no backend and no database. The game sends nothing to us.</li>
+          <li><strong>We never learn who you are.</strong> There is no sign-in, no account and no database of ours. What reaches us is play statistics and crash reports through Google Firebase, linked only to a random identifier (section 3).</li>
           <li><strong>Everything about your game stays on your device</strong> (section 4). Deleting the game deletes it.</li>
           <li><strong>Ads come from Google AdMob.</strong> Google's software collects technical data to serve and measure ads (section 5). We never receive that data in a form that identifies you.</li>
           <li><strong>Purchases are handled by Apple and Google</strong> (section 6). We only learn whether a purchase succeeded.</li>
@@ -58,12 +59,19 @@
         </ul>
 
         <h2>3. Data we collect</h2>
-        <p><strong>None, directly.</strong> We do not collect your name, email address, phone number, contacts, photos, precise location, biometric data or any other personal information, and the game includes no analytics service of ours.</p>
+        <p>We do not collect your name, email address, phone number, contacts, photos, precise location, biometric data, or anything else that tells us who you are. What does reach us comes through <strong>Google Firebase</strong>, a set of tools from Google LLC that processes the data on our behalf, and is limited to the following.</p>
+        <h3>Play statistics (Google Analytics for Firebase)</h3>
+        <p>Only after you accept the Terms of Use and this policy when you first open the game, it records how the game is played: levels started, won or lost and how long they took, boosters used and coins spent, rewarded ads watched, daily gifts and missions claimed, the tutorial, achievements, and that a purchase was delivered (never your payment details). With these events Google collects a random app-instance identifier created when the game is installed; the device model, operating system, language and app version; the number and length of sessions; an approximate location (country, region or city) derived from your IP address, which Google Analytics does not store; and, from the stores, the product and price of purchases.</p>
+        <p>We see this mostly as totals, for example how many players finish level 10 or which level makes people give up, and we use it to balance the levels, decide what to improve and check that a change made the game better. On Android, the game stops Analytics from reading the advertising ID. On iOS, Analytics can read the advertising identifier (IDFA) only if you allowed tracking in Apple's prompt. If you turn off <em>Personalized ads</em> in Settings, the statistics are not used to personalize ads.</p>
+        <h3>Crash reports (Firebase Crashlytics)</h3>
+        <p>If the game crashes or runs into an error, it sends a report with the technical trace of the error, the device model, operating system, free memory and storage, screen orientation, app version, and a random installation identifier. Crash reports contain no game progress and nothing you wrote. We use them only to find and fix bugs.</p>
+        <h3>Values we can adjust (Firebase Remote Config)</h3>
+        <p>When it starts, the game asks Firebase for a few numbers we can adjust without an update, such as how often ads appear between levels or what boosters cost in coins. Sometimes we compare two versions of such a number, and the game is then placed in one of two groups at random. For this Firebase receives a random installation identifier, the app version, language and country.</p>
         <p>If you write to us for support, we receive what you choose to send: your email address and the content of your message. We use it only to answer you and keep it only as long as needed to resolve your request, then delete it. Please do not send us personal information we do not need.</p>
         <p>The game is not designed to collect sensitive personal data (such as health, religion, political opinions or sexual orientation). If any were ever sent to us inadvertently, we would delete it promptly.</p>
 
         <h2>4. What the game stores on your device</h2>
-        <p>Everything in this section stays on your phone or tablet, in the game's own private storage. It is never transmitted to us, and there is no server it could be transmitted to.</p>
+        <p>Everything in this section stays on your phone or tablet, in the game's own private storage. It is never transmitted to us, and there is no server it could be transmitted to. (The statistics in section 3 are separate: they describe what happens in the game, not your saved game.)</p>
         <ul>
           <li><strong>Your progress:</strong> your current level, the destinations, postcards and landmarks you have unlocked, your stars and best scores.</li>
           <li><strong>Your game items:</strong> your coins and boosters, and which one-time purchases (such as Remove Ads or the Starter Pack) you have already made, so the game can apply them.</li>
@@ -105,15 +113,16 @@
         <p>Only the following companies receive data from the game, and only in the ways described above. We do not sell personal data, and we do not share it with anyone else for their own marketing.</p>
         <table>
           <tr><th>Company and service</th><th>What for</th><th>Their policy</th></tr>
+          <tr><td>Google LLC · Firebase (Analytics, Crashlytics, Remote Config)</td><td>Play statistics, crash reports, adjustable values; acts as our processor</td><td><a href="https://firebase.google.com/support/privacy" rel="noopener">Privacy and Security in Firebase</a></td></tr>
           <tr><td>Google LLC · Google Mobile Ads (AdMob)</td><td>Showing and measuring ads; fraud prevention</td><td><a href="https://policies.google.com/technologies/partner-sites" rel="noopener">How Google uses data from partner apps</a></td></tr>
           <tr><td>Apple Inc. · App Store, In-App Purchase, ratings</td><td>Download, purchases, restore, ratings (iOS)</td><td><a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple Privacy Policy</a></td></tr>
           <tr><td>Google LLC · Google Play, Play Billing, ratings</td><td>Download, purchases, restore, ratings (Android)</td><td><a href="https://policies.google.com/privacy" rel="noopener">Google Privacy Policy</a></td></tr>
         </table>
-        <p>If we ever add a service to this list (for example, a crash-reporting or analytics tool), we will update this page before the change ships, and the App Store and Google Play data labels for the game will be updated to match.</p>
+        <p>If we ever add a service to this list, we will update this page before the change ships, and the App Store and Google Play data labels for the game will be updated to match.</p>
         <p>We may also disclose information if required by law, a court order or a public authority, or when reasonably necessary to protect our rights, your safety or the safety of others. If Trip Sort were ever transferred to another company, for example through a sale or merger, this policy would continue to apply to any data transferred with it, and you would be informed through this page and the stores.</p>
 
         <h2>9. Children</h2>
-        <p>Trip Sort is a general-audience puzzle game. It is <strong>not directed at children under 13</strong>, or under 16 in the European Economic Area and the United Kingdom, or under the age at which your country lets you consent to data processing. We do not knowingly collect personal information from children, and the game itself collects none from any user. Ads in the game are not targeted at children.</p>
+        <p>Trip Sort is a general-audience puzzle game. It is <strong>not directed at children under 13</strong>, or under 16 in the European Economic Area and the United Kingdom, or under the age at which your country lets you consent to data processing. We do not knowingly collect personal information from children, and the game collects nothing that identifies any user. Ads in the game are not targeted at children.</p>
         <p>If you are a parent or guardian and believe a child has used the game: everything the game stores is on the device, so deleting the game from the device erases it completely. If you believe any information about a child has reached us or Google through the game, contact us at <a href="mailto:gulabonzinillc@gmail.com">gulabonzinillc@gmail.com</a> and we will help you, including by pointing you to Google's own tools for the advertising data described in section 5.</p>
 
         <h2>10. Legal bases (EEA, UK and Switzerland)</h2>
@@ -123,16 +132,17 @@
           <tr><td>Running the game, applying your purchases, restoring them</td><td>Performance of a contract (Article 6(1)(b))</td></tr>
           <tr><td>Showing non-personalized ads to keep the game free; preventing ad fraud</td><td>Our legitimate interests (Article 6(1)(f)), balanced against your rights</td></tr>
           <tr><td>Showing personalized ads; any use of your advertising identifier for that purpose</td><td>Your consent (Article 6(1)(a)), which you can withdraw at any time as described in section 5</td></tr>
+          <tr><td>Play statistics, crash reports and adjustable values (section 3)</td><td>Our legitimate interests in keeping the game working and improving it (Article 6(1)(f)); you can object as described in section 12</td></tr>
           <tr><td>Answering a support request</td><td>Our legitimate interest in helping you, and your request itself</td></tr>
           <tr><td>Keeping records or disclosing data when the law requires it</td><td>Legal obligation (Article 6(1)(c))</td></tr>
         </table>
 
         <h2>11. Where data is processed</h2>
-        <p>We hold no data, so nothing is stored by us in any country. The advertising and store data described above is processed by Google and Apple on their own infrastructure, which includes servers in the United States and other countries whose laws may differ from yours. For data from the EEA, the UK and Switzerland, Google and Apple rely on recognized transfer safeguards, such as the EU–U.S. Data Privacy Framework and the European Commission's Standard Contractual Clauses, as described in their own privacy policies linked in section 8.</p>
+        <p>We keep no servers of our own. The statistics and crash reports in section 3 are stored by Google on its Firebase infrastructure, and the advertising and store data described above is processed by Google and Apple on their own infrastructure, which includes servers in the United States and other countries whose laws may differ from yours. For data from the EEA, the UK and Switzerland, Google and Apple rely on recognized transfer safeguards, such as the EU–U.S. Data Privacy Framework and the European Commission's Standard Contractual Clauses, as described in their own privacy policies linked in section 8.</p>
 
         <h2>12. Your rights and how to use them</h2>
         <p>Depending on where you live, you may have the right to access the personal data held about you, to have it corrected or deleted, to receive a copy of it, to restrict or object to its processing, to withdraw a consent you gave, and not to be discriminated against for exercising these rights.</p>
-        <p><strong>In practice:</strong> we hold no personal data about you, so there is nothing for us to disclose, correct, export or delete. Everything in section 4 is on your own device and under your sole control, and deleting the game removes it. For the advertising data processed by Google, the controls in section 5 let you reset or remove your advertising identifier and switch to non-personalized ads, and Google's own tools at <a href="https://myaccount.google.com/data-and-privacy" rel="noopener">myaccount.google.com</a> let you review and delete activity linked to a Google account.</p>
+        <p><strong>In practice:</strong> we hold nothing that tells us who you are. The Firebase data in section 3 is tied to a random identifier that we cannot connect to you, so we cannot pick out which records are yours; it is deleted automatically after the periods in section 13, and deleting the game stops all collection (a new install starts with a new identifier). If you object to the statistics, write to us and we will help. Everything in section 4 is on your own device and under your sole control, and deleting the game removes it. For the advertising data processed by Google, the controls in section 5 let you reset or remove your advertising identifier and switch to non-personalized ads, and Google's own tools at <a href="https://myaccount.google.com/data-and-privacy" rel="noopener">myaccount.google.com</a> let you review and delete activity linked to a Google account.</p>
         <p>You can still write to us at <a href="mailto:gulabonzinillc@gmail.com">gulabonzinillc@gmail.com</a> with "Privacy request" in the subject. We answer within 30 days (45 days for requests under California law), and we may ask you to confirm details so that we do not act on someone else's request. You may also use an authorized agent where your law allows it, and you can appeal our answer by replying to it. We do not make decisions about you by automated means that have legal or similarly significant effects.</p>
         <h3>European Economic Area, United Kingdom and Switzerland</h3>
         <p>In addition to the rights above, you have the right to lodge a complaint with your data protection authority: the <a href="https://www.edpb.europa.eu/about-edpb/about-edpb/members_en" rel="noopener">authority of your EU country</a>, the <a href="https://ico.org.uk/" rel="noopener">UK Information Commissioner's Office</a>, or the <a href="https://www.edoeb.admin.ch/" rel="noopener">Swiss FDPIC</a>.</p>
@@ -144,10 +154,10 @@
         <p>Under Law 18.331, you have the rights of access, rectification, update, inclusion and deletion, and you may complain to the <a href="https://www.gub.uy/unidad-reguladora-control-datos-personales/" rel="noopener">Unidad Reguladora y de Control de Datos Personales (URCDP)</a>.</p>
 
         <h2>13. Data retention</h2>
-        <p><strong>We retain nothing, because we receive nothing.</strong> The game data described in section 4 stays on your device until you delete the game. Support emails are deleted once your request is resolved, unless a law requires us to keep them longer. Advertising and store data is kept by Google and Apple according to their own retention policies.</p>
+        <p>The game data described in section 4 stays on your device until you delete the game. Play statistics are kept at event level for 2 months and then only as totals; crash reports are kept for 90 days. Support emails are deleted once your request is resolved, unless a law requires us to keep them longer. Advertising and store data is kept by Google and Apple according to their own retention policies.</p>
 
         <h2>14. Security</h2>
-        <p>The game communicates with Google and Apple only over encrypted connections, and it stores nothing of yours anywhere but your device. Because we hold no personal data, there is no database of yours to be breached on our side. No system can be guaranteed to be completely secure, however; if we ever learned of a security incident affecting the game's users, we would publish a notice on this page and in the game's release notes, and notify the authorities where the law requires it.</p>
+        <p>The game communicates with Google and Apple only over encrypted connections, and it stores nothing of yours anywhere but your device. We keep no database of our own; the Firebase data is stored by Google and can be reached only through our Google account. No system can be guaranteed to be completely secure, however; if we ever learned of a security incident affecting the game's users, we would publish a notice on this page and in the game's release notes, and notify the authorities where the law requires it.</p>
 
         <h2>15. This website</h2>
         <p>This page is served as static files. It sets no cookies, runs no analytics and embeds no third-party trackers. The site is hosted on GitHub Pages, which keeps standard server access logs, including IP address and user agent, under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's own privacy statement</a>. We do not read, receive or have access to those logs.</p>
