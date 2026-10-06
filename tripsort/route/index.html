@@ -52,6 +52,16 @@ h1 .gold { color: var(--route-b); }
 .stops .lv { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; white-space: nowrap; }
 .stops .ct { color: var(--muted); }
 .note { font-size: 13px; color: var(--muted); margin: 0; }
+/* The traveler: walks the route stop by stop, and flies the long legs. */
+.traveler { font-size: 30px; line-height: 1; filter: drop-shadow(0 2px 2px rgba(0,0,0,.35)); pointer-events: none; }
+.traveler span { display: inline-block; transition: transform .25s; }
+.trip { position: absolute; left: 12px; bottom: 28px; z-index: 1000; display: flex; gap: 8px; align-items: center;
+  background: var(--card); color: var(--ink); border: 1px solid var(--rule); border-radius: 12px; padding: 6px 8px 6px 6px;
+  box-shadow: 0 2px 8px rgba(20,25,50,.2); font: 600 13px var(--display); max-width: calc(100% - 24px); }
+.trip button { border: 0; border-radius: 9px; padding: 6px 10px; font: 600 13px var(--display); cursor: pointer; background: var(--hi); color: #fff; white-space: nowrap; }
+.trip button.ghost { background: transparent; color: var(--ink); border: 1px solid var(--rule); }
+.trip .where { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+.mapwrap { position: relative; }
 </style>
 </head>
 <body>
@@ -62,7 +72,10 @@ h1 .gold { color: var(--route-b); }
     <p class="lede">The order a player travels in, stop by stop, on a real map. Each stop is a place with 12 levels; finishing them completes its postcard and stamps the passport. The trip starts in Montevideo, goes round the whole world and ends in Stanley (Falkland Islands), back on the same side of the Atlantic where it began.</p>
     <ul class="facts"><li><b>256</b>stops</li><li><b>193</b>UN countries</li><li><b>20</b>chapters</li><li><b>3,072</b>levels</li></ul>
   </header>
-  <div id="map" role="region" aria-label="Map of the Trip Sort route"></div>
+  <div class="mapwrap">
+    <div id="map" role="region" aria-label="Map of the Trip Sort route"></div>
+    <div class="trip"><button type="button" id="tripPlay">Pause</button><button type="button" class="ghost" id="tripFollow">Follow</button><span class="where" id="tripWhere" aria-live="polite"></span></div>
+  </div>
   <div class="legend"><span>Start</span><i></i><span>End</span><span>· Zoom and drag like any map; switch to satellite at the top right. Tap a chapter to fly to it, or a dot for its stop.</span></div>
   <section class="chapters" id="chapters"></section>
   <p class="note">Levels count 12 per stop: stop 1 is levels 1–12, stop 2 is 13–24, and so on.</p>
@@ -175,6 +188,68 @@ function select(c) {
   }
   updateNames();
 }
+
+// ---------- The traveler ----------
+// A little traveler goes round the route on its own, one stop after the
+// other: walking the short legs and flying the long ones over the sea. It
+// moves along the same straight lines the route draws (straight on the map,
+// so the position is interpolated in map pixels, not in degrees). Longitude
+// keeps counting past the date line, so it never jumps across the map; the
+// tiles repeat round the world. "Follow" keeps the map centred on it.
+const FLY_KM = 900, SPEED = 0.55;   // map pixels per frame at zoom 0 x 256
+const km = (a, b) => {
+  const r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLon = (b.lon - a.lon) * r;
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLon / 2) ** 2;
+  return 12742 * Math.asin(Math.sqrt(h));
+};
+const walker = L.marker([stops[0].lat, stops[0].lon], {
+  icon: L.divIcon({ className: 'traveler', html: '<span>🚶</span>', iconSize: [30, 30], iconAnchor: [15, 26] }),
+  interactive: false, keyboard: false, zIndexOffset: 1000,
+}).addTo(map);
+const walkerEl = () => walker.getElement()?.querySelector('span');
+const where = document.getElementById('tripWhere');
+let leg = 0, t = 0, offset = 0, playing = !reduce, follow = false, pauseUntil = 0;
+function legEnds(i) {
+  const a = stops[i], b = stops[i + 1];
+  let bl = b.lon;
+  if (bl - a.lon > 180) bl -= 360; else if (a.lon - bl > 180) bl += 360;
+  return [L.latLng(a.lat, a.lon + offset), L.latLng(b.lat, bl + offset), bl - b.lon];
+}
+function say(i) { const a = stops[i], b = stops[i + 1]; where.textContent = `${a.n}. ${a.name} → ${b.name}`; }
+say(0);
+function step(now) {
+  requestAnimationFrame(step);
+  if (!playing || now < pauseUntil) return;
+  const [A, B, shift] = legEnds(leg);
+  const pa = map.project(A, 0), pb = map.project(B, 0), len = Math.max(.01, pa.distanceTo(pb));
+  t = Math.min(1, t + SPEED / 256 * 6 / len);
+  const p = map.unproject(pa.add(pb.subtract(pa).multiplyBy(t)), 0);
+  walker.setLatLng(p);
+  const el = walkerEl(), flying = km(stops[leg], stops[leg + 1]) > FLY_KM;
+  if (el) {
+    el.textContent = flying ? '✈️' : '🚶';
+    // The emoji faces left; turn it to face where it is going.
+    const east = pb.x > pa.x;
+    el.style.transform = flying ? `rotate(${Math.atan2(pb.y - pa.y, pb.x - pa.x) * 180 / Math.PI + 45}deg)` : (east ? 'scaleX(-1)' : 'none');
+  }
+  if (follow) map.panTo(p, { animate: false });
+  if (t >= 1) {
+    t = 0; leg++; offset += shift; pauseUntil = now + 450;
+    if (leg >= stops.length - 1) { leg = 0; offset = 0; pauseUntil = now + 1500; walker.setLatLng([stops[0].lat, stops[0].lon]); }
+    say(leg === 0 ? 0 : leg);
+  }
+}
+requestAnimationFrame(step);
+const playBtn = document.getElementById('tripPlay'), followBtn = document.getElementById('tripFollow');
+const syncButtons = () => { playBtn.textContent = playing ? 'Pause' : 'Play'; followBtn.classList.toggle('ghost', !follow); };
+playBtn.onclick = () => { playing = !playing; syncButtons(); };
+followBtn.onclick = () => {
+  follow = !follow;
+  if (follow) { playing = true; map.setView(walker.getLatLng(), Math.max(map.getZoom(), 4.5), { animate: !reduce }); }
+  syncButtons(); updateNames();
+};
+map.on('dragstart', () => { if (follow) { follow = false; syncButtons(); } });
+syncButtons();
 
 const list = document.getElementById('chapters');
 chapters.forEach((name, c) => {
