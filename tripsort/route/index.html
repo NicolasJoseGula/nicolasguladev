@@ -201,7 +201,7 @@ function select(c) {
 // so the position is interpolated in map pixels, not in degrees). Longitude
 // keeps counting past the date line, so it never jumps across the map; the
 // tiles repeat round the world. "Follow" keeps the map centred on it.
-const FLY_KM = 900, SAIL_MAX_KM = 6000, SPEED = 0.55;   // map pixels per frame at zoom 0 x 256
+const FLY_KM = 900, SAIL_MAX_KM = 1500, SPEED = 0.55;   // map pixels per frame at zoom 0 x 256
 const km = (a, b) => {
   const r = Math.PI / 180, dLat = (b.lat - a.lat) * r, dLon = (b.lon - a.lon) * r;
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(a.lat * r) * Math.cos(b.lat * r) * Math.sin(dLon / 2) ** 2;
