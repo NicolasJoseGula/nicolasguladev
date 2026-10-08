@@ -583,8 +583,13 @@ section { padding: 78px 0; }
 .ipad-shot img { width: 100%; height: auto; filter: drop-shadow(0 30px 60px rgba(0,0,0,.55)); }
 
 /* Estilos: los once looks con nombre, cada uno sacado de la app. */
-.look-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
-.look-card { margin: 0; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; overflow: hidden; transition: transform .2s, border-color .2s; }
+/* Flex en vez de grilla para que la última fila, con menos tarjetas, quede
+   centrada bajo las de arriba (once estilos nunca llenan todas las filas). */
+.look-grid { --cols: 2; display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; }
+@media (min-width: 520px) { .look-grid { --cols: 3; } }
+@media (min-width: 760px) { .look-grid { --cols: 4; } }
+@media (min-width: 1080px) { .look-grid { --cols: 6; } }
+.look-card { flex: 0 0 calc((100% - (var(--cols) - 1) * 14px) / var(--cols)); min-width: 0; margin: 0; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 20px; overflow: hidden; transition: transform .2s, border-color .2s; }
 .look-card:hover { transform: translateY(-3px); border-color: var(--pink); }
 .look-card img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; background: #111; }
 .look-card figcaption { padding: 12px 14px 16px; }
