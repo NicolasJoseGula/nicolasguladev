@@ -241,12 +241,20 @@ body[data-active="es"] [data-lang="es"] { display: revert; }
   position: absolute; inset: 0; pointer-events: none;
   clip-path: inset(0 calc(100% - var(--cut)) 0 0);
 }
-/* La marca, donde la deja una exportación gratis. */
+/* La marca, donde la deja una exportación gratis desde la 1.2: el ícono y
+   el nombre en el medio del cuadro, al 42 %. Las medidas son las de
+   Watermark.swift contra un lado corto de 1080 (ícono 104, letra 62,
+   separación 20), en cqw del ancho del video. */
 .ba-mark {
-  position: absolute; top: 4.5%; left: 6%;
-  font-weight: 900; font-size: clamp(11px, 3.2cqw, 15px); letter-spacing: .02em;
-  color: rgba(255,255,255,.92); text-shadow: 0 1px 6px rgba(0,0,0,.55);
+  position: absolute; left: 0; right: 0; top: 50%; transform: translateY(-50%);
+  container-type: inline-size;
+  display: flex; align-items: center; justify-content: center;
+  opacity: .42; filter: drop-shadow(0 1px 3px rgba(0,0,0,.55));
+  font-family: ui-rounded, "SF Pro Rounded", system-ui, sans-serif;
+  font-weight: 900; color: rgba(255,255,255,.92); letter-spacing: -.033em;
 }
+.ba-mark img { width: 9.63cqw; height: 9.63cqw; margin-right: 1.85cqw; }
+.ba-mark > span { font-size: 5.74cqw; line-height: 1; }
 .ba-mark b { background: linear-gradient(90deg, var(--pink), var(--purple), var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
 /* El subtítulo, en el estilo Creator de la app: blanco, contorno rosa, y la
    palabra que suena sobre lima. El contorno son ocho sombras porque
