@@ -58,6 +58,20 @@
   <url><loc>https://dezeo.lat/fixyourlife/guides/streak-widget-iphone.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://dezeo.lat/fixyourlife/guides/diary-with-prompts.html</loc><lastmod>2026-07-20</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
+  <!-- Trip Sort -->
+  <url>
+    <loc>https://dezeo.lat/tripsort/</loc>
+    <lastmod>2026-10-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://dezeo.lat/tripsort/privacypolicy/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
   <!-- Block&Read -->
   <url>
     <loc>https://dezeo.lat/blockandread/</loc>
