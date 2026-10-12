@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trip Sort: Travel Tile Match — Match 3 Tiles and Travel the World</title>
-  <meta name="description" content="Trip Sort is a relaxing tile matching puzzle for iOS and Android. Match 3 tiles, clear the board and travel to 255 destinations, with over 3,000 levels, postcards and famous landmarks to collect. Play offline.">
+  <title>Trip Sort: Triple Tile Match – Offline Brain Puzzle Game</title>
+  <meta name="description" content="Trip Sort is a relaxing triple tile match puzzle for iPhone and Android. Match 3 tiles, train your brain and travel to 255 destinations. Free to play, no Wi-Fi needed.">
   <link rel="canonical" href="https://dezeo.lat/tripsort/">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#8fd6ff">
@@ -12,32 +12,45 @@
   <link rel="apple-touch-icon" href="assets/img/tripsort-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&display=swap">
-  <link rel="stylesheet" href="assets/css/landing.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="preload" as="image" href="assets/img/hero-en.webp" type="image/webp">
 
-  <!-- Open Graph. Social crawlers still read PNG more reliably than WebP. -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Trip Sort">
-  <meta property="og:title" content="Trip Sort: Travel Tile Match">
-  <meta property="og:description" content="Match 3 tiles and travel the world. A relaxing puzzle trip to 255 destinations.">
+  <meta property="og:title" content="Trip Sort: Triple Tile Match">
+  <meta property="og:description" content="Match 3 tiles, train your brain and travel the world. A relaxing puzzle trip to 255 destinations that plays offline.">
   <meta property="og:url" content="https://dezeo.lat/tripsort/">
-  <meta property="og:image" content="https://dezeo.lat/tripsort/assets/img/trip-sort-feature.png">
+  <meta property="og:image" content="https://dezeo.lat/tripsort/assets/img/og-tripsort.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Trip Sort: Travel Tile Match">
-  <meta name="twitter:description" content="Match 3 tiles and travel the world. A relaxing puzzle trip to 255 destinations.">
-  <meta name="twitter:image" content="https://dezeo.lat/tripsort/assets/img/trip-sort-feature.png">
+  <meta name="twitter:title" content="Trip Sort: Triple Tile Match">
+  <meta name="twitter:description" content="Match 3 tiles, train your brain and travel the world. A relaxing puzzle trip to 255 destinations that plays offline.">
+  <meta name="twitter:image" content="https://dezeo.lat/tripsort/assets/img/og-tripsort.jpg">
+  <meta name="apple-itunes-app" content="app-id=6818841022">
 
-  <!-- Structured data: the game and the FAQ below, word for word. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    "name": "Trip Sort: Travel Tile Match",
+    "name": "Trip Sort: Triple Tile Match",
+    "alternateName": "Trip Sort",
     "operatingSystem": "iOS, Android",
     "applicationCategory": "GameApplication",
-    "description": "A relaxing tile matching puzzle: match 3 tiles, clear the board and travel to 255 destinations, with over 3,000 levels, postcards and famous landmarks to collect.",
+    "applicationSubCategory": "Puzzle",
+    "description": "A relaxing triple tile match puzzle: match 3 tiles, clear the board and travel to 255 real destinations, with over 3,000 levels, postcards and 23 famous landmarks to collect. Plays offline.",
     "url": "https://dezeo.lat/tripsort/",
+    "image": "https://dezeo.lat/tripsort/assets/img/og-tripsort.jpg",
+    "screenshot": [
+      "https://dezeo.lat/tripsort/assets/img/shots/en-01.webp",
+      "https://dezeo.lat/tripsort/assets/img/shots/en-03.webp",
+      "https://dezeo.lat/tripsort/assets/img/shots/en-05.webp"
+    ],
+    "installUrl": "https://apps.apple.com/app/id6818841022",
     "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "inLanguage": ["en", "es"],
+    "author": { "@type": "Person", "name": "Nicolas Gula" },
     "publisher": { "@type": "Organization", "name": "dezeo", "url": "https://dezeo.lat/" }
   }
   </script>
@@ -46,118 +59,521 @@
     "@context": "https://schema.org",
     "@type": "FAQPage",
     "mainEntity": [
-      { "@type": "Question", "name": "Where is my progress saved?",
-        "acceptedAnswer": { "@type": "Answer", "text": "On your device. Trip Sort has no accounts, so your levels, coins and boosters stay on your phone. Deleting the game deletes your progress." } },
-      { "@type": "Question", "name": "I bought something and it did not arrive.",
-        "acceptedAnswer": { "@type": "Answer", "text": "Open the Shop and tap Restore Purchases. Remove Ads and the Starter Pack come back on the same Apple or Google account. If coins from a pack are missing, write to us with the date and the pack's name." } },
-      { "@type": "Question", "name": "Can I play without internet?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every level works offline. Without a connection there are simply no ads and the Shop is not available." } },
-      { "@type": "Question", "name": "How do I turn off the music or the sounds?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Tap the gear in the top corner. Sound, Music and Vibration each have their own switch." } },
-      { "@type": "Question", "name": "Can I play an old level again?",
-        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Open the Journey, tap a destination you have completed and pick any of its 12 levels." } }
+      { "@type": "Question", "name": "What is a triple tile match game?",
+        "acceptedAnswer": { "@type": "Answer", "text": "A triple tile match game is a puzzle where you tap tiles to move them into a tray, and every three identical tiles clear. You win when the whole board is empty and lose if the tray fills up without a match. In Trip Sort the tray has four slots and every board is themed after a real city." } },
+      { "@type": "Question", "name": "Can I play Trip Sort offline, without Wi-Fi?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Every level plays with no internet, no Wi-Fi and no mobile data. Offline there are simply no ads and the Shop is not available." } },
+      { "@type": "Question", "name": "Is Trip Sort a good game to play on a plane?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. It works in airplane mode, has no timers and levels take a few minutes each, so it fits anything from a short hop to a long-haul flight." } },
+      { "@type": "Question", "name": "How do I beat a hard level?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Uncover tiles before you fill the tray, avoid leaving single tiles waiting in the tray, and keep boosters for the moment the tray is almost full. Undo, Shuffle, the Magic Wand and the extra fifth slot can each save a level." } },
+      { "@type": "Question", "name": "Does Trip Sort train your brain?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It keeps your mind busy in a good way: you scan the board for matches, plan a few moves ahead and manage a small tray. A few levels a day make a calm brain break." } },
+      { "@type": "Question", "name": "Is Trip Sort easy enough for seniors?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. You only tap, there are no timers, there is no account to create and the first boards are gentle, so anyone can pick it up at their own pace." } },
+      { "@type": "Question", "name": "Is Trip Sort like mahjong?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It shares the look and the calm of mahjong solitaire, with stacked tiles you uncover layer by layer. The difference is that you collect three identical tiles in a tray instead of removing pairs." } },
+      { "@type": "Question", "name": "Is there a timer?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Trip Sort has no timers, so you can take as long as you like on every move. Music, sounds and vibration each have their own switch in Settings." } },
+      { "@type": "Question", "name": "How many levels and destinations are there?",
+        "acceptedAnswer": { "@type": "Answer", "text": "255 real destinations on every continent, with 12 levels each: over 3,000 levels. Every city has its own tiles, a postcard to complete and a passport stamp, and 23 famous landmarks wait along the way." } },
+      { "@type": "Question", "name": "What do the boosters do?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Hint lights up your best move, Undo puts your last tile back on the board, Shuffle mixes up the tiles left, the Magic Wand clears a whole set and Extra Slot adds a fifth slot to the tray." } },
+      { "@type": "Question", "name": "Is Trip Sort free?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, Trip Sort is free to play. It has optional in-app purchases and ads, and a single Remove Ads purchase turns off the ads between levels." } },
+      { "@type": "Question", "name": "Do I need an account?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. There is no sign-up. Your progress is saved on your phone." } }
     ]
   }
   </script>
 </head>
-<body>
-  <header class="top">
-    <div class="wrap">
-      <a class="brand" href="./">
-        <img src="assets/img/tripsort-icon.png" alt="Trip Sort app icon" width="40" height="40">
-        Trip Sort
-      </a>
-      <nav>
-        <a href="#features">Features</a>
-        <a href="#support">Support</a>
-      </nav>
-    </div>
-  </header>
+<body data-active="en">
 
-  <main>
-    <section class="hero">
-      <div class="wrap">
-        <h1 class="logo">Trip <span>Sort</span></h1>
-        <p class="tagline">Match 3 tiles and travel the world</p>
-        <p class="sub">A relaxing tile matching puzzle. Clear the board, fill your postcard and fly, sail or ride to the next of 255 destinations.</p>
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="">
+      <img src="assets/img/tripsort-icon.png" alt="Trip Sort app icon" width="32" height="32">
+      Trip Sort
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+    <nav class="site-nav" aria-label="Main">
+      <a href="#screenshots"><span data-lang="en">Screenshots</span><span data-lang="es" lang="es">Capturas</span></a>
+      <a href="#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a>
+      <a href="guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
+      <a href="#faq">FAQ</a>
+      <a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a>
+      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language / Idioma">
+        <option value="en">English</option>
+        <option value="es">Español</option>
+      </select>
+      <a class="nav-cta" href="#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a>
+    </nav>
+    <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></label>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= Hero ================= -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow"><span data-lang="en">Triple tile match · Brain puzzle · No Wi-Fi needed</span><span data-lang="es" lang="es">Emparejar fichas · Juego mental · Sin wifi</span></span>
+        <h1><span data-lang="en">The relaxing <span class="accent">triple tile match</span> that takes you around the world</span><span data-lang="es" lang="es">El puzzle relajante de <span class="accent">emparejar fichas</span> que te lleva por el mundo</span></h1>
+        <p class="sub"><span data-lang="en">Match 3 tiles, clear the board and fly, sail or ride to the next of 255 real destinations. A calm brain puzzle with no timers, made to play anywhere, even offline.</span><span data-lang="es" lang="es">Juntá 3 fichas iguales, limpiá el tablero y viajá en avión, barco o tren al próximo de 255 destinos reales. Un puzzle mental tranquilo, sin reloj, para jugar donde sea, incluso sin internet.</span></p>
         <div class="stores">
-          <span class="store"><small>Coming soon on</small><strong>Google Play</strong></span>
-          <span class="store"><small>Coming soon on the</small><strong>App Store</strong></span>
+          <a class="store js-ios" href="https://apps.apple.com/app/id6818841022" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.1-2.01-3.77-2.04-1.6-.16-3.13.94-3.94.94-.81 0-2.07-.92-3.41-.89-1.75.03-3.37 1.02-4.27 2.59-1.82 3.16-.47 7.83 1.31 10.39.87 1.25 1.9 2.66 3.26 2.61 1.31-.05 1.8-.85 3.39-.85 1.58 0 2.03.85 3.41.82 1.41-.03 2.3-1.28 3.16-2.54.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.73-1.05-2.76-4.16M14.5 4.79c.72-.88 1.21-2.1 1.08-3.31-1.04.04-2.3.69-3.05 1.56-.67.77-1.25 2.01-1.09 3.19 1.16.09 2.34-.59 3.06-1.44"/></svg>
+            <span><small><span data-lang="en">Download on the</span><span data-lang="es" lang="es">Descargalo en el</span></small><strong>App Store</strong></span>
+          </a>
+          <a class="store js-android" href="https://play.google.com/store/apps/details?id=lat.dezeo.trip_sort" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 1.8C3.3 2.1 3.2 2.5 3.2 3v18c0 .5.1.9.4 1.2L13.8 12z"/><path fill="#fbbc04" d="M17.2 15.4 13.8 12l3.4-3.4 4 2.3c1.1.6 1.1 1.7 0 2.3z"/><path fill="#4285f4" d="M17.2 8.6 5.3 1.8c-.7-.4-1.3-.4-1.7 0L13.8 12z"/><path fill="#ea4335" d="M3.6 22.2c.4.4 1 .4 1.7 0l11.9-6.8-3.4-3.4z"/></svg>
+            <span><small><span data-lang="en">Get it on</span><span data-lang="es" lang="es">Disponible en</span></small><strong>Google Play</strong></span>
+          </a>
         </div>
-        <picture>
-          <source srcset="assets/img/trip-sort-feature.webp" type="image/webp">
-          <img class="feature" src="assets/img/trip-sort-feature.png" alt="Trip Sort title over a grand travel station, with tiles of the Eiffel Tower, the Leaning Tower of Pisa, the Statue of Liberty and the Taj Mahal" width="1024" height="500">
-        </picture>
-      </div>
-    </section>
-
-    <section class="screens">
-      <div class="wrap">
-        <h2>One board at a time, all around the world</h2>
-        <p class="lead">Every city brings its own tiles: croissants and the Eiffel Tower in Paris, torii gates and sushi in Kyoto, tango shoes and mate in Buenos Aires.</p>
-        <div class="shots">
-          <img src="assets/img/match-3-tiles.webp" alt="A Paris level: match three Eiffel Tower tiles in the tray" width="540" height="960" loading="lazy">
-          <img src="assets/img/255-destinations.webp" alt="A map of Europe with the route from London to Paris, Rome and Santorini" width="540" height="960" loading="lazy">
-          <img src="assets/img/relax-and-unwind.webp" alt="A calm Santorini level with blue domes in the background" width="540" height="960" loading="lazy">
-          <img src="assets/img/travel-the-world.webp" alt="A Rio de Janeiro level with Christ the Redeemer tiles" width="540" height="960" loading="lazy">
+        <div class="proof">
+          <span><span data-lang="en">Free to play</span><span data-lang="es" lang="es">Gratis</span></span>
+          <span><span data-lang="en">Plays offline</span><span data-lang="es" lang="es">Funciona sin internet</span></span>
+          <span><span data-lang="en">No timers</span><span data-lang="es" lang="es">Sin reloj</span></span>
+          <span><span data-lang="en">No account</span><span data-lang="es" lang="es">Sin cuenta</span></span>
         </div>
       </div>
-    </section>
-
-    <section class="features" id="features">
-      <div class="wrap">
-        <h2>Why you'll keep traveling</h2>
-        <div class="grid">
-          <div class="card"><div class="icon">3</div><h3>Match 3 tiles</h3><p>Tap a tile to send it to your tray. Three of a kind clear. Clear them all to finish the level.</p></div>
-          <div class="card"><div class="icon">255</div><h3>255 destinations</h3><p>Real cities on every continent, 12 levels each: over 3,000 levels in all.</p></div>
-          <div class="card"><div class="icon">✈</div><h3>A real trip</h3><p>Finish a city and watch your plane, ship or train cross the map to the next stop.</p></div>
-          <div class="card"><div class="icon">★</div><h3>Postcards and landmarks</h3><p>Every level adds a piece to the city's postcard, and some destinations hide a famous landmark to collect.</p></div>
-          <div class="card"><div class="icon">♪</div><h3>Relaxing, never rushed</h3><p>No timers. Early boards are calm; later ones stack tiles in layers for a gentle challenge.</p></div>
-          <div class="card"><div class="icon">⚡</div><h3>Play offline</h3><p>Every level works without internet, on the plane, on the train or on the couch.</p></div>
-        </div>
+      <div class="hero-art">
+        <img data-lang="en" src="assets/img/hero-en.webp" width="1200" height="1150" fetchpriority="high" alt="Trip Sort on two phones: a Paris tile match board with Eiffel Tower tiles and a Rio de Janeiro board, with landmark tiles floating around">
+        <img data-lang="es" src="assets/img/hero-es.webp" width="1200" height="1150" loading="lazy" alt="Trip Sort en dos teléfonos: un tablero de París con fichas de la Torre Eiffel y uno de Río de Janeiro, con fichas de monumentos alrededor">
       </div>
-    </section>
-
-    <section class="support" id="support">
-      <div class="wrap">
-        <h2>Support</h2>
-        <p class="lead">Questions about the game, a purchase or a level? Start here.</p>
-        <div class="panel">
-          <details>
-            <summary>Where is my progress saved?</summary>
-            <p>On your device. Trip Sort has no accounts, so your levels, coins and boosters stay on your phone. Deleting the game deletes your progress.</p>
-          </details>
-          <details>
-            <summary>I bought something and it did not arrive.</summary>
-            <p>Open the Shop and tap Restore Purchases. Remove Ads and the Starter Pack come back on the same Apple or Google account. If coins from a pack are missing, write to us with the date and the pack's name.</p>
-          </details>
-          <details>
-            <summary>Can I play without internet?</summary>
-            <p>Yes. Every level works offline. Without a connection there are simply no ads and the Shop is not available.</p>
-          </details>
-          <details>
-            <summary>How do I turn off the music or the sounds?</summary>
-            <p>Tap the gear in the top corner. Sound, Music and Vibration each have their own switch.</p>
-          </details>
-          <details>
-            <summary>Can I play an old level again?</summary>
-            <p>Yes. Open the Journey, tap a destination you have completed and pick any of its 12 levels.</p>
-          </details>
-          <div class="contact">
-            <a class="button" href="mailto:gulabonzinillc@gmail.com?subject=Trip%20Sort%20support">Email us</a>
-            <p>gulabonzinillc@gmail.com · we usually answer within two days</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="foot">
-    <div class="wrap">
-      <a href="privacypolicy/">Privacy Policy</a>
-      <a href="terms/">Terms of Use</a>
-      <p style="margin-top:10px">© 2026 <a href="https://dezeo.lat/" style="margin:0">dezeo</a></p>
     </div>
-  </footer>
+  </section>
+
+  <!-- ================= Stats ================= -->
+  <section class="stats" aria-label="Trip Sort in numbers">
+    <div class="container stats-row">
+      <div class="stat"><b>255</b><span><span data-lang="en">real destinations</span><span data-lang="es" lang="es">destinos reales</span></span></div>
+      <div class="stat"><b>3,000+</b><span><span data-lang="en">levels to play</span><span data-lang="es" lang="es">niveles para jugar</span></span></div>
+      <div class="stat"><b>23</b><span><span data-lang="en">famous landmarks</span><span data-lang="es" lang="es">monumentos famosos</span></span></div>
+      <div class="stat"><b>70+</b><span><span data-lang="en">languages</span><span data-lang="es" lang="es">idiomas</span></span></div>
+    </div>
+  </section>
+
+  <!-- ================= Download ================= -->
+  <section id="download">
+    <div class="container">
+      <div class="band">
+        <div class="band-grid">
+          <div>
+            <p class="kicker" style="color:#ffd76a"><span data-lang="en">Free on iPhone and Android</span><span data-lang="es" lang="es">Gratis en iPhone y Android</span></p>
+            <h2><span data-lang="en">Pack your bags. Your first stop is one tap away.</span><span data-lang="es" lang="es">Armá la valija. Tu primera parada está a un toque.</span></h2>
+            <p><span data-lang="en">Download Trip Sort, start in Montevideo and match your way around the world. No account, no sign-up, no Wi-Fi needed.</span><span data-lang="es" lang="es">Descargá Trip Sort, arrancá en Montevideo y emparejá fichas por todo el mundo. Sin cuenta, sin registro y sin wifi.</span></p>
+            <div class="stores">
+              <a class="store js-ios" href="https://apps.apple.com/app/id6818841022" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.1-2.01-3.77-2.04-1.6-.16-3.13.94-3.94.94-.81 0-2.07-.92-3.41-.89-1.75.03-3.37 1.02-4.27 2.59-1.82 3.16-.47 7.83 1.31 10.39.87 1.25 1.9 2.66 3.26 2.61 1.31-.05 1.8-.85 3.39-.85 1.58 0 2.03.85 3.41.82 1.41-.03 2.3-1.28 3.16-2.54.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.73-1.05-2.76-4.16M14.5 4.79c.72-.88 1.21-2.1 1.08-3.31-1.04.04-2.3.69-3.05 1.56-.67.77-1.25 2.01-1.09 3.19 1.16.09 2.34-.59 3.06-1.44"/></svg>
+                <span><small><span data-lang="en">Download on the</span><span data-lang="es" lang="es">Descargalo en el</span></small><strong>App Store</strong></span>
+              </a>
+              <a class="store js-android" href="https://play.google.com/store/apps/details?id=lat.dezeo.trip_sort" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 1.8C3.3 2.1 3.2 2.5 3.2 3v18c0 .5.1.9.4 1.2L13.8 12z"/><path fill="#fbbc04" d="M17.2 15.4 13.8 12l3.4-3.4 4 2.3c1.1.6 1.1 1.7 0 2.3z"/><path fill="#4285f4" d="M17.2 8.6 5.3 1.8c-.7-.4-1.3-.4-1.7 0L13.8 12z"/><path fill="#ea4335" d="M3.6 22.2c.4.4 1 .4 1.7 0l11.9-6.8-3.4-3.4z"/></svg>
+                <span><small><span data-lang="en">Get it on</span><span data-lang="es" lang="es">Disponible en</span></small><strong>Google Play</strong></span>
+              </a>
+            </div>
+            <p class="micro"><span data-lang="en">Free to play with optional in-app purchases and ads. Remove Ads is a single purchase.</span><span data-lang="es" lang="es">Gratis, con compras opcionales y anuncios. Quitar anuncios es una sola compra.</span></p>
+          </div>
+          <div class="band-art"><img src="assets/img/postcards.webp" width="1500" height="900" loading="lazy" alt="Trip Sort postcards from Mexico City, Rio de Janeiro, Paris, Rome and Santorini"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Screenshots ================= -->
+  <section id="screenshots">
+    <div class="section-head container">
+      <p class="kicker"><span data-lang="en">Screenshots</span><span data-lang="es" lang="es">Capturas</span></p>
+      <h2><span data-lang="en">One board at a time, all around the world</span><span data-lang="es" lang="es">Un tablero a la vez, por todo el mundo</span></h2>
+      <p><span data-lang="en">Every city brings its own tiles: croissants and the Eiffel Tower in Paris, torii gates and sushi in Kyoto, toucans and Christ the Redeemer in Rio.</span><span data-lang="es" lang="es">Cada ciudad trae sus propias fichas: croissants y la Torre Eiffel en París, toriis y sushi en Kioto, tucanes y el Cristo Redentor en Río.</span></p>
+    </div>
+    <div class="shots-scroller">
+      <figure>
+        <img data-lang="en" src="assets/img/shots/en-01.webp" width="480" height="1043" loading="lazy" alt="Match 3 tiles: a Paris tile match board with three Eiffel Tower tiles lined up">
+        <img data-lang="es" src="assets/img/shots/es-01.webp" width="480" height="1043" loading="lazy" alt="Juntá 3 fichas: un tablero de París con tres fichas de la Torre Eiffel">
+        <figcaption><span data-lang="en">Match 3 tiles in Paris</span><span data-lang="es" lang="es">Juntá 3 fichas en París</span></figcaption>
+      </figure>
+      <figure>
+        <img data-lang="en" src="assets/img/shots/en-02.webp" width="480" height="1043" loading="lazy" alt="Train your brain: a Kyoto board with torii gates, sushi and pagodas">
+        <img data-lang="es" src="assets/img/shots/es-02.webp" width="480" height="1043" loading="lazy" alt="Entrená tu mente: un tablero de Kioto con toriis, sushi y pagodas">
+        <figcaption><span data-lang="en">Train your brain in Kyoto</span><span data-lang="es" lang="es">Entrená la cabeza en Kioto</span></figcaption>
+      </figure>
+      <figure>
+        <img data-lang="en" src="assets/img/shots/en-03.webp" width="480" height="1043" loading="lazy" alt="255 destinations: a map of Europe with a travel route from London to Paris, Rome and Santorini">
+        <img data-lang="es" src="assets/img/shots/es-03.webp" width="480" height="1043" loading="lazy" alt="255 destinos: mapa de Europa con la ruta de Londres a París, Roma y Santorini">
+        <figcaption><span data-lang="en">255 destinations on the map</span><span data-lang="es" lang="es">255 destinos en el mapa</span></figcaption>
+      </figure>
+      <figure>
+        <img data-lang="en" src="assets/img/shots/en-04.webp" width="480" height="1043" loading="lazy" alt="Relax and unwind: a calm Santorini board with blue domes and windmills">
+        <img data-lang="es" src="assets/img/shots/es-04.webp" width="480" height="1043" loading="lazy" alt="Relajate: un tablero tranquilo de Santorini con cúpulas azules y molinos">
+        <figcaption><span data-lang="en">Relax in Santorini</span><span data-lang="es" lang="es">Relajate en Santorini</span></figcaption>
+      </figure>
+      <figure>
+        <img data-lang="en" src="assets/img/shots/en-05.webp" width="480" height="1043" loading="lazy" alt="Travel the world: a Rio de Janeiro board with Christ the Redeemer and toucan tiles">
+        <img data-lang="es" src="assets/img/shots/es-05.webp" width="480" height="1043" loading="lazy" alt="Viajá por el mundo: un tablero de Río con fichas del Cristo Redentor y tucanes">
+        <figcaption><span data-lang="en">Travel to Rio de Janeiro</span><span data-lang="es" lang="es">Viajá a Río de Janeiro</span></figcaption>
+      </figure>
+      <figure>
+        <img data-lang="en" src="assets/img/shots/en-06.webp" width="480" height="1043" loading="lazy" alt="Play offline: a London board with Big Ben, red buses and corgis">
+        <img data-lang="es" src="assets/img/shots/es-06.webp" width="480" height="1043" loading="lazy" alt="Jugá sin internet: un tablero de Londres con el Big Ben, buses rojos y corgis">
+        <figcaption><span data-lang="en">Play offline in London</span><span data-lang="es" lang="es">Jugá sin internet en Londres</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ================= Inside the game ================= -->
+  <section id="inside">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker"><span data-lang="en">Inside the game</span><span data-lang="es" lang="es">El juego por dentro</span></p>
+        <h2><span data-lang="en">A puzzle game that feels like a trip</span><span data-lang="es" lang="es">Un juego de puzzle que se siente como un viaje</span></h2>
+        <p><span data-lang="en">Every level moves you forward on a real route, and every city leaves you something to keep.</span><span data-lang="es" lang="es">Cada nivel te avanza en una ruta real, y cada ciudad te deja algo para guardar.</span></p>
+      </div>
+
+      <div class="feature">
+        <div class="feature-art"><img src="assets/img/route.webp" width="1440" height="780" loading="lazy" alt="Travel puzzle game map: a route across Europe from London to Paris, Rome and Santorini with a train and a plane"></div>
+        <div>
+          <p class="kicker"><span data-lang="en">255 destinations</span><span data-lang="es" lang="es">255 destinos</span></p>
+          <h3><span data-lang="en">Fly, sail and ride to the next city</span><span data-lang="es" lang="es">Volá, navegá y viajá a la próxima ciudad</span></h3>
+          <p><span data-lang="en">Clear the 12 levels of a destination and watch your plane, ship, train or bus cross the map to the next stop. From Montevideo to Paris, Kyoto, Cairo and Sydney: 255 real places on every continent.</span><span data-lang="es" lang="es">Completá los 12 niveles de un destino y mirá cómo tu avión, barco, tren o bus cruza el mapa hasta la próxima parada. De Montevideo a París, Kioto, El Cairo y Sídney: 255 lugares reales en todos los continentes.</span></p>
+          <p><a class="inline" href="guides/travel-puzzle-game/" style="color:var(--pink);font-weight:700"><span data-lang="en">How the world tour works →</span><span data-lang="es" lang="es">Cómo funciona la vuelta al mundo →</span></a></p>
+        </div>
+      </div>
+
+      <div class="feature flip">
+        <div class="feature-art"><img src="assets/img/postcards.webp" width="1500" height="900" loading="lazy" alt="Collectible city postcards in Trip Sort with a VISITED Paris passport stamp"></div>
+        <div>
+          <p class="kicker"><span data-lang="en">Postcards and passport</span><span data-lang="es" lang="es">Postales y pasaporte</span></p>
+          <h3><span data-lang="en">Every level paints a piece of the postcard</span><span data-lang="es" lang="es">Cada nivel pinta un pedazo de la postal</span></h3>
+          <p><span data-lang="en">Each board you clear reveals more of the city's postcard. Finish the city and your passport gets its VISITED stamp.</span><span data-lang="es" lang="es">Cada tablero que limpiás revela más de la postal de la ciudad. Terminá la ciudad y tu pasaporte recibe el sello de VISITADO.</span></p>
+          <ul>
+            <li><span data-lang="en">A hand-painted postcard for every destination</span><span data-lang="es" lang="es">Una postal ilustrada para cada destino</span></li>
+            <li><span data-lang="en">A passport that fills up stamp by stamp</span><span data-lang="es" lang="es">Un pasaporte que se llena sello por sello</span></li>
+            <li><span data-lang="en">Daily rewards, daily missions and a Daily Challenge</span><span data-lang="es" lang="es">Premios diarios, misiones diarias y un Desafío Diario</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div class="feature-art"><img src="assets/img/landmarks.webp" width="1500" height="900" loading="lazy" alt="Twelve famous landmark tiles: Big Ben, the Colosseum, the Statue of Liberty, the Taj Mahal, Mount Fuji and more"></div>
+        <div>
+          <p class="kicker"><span data-lang="en">23 landmarks</span><span data-lang="es" lang="es">23 monumentos</span></p>
+          <h3><span data-lang="en">Collect the wonders of the world</span><span data-lang="es" lang="es">Coleccioná las maravillas del mundo</span></h3>
+          <p><span data-lang="en">Some destinations hide a famous landmark: the Eiffel Tower, the Taj Mahal, Chichen Itza, the Great Wall of China and more. Each one comes with a short real story.</span><span data-lang="es" lang="es">Algunos destinos esconden un monumento famoso: la Torre Eiffel, el Taj Mahal, Chichén Itzá, la Gran Muralla y más. Cada uno trae una historia real corta.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= How it works ================= -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></p>
+        <h2><span data-lang="en">How to play a triple tile match</span><span data-lang="es" lang="es">Cómo se juega a emparejar fichas de a tres</span></h2>
+        <p><span data-lang="en">You learn it in one level. Mastering the layered boards is the fun part.</span><span data-lang="es" lang="es">Se aprende en un nivel. Dominar los tableros con capas es lo divertido.</span></p>
+      </div>
+      <div class="steps">
+        <div class="step"><h3><span data-lang="en">Tap a tile</span><span data-lang="es" lang="es">Tocá una ficha</span></h3><p><span data-lang="en">It drops into your tray, which has four slots.</span><span data-lang="es" lang="es">Va a tu bandeja, que tiene cuatro casilleros.</span></p></div>
+        <div class="step"><h3><span data-lang="en">Match three</span><span data-lang="es" lang="es">Juntá tres</span></h3><p><span data-lang="en">Three identical tiles in the tray clear on their own.</span><span data-lang="es" lang="es">Tres fichas iguales en la bandeja desaparecen solas.</span></p></div>
+        <div class="step"><h3><span data-lang="en">Plan ahead</span><span data-lang="es" lang="es">Pensá antes</span></h3><p><span data-lang="en">Only uncovered tiles can be picked, and a full tray ends the level.</span><span data-lang="es" lang="es">Solo se pueden tocar las fichas destapadas, y si la bandeja se llena, perdés.</span></p></div>
+        <div class="step"><h3><span data-lang="en">Clear and travel</span><span data-lang="es" lang="es">Limpiá y viajá</span></h3><p><span data-lang="en">Empty the board to win and move on toward the next city.</span><span data-lang="es" lang="es">Vaciá el tablero para ganar y avanzar hacia la próxima ciudad.</span></p></div>
+      </div>
+      <div class="boosters">
+        <div class="booster"><b><span data-lang="en">Hint</span><span data-lang="es" lang="es">Pista</span></b><span><span data-lang="en">lights up your best move</span><span data-lang="es" lang="es">ilumina tu mejor jugada</span></span></div>
+        <div class="booster"><b><span data-lang="en">Undo</span><span data-lang="es" lang="es">Deshacer</span></b><span><span data-lang="en">puts your last tile back</span><span data-lang="es" lang="es">devuelve tu última ficha</span></span></div>
+        <div class="booster"><b><span data-lang="en">Shuffle</span><span data-lang="es" lang="es">Mezclar</span></b><span><span data-lang="en">mixes up the tiles left</span><span data-lang="es" lang="es">mezcla las fichas que quedan</span></span></div>
+        <div class="booster"><b><span data-lang="en">Magic Wand</span><span data-lang="es" lang="es">Varita mágica</span></b><span><span data-lang="en">clears a whole set</span><span data-lang="es" lang="es">saca un trío entero</span></span></div>
+        <div class="booster"><b><span data-lang="en">Extra Slot</span><span data-lang="es" lang="es">Casilla extra</span></b><span><span data-lang="en">a fifth slot in the tray</span><span data-lang="es" lang="es">un quinto lugar en la bandeja</span></span></div>
+      </div>
+      <p style="text-align:center;margin-top:28px"><a class="btn btn-ghost" href="guides/how-to-beat-hard-tile-match-levels/"><span data-lang="en">9 tips for hard levels →</span><span data-lang="es" lang="es">9 consejos para niveles difíciles →</span></a></p>
+    </div>
+  </section>
+
+  <!-- ================= Guides ================= -->
+  <section id="guides">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></p>
+        <h2><span data-lang="en">Tips, tricks and offline puzzle ideas</span><span data-lang="es" lang="es">Consejos, trucos e ideas para jugar sin internet</span></h2>
+        <p><span data-lang="en">Short guides for tile match players, travelers and anyone looking for a calm brain game.</span><span data-lang="es" lang="es">Guías cortas para fans de las fichas, viajeros y cualquiera que busque un juego mental tranquilo.</span></p>
+      </div>
+      <div class="guides-grid">
+        <!-- guides:start -->
+        <a class="guide-card" href="guides/triple-tile-match/">
+          <img src="assets/img/guides/triple-tile-match.jpg" width="1200" height="630" loading="lazy" alt="What Is a Triple Tile Match Game? Rules and How to Start">
+          <div class="body">
+            <span class="tag"><span data-lang="en">Basics</span><span data-lang="es" lang="es">Lo básico</span></span>
+            <h3><span data-lang="en">What Is a Triple Tile Match Game? Rules and How to Start</span><span data-lang="es" lang="es">¿Qué es un juego de triple tile match? Reglas y cómo empezar</span></h3>
+            <p><span data-lang="en">The rules of tile matching, why the tray matters and how to clear your first boards.</span><span data-lang="es" lang="es">Las reglas de emparejar fichas, por qué importa la bandeja y cómo limpiar tus primeros tableros.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/how-to-beat-hard-tile-match-levels/">
+          <img src="assets/img/guides/how-to-beat-hard-tile-match-levels.jpg" width="1200" height="630" loading="lazy" alt="How to Beat Hard Tile Match Levels: 9 Tips That Work">
+          <div class="body">
+            <span class="tag"><span data-lang="en">Strategy</span><span data-lang="es" lang="es">Estrategia</span></span>
+            <h3><span data-lang="en">How to Beat Hard Tile Match Levels: 9 Tips That Work</span><span data-lang="es" lang="es">Cómo pasar niveles difíciles de tile match: 9 consejos que funcionan</span></h3>
+            <p><span data-lang="en">Plan around the tray, uncover tiles first and save boosters for the right moment.</span><span data-lang="es" lang="es">Jugá pensando en la bandeja, destapá fichas primero y guardá los boosters para el momento justo.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/offline-games-no-wifi/">
+          <img src="assets/img/guides/offline-games-no-wifi.jpg" width="1200" height="630" loading="lazy" alt="Offline Puzzle Games With No Wi-Fi Needed">
+          <div class="body">
+            <span class="tag"><span data-lang="en">Offline</span><span data-lang="es" lang="es">Sin internet</span></span>
+            <h3><span data-lang="en">Offline Puzzle Games With No Wi-Fi Needed</span><span data-lang="es" lang="es">Juegos de puzzle offline que no necesitan wifi</span></h3>
+            <p><span data-lang="en">What makes a puzzle game truly offline, and how Trip Sort plays with zero signal.</span><span data-lang="es" lang="es">Qué hace que un juego de puzzle sea offline de verdad, y cómo se juega Trip Sort sin señal.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/games-to-play-on-a-plane/">
+          <img src="assets/img/guides/games-to-play-on-a-plane.jpg" width="1200" height="630" loading="lazy" alt="Games to Play on a Plane Without Wi-Fi">
+          <div class="body">
+            <span class="tag"><span data-lang="en">Travel</span><span data-lang="es" lang="es">Viajes</span></span>
+            <h3><span data-lang="en">Games to Play on a Plane Without Wi-Fi</span><span data-lang="es" lang="es">Juegos para jugar en el avión sin wifi</span></h3>
+            <p><span data-lang="en">How to get your phone ready for a long flight, and a puzzle trip that works in airplane mode.</span><span data-lang="es" lang="es">Cómo preparar el teléfono para un vuelo largo, y un viaje de puzzles que anda en modo avión.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/brain-puzzle-games-for-adults/">
+          <img src="assets/img/guides/brain-puzzle-games-for-adults.jpg" width="1200" height="630" loading="lazy" alt="Brain Puzzle Games for Adults: A Few Minutes a Day">
+          <div class="body">
+            <span class="tag"><span data-lang="en">Brain games</span><span data-lang="es" lang="es">Juegos mentales</span></span>
+            <h3><span data-lang="en">Brain Puzzle Games for Adults: A Few Minutes a Day</span><span data-lang="es" lang="es">Juegos mentales para adultos: unos minutos al día</span></h3>
+            <p><span data-lang="en">What a tile puzzle actually asks of your brain, and how to build a short daily habit.</span><span data-lang="es" lang="es">Qué le pide de verdad un puzzle de fichas a tu cabeza, y cómo armar un hábito diario corto.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/puzzle-games-for-seniors/">
+          <img src="assets/img/guides/puzzle-games-for-seniors.jpg" width="1200" height="630" loading="lazy" alt="Easy Puzzle Games for Seniors: What to Look For">
+          <div class="body">
+            <span class="tag"><span data-lang="en">Easy to play</span><span data-lang="es" lang="es">Fácil de jugar</span></span>
+            <h3><span data-lang="en">Easy Puzzle Games for Seniors: What to Look For</span><span data-lang="es" lang="es">Juegos de puzzle fáciles para personas mayores: qué buscar</span></h3>
+            <p><span data-lang="en">No timers, simple taps, no account: a checklist for picking a calm puzzle game.</span><span data-lang="es" lang="es">Sin reloj, toques simples, sin cuenta: una lista para elegir un juego de puzzle tranquilo.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/mahjong-tile-match-vs-mahjong-solitaire/">
+          <img src="assets/img/guides/mahjong-tile-match-vs-mahjong-solitaire.jpg" width="1200" height="630" loading="lazy" alt="Tile Match vs. Mahjong Solitaire: What&#x27;s the Difference?">
+          <div class="body">
+            <span class="tag"><span data-lang="en">Mahjong</span><span data-lang="es" lang="es">Mahjong</span></span>
+            <h3><span data-lang="en">Tile Match vs. Mahjong Solitaire: What&#x27;s the Difference?</span><span data-lang="es" lang="es">Tile match vs. mahjong solitario: ¿cuál es la diferencia?</span></h3>
+            <p><span data-lang="en">Pairs versus triples, free tiles versus a tray: how the two classics compare.</span><span data-lang="es" lang="es">Pares contra tríos, fichas libres contra bandeja: cómo se comparan los dos clásicos.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/relaxing-zen-puzzle-games/">
+          <img src="assets/img/guides/relaxing-zen-puzzle-games.jpg" width="1200" height="630" loading="lazy" alt="Relaxing Zen Puzzle Games to Unwind After a Long Day">
+          <div class="body">
+            <span class="tag"><span data-lang="en">Relax</span><span data-lang="es" lang="es">Relajarse</span></span>
+            <h3><span data-lang="en">Relaxing Zen Puzzle Games to Unwind After a Long Day</span><span data-lang="es" lang="es">Juegos de puzzle zen y relajantes para desconectar al final del día</span></h3>
+            <p><span data-lang="en">What makes a game feel calm, and how to set Trip Sort up for a quiet ten minutes.</span><span data-lang="es" lang="es">Qué hace que un juego se sienta tranquilo, y cómo dejar Trip Sort listo para diez minutos de calma.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/travel-puzzle-game/">
+          <img src="assets/img/guides/travel-puzzle-game.jpg" width="1200" height="630" loading="lazy" alt="A Travel Puzzle Game: Visit 255 Destinations From Your Phone">
+          <div class="body">
+            <span class="tag"><span data-lang="en">World tour</span><span data-lang="es" lang="es">Vuelta al mundo</span></span>
+            <h3><span data-lang="en">A Travel Puzzle Game: Visit 255 Destinations From Your Phone</span><span data-lang="es" lang="es">Un juego de puzzle de viajes: visitá 255 destinos desde tu teléfono</span></h3>
+            <p><span data-lang="en">Postcards, passport stamps and famous landmarks: how a trip around the world works.</span><span data-lang="es" lang="es">Postales, sellos de pasaporte y monumentos famosos: así funciona una vuelta al mundo.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/tile-match-boosters/">
+          <img src="assets/img/guides/tile-match-boosters.jpg" width="1200" height="630" loading="lazy" alt="Tile Match Boosters Explained: Hint, Undo, Shuffle, Wand, Extra Slot">
+          <div class="body">
+            <span class="tag"><span data-lang="en">Boosters</span><span data-lang="es" lang="es">Boosters</span></span>
+            <h3><span data-lang="en">Tile Match Boosters Explained: Hint, Undo, Shuffle, Wand, Extra Slot</span><span data-lang="es" lang="es">Los boosters de tile match explicados: pista, deshacer, mezclar, varita y casilla extra</span></h3>
+            <p><span data-lang="en">What each booster does, when it saves a level, and how to earn more without paying.</span><span data-lang="es" lang="es">Qué hace cada booster, cuándo salva un nivel, y cómo ganar más sin pagar.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/juegos-de-emparejar-fichas/">
+          <img src="assets/img/guides/juegos-de-emparejar-fichas.jpg" width="1200" height="630" loading="lazy" alt="Tile Matching Games in Spanish: Emparejar Fichas">
+          <div class="body">
+            <span class="tag"><span data-lang="en">In Spanish</span><span data-lang="es" lang="es">Fichas</span></span>
+            <h3><span data-lang="en">Tile Matching Games in Spanish: Emparejar Fichas</span><span data-lang="es" lang="es">Juegos de emparejar fichas: cómo se juegan y cuál probar</span></h3>
+            <p><span data-lang="en">A guide for Spanish speakers searching for tile matching games.</span><span data-lang="es" lang="es">Qué son los juegos de emparejar fichas, cómo se juegan y cómo es Trip Sort.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <a class="guide-card" href="guides/juegos-mentales-sin-internet/">
+          <img src="assets/img/guides/juegos-mentales-sin-internet.jpg" width="1200" height="630" loading="lazy" alt="Offline Brain Games, for Spanish Speakers">
+          <div class="body">
+            <span class="tag"><span data-lang="en">In Spanish</span><span data-lang="es" lang="es">Sin internet</span></span>
+            <h3><span data-lang="en">Offline Brain Games, for Spanish Speakers</span><span data-lang="es" lang="es">Juegos mentales sin internet para adultos</span></h3>
+            <p><span data-lang="en">Brain games that work offline, explained in Spanish.</span><span data-lang="es" lang="es">Juegos para ejercitar la cabeza que andan sin wifi ni datos, y cómo jugar Trip Sort.</span></p>
+            <span class="read"><span data-lang="en">Read the guide →</span><span data-lang="es" lang="es">Leer la guía →</span></span>
+          </div>
+        </a>
+        <!-- guides:end -->
+      </div>
+      <p style="text-align:center;margin-top:30px"><a class="btn btn-ghost" href="guides/"><span data-lang="en">All guides →</span><span data-lang="es" lang="es">Todas las guías →</span></a></p>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <p class="kicker">FAQ</p>
+        <h2><span data-lang="en">Questions about Trip Sort</span><span data-lang="es" lang="es">Preguntas sobre Trip Sort</span></h2>
+      </div>
+      <div class="faq">
+        <details open>
+          <summary><span data-lang="en">What is a triple tile match game?</span><span data-lang="es" lang="es">¿Qué es un juego de triple tile match?</span></summary>
+          <p><span data-lang="en">A puzzle where you tap tiles to move them into a tray, and every three identical tiles clear. You win when the board is empty and lose if the tray fills up without a match. In Trip Sort the tray has four slots and every board is themed after a real city.</span><span data-lang="es" lang="es">Un puzzle donde tocás fichas para pasarlas a una bandeja, y cada tres fichas iguales desaparecen. Ganás cuando el tablero queda vacío y perdés si la bandeja se llena sin un trío. En Trip Sort la bandeja tiene cuatro casilleros y cada tablero es de una ciudad real.</span></p>
+          <a class="more" href="guides/triple-tile-match/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">Can I play Trip Sort offline, without Wi-Fi?</span><span data-lang="es" lang="es">¿Puedo jugar Trip Sort sin internet ni wifi?</span></summary>
+          <p><span data-lang="en">Yes. Every level plays with no internet, no Wi-Fi and no mobile data. Offline there are simply no ads and the Shop is not available.</span><span data-lang="es" lang="es">Sí. Todos los niveles se juegan sin internet, sin wifi y sin datos. Sin conexión simplemente no hay anuncios y la Tienda no está disponible.</span></p>
+          <a class="more" href="guides/offline-games-no-wifi/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">Is Trip Sort a good game to play on a plane?</span><span data-lang="es" lang="es">¿Sirve Trip Sort para jugar en el avión?</span></summary>
+          <p><span data-lang="en">Yes. It works in airplane mode, has no timers and each level takes a few minutes, so it fits anything from a short hop to a long-haul flight.</span><span data-lang="es" lang="es">Sí. Anda en modo avión, no tiene reloj y cada nivel dura unos minutos, así que sirve para un vuelo corto o para uno de muchas horas.</span></p>
+          <a class="more" href="guides/games-to-play-on-a-plane/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">How do I beat a hard level?</span><span data-lang="es" lang="es">¿Cómo paso un nivel difícil?</span></summary>
+          <p><span data-lang="en">Uncover tiles before you fill the tray, avoid leaving single tiles waiting in it, and keep boosters for when the tray is almost full. Undo, Shuffle, the Magic Wand and the extra fifth slot can each save a level.</span><span data-lang="es" lang="es">Destapá fichas antes de llenar la bandeja, no dejes fichas sueltas esperando en ella y guardá los boosters para cuando esté casi llena. Deshacer, Mezclar, la Varita y el quinto casillero pueden salvar un nivel.</span></p>
+          <a class="more" href="guides/how-to-beat-hard-tile-match-levels/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">Does Trip Sort train your brain?</span><span data-lang="es" lang="es">¿Trip Sort sirve como juego mental?</span></summary>
+          <p><span data-lang="en">It keeps your mind busy in a good way: you scan the board for matches, plan a few moves ahead and manage a small tray. A few levels a day make a calm brain break.</span><span data-lang="es" lang="es">Te mantiene la cabeza ocupada en el buen sentido: buscás tríos en el tablero, pensás un par de jugadas adelante y manejás una bandeja chica. Unos niveles por día son una pausa mental tranquila.</span></p>
+          <a class="more" href="guides/brain-puzzle-games-for-adults/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">Is Trip Sort easy enough for seniors?</span><span data-lang="es" lang="es">¿Es fácil para personas mayores?</span></summary>
+          <p><span data-lang="en">Yes. You only tap, there are no timers, there is no account to create and the first boards are gentle, so anyone can pick it up at their own pace.</span><span data-lang="es" lang="es">Sí. Solo hay que tocar, no hay reloj, no hay que crear una cuenta y los primeros tableros son suaves, así que cualquiera lo agarra a su ritmo.</span></p>
+          <a class="more" href="guides/puzzle-games-for-seniors/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">Is Trip Sort like mahjong?</span><span data-lang="es" lang="es">¿Trip Sort es como el mahjong?</span></summary>
+          <p><span data-lang="en">It shares the look and the calm of mahjong solitaire, with stacked tiles you uncover layer by layer. The difference is that you collect three identical tiles in a tray instead of removing pairs.</span><span data-lang="es" lang="es">Tiene el estilo y la calma del mahjong solitario, con fichas apiladas que vas destapando capa por capa. La diferencia es que juntás tres fichas iguales en una bandeja en vez de sacar pares.</span></p>
+          <a class="more" href="guides/mahjong-tile-match-vs-mahjong-solitaire/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">Is there a timer?</span><span data-lang="es" lang="es">¿Hay reloj?</span></summary>
+          <p><span data-lang="en">No. Trip Sort has no timers, so you can take as long as you like on every move. Music, sounds and vibration each have their own switch in Settings.</span><span data-lang="es" lang="es">No. Trip Sort no tiene reloj, así que podés tomarte todo el tiempo que quieras en cada jugada. La música, los sonidos y la vibración tienen cada uno su interruptor en Ajustes.</span></p>
+          <a class="more" href="guides/relaxing-zen-puzzle-games/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">How many levels and destinations are there?</span><span data-lang="es" lang="es">¿Cuántos niveles y destinos hay?</span></summary>
+          <p><span data-lang="en">255 real destinations on every continent, with 12 levels each: over 3,000 levels. Every city has its own tiles, a postcard and a passport stamp, and 23 famous landmarks wait along the way.</span><span data-lang="es" lang="es">255 destinos reales en todos los continentes, con 12 niveles cada uno: más de 3.000 niveles. Cada ciudad tiene sus fichas, una postal y un sello de pasaporte, y en el camino te esperan 23 monumentos famosos.</span></p>
+          <a class="more" href="guides/travel-puzzle-game/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">What do the boosters do?</span><span data-lang="es" lang="es">¿Qué hacen los boosters?</span></summary>
+          <p><span data-lang="en">Hint lights up your best move, Undo puts your last tile back on the board, Shuffle mixes up the tiles left, the Magic Wand clears a whole set and Extra Slot adds a fifth slot to the tray.</span><span data-lang="es" lang="es">La Pista ilumina tu mejor jugada, Deshacer devuelve tu última ficha al tablero, Mezclar reordena las fichas que quedan, la Varita mágica saca un trío entero y el Casilla extra suma un quinto lugar a la bandeja.</span></p>
+          <a class="more" href="guides/tile-match-boosters/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">Is Trip Sort free?</span><span data-lang="es" lang="es">¿Trip Sort es gratis?</span></summary>
+          <p><span data-lang="en">Yes, it is free to play. It has optional in-app purchases and ads, and a single Remove Ads purchase turns off the ads between levels.</span><span data-lang="es" lang="es">Sí, es gratis. Tiene compras opcionales y anuncios, y una sola compra de Quitar anuncios saca los anuncios entre niveles.</span></p>
+          <a class="more" href="support/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+        <details>
+          <summary><span data-lang="en">Do I need an account?</span><span data-lang="es" lang="es">¿Necesito una cuenta?</span></summary>
+          <p><span data-lang="en">No. There is no sign-up. Your progress is saved on your phone.</span><span data-lang="es" lang="es">No. No hay registro. Tu progreso se guarda en tu teléfono.</span></p>
+          <a class="more" href="support/"><span data-lang="en">Learn more →</span><span data-lang="es" lang="es">Saber más →</span></a>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Final CTA ================= -->
+  <section id="cta">
+    <div class="container">
+      <div class="band">
+        <div class="band-grid">
+          <div>
+            <h2><span data-lang="en">Ready for your next trip?</span><span data-lang="es" lang="es">¿Listo para tu próximo viaje?</span></h2>
+            <p><span data-lang="en">3,000+ relaxing levels, 255 cities and a passport waiting for its first stamp. Download Trip Sort free and start matching.</span><span data-lang="es" lang="es">Más de 3.000 niveles relajantes, 255 ciudades y un pasaporte esperando su primer sello. Descargá Trip Sort gratis y empezá a emparejar.</span></p>
+            <div class="stores">
+              <a class="store js-ios" href="https://apps.apple.com/app/id6818841022" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.1-2.01-3.77-2.04-1.6-.16-3.13.94-3.94.94-.81 0-2.07-.92-3.41-.89-1.75.03-3.37 1.02-4.27 2.59-1.82 3.16-.47 7.83 1.31 10.39.87 1.25 1.9 2.66 3.26 2.61 1.31-.05 1.8-.85 3.39-.85 1.58 0 2.03.85 3.41.82 1.41-.03 2.3-1.28 3.16-2.54.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.73-1.05-2.76-4.16M14.5 4.79c.72-.88 1.21-2.1 1.08-3.31-1.04.04-2.3.69-3.05 1.56-.67.77-1.25 2.01-1.09 3.19 1.16.09 2.34-.59 3.06-1.44"/></svg>
+                <span><small><span data-lang="en">Download on the</span><span data-lang="es" lang="es">Descargalo en el</span></small><strong>App Store</strong></span>
+              </a>
+              <a class="store js-android" href="https://play.google.com/store/apps/details?id=lat.dezeo.trip_sort" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 1.8C3.3 2.1 3.2 2.5 3.2 3v18c0 .5.1.9.4 1.2L13.8 12z"/><path fill="#fbbc04" d="M17.2 15.4 13.8 12l3.4-3.4 4 2.3c1.1.6 1.1 1.7 0 2.3z"/><path fill="#4285f4" d="M17.2 8.6 5.3 1.8c-.7-.4-1.3-.4-1.7 0L13.8 12z"/><path fill="#ea4335" d="M3.6 22.2c.4.4 1 .4 1.7 0l11.9-6.8-3.4-3.4z"/></svg>
+                <span><small><span data-lang="en">Get it on</span><span data-lang="es" lang="es">Disponible en</span></small><strong>Google Play</strong></span>
+              </a>
+            </div>
+          </div>
+          <div class="band-art"><img src="assets/img/landmarks.webp" width="1500" height="900" loading="lazy" alt="Landmark tiles to collect in Trip Sort"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="">
+          <img src="assets/img/tripsort-icon.png" alt="Trip Sort app icon" width="32" height="32">
+          Trip Sort
+        </a>
+        <p><span data-lang="en">A relaxing triple tile match puzzle. Match 3 tiles, train your brain and travel the world, offline.</span><span data-lang="es" lang="es">Un puzzle relajante de emparejar fichas de a tres. Juntá 3 fichas, entrená la cabeza y viajá por el mundo, sin internet.</span></p>
+      </div>
+      <div>
+        <h4>App</h4>
+        <ul>
+          <li><a href="#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a></li>
+          <li><a href="#screenshots"><span data-lang="en">Screenshots</span><span data-lang="es" lang="es">Capturas</span></a></li>
+          <li><a href="#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a></li>
+          <li><a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a></li>
+        </ul>
+      </div>
+      <div>
+        <h4><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></h4>
+        <ul>
+          <li><a href="guides/triple-tile-match/"><span data-lang="en">Triple tile match</span><span data-lang="es" lang="es">Triple tile match</span></a></li>
+          <li><a href="guides/how-to-beat-hard-tile-match-levels/"><span data-lang="en">Hard level tips</span><span data-lang="es" lang="es">Niveles difíciles</span></a></li>
+          <li><a href="guides/offline-games-no-wifi/"><span data-lang="en">Offline games</span><span data-lang="es" lang="es">Juegos sin internet</span></a></li>
+          <li><a href="guides/games-to-play-on-a-plane/"><span data-lang="en">Games for flights</span><span data-lang="es" lang="es">Juegos para el avión</span></a></li>
+          <li><a href="guides/brain-puzzle-games-for-adults/"><span data-lang="en">Brain games</span><span data-lang="es" lang="es">Juegos mentales</span></a></li>
+          <li><a href="guides/"><span data-lang="en">All guides →</span><span data-lang="es" lang="es">Todas las guías →</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Trip Sort · Nicolas Gula · <a href="https://dezeo.lat/">dezeo</a></span>
+      <span>
+        <a href="privacypolicy/"><span data-lang="en">Privacy Policy</span><span data-lang="es" lang="es">Privacidad</span></a> ·
+        <a href="terms/"><span data-lang="en">Terms of Use</span><span data-lang="es" lang="es">Términos</span></a> ·
+        <a href="support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function setLang(l) {
+    document.body.setAttribute('data-active', l);
+    document.documentElement.lang = l;
+    var sel = document.getElementById('langselect');
+    if (sel) sel.value = l;
+    try { localStorage.setItem('ts-lang', l); } catch (e) {}
+  }
+  (function () {
+    var saved = null;
+    try { saved = localStorage.getItem('ts-lang'); } catch (e) {}
+    var page = document.body.getAttribute('data-default');
+    var l = saved || ((navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : page || 'en');
+    setLang(l);
+  })();
+</script>
 </body>
 </html>

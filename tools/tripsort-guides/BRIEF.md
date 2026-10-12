@@ -1,0 +1,83 @@
+# Brief for writing a Trip Sort guide
+
+You write the BODY of one SEO guide for the Trip Sort landing (dezeo.lat/tripsort/guides/<slug>/).
+`build.py` wraps your file with the head, header, title (h1), cover image, related guides and footer,
+so you write only what goes after the cover image.
+
+## Files you write (only these)
+
+- `content/<slug>.html`: the bilingual article body (fragment, no <html>/<head>/<body>, no h1).
+- `content/<slug>.faq.json`: `[["question", "answer"], ...]`, the same 3 "people also ask" questions you put at the end,
+  in the guide's main language (`lang` in guides.json: "en" or "es"), plain text.
+
+Read `guides.json` for the slug, keyword, secondary keywords, titles and descriptions. Don't edit it.
+
+## Format rules
+
+- Every visible text is bilingual, inside its element, like this:
+  `<p><span data-lang="en">English text.</span><span data-lang="es" lang="es">Texto en español.</span></p>`
+  Same for h2, h3, li, figcaption, button labels. Never put block elements inside the spans.
+- Spanish: rioplatense voseo, like the rest of the site ("jugá", "tocá", "podés", "descargá"). Natural, not a literal translation.
+  For guides whose `lang` is "es", Spanish is the primary, keyword-targeted text and English is the translation.
+- Structure:
+  1. `<p class="lede">`: answer the search intent in the first two sentences (featured-snippet style), with the main keyword.
+  2. 4 to 6 `<h2>` sections that genuinely answer what the searcher wants (general, useful, not an ad), with lists or numbered steps where it helps. Put the main keyword naturally in at least one h2 and the secondary keywords where they fit. No keyword stuffing.
+  3. At least one figure using the real images below.
+  4. A `<div class="callout">` titled "How to do it in Trip Sort" / "Cómo hacerlo en Trip Sort" (h2) with an `<ol>` of concrete steps in the app, then
+     `<p><a class="btn btn-primary" href="../../#download"><span data-lang="en">Download Trip Sort free</span><span data-lang="es" lang="es">Descargar Trip Sort gratis</span></a></p>`
+  5. Optional `<div class="tip"><p>...</p></div>` with a pro tip.
+  6. `<h2>` "Questions people also ask" / "Lo que también preguntan" with 3 `<h3>` + `<p>` pairs (the same 3 go in the faq.json).
+- Link naturally to 1 or 2 other guides: `<a class="inline" href="../<other-slug>/">...</a>` (slugs in guides.json).
+- Length: about 900–1,300 words per language. Indent with 4 spaces (it sits inside `<div class="narrow">`).
+- No emojis. No "best", "#1", "top" claims about Trip Sort. Don't name or criticize competitor apps (generic genres like "mahjong solitaire" are fine).
+- No health or medical claims (no "improves memory", "reduces anxiety", "prevents dementia"). Say things like "keeps your mind busy", "a calm break", "practice attention and planning".
+- Only claim game facts listed below. If you are not sure something exists in the game, don't mention it.
+
+## Images you can use (paths relative to the guide page)
+
+- Store screenshots, 480x1043, one per language (swap with data-lang):
+  `../../assets/img/shots/en-01.webp` ... `en-06.webp` and `es-01.webp` ... `es-06.webp`
+  01 "Match 3 Tiles!" (Paris board, Eiffel tiles in the tray) · 02 "Train Your Brain" (Kyoto board, torii, sushi) ·
+  03 "255 Destinations" (map of Europe with a route, postcards of Paris and Santorini) · 04 "Relax & Unwind" (Santorini board) ·
+  05 "Travel the World" (Rio board, Christ the Redeemer, toucans) · 06 "Play Offline" (London board, Big Ben, double-decker bus).
+  Use as:
+  ```html
+    <figure class="phone">
+      <img data-lang="en" src="../../assets/img/shots/en-01.webp" width="480" height="1043" loading="lazy" alt="...">
+      <img data-lang="es" src="../../assets/img/shots/es-01.webp" width="480" height="1043" loading="lazy" alt="...">
+      <figcaption><span data-lang="en">...</span><span data-lang="es" lang="es">...</span></figcaption>
+    </figure>
+  ```
+- Wide art (no text in it, one for both languages), use `<figure><img ...></figure>`:
+  `../../assets/img/route.webp` (1440x780, map with a trip route and postcards) ·
+  `../../assets/img/postcards.webp` (1500x900, fan of five city postcards) ·
+  `../../assets/img/landmarks.webp` (1500x900, twelve landmark tiles).
+  Alt text: descriptive and in English, with a keyword where natural.
+
+## Trip Sort facts (the only things you may claim)
+
+- Name: "Trip Sort: Triple Tile Match". iPhone and Android. Made by the studio dezeo (Nicolas Gula).
+- Free to play, with optional in-app purchases and ads. A single "Remove Ads" purchase turns off the ads between levels.
+  Rewarded videos are always optional (continue after a loss, extra hints). Restore Purchases is in the Shop.
+- How to play: tap a tile and it moves into the tray. The tray has 4 slots. Three identical tiles in the tray clear.
+  Only tiles that are not covered by other tiles can be picked. Clear every tile to finish the level.
+  If the tray fills up with no match, the level is lost; you can continue (with a rewarded video or coins) or retry.
+- No timers. Early boards are calm and easy; later boards stack tiles in layers and ask you to think a few moves ahead.
+- 255 real destinations on every continent, 12 levels each (over 3,000 levels). The trip starts in Montevideo.
+- Each city has its own tiles: Paris has the Eiffel Tower, croissants and macarons; Kyoto torii gates and sushi;
+  Rio Christ the Redeemer and toucans; Buenos Aires tango shoes and mate; London Big Ben and the double-decker bus.
+- Every level adds a piece to the city's postcard. Finishing a city stamps your passport ("VISITED"), then you travel
+  to the next stop by plane, ship, train or bus with an animation across the map (you can tap to skip it).
+- 23 famous landmarks to collect, earned when you complete the destination where they stand: Eiffel Tower, Fushimi Inari Torii,
+  Itsukushima Pagoda, Christ the Redeemer, Leaning Tower of Pisa, Colosseum, Chichen Itza, Statue of Liberty, Big Ben,
+  Taj Mahal, Great Pyramid, Sydney Opera House, Saint Basil's Cathedral, Great Wall of China, Treasury of Petra,
+  Angkor Wat, Parthenon, Burj Khalifa, Hagia Sophia, Brandenburg Gate, Abu Simbel, Uluru, Mount Fuji.
+  Each landmark comes with a short real-world story.
+- Boosters: Hint (lights up your best move), Undo (puts your last tile back on the board), Magic Wand (clears a whole set for you),
+  Shuffle (mixes up the tiles left on the board), Extra Slot (adds a fifth slot to the tray). You start with some and can buy more with coins.
+- Coins, daily rewards, daily missions, a Daily Challenge and achievements.
+- Replay: open the Journey, tap a destination you completed and pick any of its 12 levels.
+- Settings: the gear icon. Sound, Music and Vibration each have their own switch. Calm music, one relaxing tune per level, looping.
+- Works offline: every level plays with no internet. Offline there are simply no ads and the Shop is not available.
+- No account and no sign-up. Progress is saved on the device (deleting the game deletes progress).
+- The game is translated into 70+ languages.

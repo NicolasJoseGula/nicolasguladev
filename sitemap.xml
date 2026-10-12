@@ -61,7 +61,7 @@
   <!-- Trip Sort -->
   <url>
     <loc>https://dezeo.lat/tripsort/</loc>
-    <lastmod>2026-10-10</lastmod>
+    <lastmod>2026-10-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -71,6 +71,20 @@
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
+  <url><loc>https://dezeo.lat/tripsort/support/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/</loc><lastmod>2026-10-12</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/triple-tile-match/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/how-to-beat-hard-tile-match-levels/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/offline-games-no-wifi/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/games-to-play-on-a-plane/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/brain-puzzle-games-for-adults/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/puzzle-games-for-seniors/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/mahjong-tile-match-vs-mahjong-solitaire/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/relaxing-zen-puzzle-games/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/travel-puzzle-game/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/tile-match-boosters/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/juegos-de-emparejar-fichas/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://dezeo.lat/tripsort/guides/juegos-mentales-sin-internet/</loc><lastmod>2026-10-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 
   <!-- Block&Read -->
   <url>

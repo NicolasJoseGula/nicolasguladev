@@ -1,0 +1,5 @@
+[
+  ["Is tile match the same as mahjong?", "No. Traditional mahjong is a four-player game with its own scoring. Mahjong solitaire uses the same tiles to remove pairs of free tiles from a layout. Tile match borrows the layered look but clears tiles in sets of three through a small tray."],
+  ["What makes a tile free in mahjong solitaire?", "A tile is free when no other tile sits on top of it and at least one of its long sides, left or right, is not touching another tile. Only free tiles can be matched and removed."],
+  ["Is tile match easier than mahjong solitaire?", "It is easier to learn, because the pictures are familiar and the only rule is to collect three of a kind. It is not always easier to win: the small tray means a few careless taps can end a level, so planning matters just as much."]
+]

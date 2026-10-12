@@ -1,0 +1,5 @@
+[
+  ["Is triple tile match the same as mahjong?", "No. Mahjong solitaire matches pairs of free tiles directly on the board. A triple tile match game sends tiles to a tray and clears them in sets of three, so you have to plan around the tray's limited space."],
+  ["What happens when the tray is full?", "If the tray fills up and no three tiles in it match, the level is lost. In Trip Sort you can continue with an optional rewarded video or with coins, or retry the level."],
+  ["Are tile match games free?", "Most tile match games are free to play, supported by ads and optional purchases. Trip Sort is free, with optional in-app purchases, and a single Remove Ads purchase turns off the ads between levels."]
+]
