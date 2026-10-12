@@ -13,7 +13,8 @@
 //                If the file is missing, the card shows the first letter instead
 //   description: one short line about the project
 //   url:         where the card links to (the project landing page)
-//   platform:    one of "ios", "extension" or "steam" (shows a small logo).
+//   platform:    one of "ios", "android", "mac", "extension" or "steam"
+//                (shows a small logo), or a list of them for several logos.
 //                omit it if the project has no platform tag.
 //   background:  optional CSS background for the image area. Use it when the
 //                icon has its own backdrop, so the card blends with it instead
@@ -25,7 +26,7 @@ var projects = [
     image: "assets/tripsort.jpg",
     description: "A relaxing triple tile match. Clear each board and travel the world through 255 destinations, offline.",
     url: "tripsort/",
-    platform: "ios",
+    platform: ["ios", "android"],
     background: "#091022"
   },
   {
@@ -155,6 +156,10 @@ var PLATFORMS = {
     label: "iOS app",
     svg: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.1-2.01-3.77-2.04-1.6-.16-3.13.94-3.94.94-.81 0-2.07-.92-3.41-.89-1.75.03-3.37 1.02-4.27 2.59-1.82 3.16-.47 7.83 1.31 10.39.87 1.25 1.9 2.66 3.26 2.61 1.31-.05 1.8-.85 3.39-.85 1.58 0 2.03.85 3.41.82 1.41-.03 2.3-1.28 3.16-2.54.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.73-1.05-2.76-4.16M14.5 4.79c.72-.88 1.21-2.1 1.08-3.31-1.04.04-2.3.69-3.05 1.56-.67.77-1.25 2.01-1.09 3.19 1.16.09 2.34-.59 3.06-1.44"/></svg>'
   },
+  android: {
+    label: "Android app",
+    svg: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85a.637.637 0 0 0-.83.22l-1.88 3.24a11.43 11.43 0 0 0-8.94 0L5.65 5.67a.643.643 0 0 0-.87-.2c-.28.18-.37.54-.22.83L6.4 9.48A10.78 10.78 0 0 0 1 18h22a10.78 10.78 0 0 0-5.4-8.52M7 15.25a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5m10 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5"/></svg>'
+  },
   extension: {
     label: "Browser extension",
     svg: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>'
@@ -239,15 +244,20 @@ var PLATFORMS = {
     open.textContent = "→ open";
     foot.appendChild(open);
 
-    var plat = PLATFORMS[p.platform];
-    if (plat) {
+    var plats = [].concat(p.platform || []);
+    var badges = document.createElement("span");
+    badges.className = "card-platforms";
+    plats.forEach(function (key) {
+      var plat = PLATFORMS[key];
+      if (!plat) return;
       var badge = document.createElement("span");
       badge.className = "card-platform";
       badge.title = plat.label;
       badge.setAttribute("aria-label", plat.label);
       badge.innerHTML = plat.svg;
-      foot.appendChild(badge);
-    }
+      badges.appendChild(badge);
+    });
+    if (badges.childNodes.length) foot.appendChild(badges);
 
     body.appendChild(name);
     body.appendChild(desc);
