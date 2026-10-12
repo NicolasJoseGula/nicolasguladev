@@ -21,6 +21,14 @@
 // ----------------------------------------------------------------
 var projects = [
   {
+    name: "Trip Sort",
+    image: "assets/tripsort.jpg",
+    description: "A relaxing triple tile match. Clear each board and travel the world through 255 destinations, offline.",
+    url: "tripsort/",
+    platform: "ios",
+    background: "#091022"
+  },
+  {
     name: "FaceCheck",
     image: "assets/facecheck.jpg",
     description: "Reads what your photo conveys: your score, your best feature and the points your next shot can gain. All on the iPhone.",
