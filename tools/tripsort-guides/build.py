@@ -18,7 +18,7 @@ HERE = pathlib.Path(__file__).resolve().parent
 SITE = HERE.parent.parent / 'tripsort'
 BASE = 'https://dezeo.lat/tripsort/'
 UPDATED = '2026-10-12'
-APP_STORE = 'https://apps.apple.com/app/id6818841022'
+APP_STORE = 'https://apps.apple.com/app/trip-sort-triple-tile-match/id6818841022'
 PLAY = 'https://play.google.com/store/apps/details?id=lat.dezeo.trip_sort'
 
 GUIDES = json.loads((HERE / 'guides.json').read_text(encoding='utf-8'))
