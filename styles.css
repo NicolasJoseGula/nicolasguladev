@@ -313,8 +313,10 @@ a { color: inherit; text-decoration: none; }
 .card:hover .card-platform { color: var(--text-2); }
 
 /* Scroll reveal */
-.reveal-card { opacity: 0; transform: translateY(18px); }
-.reveal-card.in { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s ease; }
+/* Solo si el <head> encendio la animacion (.projects-anim en <html>). Las
+   tarjetas vienen en el HTML: sin JavaScript se ven desde el principio. */
+.projects-anim #projectGrid .card { opacity: 0; transform: translateY(18px); }
+.projects-anim #projectGrid .card.in { opacity: 1; transform: none; transition: opacity 0.5s ease, transform 0.5s ease; }
 
 /* ----------------------------------------------------------------
    Footer
@@ -372,3 +374,17 @@ a { color: inherit; text-decoration: none; }
 
 .site-nav a { white-space: nowrap; }
 .site-header { max-width: 1140px; }
+
+/* Texto para lectores de pantalla que no se ve: el nombre de la plataforma en
+   las tarjetas de Work, que a la vista es solo un icono. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

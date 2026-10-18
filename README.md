@@ -9,7 +9,8 @@ nicolasdev/
 ├── index.html      Home (studio hero)
 ├── projects.html   Work (grid of projects)
 ├── styles.css      Shared styles (dark theme, brand gradients)  <- edit here
-├── projects.js     The list of projects  <- add work here
+├── projects.json   The list of projects  <- add work here
+├── projects.js     Scroll-reveal for the cards (no data)
 ├── tools/          Build scripts (see "Build step" below)
 ├── assets/
 │   ├── fonts/      Self-hosted Space Grotesk + Inter (OFL, see OFL.txt)
@@ -35,17 +36,23 @@ Set the real contact email (currently `hola@dezeo.lat`).
 ### Add a project to the grid
 Drop the full-size image in `assets/originales/`, run
 `python3 tools/optimizar-assets.py`, then add one object to `projects` in
-`projects.js` pointing at the generated `.jpg`:
+`projects.json`:
 
-```js
+```json
 {
-  name: "App name",
-  image: "assets/app.jpg",
-  description: "One short line about the app.",
-  url: "appfolder/",
-  platform: "ios"   // or "extension", "steam", or omit
+  "name": "App name",
+  "image": "assets/app.jpg",
+  "alt": "App name icon: what the image shows",
+  "description": "One short line about the app.",
+  "url": "appfolder/",
+  "platform": "ios"
 }
 ```
+
+Then run `python3 tools/construir.py`. The cards are written into
+`projects.html` as real HTML, so search engines and AI crawlers that don't run
+JavaScript still see every project and its link. The build refuses a project
+whose `url` is not an existing page of the site.
 
 ### Add a project landing page
 Create a folder (for example `charlatan/`) with an `index.html` and a
@@ -56,8 +63,8 @@ Create a folder (for example `charlatan/`) with an `index.html` and a
 
 The CSS is inlined into `index.html` and `projects.html` so the page paints in
 a single round trip. `styles.css` and `assets/fonts/fonts.css` are still the
-files you edit; the `<style id="css-del-sitio">` block in each page is
-generated. **After touching either stylesheet, run:**
+files you edit; the `<style id="css-del-sitio">` block in each page and the
+Work cards (from `projects.json`) are generated. **After touching either stylesheet, run:**
 
 ```
 python3 tools/construir.py
