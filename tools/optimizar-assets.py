@@ -4,9 +4,10 @@
 Los originales quedan en assets/originales/ y no se publican; de acá salen los
 archivos que sirve la página. Volver a correrlo es idempotente.
 
-Medida que manda: el tamaño real en pantalla, no el del archivo.
-  - el logo del header se ve a 44 px de alto  -> 132 px (3x)
-  - las tarjetas de Work miden ~340 px de ancho -> 800 px de lado mayor
+Medida que manda: el tamaño real en pantalla, no el del archivo: las tarjetas
+de Work miden ~340 px de ancho -> 800 px de lado mayor.
+
+La marca (logo, símbolo, favicon y la portada) sale de tools/portal-assets.py.
 """
 import pathlib
 from PIL import Image
@@ -14,9 +15,7 @@ from PIL import Image
 ASSETS = pathlib.Path(__file__).resolve().parent.parent / 'assets'
 ORIG = ASSETS / 'originales'
 
-LOGO = 132          # 3x de los 44 px del header
 TARJETA = 800       # lado mayor de las imágenes de proyecto
-OG = 1024           # imagen para redes sociales
 
 
 def guardar(im, destino, **kw):
@@ -40,16 +39,6 @@ def main():
     ORIG.mkdir(exist_ok=True)
     filas = []
 
-    # --- logo del header: es el que pesaba 1,3 MB para verse a 44 px ---
-    src = fuente('dezeotransparent.png')
-    antes = src.stat().st_size
-    # PNG sin cuantizar: el logo es un degradado y la paleta de 256 colores le
-    # deja bandas visibles. A 132 px pesa 6 KB igual, no vale la pena arriesgar
-    # la marca por 3 KB.
-    im = encoger(Image.open(src).convert('RGBA'), LOGO)
-    p = guardar(im, ASSETS / 'dezeo-mark.png', format='PNG', optimize=True)
-    filas.append(('dezeotransparent.png -> dezeo-mark.png', antes, p))
-
     # --- imágenes de las tarjetas de Work: webp con respaldo jpg ---
     for nombre in ('tripsort', 'facecheck', 'chartmaker', 'charlatan', 'guardianreader', 'blockandread', 'fixyourlife'):
         src = fuente(f'{nombre}.png')
@@ -61,14 +50,6 @@ def main():
         j = guardar(im, ASSETS / f'{nombre}.jpg', format='JPEG', quality=82,
                     optimize=True, progressive=True)
         filas.append((f'{nombre}.png -> .webp + .jpg', antes, w + j))
-
-    # --- imagen de og: la piden los crawlers, no el navegador, pero 532 KB es mucho ---
-    src = fuente('dezeologo.png')
-    antes = src.stat().st_size
-    im = encoger(Image.open(src).convert('RGB'), OG)
-    j = guardar(im, ASSETS / 'dezeologo.jpg', format='JPEG', quality=88,
-                optimize=True, progressive=True)
-    filas.append(('dezeologo.png -> dezeologo.jpg', antes, j))
 
     ancho = max(len(f) for f, _, _ in filas)
     total_a = total_d = 0

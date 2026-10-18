@@ -12,11 +12,13 @@
   <meta property="og:title" content="Press kit — dezeo">
   <meta property="og:description" content="Press kit for dezeo, an independent studio from Montevideo, Uruguay: app icons, screenshots, descriptions and store links for Trip Sort, FaceCheck, Chart Maker, Charlatan, Guardian Reader, Block&amp;Read and Fix Your Life.">
   <meta property="og:url" content="https://dezeo.lat/press/">
-  <meta property="og:image" content="https://dezeo.lat/assets/dezeologo.jpg">
-  <meta name="twitter:card" content="summary">
+  <meta property="og:image" content="https://dezeo.lat/assets/dezeo-portal.jpg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="893">
+  <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Press kit — dezeo">
   <meta name="twitter:description" content="Press kit for dezeo, an independent studio from Montevideo, Uruguay: app icons, screenshots, descriptions and store links for Trip Sort, FaceCheck, Chart Maker, Charlatan, Guardian Reader, Block&amp;Read and Fix Your Life.">
-  <meta name="twitter:image" content="https://dezeo.lat/assets/dezeologo.jpg">
+  <meta name="twitter:image" content="https://dezeo.lat/assets/dezeo-portal.jpg">
   <link rel="icon" type="image/png" href="../assets/favicon.png">
   <link rel="apple-touch-icon" href="../assets/favicon.png">
   <link rel="preload" as="font" type="font/woff2" href="../assets/fonts/space-grotesk-latin.woff2" crossorigin>
@@ -104,7 +106,7 @@ descent-override: 26.843%;
 line-gap-override: 0%;
 }
 :root {
---bg: #08080c;
+--bg: #0b0b0b;
 --surface: #111119;
 --surface-2: #16161f;
 --border: #23232e;
@@ -112,9 +114,11 @@ line-gap-override: 0%;
 --text: #f4f4f7;
 --text-2: #9a9aa6;
 --text-3: #7c7c88;
---accent: #c084fc;
---grad-brand: linear-gradient(120deg, #7C3AED, #EC4899 60%, #FB6E3C);
---grad-text: linear-gradient(120deg, #2F6BFF, #7C3AED, #EC4899, #FB6E3C);
+--lima: #b8ff00;
+--lima-apagado: #86bd00;
+--accent: #b8ff00;
+--grad-brand: linear-gradient(120deg, #b8ff00, #8fe000);
+--grad-text: linear-gradient(100deg, #b8ff00, #e4ff8f 55%, #b8ff00);
 --font-head: "Space Grotesk", "Space Grotesk fallback", system-ui, sans-serif;
 --font-body: "Inter", "Inter fallback", system-ui, sans-serif;
 }
@@ -145,99 +149,52 @@ left: 50%;
 transform: translateX(-50%);
 width: min(1000px, 120vw);
 height: 640px;
-background: radial-gradient(closest-side, rgba(124, 58, 237, 0.28), rgba(47, 107, 255, 0.10), transparent);
+background: radial-gradient(closest-side, rgba(184, 255, 0, 0.16), rgba(184, 255, 0, 0.05), transparent);
 pointer-events: none;
 z-index: 0;
 }
 .site-header {
-position: sticky; top: 16px;
+position: sticky; top: 14px;
 z-index: 50;
 display: flex;
 align-items: center;
 justify-content: space-between;
-gap: 20px;
-width: calc(100% - 40px);
-max-width: 1000px;
-margin: 16px auto 0;
-padding: 10px 28px;
-background: rgba(18, 18, 22, .72);
-backdrop-filter: blur(16px);
--webkit-backdrop-filter: blur(16px);
-border: 1px solid var(--line, rgba(255,255,255,.09));
-border-radius: 18px;
-box-shadow: 0 10px 34px rgba(0, 0, 0, .38);
+gap: 16px;
+width: calc(100% - 32px);
+max-width: 880px;
+margin: 14px auto 0;
+padding: 6px 6px 6px 16px;
+background: rgba(14, 14, 14, 0.42);
+backdrop-filter: blur(14px) saturate(140%);
+-webkit-backdrop-filter: blur(14px) saturate(140%);
+border: 1px solid rgba(255, 255, 255, 0.07);
+border-radius: 999px;
 }
-.brand { display: flex; align-items: center; gap: 10px; }
-.brand-icon { height: 44px; width: auto; display: block; }
+.brand { display: flex; align-items: center; gap: 8px; }
+.brand-icon { height: 22px; width: auto; display: block; }
 .brand-name {
 font-family: var(--font-head);
-font-weight: 700;
-font-size: 26px;
+font-weight: 600;
+font-size: 15px;
 line-height: 1;
-letter-spacing: -0.02em;
+letter-spacing: -0.01em;
 color: #fff;
 }
-.site-nav { display: flex; gap: 28px; font-size: 16px; color: var(--text-2); }
-.site-nav a { transition: color 0.15s ease; }
-.site-nav a:hover, .site-nav a.active { color: var(--text); }
-.hero {
-position: relative;
-z-index: 1;
-flex: 1;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 40px 32px 90px;
-}
-.kicker {
-font-size: 12px;
-letter-spacing: 0.28em;
-text-transform: uppercase;
-color: var(--text-3);
-margin-bottom: 24px;
-}
-.hero-title {
-font-family: var(--font-head);
-font-weight: 700;
-font-size: clamp(34px, 6vw, 60px);
-line-height: 1.08;
-letter-spacing: -0.02em;
-color: #fff;
-max-width: 840px;
-margin-bottom: 24px;
-}
-.hero-sub {
-font-size: 19px;
-color: var(--text-2);
-max-width: 520px;
-margin-bottom: 38px;
-line-height: 1.6;
-}
-.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
-@keyframes fadeUp {
-from { opacity: 0; transform: translateY(14px); }
-to { opacity: 1; transform: none; }
-}
-.hero > * { opacity: 0; animation: fadeUp 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
-.hero .kicker { animation-delay: 0.05s; }
-.hero-title { animation-delay: 0.15s; }
-.hero-sub { animation-delay: 0.28s; }
-.hero-actions { animation-delay: 0.4s; }
-@media (prefers-reduced-motion: reduce) {
-.hero > * { opacity: 1; animation: none; }
-}
+.site-nav { display: flex; gap: 2px; font-size: 13px; letter-spacing: 0.01em; color: var(--text-2); }
+.site-nav a { padding: 6px 13px; border-radius: 999px; transition: color 0.15s ease, background 0.15s ease; }
+.site-nav a:hover { color: var(--text); background: rgba(255, 255, 255, 0.06); }
+.site-nav a.active { color: var(--text); }
 .btn {
 position: relative;
 overflow: hidden;
 display: inline-flex;
 align-items: center;
 gap: 6px;
-font-size: 16px;
+font-size: 14px;
 font-weight: 500;
-padding: 14px 28px;
-border-radius: 12px;
+letter-spacing: 0.01em;
+padding: 11px 20px;
+border-radius: 999px;
 transition: border-color 0.15s ease, background 0.15s ease, box-shadow 0.25s ease;
 }
 .btn::after {
@@ -256,10 +213,16 @@ pointer-events: none;
 from { left: -75%; }
 to { left: 130%; }
 }
-.btn-primary { background: var(--grad-brand); color: #fff; }
-.btn-primary:hover { box-shadow: 0 6px 30px rgba(236, 72, 153, 0.42); }
-.btn-ghost { border: 1px solid var(--border-strong); color: var(--text); }
-.btn-ghost:hover { border-color: #45455a; background: rgba(255, 255, 255, 0.04); }
+.btn-primary { background: var(--lima); color: #0b0b0b; font-weight: 600; }
+.btn-primary:hover { box-shadow: 0 6px 30px rgba(184, 255, 0, 0.34); }
+.btn-ghost {
+border: 1px solid rgba(255, 255, 255, 0.16);
+background: rgba(11, 11, 11, 0.32);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+color: var(--text);
+}
+.btn-ghost:hover { border-color: rgba(184, 255, 0, 0.45); background: rgba(184, 255, 0, 0.06); }
 @media (prefers-reduced-motion: reduce) {
 .btn:hover::after { animation: none; }
 }
@@ -272,16 +235,27 @@ max-width: 1080px;
 margin: 0 auto;
 padding: 32px 32px 80px;
 }
-.work-head { margin-bottom: 40px; }
-.page-title {
+.work-head { margin-bottom: 44px; }
+.work-kicker {
+margin-bottom: 14px;
 font-family: var(--font-head);
-font-weight: 700;
-font-size: 36px;
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.32em;
+text-transform: uppercase;
+color: var(--lima);
+}
+.page-title {
+max-width: 20ch;
+font-family: var(--font-head);
+font-weight: 600;
+font-size: clamp(24px, 3vw, 34px);
+line-height: 1.15;
 letter-spacing: -0.02em;
 color: #fff;
-margin-bottom: 10px;
+margin-bottom: 12px;
 }
-.page-sub { font-size: 16px; color: var(--text-2); max-width: 520px; }
+.page-sub { font-size: 15px; line-height: 1.6; color: var(--text-2); max-width: 46ch; }
 .grid {
 display: grid;
 grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -345,15 +319,15 @@ margin-bottom: 7px;
 position: relative;
 z-index: 1;
 text-align: center;
-padding: 32px;
+padding: 24px 24px 26px;
 color: var(--text-3);
 }
 .socials {
 display: flex;
-gap: 20px;
+gap: 18px;
 justify-content: center;
 flex-wrap: wrap;
-margin-bottom: 18px;
+margin-bottom: 12px;
 }
 .socials a {
 display: inline-flex;
@@ -361,12 +335,11 @@ color: var(--text-3);
 transition: color 0.15s ease, transform 0.15s ease;
 }
 .socials a:hover { color: var(--text); transform: translateY(-2px); }
-.socials svg { width: 20px; height: 20px; display: block; }
-.copyright { font-size: 13px; }
+.socials svg { width: 16px; height: 16px; display: block; }
+.copyright { font-size: 12px; letter-spacing: 0.01em; }
 @media (max-width: 560px) {
-.site-header { padding: 8px 18px; width: calc(100% - 24px); margin-top: 10px; }
-.site-nav { gap: 18px; }
-.hero { padding: 24px 20px 70px; }
+.site-header { padding: 5px 5px 5px 14px; width: calc(100% - 24px); margin-top: 10px; top: 10px; }
+.site-nav a { padding: 6px 11px; }
 .work { padding: 24px 20px 64px; }
 }
 .card-image img.fit-contain {
@@ -374,11 +347,114 @@ object-fit: contain;
 padding: 2%;
 background: #000;
 }
-:root { --nav-h: 90px; }
-.hero { margin-top: calc(-1 * var(--nav-h)); border-top: var(--nav-h) solid transparent; }
-@media (max-width: 560px) { :root { --nav-h: 70px; } }
 .site-nav a { white-space: nowrap; }
 .site-header { max-width: 1140px; }
+body.portada { background: var(--bg); }
+.portada-fondo {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 0;
+width: 100%;
+height: 100vh;
+height: 100lvh;
+object-fit: cover;
+object-position: 62% center;
+}
+.portada-velo {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 0;
+width: 100%;
+height: 100vh;
+height: 100lvh;
+pointer-events: none;
+background:
+linear-gradient(100deg, rgba(11, 11, 11, 0.7) 0%, rgba(11, 11, 11, 0.4) 30%, rgba(11, 11, 11, 0) 58%),
+linear-gradient(0deg, rgba(11, 11, 11, 0.6) 0%, rgba(11, 11, 11, 0) 24%);
+}
+body.portada .site-footer { position: relative; z-index: 1; }
+.portal {
+position: relative;
+z-index: 1;
+flex: 1;
+display: flex;
+flex-direction: column;
+justify-content: center;
+width: 100%;
+max-width: 1180px;
+margin: 0 auto;
+padding: 32px 40px;
+}
+.portal-marca {
+position: relative;
+width: clamp(210px, 22vw, 320px);
+container-type: inline-size;
+font-weight: inherit;
+}
+.portal-logo { display: block; width: 100%; height: auto; }
+.portal-bajada {
+position: absolute;
+left: 32.05%;
+top: 89.87%;
+width: 67.79cqw;
+display: flex;
+justify-content: space-between;
+font-family: var(--font-head);
+font-size: 3.21cqw;
+font-weight: 500;
+line-height: 1;
+text-transform: uppercase;
+color: rgba(244, 244, 240, 0.82);
+white-space: nowrap;
+}
+.portal-acciones {
+display: flex;
+gap: 10px;
+flex-wrap: wrap;
+margin-top: clamp(40px, 5.5vw, 64px);
+}
+@keyframes portalEntra {
+from { opacity: 0; transform: translateY(12px); }
+to   { opacity: 1; transform: none; }
+}
+.portal-marca,
+.portal-acciones {
+opacity: 0;
+animation: portalEntra 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+.portal-marca { animation-delay: 0.05s; }
+.portal-acciones { animation-delay: 0.22s; }
+@media (prefers-reduced-motion: reduce) {
+.portal-marca,
+.portal-acciones { opacity: 1; animation: none; }
+}
+@media (max-width: 860px) {
+.portada-fondo { object-position: 50% center; }
+.portada-velo {
+background:
+linear-gradient(180deg, rgba(11, 11, 11, 0.86) 0%, rgba(11, 11, 11, 0.55) 34%, rgba(11, 11, 11, 0) 60%),
+linear-gradient(0deg, rgba(11, 11, 11, 0.84) 0%, rgba(11, 11, 11, 0.4) 12%, rgba(11, 11, 11, 0) 24%);
+}
+.portal { justify-content: flex-start; padding: 9vh 24px 32px; }
+}
+body.cometa-activo,
+body.cometa-activo a,
+body.cometa-activo button { cursor: none; }
+.cometa {
+position: fixed;
+top: 0;
+left: 0;
+z-index: 90;
+pointer-events: none;
+}
+@media (hover: none), (pointer: coarse) {
+.cometa { display: none; }
+body.cometa-activo,
+body.cometa-activo a,
+body.cometa-activo button { cursor: auto; }
+}
 .sr-only {
 position: absolute;
 width: 1px;
@@ -401,6 +477,9 @@ font-size: 13px;
 }
 .pie-apps a { color: var(--text-2); transition: color 0.15s ease; }
 .pie-apps a:hover { color: var(--text); }
+body.portada .pie-apps a,
+body.portada .copyright { text-shadow: 0 0 6px rgba(0, 0, 0, 0.95), 0 1px 2px rgba(0, 0, 0, 0.9); }
+body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
 .prensa-bloque { margin-top: 48px; }
 .prensa-titulo { font-family: var(--font-head); font-size: 22px; font-weight: 600; color: #fff; margin-bottom: 14px; }
 .prensa-texto { color: var(--text-2); font-size: 15px; line-height: 1.65; max-width: 70ch; margin-bottom: 14px; }
@@ -425,7 +504,11 @@ font-size: 13px;
 
   <header class="site-header">
     <a class="brand" href="../">
-      <img class="brand-icon" src="../assets/dezeo-mark.png" alt="dezeo logo" width="44" height="44" fetchpriority="high" decoding="async">
+      <picture>
+        <source type="image/webp" srcset="../assets/dezeo-icono.webp">
+        <img class="brand-icon" src="../assets/dezeo-icono.png" alt="dezeo logo"
+             width="35" height="44" fetchpriority="high" decoding="async">
+      </picture>
       <span class="brand-name">dezeo</span>
     </a>
     <nav class="site-nav">
@@ -436,7 +519,7 @@ font-size: 13px;
 
   <main class="work prensa">
     <div class="work-head">
-      <p class="kicker">Press</p>
+      <p class="work-kicker">Press</p>
       <h1 class="page-title">Press kit</h1>
       <p class="page-sub">Everything you need to write about our apps: descriptions, icons, screenshots and store links. Free to use in coverage.</p>
     </div>
@@ -590,15 +673,333 @@ font-size: 13px;
     </nav>
     <!-- /apps-pie -->
     <div class="socials">
-      <!-- TODO: replace the handle "dezeo" with your real usernames -->
-      <a href="https://www.instagram.com/dezeocreativestudio/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
-      <a href="https://www.youtube.com/@dezeo-creative-studio" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
-      <a href="https://www.tiktok.com/@dezeocreativestudio" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a href="https://www.tiktok.com/@dezeogsp" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a href="https://www.youtube.com/@dezeohq" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
       <a href="https://x.com/dezeooss" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-      <a href="https://github.com/dezeo-oss" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
-      <a href="https://www.linkedin.com/company/dezeo-creative-studio/" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
     </div>
     <p class="copyright">© 2026 dezeo — creative studio</p>
   </footer>
+
+  <script id="js:cometa.js">
+// ----------------------------------------------------------------
+// El cursor es un cometa.
+//
+// Una cabeza de luz verde, una estela que se estira con la velocidad y se
+// recoge cuando el puntero se frena, y particulas que se desprenden, flotan
+// sin gravedad y se apagan titilando. Todo en un <canvas> encima de la pagina.
+//
+// Detalles que importan:
+//  - Solo con puntero fino (mouse o trackpad). En pantallas tactiles no hay
+//    nada que seguir.
+//  - La clase que esconde el cursor del sistema la pone este script: si no
+//    corre, queda la flecha de siempre.
+//  - El bucle se detiene solo cuando no queda nada en movimiento, para no
+//    gastar bateria con el puntero quieto.
+//  - Con "reducir movimiento" no hay estela ni particulas: solo la luz, pegada
+//    al puntero.
+//  - Las luces se pintan una vez en un sprite y despues solo se copian:
+//    shadowBlur por particula es lo que vuelve lento a un efecto asi.
+// ----------------------------------------------------------------
+(function () {
+  var fino = window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)");
+  if (!fino || !fino.matches) return;
+
+  var lienzo = document.createElement("canvas");
+  var ctx = lienzo.getContext && lienzo.getContext("2d");
+  if (!ctx) return;
+  lienzo.className = "cometa";
+  lienzo.setAttribute("aria-hidden", "true");
+  document.body.appendChild(lienzo);
+  document.body.classList.add("cometa-activo");
+
+  var quieto = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var VIDA_ESTELA = 260;   // ms que tarda un punto de la estela en apagarse
+  var MAX_PARTICULAS = 260;
+
+  // ---- sprites de luz ----
+  function sprite(centro, medio) {
+    var c = document.createElement("canvas");
+    c.width = c.height = 64;
+    var g = c.getContext("2d");
+    var r = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+    r.addColorStop(0, centro);
+    r.addColorStop(0.22, medio);
+    r.addColorStop(1, "rgba(184, 255, 0, 0)");
+    g.fillStyle = r;
+    g.fillRect(0, 0, 64, 64);
+    return c;
+  }
+  var luz = sprite("rgba(236, 255, 180, 1)", "rgba(184, 255, 0, 0.55)");
+  var chispa = sprite("rgba(255, 255, 255, 1)", "rgba(214, 255, 120, 0.6)");
+
+  // ---- estado ----
+  var dpr = 1, ancho = 0, alto = 0;
+  var px = 0, py = 0;          // puntero
+  var cx = 0, cy = 0;          // cabeza del cometa
+  var estela = [];             // {x, y, t}
+  var particulas = [];
+  var sobreEnlace = false;
+  var escala = 1;              // tamano animado de la cabeza
+  var visible = false;
+  var pedido = 0, ultimo = 0;
+
+  function medir() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    ancho = window.innerWidth;
+    alto = window.innerHeight;
+    lienzo.width = Math.round(ancho * dpr);
+    lienzo.height = Math.round(alto * dpr);
+    lienzo.style.width = ancho + "px";
+    lienzo.style.height = alto + "px";
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    pedir();
+  }
+
+  function pedir() {
+    if (!pedido) pedido = requestAnimationFrame(cuadro);
+  }
+
+  function soltar(x, y, vx, vy, vidaMin, vidaMax) {
+    if (particulas.length >= MAX_PARTICULAS) particulas.shift();
+    particulas.push({
+      x: x, y: y, vx: vx, vy: vy,
+      vida: 1,
+      dura: vidaMin + Math.random() * (vidaMax - vidaMin),
+      tam: 0.7 + Math.random() * 1.9,
+      blanca: Math.random() < 0.24,
+      fase: Math.random() * 6.283,
+      titila: 5 + Math.random() * 9
+    });
+  }
+
+  // Polvo que se desprende a lo largo del tramo recorrido en este cuadro
+  function desprender(x0, y0, x1, y1, dist, dt) {
+    var ux = (x1 - x0) / dist, uy = (y1 - y0) / dist;
+    var rapidez = Math.min(dist / Math.max(dt, 0.001), 2600);
+    var cuantas = Math.min(8, dist / 5.5);
+    var n = Math.floor(cuantas) + (Math.random() < cuantas % 1 ? 1 : 0);
+    for (var i = 0; i < n; i++) {
+      var t = Math.random();
+      var ang = Math.random() * 6.283;
+      var deriva = 10 + Math.random() * 34;
+      soltar(
+        x0 + (x1 - x0) * t + (Math.random() - 0.5) * 3,
+        y0 + (y1 - y0) * t + (Math.random() - 0.5) * 3,
+        -ux * rapidez * 0.06 + Math.cos(ang) * deriva,
+        -uy * rapidez * 0.06 + Math.sin(ang) * deriva,
+        0.55, 1.45
+      );
+    }
+  }
+
+  function cuadro(ahora) {
+    pedido = 0;
+    var dt = ultimo ? Math.min(0.05, (ahora - ultimo) / 1000) : 1 / 60;
+    ultimo = ahora;
+
+    // Seguimiento independiente de los fps: la cabeza arrastra un poco.
+    var k = quieto ? 1 : 1 - Math.pow(0.00035, dt);
+    var ox = cx, oy = cy;
+    cx += (px - cx) * k;
+    cy += (py - cy) * k;
+    var mx = cx - ox, my = cy - oy;
+    var dist = Math.sqrt(mx * mx + my * my);
+
+    var objetivo = sobreEnlace ? 1.75 : 1;
+    escala += (objetivo - escala) * Math.min(1, dt * 12);
+
+    if (!quieto) {
+      if (dist > 0.3 || !estela.length) estela.push({ x: cx, y: cy, t: ahora });
+      while (estela.length && ahora - estela[0].t > VIDA_ESTELA) estela.shift();
+      if (dist > 0.6) desprender(ox, oy, cx, cy, dist, dt);
+
+      var freno = Math.pow(0.16, dt);   // sin gravedad: solo se frenan
+      for (var j = particulas.length - 1; j >= 0; j--) {
+        var p = particulas[j];
+        p.vida -= dt / p.dura;
+        if (p.vida <= 0) { particulas.splice(j, 1); continue; }
+        p.vx *= freno;
+        p.vy *= freno;
+        p.x += p.vx * dt;
+        p.y += p.vy * dt;
+      }
+    }
+
+    dibujar(ahora);
+
+    var sigue = visible && !quieto && (
+      estela.length > 1 || particulas.length ||
+      Math.abs(px - cx) > 0.2 || Math.abs(py - cy) > 0.2 ||
+      Math.abs(escala - objetivo) > 0.01
+    );
+    if (sigue) pedir();
+    else ultimo = 0;
+  }
+
+  // Catmull-Rom: con el mouse rapido los puntos quedan a 20-30 px y la cinta
+  // salia quebrada. Se intercalan puntos intermedios sobre una curva suave.
+  function suavizar(pts) {
+    if (pts.length < 3) return pts;
+    var salida = [];
+    for (var i = 0; i < pts.length - 1; i++) {
+      var p0 = pts[Math.max(0, i - 1)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(pts.length - 1, i + 2)];
+      for (var s = 0; s < 4; s++) {
+        var u = s / 4, u2 = u * u, u3 = u2 * u;
+        salida.push({
+          x: 0.5 * ((2 * p1.x) + (-p0.x + p2.x) * u + (2 * p0.x - 5 * p1.x + 4 * p2.x - p3.x) * u2 + (-p0.x + 3 * p1.x - 3 * p2.x + p3.x) * u3),
+          y: 0.5 * ((2 * p1.y) + (-p0.y + p2.y) * u + (2 * p0.y - 5 * p1.y + 4 * p2.y - p3.y) * u2 + (-p0.y + 3 * p1.y - 3 * p2.y + p3.y) * u3)
+        });
+      }
+    }
+    salida.push(pts[pts.length - 1]);
+    return salida;
+  }
+
+  // Una cinta rellena: ancho cero en la cola, anchoMax en la cabeza, con un
+  // degradado de color a lo largo.
+  function cinta(pts, anchoMax, colorCola, colorCabeza) {
+    var n = pts.length;
+    var cola = pts[0], cabeza = pts[n - 1];
+    var dx = cabeza.x - cola.x, dy = cabeza.y - cola.y;
+    if (dx * dx + dy * dy < 1) return;
+    var izq = [], der = [];
+    for (var i = 0; i < n; i++) {
+      var a = pts[Math.max(0, i - 1)], b = pts[Math.min(n - 1, i + 1)];
+      var tx = b.x - a.x, ty = b.y - a.y;
+      var largo = Math.sqrt(tx * tx + ty * ty) || 1;
+      var nx = -ty / largo, ny = tx / largo;
+      var w = anchoMax * Math.pow(i / (n - 1), 1.5) / 2;
+      izq.push(pts[i].x + nx * w, pts[i].y + ny * w);
+      der.push(pts[i].x - nx * w, pts[i].y - ny * w);
+    }
+    ctx.beginPath();
+    ctx.moveTo(izq[0], izq[1]);
+    for (i = 2; i < izq.length; i += 2) ctx.lineTo(izq[i], izq[i + 1]);
+    for (i = der.length - 2; i >= 0; i -= 2) ctx.lineTo(der[i], der[i + 1]);
+    ctx.closePath();
+    var g = ctx.createLinearGradient(cola.x, cola.y, cabeza.x, cabeza.y);
+    g.addColorStop(0, colorCola);
+    g.addColorStop(1, colorCabeza);
+    ctx.fillStyle = g;
+    ctx.fill();
+  }
+
+  function estampar(pts) {
+    var n = pts.length, total = 0, largos = [0], i;
+    for (i = 1; i < n; i++) {
+      var ex = pts[i].x - pts[i - 1].x, ey = pts[i].y - pts[i - 1].y;
+      total += Math.sqrt(ex * ex + ey * ey);
+      largos.push(total);
+    }
+    if (total < 1) return;
+    var j = 1;
+    for (var d = 0; d <= total; d += 3) {
+      while (j < n - 1 && largos[j] < d) j++;
+      var a = pts[j - 1], b = pts[j];
+      var u = (d - largos[j - 1]) / ((largos[j] - largos[j - 1]) || 1);
+      var x = a.x + (b.x - a.x) * u, y = a.y + (b.y - a.y) * u;
+      var f = d / total;                                 // 0 cola, 1 cabeza
+      var r = (2.5 + 19 * Math.pow(f, 1.6)) * escala;
+      ctx.globalAlpha = 0.07 * f;
+      ctx.drawImage(luz, x - r, y - r, r * 2, r * 2);
+    }
+    ctx.globalAlpha = 1;
+  }
+
+  function dibujar(ahora) {
+    ctx.clearRect(0, 0, ancho, alto);
+    if (!visible) return;
+    ctx.globalCompositeOperation = "lighter";
+
+    // Estela: una cinta continua que se afina hacia la cola. Dibujarla como
+    // tramos sueltos con tapa redonda dejaba una hilera de perlas, porque las
+    // tapas se superponen y la luz se suma justo ahi.
+    if (estela.length > 1) {
+      var curva = suavizar(estela);
+      // El halo no puede ser una cinta: un poligono ancho tiene bordes duros y
+      // queda una cuna, como un reflector. Se estampa luz difusa a lo largo de
+      // la curva, que se abre de a poco hacia la cabeza.
+      estampar(curva);
+      cinta(curva, 4 * escala, "rgba(220, 255, 140, 0)", "rgba(246, 255, 214, 0.9)");
+    }
+
+    // Particulas: se achican y titilan mientras se apagan
+    var s = ahora / 1000;
+    for (var j = 0; j < particulas.length; j++) {
+      var p = particulas[j];
+      var brillo = 0.6 + 0.4 * Math.sin(s * p.titila + p.fase);
+      var r = p.tam * (0.5 + 0.5 * p.vida) * 3.2;
+      ctx.globalAlpha = Math.max(0, p.vida * brillo);
+      ctx.drawImage(p.blanca ? chispa : luz, p.x - r, p.y - r, r * 2, r * 2);
+    }
+
+    // Cabeza: resplandor amplio, coma y punto blanco
+    ctx.globalAlpha = 0.32;
+    var R = 44 * escala;
+    ctx.drawImage(luz, cx - R, cy - R, R * 2, R * 2);
+    ctx.globalAlpha = 0.95;
+    R = 12 * escala;
+    ctx.drawImage(luz, cx - R, cy - R, R * 2, R * 2);
+    ctx.globalAlpha = 1;
+    R = 4.6 * escala;
+    ctx.drawImage(chispa, cx - R, cy - R, R * 2, R * 2);
+
+    // Aro oscuro finito: no se nota sobre la sala, pero es lo que deja ver la
+    // cabeza cuando pasa por encima del boton lima.
+    ctx.globalCompositeOperation = "source-over";
+    ctx.globalAlpha = 1;
+    ctx.beginPath();
+    ctx.arc(cx, cy, 5.2 * escala, 0, 6.283);
+    ctx.strokeStyle = "rgba(11, 11, 11, 0.45)";
+    ctx.lineWidth = 1.2;
+    ctx.stroke();
+  }
+
+  function tocable(nodo) {
+    return !!(nodo && nodo.closest && nodo.closest('a, button, [role="button"], summary'));
+  }
+
+  window.addEventListener("pointermove", function (e) {
+    if (e.pointerType && e.pointerType !== "mouse") return;
+    px = e.clientX;
+    py = e.clientY;
+    if (!visible) {
+      visible = true;
+      cx = px;
+      cy = py;
+      estela.length = 0;
+    }
+    sobreEnlace = tocable(e.target);
+    pedir();
+  }, { passive: true });
+
+  // Un click suelta un estallido de polvo hacia todos lados
+  window.addEventListener("pointerdown", function (e) {
+    if (quieto || (e.pointerType && e.pointerType !== "mouse")) return;
+    for (var i = 0; i < 22; i++) {
+      var ang = (i / 22) * 6.283 + Math.random() * 0.3;
+      var v = 70 + Math.random() * 150;
+      soltar(cx, cy, Math.cos(ang) * v, Math.sin(ang) * v, 0.45, 1.1);
+    }
+    pedir();
+  }, { passive: true });
+
+  function apagar() {
+    visible = false;
+    estela.length = 0;
+    particulas.length = 0;
+    ctx.clearRect(0, 0, ancho, alto);
+  }
+  document.addEventListener("mouseleave", apagar);
+  window.addEventListener("blur", apagar);
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) apagar();
+  });
+  window.addEventListener("resize", medir);
+
+  medir();
+})();
+  </script>
 </body>
 </html>

@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
-"""Mete el CSS dentro del HTML de index.html y projects.html.
+"""Mete el CSS y los guiones dentro del HTML de las páginas de la raíz.
 
 Un <link rel="stylesheet"> bloquea el pintado y cuesta un viaje de ida y vuelta
-entero antes de que se vea nada. Las dos páginas de la raíz suman menos de 13 KB
-con el CSS adentro, así que entran en el primer envío del servidor y la página
-pinta sin esperar un segundo pedido.
+entero antes de que se vea nada. Las páginas de la raíz pesan poco con el CSS
+adentro, así que entran en el primer envío del servidor y la página pinta sin
+esperar un segundo pedido.
 
-Las fuentes de verdad siguen siendo styles.css y assets/fonts/fonts.css. Después
-de tocar cualquiera de los dos hay que correr esto.
+Las fuentes de verdad siguen siendo styles.css, assets/fonts/fonts.css, los
+guiones (projects.js, cometa.js) y projects.json. Después de tocar cualquiera
+hay que correr esto.
 """
 import html
 import json
@@ -18,11 +19,11 @@ RAIZ = pathlib.Path(__file__).resolve().parent.parent
 PAGINAS = ('index.html', 'projects.html', 'press/index.html')
 HOJAS = ('assets/fonts/fonts.css', 'styles.css')
 MARCA_CSS = re.compile(r'(<style id="css-del-sitio">)(.*?)(</style>)', re.S)
-# projects.js dibuja la grilla. Si viaja en un pedido aparte, el navegador
-# alcanza a pintar la página con la grilla vacía y, cuando el script llega,
-# las tarjetas empujan el pie hacia abajo: eso era 0,149 de CLS.
-MARCA_JS = re.compile(r'(<script id="js-del-sitio">)(.*?)(</script>)', re.S)
-GUION = 'projects.js'
+# Cada página declara qué guiones quiere con <script id="js:archivo.js">.
+# Van adentro del HTML por la misma razón que el CSS: un pedido aparte es un
+# viaje de ida y vuelta más, y cuando projects.js armaba la grilla eso dejaba
+# pintar la página vacía y después empujaba el pie (0,149 de CLS).
+MARCA_JS = re.compile(r'(<script id="js:([A-Za-z0-9_.-]+)">)(.*?)(</script>)', re.S)
 
 
 # Las tarjetas de Work se escriben en el HTML. Antes las armaba projects.js en
@@ -166,9 +167,15 @@ def comprimir(css):
 
 def main():
     css = comprimir('\n'.join((RAIZ / h).read_text(encoding='utf-8') for h in HOJAS))
-    js = (RAIZ / GUION).read_text(encoding='utf-8')
-    if '</script' in js:
-        raise SystemExit(f'{GUION} contiene "</script": no se puede insertar tal cual')
+
+    def guion(nombre):
+        ruta = RAIZ / nombre
+        if not ruta.exists():
+            raise SystemExit(f'falta {nombre}, pedido por un <script id="js:{nombre}">')
+        cuerpo = ruta.read_text(encoding='utf-8')
+        if '</script' in cuerpo:
+            raise SystemExit(f'{nombre} contiene "</script": no se puede insertar tal cual')
+        return cuerpo
 
     for nombre in PAGINAS:
         p = RAIZ / nombre
@@ -198,12 +205,15 @@ def main():
                            r'(<meta name="twitter:description" content=")[^"]*(">)'):
                 t = re.sub(patron, lambda m: m.group(1) + desc + m.group(2), t, count=1)
             print(f'  {nombre}: {len(nombres)} tarjetas desde {DATOS}')
-        if MARCA_JS.search(t):
-            t = MARCA_JS.sub(lambda m: m.group(1) + '\n' + js + '  ' + m.group(3), t, count=1)
+        metidos = []
+        def poner(m):
+            metidos.append(m.group(2))
+            return m.group(1) + '\n' + guion(m.group(2)) + '  ' + m.group(4)
+        t = MARCA_JS.sub(poner, t)
         p.write_text(t, encoding='utf-8')
-        print(f'  {nombre}: {antes/1024:.1f} KB -> {len(t)/1024:.1f} KB')
+        guiones = ' + '.join(metidos) if metidos else 'sin guiones'
+        print(f'  {nombre}: {antes/1024:.1f} KB -> {len(t)/1024:.1f} KB  ({guiones})')
     print(f'  CSS: {len(css)/1024:.1f} KB desde {", ".join(HOJAS)}')
-    print(f'  JS:  {len(js)/1024:.1f} KB desde {GUION} (solo en projects.html)')
 
 
 if __name__ == '__main__':

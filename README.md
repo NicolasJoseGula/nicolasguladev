@@ -6,11 +6,13 @@ Site and landing-page host for dezeo — a creative studio.
 
 ```
 nicolasdev/
-├── index.html      Home (studio hero)
+├── index.html      Home (the portal: logo, two buttons, full-page photo)
 ├── projects.html   Work (grid of projects)
-├── styles.css      Shared styles (dark theme, brand gradients)  <- edit here
+├── press/          Press kit (app cards generated from projects.json)
+├── styles.css      Shared styles (dark theme, lime accent)  <- edit here
 ├── projects.json   The list of projects  <- add work here
 ├── projects.js     Scroll-reveal for the cards (no data)
+├── cometa.js       The comet cursor (desktop only)
 ├── tools/          Build scripts (see "Build step" below)
 ├── assets/
 │   ├── fonts/      Self-hosted Space Grotesk + Inter (OFL, see OFL.txt)
@@ -24,14 +26,18 @@ nicolasdev/
 ## Brand
 
 - Fonts: Space Grotesk (headings) + Inter (body).
-- Gradient: blue `#2F6BFF` → violet `#7C3AED` → pink `#EC4899` → orange `#FB6E3C`.
-- Dark background `#08080c`. Logo icon lives at `assets/dezeo-mark.png`.
+- Accent: lime `#b8ff00` on a dark background `#0b0b0b`.
+- Logo `assets/dezeo-logo.*`, symbol `assets/dezeo-icono.*`, favicon
+  `assets/favicon.png` and the home photo `assets/dezeo-portal*` all come from
+  the two originals in `assets/originales/neon-portal*`: run
+  `python3 tools/portal-assets.py` after replacing either.
+- The site is English only.
 
 ## How to edit
 
-### Change the hero copy / links
-Edit the text in `index.html` (`.hero-title`, `.hero-sub`) and the nav links.
-Set the real contact email (currently `hola@dezeo.lat`).
+### Change the home buttons / links
+Edit `.portal-acciones` in `index.html` and the nav links. The contact email
+is `hola@dezeo.lat`.
 
 ### Add a project to the grid
 Drop the full-size image in `assets/originales/`, run
@@ -57,14 +63,16 @@ whose `url` is not an existing page of the site.
 ### Add a project landing page
 Create a folder (for example `charlatan/`) with an `index.html` and a
 `privacypolicy/index.html`. Keep it self-contained. Point the project's
-`url` in `projects.js` to that folder.
+`url` in `projects.json` to that folder.
 
 ## Build step
 
-The CSS is inlined into `index.html` and `projects.html` so the page paints in
-a single round trip. `styles.css` and `assets/fonts/fonts.css` are still the
-files you edit; the `<style id="css-del-sitio">` block in each page and the
-Work cards (from `projects.json`) are generated. **After touching either stylesheet, run:**
+The CSS and scripts are inlined into `index.html`, `projects.html` and
+`press/index.html` so each page paints in a single round trip. `styles.css`,
+`assets/fonts/fonts.css`, `projects.js` and `cometa.js` are still the files you
+edit; the `<style id="css-del-sitio">` and `<script id="js:...">` blocks, the
+Work cards, the footer app links and the press cards (all from
+`projects.json`) are generated. **After touching any of them, run:**
 
 ```
 python3 tools/construir.py
