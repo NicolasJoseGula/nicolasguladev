@@ -80,6 +80,7 @@ def footer(up):
           <li><a href="{up}#download">{bi('Download', 'Descargar')}</a></li>
           <li><a href="{up}#screenshots">{bi('Screenshots', 'Capturas')}</a></li>
           <li><a href="{up}#how-it-works">{bi('How it works', 'Cómo funciona')}</a></li>
+          <li><a href="{up}route/">{bi('World route', 'Ruta del mundo')}</a></li>
           <li><a href="{up}#faq">FAQ</a></li>
           <li><a href="{up}support/">{bi('Support', 'Soporte')}</a></li>
           <li><a href="/projects.html">{bi('All projects', 'Proyectos')}</a></li>
