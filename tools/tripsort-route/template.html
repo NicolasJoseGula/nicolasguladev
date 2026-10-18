@@ -228,7 +228,7 @@
 @media (max-width: 460px) { .lm { grid-template-columns: 1fr; } .lm img { width: 96px; height: 96px; } }
 </style>
 </head>
-<body data-active="en">
+<body>
 
 <header class="site-header">
   <div class="container">
@@ -238,16 +238,12 @@
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
     <nav class="site-nav" aria-label="Main">
-      <a href="#map-section"><span data-lang="en">Map</span><span data-lang="es" lang="es">Mapa</span></a>
-      <a href="#chapters"><span data-lang="en">Chapters</span><span data-lang="es" lang="es">Capítulos</span></a>
-      <a href="#landmarks"><span data-lang="en">Landmarks</span><span data-lang="es" lang="es">Monumentos</span></a>
-      <a href="../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
+      <a href="#map-section"><span>Map</span></a>
+      <a href="#chapters"><span>Chapters</span></a>
+      <a href="#landmarks"><span>Landmarks</span></a>
+      <a href="../guides/"><span>Guides</span></a>
       <a href="#faq">FAQ</a>
-      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language / Idioma">
-        <option value="en">English</option>
-        <option value="es">Español</option>
-      </select>
-      <a class="nav-cta" href="#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a>
+      <a class="nav-cta" href="#download"><span>Download</span></a>
     </nav>
     <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></label>
   </div>
@@ -257,36 +253,36 @@
   <section class="hero-route">
     <div class="container hero-grid">
       <div>
-        <span class="eyebrow">✈️ <span data-lang="en">The Trip Sort world route</span><span data-lang="es" lang="es">La ruta de Trip Sort</span></span>
-        <h1><span data-lang="en">Around the world in <span class="accent">__N_STOPS__</span> stops</span><span data-lang="es" lang="es">La vuelta al mundo en <span class="accent">__N_STOPS__</span> paradas</span></h1>
-        <p class="sub"><span data-lang="en">Every Trip Sort level moves you along one real route. It starts in __FIRST_EN__, crosses every continent by plane, ferry, bus and train, and ends in __LAST_EN__. Here is the whole trip, stop by stop, on the game's own map.</span><span data-lang="es" lang="es">Cada nivel de Trip Sort te avanza en una ruta real. Arranca en __FIRST_ES__, cruza todos los continentes en avión, ferry, bus y tren, y termina en __LAST_ES__. Acá está el viaje entero, parada por parada, en el mismo mapa del juego.</span></p>
+        <span class="eyebrow">✈️ <span>The Trip Sort world route</span></span>
+        <h1><span>Around the world in <span class="accent">__N_STOPS__</span> stops</span></h1>
+        <p class="sub"><span>Every Trip Sort level moves you along one real route. It starts in __FIRST_EN__, crosses every continent by plane, ferry, bus and train, and ends in __LAST_EN__. Here is the whole trip, stop by stop, on the game's own map.</span></p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#map-section"><span data-lang="en">Watch the trip</span><span data-lang="es" lang="es">Mirá el viaje</span></a>
-          <a class="btn btn-ghost" href="#chapters"><span data-lang="en">See the 20 chapters</span><span data-lang="es" lang="es">Ver los 20 capítulos</span></a>
+          <a class="btn btn-primary" href="#map-section"><span>Watch the trip</span></a>
+          <a class="btn btn-ghost" href="#chapters"><span>See the 20 chapters</span></a>
         </div>
       </div>
       <div class="postfan">
         __HERO_FAN__
-        <div class="stamp"><div><b>__N_STOPS__</b><span data-lang="en">stops</span><span data-lang="es" lang="es">paradas</span></div></div>
+        <div class="stamp"><div><b>__N_STOPS__</b><span>stops</span></div></div>
       </div>
     </div>
   </section>
 
   <section class="stats">
     <div class="container stats-row">
-      <div class="stat"><b>__N_STOPS__</b><span data-lang="en">destinations</span><span data-lang="es" lang="es">destinos</span></div>
-      <div class="stat"><b>__N_CHAPTERS__</b><span data-lang="en">chapters</span><span data-lang="es" lang="es">capítulos</span></div>
-      <div class="stat"><b>__N_LEVELS__</b><span data-lang="en">levels</span><span data-lang="es" lang="es">niveles</span></div>
-      <div class="stat"><b>__N_LANDMARKS__</b><span data-lang="en">landmarks</span><span data-lang="es" lang="es">monumentos</span></div>
+      <div class="stat"><b>__N_STOPS__</b><span>destinations</span></div>
+      <div class="stat"><b>__N_CHAPTERS__</b><span>chapters</span></div>
+      <div class="stat"><b>__N_LEVELS__</b><span>levels</span></div>
+      <div class="stat"><b>__N_LANDMARKS__</b><span>landmarks</span></div>
     </div>
   </section>
 
   <section id="map-section">
     <div class="container">
       <div class="section-head">
-        <p class="kicker"><span data-lang="en">The map</span><span data-lang="es" lang="es">El mapa</span></p>
-        <h2><span data-lang="en">Follow the trip</span><span data-lang="es" lang="es">Seguí el viaje</span></h2>
-        <p><span data-lang="en">The traveler goes round the route on its own, with the same vehicle the game uses for every leg. Drag and zoom the map, search for a city, or tap any stop to see its postcard.</span><span data-lang="es" lang="es">El viajero recorre la ruta solo, en el mismo vehículo que usa el juego en cada tramo. Arrastrá y hacé zoom en el mapa, buscá una ciudad o tocá cualquier parada para ver su postal.</span></p>
+        <p class="kicker"><span>The map</span></p>
+        <h2><span>Follow the trip</span></h2>
+        <p><span>The traveler goes round the route on its own, with the same vehicle the game uses for every leg. Drag and zoom the map, search for a city, or tap any stop to see its postcard.</span></p>
       </div>
       <div class="mapbox" id="mapbox">
         <canvas id="mapcanvas" role="img" aria-label="Map of the Trip Sort route"></canvas>
@@ -294,7 +290,6 @@
         <div class="mapui search">
           <input id="search" type="search" list="stops-en" autocomplete="off" placeholder="Find a city" aria-label="Find a city">
           <datalist id="stops-en">__OPTIONS_EN__</datalist>
-          <datalist id="stops-es">__OPTIONS_ES__</datalist>
         </div>
         <div class="mapui zoom">
           <button class="mbtn" type="button" id="zin" aria-label="Zoom in">+</button>
@@ -310,16 +305,16 @@
         </div>
         <div class="panel card" id="card" role="dialog" aria-live="polite"></div>
       </div>
-      <p class="maphint"><span data-lang="en">The route starts in __FIRST_EN__ (red pin) and ends in __LAST_EN__ (gold pin). Gold pins mark where each chapter begins.</span><span data-lang="es" lang="es">La ruta arranca en __FIRST_ES__ (pin rojo) y termina en __LAST_ES__ (pin dorado). Los pines dorados marcan dónde empieza cada capítulo.</span></p>
+      <p class="maphint"><span>The route starts in __FIRST_EN__ (red pin) and ends in __LAST_EN__ (gold pin). Gold pins mark where each chapter begins.</span></p>
     </div>
   </section>
 
   <section id="travel" style="padding-top: 24px">
     <div class="container">
       <div class="section-head">
-        <p class="kicker"><span data-lang="en">How you get there</span><span data-lang="es" lang="es">Cómo se viaja</span></p>
-        <h2><span data-lang="en">__N_LEGS__ trips between stops</span><span data-lang="es" lang="es">__N_LEGS__ viajes entre paradas</span></h2>
-        <p><span data-lang="en">After the twelfth level of a city, a little trip takes you to the next one. Short hops go by bus or train, islands by ferry, and the long ones by plane.</span><span data-lang="es" lang="es">Después del nivel doce de cada ciudad, un viajecito te lleva a la siguiente. Los tramos cortos van en bus o tren, las islas en ferry y los largos en avión.</span></p>
+        <p class="kicker"><span>How you get there</span></p>
+        <h2><span>__N_LEGS__ trips between stops</span></h2>
+        <p><span>After the twelfth level of a city, a little trip takes you to the next one. Short hops go by bus or train, islands by ferry, and the long ones by plane.</span></p>
       </div>
       <div class="vehicles">__VEHICLES__</div>
     </div>
@@ -328,9 +323,9 @@
   <section id="chapters">
     <div class="container">
       <div class="section-head">
-        <p class="kicker"><span data-lang="en">The chapters</span><span data-lang="es" lang="es">Los capítulos</span></p>
-        <h2><span data-lang="en">__N_CHAPTERS__ chapters, one world</span><span data-lang="es" lang="es">__N_CHAPTERS__ capítulos, un solo mundo</span></h2>
-        <p><span data-lang="en">The trip is split into regions. Open a chapter to see every stop and its levels, or show it on the map.</span><span data-lang="es" lang="es">El viaje se divide en regiones. Abrí un capítulo para ver cada parada con sus niveles, o mostralo en el mapa.</span></p>
+        <p class="kicker"><span>The chapters</span></p>
+        <h2><span>__N_CHAPTERS__ chapters, one world</span></h2>
+        <p><span>The trip is split into regions. Open a chapter to see every stop and its levels, or show it on the map.</span></p>
       </div>
       <div class="chapters">
 __CHAPTERS__
@@ -341,9 +336,9 @@ __CHAPTERS__
   <section id="landmarks">
     <div class="container">
       <div class="section-head">
-        <p class="kicker"><span data-lang="en">Collect them all</span><span data-lang="es" lang="es">Coleccionalos</span></p>
-        <h2><span data-lang="en">__N_LANDMARKS__ landmarks along the way</span><span data-lang="es" lang="es">__N_LANDMARKS__ monumentos en el camino</span></h2>
-        <p><span data-lang="en">Reach a landmark's city and it joins your collection, with a short real story. Each one is also a Game Center achievement on iPhone.</span><span data-lang="es" lang="es">Llegá a la ciudad de un monumento y se suma a tu colección, con una breve historia real. Cada uno es además un logro de Game Center en iPhone.</span></p>
+        <p class="kicker"><span>Collect them all</span></p>
+        <h2><span>__N_LANDMARKS__ landmarks along the way</span></h2>
+        <p><span>Reach a landmark's city and it joins your collection, with a short real story. Each one is also a Game Center achievement on iPhone.</span></p>
       </div>
       <div class="lms">
 __LANDMARKS__
@@ -355,20 +350,20 @@ __LANDMARKS__
     <div class="narrow">
       <div class="section-head">
         <p class="kicker">FAQ</p>
-        <h2><span data-lang="en">About the route</span><span data-lang="es" lang="es">Sobre la ruta</span></h2>
+        <h2><span>About the route</span></h2>
       </div>
       <div class="faq">
-        <details><summary><span data-lang="en">Where does the trip start and end?</span><span data-lang="es" lang="es">¿Dónde empieza y dónde termina el viaje?</span></summary>
-          <p><span data-lang="en">It starts in __FIRST_EN__, Uruguay, goes round the whole world through __N_CHAPTERS__ chapters and ends in __LAST_EN__, back on the same side of the Atlantic, after __N_STOPS__ stops.</span><span data-lang="es" lang="es">Empieza en __FIRST_ES__, Uruguay, da la vuelta al mundo entero en __N_CHAPTERS__ capítulos y termina en __LAST_ES__, otra vez del mismo lado del Atlántico, después de __N_STOPS__ paradas.</span></p></details>
-        <details><summary><span data-lang="en">How many levels does each stop have?</span><span data-lang="es" lang="es">¿Cuántos niveles tiene cada parada?</span></summary>
-          <p><span data-lang="en">Twelve. Each level paints a piece of the city's postcard; finish all twelve to complete it, stamp your passport and travel on by plane, ferry, bus or train. That makes __N_LEVELS__ levels in all.</span><span data-lang="es" lang="es">Doce. Cada nivel pinta un pedazo de la postal de la ciudad; terminá los doce para completarla, sellar el pasaporte y seguir viaje en avión, ferry, bus o tren. En total son __N_LEVELS__ niveles.</span></p></details>
-        <details><summary><span data-lang="en">Is the route the same for every player?</span><span data-lang="es" lang="es">¿La ruta es la misma para todos?</span></summary>
-          <p><span data-lang="en">Yes. Stops unlock in order, so this map always shows where your trip goes next.</span><span data-lang="es" lang="es">Sí. Las paradas se desbloquean en orden, así que este mapa siempre te muestra a dónde sigue tu viaje.</span></p></details>
-        <details><summary><span data-lang="en">Are the places real?</span><span data-lang="es" lang="es">¿Los lugares son reales?</span></summary>
-          <p><span data-lang="en">Yes. Every stop is a real city, island or region at its real place on the map, and its tiles show what you would find there: food, animals, crafts and monuments.</span><span data-lang="es" lang="es">Sí. Cada parada es una ciudad, isla o región real, en su lugar real del mapa, y sus fichas muestran lo que encontrarías allí: comidas, animales, artesanías y monumentos.</span></p></details>
-        <details><summary><span data-lang="en">What are the landmarks?</span><span data-lang="es" lang="es">¿Qué son los monumentos?</span></summary>
-          <p><span data-lang="en">__N_LANDMARKS__ famous landmarks wait along the route, from the Eiffel Tower to the Great Wall. Reach their city to collect them, each with a short real story.</span><span data-lang="es" lang="es">En la ruta te esperan __N_LANDMARKS__ monumentos famosos, de la Torre Eiffel a la Gran Muralla. Llegá a su ciudad para coleccionarlos, cada uno con una breve historia real.</span></p></details>
-        <a class="more" href="../#faq"><span data-lang="en">More questions about Trip Sort →</span><span data-lang="es" lang="es">Más preguntas sobre Trip Sort →</span></a>
+        <details><summary><span>Where does the trip start and end?</span></summary>
+          <p><span>It starts in __FIRST_EN__, Uruguay, goes round the whole world through __N_CHAPTERS__ chapters and ends in __LAST_EN__, back on the same side of the Atlantic, after __N_STOPS__ stops.</span></p></details>
+        <details><summary><span>How many levels does each stop have?</span></summary>
+          <p><span>Twelve. Each level paints a piece of the city's postcard; finish all twelve to complete it, stamp your passport and travel on by plane, ferry, bus or train. That makes __N_LEVELS__ levels in all.</span></p></details>
+        <details><summary><span>Is the route the same for every player?</span></summary>
+          <p><span>Yes. Stops unlock in order, so this map always shows where your trip goes next.</span></p></details>
+        <details><summary><span>Are the places real?</span></summary>
+          <p><span>Yes. Every stop is a real city, island or region at its real place on the map, and its tiles show what you would find there: food, animals, crafts and monuments.</span></p></details>
+        <details><summary><span>What are the landmarks?</span></summary>
+          <p><span>__N_LANDMARKS__ famous landmarks wait along the route, from the Eiffel Tower to the Great Wall. Reach their city to collect them, each with a short real story.</span></p></details>
+        <a class="more" href="../#faq"><span>More questions about Trip Sort →</span></a>
       </div>
     </div>
   </section>
@@ -378,20 +373,20 @@ __LANDMARKS__
       <div class="band">
         <div class="band-grid">
           <div>
-            <p class="kicker" style="color:#ffd76a"><span data-lang="en">Free on iPhone and Android</span><span data-lang="es" lang="es">Gratis en iPhone y Android</span></p>
-            <h2><span data-lang="en">Your trip starts in __FIRST_EN__.</span><span data-lang="es" lang="es">Tu viaje arranca en __FIRST_ES__.</span></h2>
-            <p><span data-lang="en">Download Trip Sort and match your way round all __N_STOPS__ stops. No account, no sign-up, no Wi-Fi needed.</span><span data-lang="es" lang="es">Descargá Trip Sort y emparejá fichas por las __N_STOPS__ paradas. Sin cuenta, sin registro y sin wifi.</span></p>
+            <p class="kicker" style="color:#ffd76a"><span>Free on iPhone and Android</span></p>
+            <h2><span>Your trip starts in __FIRST_EN__.</span></h2>
+            <p><span>Download Trip Sort and match your way round all __N_STOPS__ stops. No account, no sign-up, no Wi-Fi needed.</span></p>
             <div class="stores">
               <a class="store js-ios" href="https://apps.apple.com/app/trip-sort-triple-tile-match/id6818841022" rel="noopener">
                 <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.13-3.85 2.22-3.91-1.21-1.77-3.1-2.01-3.77-2.04-1.6-.16-3.13.94-3.94.94-.81 0-2.07-.92-3.41-.89-1.75.03-3.37 1.02-4.27 2.59-1.82 3.16-.47 7.83 1.31 10.39.87 1.25 1.9 2.66 3.26 2.61 1.31-.05 1.8-.85 3.39-.85 1.58 0 2.03.85 3.41.82 1.41-.03 2.3-1.28 3.16-2.54.99-1.46 1.4-2.87 1.42-2.94-.03-.01-2.73-1.05-2.76-4.16M14.5 4.79c.72-.88 1.21-2.1 1.08-3.31-1.04.04-2.3.69-3.05 1.56-.67.77-1.25 2.01-1.09 3.19 1.16.09 2.34-.59 3.06-1.44"/></svg>
-                <span><small><span data-lang="en">Download on the</span><span data-lang="es" lang="es">Descargalo en el</span></small><strong>App Store</strong></span>
+                <span><small><span>Download on the</span></small><strong>App Store</strong></span>
               </a>
               <a class="store js-android" href="https://play.google.com/store/apps/details?id=lat.dezeo.trip_sort" rel="noopener">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#34a853" d="M3.6 1.8C3.3 2.1 3.2 2.5 3.2 3v18c0 .5.1.9.4 1.2L13.8 12z"/><path fill="#fbbc04" d="M17.2 15.4 13.8 12l3.4-3.4 4 2.3c1.1.6 1.1 1.7 0 2.3z"/><path fill="#4285f4" d="M17.2 8.6 5.3 1.8c-.7-.4-1.3-.4-1.7 0L13.8 12z"/><path fill="#ea4335" d="M3.6 22.2c.4.4 1 .4 1.7 0l11.9-6.8-3.4-3.4z"/></svg>
-                <span><small><span data-lang="en">Get it on</span><span data-lang="es" lang="es">Disponible en</span></small><strong>Google Play</strong></span>
+                <span><small><span>Get it on</span></small><strong>Google Play</strong></span>
               </a>
             </div>
-            <p class="micro"><span data-lang="en">Free to play with optional in-app purchases and ads. Remove Ads is a single purchase.</span><span data-lang="es" lang="es">Gratis, con compras opcionales y anuncios. Quitar anuncios es una sola compra.</span></p>
+            <p class="micro"><span>Free to play with optional in-app purchases and ads. Remove Ads is a single purchase.</span></p>
           </div>
           <div class="band-art"><img src="../assets/img/postcards.webp" width="1500" height="900" loading="lazy" alt="Trip Sort postcards from Mexico City, Rio de Janeiro, Paris, Rome and Santorini"></div>
         </div>
@@ -408,77 +403,52 @@ __LANDMARKS__
           <img src="../assets/img/tripsort-icon.png" alt="Trip Sort app icon" width="32" height="32">
           Trip Sort
         </a>
-        <p><span data-lang="en">A relaxing triple tile match puzzle. Match 3 tiles, train your brain and travel the world, offline.</span><span data-lang="es" lang="es">Un puzzle relajante de emparejar fichas de a tres. Juntá 3 fichas, entrená la cabeza y viajá por el mundo, sin internet.</span></p>
+        <p><span>A relaxing triple tile match puzzle. Match 3 tiles, train your brain and travel the world, offline.</span></p>
       </div>
       <div>
         <h4>App</h4>
         <ul>
-          <li><a href="../"><span data-lang="en">Home</span><span data-lang="es" lang="es">Inicio</span></a></li>
-          <li><a href="#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a></li>
-          <li><a href="./"><span data-lang="en">World route</span><span data-lang="es" lang="es">La ruta</span></a></li>
+          <li><a href="../"><span>Home</span></a></li>
+          <li><a href="#download"><span>Download</span></a></li>
+          <li><a href="./"><span>World route</span></a></li>
           <li><a href="../#faq">FAQ</a></li>
-          <li><a href="../support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a></li>
-          <li><a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a></li>
+          <li><a href="../support/"><span>Support</span></a></li>
+          <li><a href="/projects.html"><span>All projects</span></a></li>
         </ul>
       </div>
       <div>
-        <h4><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></h4>
+        <h4><span>Guides</span></h4>
         <ul>
-          <li><a href="../guides/triple-tile-match/"><span data-lang="en">Triple tile match</span><span data-lang="es" lang="es">Triple tile match</span></a></li>
-          <li><a href="../guides/how-to-beat-hard-tile-match-levels/"><span data-lang="en">Hard level tips</span><span data-lang="es" lang="es">Niveles difíciles</span></a></li>
-          <li><a href="../guides/offline-games-no-wifi/"><span data-lang="en">Offline games</span><span data-lang="es" lang="es">Juegos sin internet</span></a></li>
-          <li><a href="../guides/games-to-play-on-a-plane/"><span data-lang="en">Games for flights</span><span data-lang="es" lang="es">Juegos para el avión</span></a></li>
-          <li><a href="../guides/"><span data-lang="en">All guides →</span><span data-lang="es" lang="es">Todas las guías →</span></a></li>
+          <li><a href="../guides/triple-tile-match/"><span>Triple tile match</span></a></li>
+          <li><a href="../guides/how-to-beat-hard-tile-match-levels/"><span>Hard level tips</span></a></li>
+          <li><a href="../guides/offline-games-no-wifi/"><span>Offline games</span></a></li>
+          <li><a href="../guides/games-to-play-on-a-plane/"><span>Games for flights</span></a></li>
+          <li><a href="../guides/"><span>All guides →</span></a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Trip Sort · Nicolas Gula · <a href="https://dezeo.lat/">dezeo</a></span>
       <span>
-        <a href="../privacypolicy/"><span data-lang="en">Privacy Policy</span><span data-lang="es" lang="es">Privacidad</span></a> ·
-        <a href="../terms/"><span data-lang="en">Terms of Use</span><span data-lang="es" lang="es">Términos</span></a> ·
-        <a href="../support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a>
+        <a href="../privacypolicy/"><span>Privacy Policy</span></a> ·
+        <a href="../terms/"><span>Terms of Use</span></a> ·
+        <a href="../support/"><span>Support</span></a>
       </span>
     </div>
   </div>
 </footer>
 
 <script>
-  function setLang(l) {
-    document.body.setAttribute('data-active', l);
-    document.documentElement.lang = l;
-    var sel = document.getElementById('langselect');
-    if (sel) sel.value = l;
-    try { localStorage.setItem('ts-lang', l); } catch (e) {}
-    window.dispatchEvent(new Event('langchange'));
-  }
-  (function () {
-    var saved = null;
-    try { saved = localStorage.getItem('ts-lang'); } catch (e) {}
-    var l = saved || ((navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : 'en');
-    setLang(l);
-  })();
-</script>
-<script>
 (() => {
 const DATA = __DATA__;
 const stops = DATA.stops, chapters = DATA.chapters, LM = DATA.landmarks;
 const MW = 2048, MH = 1588;
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const lang = () => document.body.getAttribute('data-active') === 'es' ? 'es' : 'en';
-const T = {
-  en: { stop: 'Stop', of: 'of', country: 'Country', levels: 'Levels', chapter: 'Chapter', next: 'Next', arrive: 'The end of the trip',
+const T = { stop: 'Stop', of: 'of', country: 'Country', levels: 'Levels', chapter: 'Chapter', next: 'Next', arrive: 'The end of the trip',
         by: { fly: 'by plane', sail: 'by ferry', drive: 'by bus', rail: 'by train' }, start: 'Start', end: 'End',
         pause: 'Pause', play: 'Play', follow: 'Follow', find: 'Find a city', prev: '← Previous', nxt: 'Next →', landmark: 'Landmark here',
-        legOf: (a, b) => `Trip ${a} of ${b}` },
-  es: { stop: 'Parada', of: 'de', country: 'País', levels: 'Niveles', chapter: 'Capítulo', next: 'Sigue', arrive: 'El final del viaje',
-        by: { fly: 'en avión', sail: 'en ferry', drive: 'en bus', rail: 'en tren' }, start: 'Salida', end: 'Llegada',
-        pause: 'Pausa', play: 'Seguir', follow: 'Seguirlo', find: 'Buscá una ciudad', prev: '← Anterior', nxt: 'Siguiente →', landmark: 'Monumento',
-        legOf: (a, b) => `Viaje ${a} de ${b}` },
-};
-const tr = () => T[lang()];
-const nm = s => s[lang()];
-const ctry = s => lang() === 'es' ? s.ces : s.cen;
+        legOf: (a, b) => `Trip ${a} of ${b}` };
+const name = s => s.en;
 const fmt = n => n.toLocaleString('en-US');
 
 // Longitude keeps counting past the date line: each stop's x is moved by a
@@ -607,9 +577,9 @@ function draw() {
   ctx.textBaseline = 'middle'; ctx.lineJoin = 'round';
   for (const l of labels) {
     const s = stops[l.i];
-    let text = nm(s);
-    if (l.i === 0) text = `${tr().start} · ${text}`;
-    if (l.i === stops.length - 1) text = `${tr().end} · ${text}`;
+    let text = name(s);
+    if (l.i === 0) text = `${T.start} · ${text}`;
+    if (l.i === stops.length - 1) text = `${T.end} · ${text}`;
     const size = l.pri === 0 ? 15 : 13;
     ctx.font = `600 ${size}px Fredoka, sans-serif`;
     const w = ctx.measureText(text).width;
@@ -654,8 +624,8 @@ function setLegArt() {
   const [, , ax, ay, bx, by] = legPos();
   vehImg.style.transform = m === 'fly' ? `rotate(${Math.atan2(by - ay, bx - ax) * 180 / Math.PI + 45}deg)` : (bx > ax ? 'scaleX(-1)' : 'none');
   const a = stops[i], b = stops[i + 1];
-  document.getElementById('whereTxt').textContent = `${a.n}. ${nm(a)} → ${nm(b)}`;
-  document.getElementById('whereSub').textContent = `${tr().legOf(i + 1, stops.length - 1)} · ${tr().by[m]}`;
+  document.getElementById('whereTxt').textContent = `${a.n}. ${name(a)} → ${name(b)}`;
+  document.getElementById('whereSub').textContent = `${T.legOf(i + 1, stops.length - 1)} · ${T.by[m]}`;
   document.getElementById('progress').style.width = `${(i + legT) / (stops.length - 1) * 100}%`;
 }
 function tick(now) {
@@ -680,8 +650,8 @@ function tick(now) {
 }
 const playBtn = document.getElementById('play'), followBtn = document.getElementById('follow');
 function syncButtons() {
-  playBtn.textContent = playing ? tr().pause : tr().play;
-  followBtn.textContent = tr().follow;
+  playBtn.textContent = playing ? T.pause : T.play;
+  followBtn.textContent = T.follow;
   followBtn.classList.toggle('on', follow); followBtn.classList.toggle('ghost', !follow);
 }
 playBtn.onclick = () => { playing = !playing; syncButtons(); };
@@ -776,16 +746,16 @@ const cardEl = document.getElementById('card');
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 function renderCard() {
   if (card < 0) { cardEl.classList.remove('show'); return; }
-  const s = stops[card], t = tr(), nx = stops[card + 1];
+  const s = stops[card], t = T, nx = stops[card + 1];
   const from = (s.n - 1) * 12 + 1, to = s.n * 12;
   cardEl.innerHTML = `<button class="x" type="button" aria-label="Close">✕</button>
-    <img class="pc" src="img/pc/${s.id}.webp" alt="${esc(nm(s))} postcard">
+    <img class="pc" src="img/pc/${s.id}.webp" alt="${esc(name(s))} postcard">
     <p class="no">${t.stop} ${s.n} ${t.of} ${stops.length}</p>
-    <h3>${esc(nm(s))}</h3><p class="ct">${esc(ctry(s))}</p>
+    <h3>${esc(name(s))}</h3><p class="ct">${esc(s.cen)}</p>
     <dl><dt>${t.levels}</dt><dd>${fmt(from)}–${fmt(to)}</dd>
-      <dt>${t.chapter}</dt><dd>${esc(chapters[s.ch][lang()])}</dd>
-      <dt>${t.next}</dt><dd>${nx ? `<img src="img/v/${s.m}.webp" alt="">${esc(nm(nx))} ${t.by[s.m]}` : t.arrive}</dd></dl>
-    ${s.lm ? `<div class="lmrow"><img src="img/lm/${s.lm}.webp" alt=""><span>${t.landmark}: ${esc(LM[s.lm][lang()])}</span></div>` : ''}
+      <dt>${t.chapter}</dt><dd>${esc(chapters[s.ch].en)}</dd>
+      <dt>${t.next}</dt><dd>${nx ? `<img src="img/v/${s.m}.webp" alt="">${esc(name(nx))} ${t.by[s.m]}` : t.arrive}</dd></dl>
+    ${s.lm ? `<div class="lmrow"><img src="img/lm/${s.lm}.webp" alt=""><span>${t.landmark}: ${esc(LM[s.lm].en)}</span></div>` : ''}
     <div class="nav"><button class="tbtn ghost" type="button" data-go="-1" ${card === 0 ? 'disabled' : ''}>${t.prev}</button><button class="tbtn ghost" type="button" data-go="1" ${nx ? '' : 'disabled'}>${t.nxt}</button></div>`;
   cardEl.classList.add('show');
   cardEl.querySelector('.x').onclick = closeCard;
@@ -809,7 +779,7 @@ function select(c, fit = true) {
   sel = c;
   chsel.classList.toggle('show', c >= 0);
   if (c >= 0) {
-    document.getElementById('chselName').textContent = `${tr().chapter} ${c + 1} · ${chapters[c][lang()]}`;
+    document.getElementById('chselName').textContent = `${T.chapter} ${c + 1} · ${chapters[c].en}`;
     if (fit) fitStops(stops.filter(s => s.ch === c));
   }
   schedule();
@@ -827,27 +797,25 @@ const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 function find() {
   const q = norm(search.value.split(',')[0].trim());
   if (!q) return;
-  let i = stops.findIndex(s => norm(s.en) === q || norm(s.es) === q);
-  if (i < 0) i = stops.findIndex(s => norm(s.en).startsWith(q) || norm(s.es).startsWith(q));
-  if (i < 0) i = stops.findIndex(s => norm(s.en).includes(q) || norm(s.es).includes(q) || norm(s.cen) === q || norm(s.ces) === q);
+  let i = stops.findIndex(s => norm(s.en) === q);
+  if (i < 0) i = stops.findIndex(s => norm(s.en).startsWith(q));
+  if (i < 0) i = stops.findIndex(s => norm(s.en).includes(q) || norm(s.cen) === q);
   if (i >= 0) { touched = true; select(-1, false); openCard(i, true); search.blur(); }
 }
 search.addEventListener('change', find);
 search.addEventListener('keydown', e => { if (e.key === 'Enter') find(); });
 
-// ---------- Language ----------
-function onLang() {
-  search.placeholder = tr().find; search.setAttribute('list', `stops-${lang()}`);
+// ---------- Texts ----------
+function texts() {
   syncButtons(); setLegArt(); renderCard(); if (sel >= 0) select(sel, false); schedule();
 }
-window.addEventListener('langchange', onLang);
 
 // ---------- Start ----------
 new ResizeObserver(resize).observe(box);
 fetch('map.json').then(r => r.json()).then(m => {
   land = m.land.map(r => [r[0], r[1], r[2], r[3], new Path2D(r[4])]);
   borders = m.borders.map(r => [r[0], r[1], r[2], r[3], new Path2D(r[4])]);
-  ready = true; resize(); onLang(); requestAnimationFrame(tick);
+  ready = true; resize(); texts(); requestAnimationFrame(tick);
 });
 document.fonts && document.fonts.ready.then(schedule);
 })();

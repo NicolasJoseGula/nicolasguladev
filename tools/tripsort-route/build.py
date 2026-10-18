@@ -6,7 +6,6 @@
 #   lib/domain/game_data.dart   destinations in play order, and the landmarks
 #   assets/map/route.json       where each stop sits on the game's map and how
 #                               the trip leaves it (fly, sail, drive, rail)
-#   assets/i18n/es.json         Spanish names
 #   assets/postcards, icons     postcards, landmark art and the vehicles
 # and, from the design repo (~/Documents/TripSort):
 #   docs/route-stops.json       chapters and real coordinates
@@ -41,17 +40,12 @@ if len(dests) != block.count('Destination('):
     sys.exit('Could not read every destination in game_data.dart')
 landmarks = [tuple(map(unq, m)) for m in re.findall(rf'Landmark\({S}, {S}, {S}, {S}, {S}, {S}\)', src)]
 
-es = json.load(open(os.path.join(GAME, 'assets/i18n/es.json'), encoding='utf-8'))
-t_es = lambda s: es.get(s, s)
 route = json.load(open(os.path.join(GAME, 'assets/map/route.json'), encoding='utf-8'))
 geo = json.load(open(os.path.join(DESIGN, 'docs/route-stops.json'), encoding='utf-8'))
 missing = [d[0] for d in dests if d[0] not in route['stops'] or d[0] not in geo['stops']]
 if missing:
     sys.exit('No place on the map for: ' + ', '.join(missing))
 
-# Chapter names in Spanish come from the Game Center achievements, which are
-# named after the chapters.
-gc_es = json.load(open(os.path.join(GAME, 'tool/game_center/i18n/es-ES.json'), encoding='utf-8'))
 slug = lambda s: re.sub(r'[^a-z0-9]+', '_', s.lower()).strip('_')
 ch_order = []
 for d in dests:
@@ -61,14 +55,14 @@ for d in dests:
 chapters = []
 for c in ch_order:
     en = geo['chapters'][c]
-    chapters.append({'en': en, 'es': gc_es.get(f'tripsort.chapter.{slug(en)}', {}).get('name', en)})
+    chapters.append({'en': en})
 
 lm_by_place = {l[4]: l for l in landmarks}
 stops = []
 for i, (sid, city, country) in enumerate(dests):
     x, y, mode = route['stops'][sid]
     g = geo['stops'][sid]
-    s = {'n': i + 1, 'id': sid, 'en': city, 'es': t_es(city), 'cen': country, 'ces': t_es(country),
+    s = {'n': i + 1, 'id': sid, 'en': city, 'cen': country,
          'x': x, 'y': y, 'm': mode, 'ch': ch_order.index(g['ch']), 'lat': g['lat'], 'lon': g['lon']}
     if sid in lm_by_place:
         s['lm'] = lm_by_place[sid][0]
@@ -221,11 +215,12 @@ og_image()
 
 # ---------- Page ----------
 e = html.escape
-def L(en, es_):
-    return f'<span data-lang="en">{en}</span><span data-lang="es" lang="es">{es_}</span>'
+def L(en):
+    # Solo ingles. Cada texto queda en su <span>, como cuando venia en par
+    # con el espanol: ".stamp span" y otras reglas del template lo esperan.
+    return f'<span>{en}</span>'
 fmt = lambda n: f'{n:,}'
 lv = lambda s: ((s['n'] - 1) * LEVELS + 1, s['n'] * LEVELS)
-MODE = {'fly': ('Flight', 'Vuelo'), 'sail': ('Ferry', 'Ferry'), 'drive': ('Bus', 'Bus'), 'rail': ('Train', 'Tren')}
 
 cards = []
 for c, ch in enumerate(chapters):
@@ -235,17 +230,17 @@ for c, ch in enumerate(chapters):
     fan = ''.join(f'<img src="img/pc/{s["id"]}.webp" width="300" height="400" loading="lazy" alt="{e(s["en"])} postcard">' for s in pick[:4])
     items = ''.join(
         f'<li><button type="button" data-stop="{s["n"]}"><span class="no">{s["n"]}</span>'
-        f'<span class="nm">{L(e(s["en"]), e(s["es"]))}<small>{L(e(s["cen"]), e(s["ces"]))}</small></span>'
+        f'<span class="nm">{L(e(s["en"]))}<small>{L(e(s["cen"]))}</small></span>'
         f'<span class="lv">{fmt(lv(s)[0])}–{fmt(lv(s)[1])}</span></button></li>' for s in ss)
     cards.append(f'''<article class="chapter" id="ch-{c + 1}">
   <div class="fan">{fan}</div>
   <div class="ch-body">
-    <p class="ch-no">{L('Chapter', 'Capítulo')} {c + 1}</p>
-    <h3>{L(e(ch['en']), e(ch['es']))}</h3>
-    <p class="ch-meta">{L(f'{len(ss)} stops', f'{len(ss)} paradas')} · {L('levels', 'niveles')} {fmt(lv(a)[0])}–{fmt(lv(b)[1])}</p>
-    <p class="ch-ends">{L(e(a['en']), e(a['es']))} → {L(e(b['en']), e(b['es']))}</p>
-    <div class="ch-actions"><button type="button" class="chip" data-chapter="{c}">{L('Show on the map', 'Ver en el mapa')}</button></div>
-    <details><summary>{L(f'All {len(ss)} stops', f'Las {len(ss)} paradas')}</summary><ol class="stoplist">{items}</ol></details>
+    <p class="ch-no">{L('Chapter')} {c + 1}</p>
+    <h3>{L(e(ch['en']))}</h3>
+    <p class="ch-meta">{L(f'{len(ss)} stops')} · {L('levels')} {fmt(lv(a)[0])}–{fmt(lv(b)[1])}</p>
+    <p class="ch-ends">{L(e(a['en']))} → {L(e(b['en']))}</p>
+    <div class="ch-actions"><button type="button" class="chip" data-chapter="{c}">{L('Show on the map')}</button></div>
+    <details><summary>{L(f'All {len(ss)} stops')}</summary><ol class="stoplist">{items}</ol></details>
   </div>
 </article>''')
 
@@ -256,24 +251,23 @@ for l in sorted(landmarks, key=lambda l: stop_of[l[4]]['n']):
     lm_cards.append(f'''<article class="lm">
   <img src="img/lm/{l[0]}.webp" width="220" height="220" loading="lazy" alt="{e(l[1])} in Trip Sort">
   <div>
-    <p class="lm-stop">{L('Stop', 'Parada')} {s['n']} · {L(e(s['en']), e(s['es']))}</p>
-    <h3>{L(e(l[1]), e(t_es(l[1])))}</h3>
-    <p>{L(e(l[5]), e(t_es(l[5])))}</p>
-    <button type="button" class="chip" data-stop="{s['n']}">{L('Find it on the route', 'Buscarlo en la ruta')}</button>
+    <p class="lm-stop">{L('Stop')} {s['n']} · {L(e(s['en']))}</p>
+    <h3>{L(e(l[1]))}</h3>
+    <p>{L(e(l[5]))}</p>
+    <button type="button" class="chip" data-stop="{s['n']}">{L('Find it on the route')}</button>
   </div>
 </article>''')
 
 vehicles = ''.join(f'''<div class="veh"><img src="img/v/{m}.webp" width="160" height="160" loading="lazy" alt="">
-  <b>{legs[m]}</b><span>{L({'fly': 'flights', 'sail': 'ferry crossings', 'drive': 'bus rides', 'rail': 'train rides'}[m], {'fly': 'vuelos', 'sail': 'cruces en ferry', 'drive': 'viajes en bus', 'rail': 'viajes en tren'}[m])}</span></div>'''
+  <b>{legs[m]}</b><span>{L({'fly': 'flights', 'sail': 'ferry crossings', 'drive': 'bus rides', 'rail': 'train rides'}[m])}</span></div>'''
                    for m in ('fly', 'drive', 'rail', 'sail'))
 
 options = ''.join(f'<option value="{e(s["en"])}, {e(s["cen"])}"></option>' for s in stops)
-options_es = ''.join(f'<option value="{e(s["es"])}, {e(s["ces"])}"></option>' for s in stops)
 hero_fan = ''.join(f'<img src="img/pc/{sid}-l.webp" width="480" height="640" alt="Trip Sort postcard of {e(next(s["en"] for s in stops if s["id"] == sid))}">' for sid in HERO)
 
 first, last = stops[0], stops[-1]
 data = {'chapters': chapters, 'stops': [{k: v for k, v in s.items() if k not in ('lat', 'lon')} for s in stops],
-        'landmarks': {l[0]: {'en': l[1], 'es': t_es(l[1])} for l in landmarks}}
+        'landmarks': {l[0]: {'en': l[1]} for l in landmarks}}
 itemlist = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': 'Trip Sort world route',
             'numberOfItems': len(stops), 'itemListOrder': 'https://schema.org/ItemListOrderAscending',
             'itemListElement': [{'@type': 'ListItem', 'position': s['n'],
@@ -289,7 +283,6 @@ for k, v in {
     '__LANDMARKS__': '\n'.join(lm_cards),
     '__VEHICLES__': vehicles,
     '__OPTIONS_EN__': options,
-    '__OPTIONS_ES__': options_es,
     '__HERO_FAN__': hero_fan,
     '__N_STOPS__': str(len(stops)),
     '__N_CHAPTERS__': str(len(chapters)),
@@ -297,8 +290,8 @@ for k, v in {
     '__N_LANDMARKS__': str(len(landmarks)),
     '__N_COUNTRIES__': str(countries),
     '__N_LEGS__': str(len(stops) - 1),
-    '__FIRST_EN__': first['en'], '__FIRST_ES__': first['es'],
-    '__LAST_EN__': f"{last['en']} ({last['cen']})", '__LAST_ES__': f"{last['es']} ({last['ces']})",
+    '__FIRST_EN__': first['en'],
+    '__LAST_EN__': f"{last['en']} ({last['cen']})",
 }.items():
     page = page.replace(k, v)
 left = re.findall(r'__[A-Z_]+__', page)

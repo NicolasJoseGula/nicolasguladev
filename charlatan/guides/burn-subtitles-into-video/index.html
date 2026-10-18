@@ -110,7 +110,7 @@
 }
 </script>
 </head>
-<body data-active="en">
+<body>
 
 <header class="site-header">
   <div class="container">
@@ -120,16 +120,12 @@
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
     <nav class="site-nav" aria-label="Main">
-      <a href="../../#inside-the-app"><span data-lang="en">Inside the app</span><span data-lang="es" lang="es">La app por dentro</span></a>
-      <a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a>
-      <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
+      <a href="../../#inside-the-app"><span>Inside the app</span></a>
+      <a href="../../#how-it-works"><span>How it works</span></a>
+      <a href="../../guides/"><span>Guides</span></a>
       <a href="../../#faq">FAQ</a>
-      <a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a>
-      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language / Idioma">
-        <option value="en">English</option>
-        <option value="es">Español</option>
-      </select>
-      <a class="nav-cta js-appstore" href="../../#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a>
+      <a href="/projects.html"><span>All projects</span></a>
+      <a class="nav-cta js-appstore" href="../../#download"><span>Download</span></a>
     </nav>
     <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></label>
   </div>
@@ -139,49 +135,49 @@
 
 
 <article class="article container">
-<p class="breadcrumb"><a href="../../">Charlatan</a> › <a href="../../guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a></p>
-<h1><span data-lang="en">How to burn subtitles into a video</span><span data-lang="es" lang="es">Cómo quemar subtítulos en un video</span></h1>
-<p class="meta"><span data-lang="en">Updated 2026-08-07 · Charlatan for iPhone</span><span data-lang="es" lang="es">Actualizado 2026-08-07 · Charlatan para iPhone</span></p>
-<p><span data-lang="en">"Burned in" and "hardcoded" mean the same thing: the text is drawn into the video frames themselves, so it is as much a part of the picture as anything that was in front of the camera.</span><span data-lang="es" lang="es">"Quemados" y "hardcoded" significan lo mismo: el texto está dibujado dentro de los cuadros del video, así que es tan parte de la imagen como cualquier cosa que estuviera delante de la cámara.</span></p>
-<p><span data-lang="en">The alternative is a separate subtitle file — SRT or VTT — that a player reads alongside the video. Both are correct in different places.</span><span data-lang="es" lang="es">La alternativa es un archivo de subtítulos aparte — SRT o VTT — que el reproductor lee junto al video. Las dos son correctas en lugares distintos.</span></p>
-<figure><div class="phone"><span data-lang="en"><img src="../../assets/img/app/en/reframe.webp" width="640" height="1328" loading="lazy" alt="Reframing a captioned video to 1:1 in Charlatan before exporting it with the subtitles burned in"></span><span data-lang="es" lang="es"><img src="../../assets/img/app/es/reframe.webp" width="640" height="1328" loading="lazy" alt="Reframing a captioned video to 1:1 in Charlatan before exporting it with the subtitles burned in"></span></div><figcaption><span data-lang="en">Charlatan on iPhone</span><span data-lang="es" lang="es">Charlatan en iPhone</span></figcaption></figure>
-<h2><span data-lang="en">When burned-in is right</span><span data-lang="es" lang="es">Cuándo conviene quemarlos</span></h2>
+<p class="breadcrumb"><a href="../../">Charlatan</a> › <a href="../../guides/"><span>Guides</span></a></p>
+<h1><span>How to burn subtitles into a video</span></h1>
+<p class="meta"><span>Updated 2026-08-07 · Charlatan for iPhone</span></p>
+<p><span>"Burned in" and "hardcoded" mean the same thing: the text is drawn into the video frames themselves, so it is as much a part of the picture as anything that was in front of the camera.</span></p>
+<p><span>The alternative is a separate subtitle file — SRT or VTT — that a player reads alongside the video. Both are correct in different places.</span></p>
+<figure><div class="phone"><span><img src="../../assets/img/app/en/reframe.webp" width="640" height="1328" loading="lazy" alt="Reframing a captioned video to 1:1 in Charlatan before exporting it with the subtitles burned in"></span></div><figcaption><span>Charlatan on iPhone</span></figcaption></figure>
+<h2><span>When burned-in is right</span></h2>
 <ul>
-  <li><span data-lang="en">Social video, always. TikTok, Reels and Shorts have no way to carry your subtitle file, and the audience watches muted by default.</span><span data-lang="es" lang="es">Video social, siempre. TikTok, Reels y Shorts no tienen forma de llevar tu archivo de subtítulos, y la audiencia mira sin sonido por defecto.</span></li>
-  <li><span data-lang="en">Anything you will repost across several platforms and want to look identical on each.</span><span data-lang="es" lang="es">Cualquier cosa que vayas a repostear en varias plataformas y quieras que se vea igual en todas.</span></li>
-  <li><span data-lang="en">Any style you actually care about: colour, outline, custom font, karaoke highlight. None of that survives in an SRT, which carries text and timings and nothing else.</span><span data-lang="es" lang="es">Cualquier estilo que te importe: color, contorno, tipografía propia, resaltado karaoke. Nada de eso sobrevive en un SRT, que lleva texto y tiempos y nada más.</span></li>
-  <li><span data-lang="en">Anything sent as a plain file — WhatsApp, email, a shared album — where nobody is going to attach a second file.</span><span data-lang="es" lang="es">Cualquier cosa que mandes como archivo suelto — WhatsApp, mail, un álbum compartido — donde nadie va a adjuntar un segundo archivo.</span></li>
+  <li><span>Social video, always. TikTok, Reels and Shorts have no way to carry your subtitle file, and the audience watches muted by default.</span></li>
+  <li><span>Anything you will repost across several platforms and want to look identical on each.</span></li>
+  <li><span>Any style you actually care about: colour, outline, custom font, karaoke highlight. None of that survives in an SRT, which carries text and timings and nothing else.</span></li>
+  <li><span>Anything sent as a plain file — WhatsApp, email, a shared album — where nobody is going to attach a second file.</span></li>
 </ul>
-<h2><span data-lang="en">When a separate file is right</span><span data-lang="es" lang="es">Cuándo conviene el archivo aparte</span></h2>
+<h2><span>When a separate file is right</span></h2>
 <ul>
-  <li><span data-lang="en">Long-form video on YouTube or a website, where viewers may want to turn captions off, change the language, or use a screen reader.</span><span data-lang="es" lang="es">Video largo en YouTube o un sitio web, donde el que mira puede querer apagar los subtítulos, cambiar el idioma o usar un lector de pantalla.</span></li>
-  <li><span data-lang="en">Anything that needs to be searchable — a transcript file is text a search engine can read, and pixels are not.</span><span data-lang="es" lang="es">Cualquier cosa que necesite ser buscable — un archivo de transcripción es texto que un buscador puede leer, y los píxeles no.</span></li>
-  <li><span data-lang="en">Broadcast, streaming platforms and accessibility compliance, which usually require selectable captions specifically.</span><span data-lang="es" lang="es">Televisión, plataformas de streaming y cumplimiento de accesibilidad, que suelen exigir subtítulos seleccionables específicamente.</span></li>
-  <li><span data-lang="en">Anything you will need to correct later without re-rendering the video.</span><span data-lang="es" lang="es">Cualquier cosa que vayas a tener que corregir después sin volver a renderizar el video.</span></li>
+  <li><span>Long-form video on YouTube or a website, where viewers may want to turn captions off, change the language, or use a screen reader.</span></li>
+  <li><span>Anything that needs to be searchable — a transcript file is text a search engine can read, and pixels are not.</span></li>
+  <li><span>Broadcast, streaming platforms and accessibility compliance, which usually require selectable captions specifically.</span></li>
+  <li><span>Anything you will need to correct later without re-rendering the video.</span></li>
 </ul>
-<h2><span data-lang="en">The honest downside</span><span data-lang="es" lang="es">La contra honesta</span></h2>
-<p><span data-lang="en">Burned-in captions cannot be turned off or edited after export. If a word is wrong, you re-export.</span><span data-lang="es" lang="es">Los subtítulos quemados no se pueden apagar ni editar después de exportar. Si una palabra está mal, volvés a exportar.</span></p>
-<p><span data-lang="en">In practice this is smaller than it sounds, because you keep the project and re-exporting is a couple of taps. It is worth naming, though, rather than pretending the choice is free.</span><span data-lang="es" lang="es">En la práctica esto es más chico de lo que suena, porque el proyecto lo seguís teniendo y volver a exportar son dos toques. Igual vale nombrarlo en vez de fingir que la elección es gratis.</span></p>
+<h2><span>The honest downside</span></h2>
+<p><span>Burned-in captions cannot be turned off or edited after export. If a word is wrong, you re-export.</span></p>
+<p><span>In practice this is smaller than it sounds, because you keep the project and re-exporting is a couple of taps. It is worth naming, though, rather than pretending the choice is free.</span></p>
 <div class="callout">
-<h3><span data-lang="en">How to do it in Charlatan</span><span data-lang="es" lang="es">Cómo hacerlo en Charlatan</span></h3>
+<h3><span>How to do it in Charlatan</span></h3>
 <ol>
-  <li><span data-lang="en">Open the clip in Charlatan. The transcription runs on the phone and gives you an editable caption list.</span><span data-lang="es" lang="es">Abrí el clip en Charlatan. La transcripción corre en el teléfono y te da una lista de subtítulos editable.</span></li>
-  <li><span data-lang="en">Fix any misheard word in the Text panel before you style anything — it is the one step that is cheaper to do now than later.</span><span data-lang="es" lang="es">Corregí cualquier palabra mal entendida en el panel de Texto antes de estilar nada — es el único paso que sale más barato ahora que después.</span></li>
-  <li><span data-lang="en">Choose the font, colour, outline and pace.</span><span data-lang="es" lang="es">Elegí la tipografía, el color, el contorno y el ritmo.</span></li>
-  <li><span data-lang="en">Pick your aspect ratio: 9:16, 1:1, 16:9 or the original framing.</span><span data-lang="es" lang="es">Elegí la proporción: 9:16, 1:1, 16:9 o el encuadre original.</span></li>
-  <li><span data-lang="en">Export. Charlatan renders the captions into every frame, so the file you get is the file everyone sees.</span><span data-lang="es" lang="es">Exportá. Charlatan dibuja los subtítulos en cada cuadro, así que el archivo que te queda es el que ve todo el mundo.</span></li>
+  <li><span>Open the clip in Charlatan. The transcription runs on the phone and gives you an editable caption list.</span></li>
+  <li><span>Fix any misheard word in the Text panel before you style anything — it is the one step that is cheaper to do now than later.</span></li>
+  <li><span>Choose the font, colour, outline and pace.</span></li>
+  <li><span>Pick your aspect ratio: 9:16, 1:1, 16:9 or the original framing.</span></li>
+  <li><span>Export. Charlatan renders the captions into every frame, so the file you get is the file everyone sees.</span></li>
 </ol>
-<p><a class="btn btn-primary js-appstore" href="../../#download"><span data-lang="en">Download Charlatan free</span><span data-lang="es" lang="es">Descargar Charlatan gratis</span></a></p>
+<p><a class="btn btn-primary js-appstore" href="../../#download"><span>Download Charlatan free</span></a></p>
 </div>
-<h2><span data-lang="en">Questions people also ask</span><span data-lang="es" lang="es">Lo que también preguntan</span></h2>
-<h3><span data-lang="en">What does hardcoded subtitles mean?</span><span data-lang="es" lang="es">¿Qué significa subtítulos hardcoded?</span></h3>
-<p><span data-lang="en">It means the subtitle text has been rendered into the video's pixels rather than stored separately. Hardcoded, burned-in and open captions all describe the same result: text that cannot be switched off because it is part of the image.</span><span data-lang="es" lang="es">Significa que el texto del subtítulo fue dibujado dentro de los píxeles del video en lugar de guardarse aparte. Hardcoded, quemados y subtítulos abiertos describen el mismo resultado: texto que no se puede apagar porque es parte de la imagen.</span></p>
-<h3><span data-lang="en">Can I burn subtitles into a video on my phone?</span><span data-lang="es" lang="es">¿Puedo quemar subtítulos en un video desde el teléfono?</span></h3>
-<p><span data-lang="en">Yes. The whole process — transcribing, styling and rendering the captions into the frames — runs on a modern iPhone without a computer or an upload.</span><span data-lang="es" lang="es">Sí. Todo el proceso — transcribir, estilar y dibujar los subtítulos en los cuadros — corre en un iPhone moderno sin computadora ni subida.</span></p>
-<div class="related"><h2><span data-lang="en">Keep reading</span><span data-lang="es" lang="es">Seguir leyendo</span></h2><ul>
-  <li><a href="../../guides/how-to-add-subtitles-to-video-on-iphone/"><span data-lang="en">How to add subtitles to a video on iPhone</span><span data-lang="es" lang="es">Cómo poner subtítulos a un video en iPhone</span> →</a></li>
-  <li><a href="../../guides/add-captions-to-instagram-reels/"><span data-lang="en">How to add captions to Instagram Reels</span><span data-lang="es" lang="es">Cómo poner subtítulos a Reels de Instagram</span> →</a></li>
-  <li><a href="../../guides/captions-without-watermark/"><span data-lang="en">How to export captions without a watermark</span><span data-lang="es" lang="es">Cómo exportar subtítulos sin marca de agua</span> →</a></li>
+<h2><span>Questions people also ask</span></h2>
+<h3><span>What does hardcoded subtitles mean?</span></h3>
+<p><span>It means the subtitle text has been rendered into the video's pixels rather than stored separately. Hardcoded, burned-in and open captions all describe the same result: text that cannot be switched off because it is part of the image.</span></p>
+<h3><span>Can I burn subtitles into a video on my phone?</span></h3>
+<p><span>Yes. The whole process — transcribing, styling and rendering the captions into the frames — runs on a modern iPhone without a computer or an upload.</span></p>
+<div class="related"><h2><span>Keep reading</span></h2><ul>
+  <li><a href="../../guides/how-to-add-subtitles-to-video-on-iphone/"><span>How to add subtitles to a video on iPhone</span> →</a></li>
+  <li><a href="../../guides/add-captions-to-instagram-reels/"><span>How to add captions to Instagram Reels</span> →</a></li>
+  <li><a href="../../guides/captions-without-watermark/"><span>How to export captions without a watermark</span> →</a></li>
 </ul></div>
 </article>
 
@@ -197,36 +193,36 @@
           <span>Charla<span class="tan">tan</span></span>
         </a>
         <p>
-          <span data-lang="en">Automatic subtitles in any font you like, entirely on your iPhone. From the developer of <a class="inline" href="/guardianreader/">Guardian Reader</a>.</span>
-          <span data-lang="es" lang="es">Subtítulos automáticos con la tipografía que quieras, enteramente en tu iPhone. Del creador de <a class="inline" href="/guardianreader/">Guardian Reader</a>.</span>
+          <span>Automatic subtitles in any font you like, entirely on your iPhone. From the developer of <a class="inline" href="/guardianreader/">Guardian Reader</a>.</span>
+          
         </p>
       </div>
       <div>
         <h4>App</h4>
         <ul>
-          <li><a href="../../#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a></li>
-          <li><a href="../../#inside-the-app"><span data-lang="en">Inside the app</span><span data-lang="es" lang="es">La app por dentro</span></a></li>
-          <li><a href="../../#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a></li>
-          <li><a href="../../#pricing"><span data-lang="en">Pricing</span><span data-lang="es" lang="es">Precios</span></a></li>
-          <li><a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a></li>
+          <li><a href="../../#download"><span>Download</span></a></li>
+          <li><a href="../../#inside-the-app"><span>Inside the app</span></a></li>
+          <li><a href="../../#how-it-works"><span>How it works</span></a></li>
+          <li><a href="../../#pricing"><span>Pricing</span></a></li>
+          <li><a href="/projects.html"><span>All projects</span></a></li>
         </ul>
       </div>
       <div>
-        <h4><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></h4>
+        <h4><span>Guides</span></h4>
         <ul>
-          <li><a href="../../guides/how-to-add-subtitles-to-video-on-iphone/"><span data-lang="en">Subtitles on iPhone</span><span data-lang="es" lang="es">Subtítulos en iPhone</span></a></li>
-          <li><a href="../../guides/best-fonts-for-subtitles/"><span data-lang="en">Best subtitle fonts</span><span data-lang="es" lang="es">Mejores tipografías</span></a></li>
-          <li><a href="../../guides/word-by-word-karaoke-captions/"><span data-lang="en">Karaoke captions</span><span data-lang="es" lang="es">Subtítulos karaoke</span></a></li>
-          <li><a href="../../guides/"><span data-lang="en">All guides →</span><span data-lang="es" lang="es">Todas las guías →</span></a></li>
+          <li><a href="../../guides/how-to-add-subtitles-to-video-on-iphone/"><span>Subtitles on iPhone</span></a></li>
+          <li><a href="../../guides/best-fonts-for-subtitles/"><span>Best subtitle fonts</span></a></li>
+          <li><a href="../../guides/word-by-word-karaoke-captions/"><span>Karaoke captions</span></a></li>
+          <li><a href="../../guides/"><span>All guides →</span></a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Charlatan · Nicolas Gula</span>
       <span>
-        <a href="../../privacypolicy/"><span data-lang="en">Privacy Policy</span><span data-lang="es" lang="es">Privacidad</span></a> ·
-        <a href="../../terms/"><span data-lang="en">Terms of Use</span><span data-lang="es" lang="es">Términos</span></a> ·
-        <a href="../../support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a>
+        <a href="../../privacypolicy/"><span>Privacy Policy</span></a> ·
+        <a href="../../terms/"><span>Terms of Use</span></a> ·
+        <a href="../../support/"><span>Support</span></a>
       </span>
     </div>
   </div>
@@ -240,24 +236,6 @@
       el.setAttribute("rel", "noopener");
     });
   }
-  /* Esta página habla inglés y español. La portada habla once idiomas y
-     guarda el elegido: uno que aquí no existe mostraba la página en blanco,
-     así que cae al inglés, y solo se guarda lo que se elige en esta página
-     para no pisar el idioma de la portada. */
-  function setLang(l, quiet) {
-    if (l !== "es") l = "en";
-    document.body.setAttribute("data-active", l);
-    document.documentElement.lang = l;
-    var sel = document.getElementById("langselect");
-    if (sel) sel.value = l;
-    if (!quiet) { try { localStorage.setItem("ch-lang", l); } catch (e) {} }
-  }
-  (function () {
-    var saved = null;
-    try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
-    var lang = saved || ((navigator.language || "en").slice(0, 2) === "es" ? "es" : "en");
-    setLang(lang, true);
-  })();
 </script>
 
 </body>

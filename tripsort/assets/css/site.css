@@ -46,12 +46,6 @@ h1, h2, h3, .display { font-family: var(--display); font-weight: 700; letter-spa
 .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
 .narrow { max-width: 780px; margin: 0 auto; padding: 0 24px; }
 
-/* ---------- Language toggle ---------- */
-[data-lang] { display: none; }
-body[data-active="en"] [data-lang="en"] { display: revert; }
-body[data-active="es"] [data-lang="es"] { display: revert; }
-body[data-active="en"] img[data-lang="en"], body[data-active="es"] img[data-lang="es"] { display: block; }
-
 /* ---------- Header: the floating pill ---------- */
 .site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 16px 0; pointer-events: none; }
 .site-header .container {
@@ -79,15 +73,6 @@ body[data-active="en"] img[data-lang="en"], body[data-active="es"] img[data-lang
   color: #fff; background: var(--grad); padding: 9px 18px; border-radius: 999px; font-weight: 700;
 }
 .site-nav .nav-cta:hover { color: #fff; filter: brightness(1.06); }
-.langselect {
-  font-family: var(--sans); font-size: 13px; font-weight: 600; color: var(--pill-text);
-  background-color: rgba(255, 255, 255, .06); border: 1px solid var(--pill-border); border-radius: 999px;
-  padding: 7px 30px 7px 14px; appearance: none; -webkit-appearance: none; cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='%23ffc531' stroke-width='1.5'/%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 12px center;
-}
-.langselect:hover { border-color: var(--sun); }
-.langselect option { background: #1a1e3a; color: var(--pill-text); }
 .nav-toggle, .nav-burger { display: none; }
 @media (max-width: 1023px) {
   .nav-burger {
@@ -105,7 +90,6 @@ body[data-active="en"] img[data-lang="en"], body[data-active="es"] img[data-lang
   }
   .site-nav a { display: block; padding: 14px 0; font-size: 16px; border-bottom: 1px solid var(--pill-border); }
   .site-nav .nav-cta { margin-top: 14px; text-align: center; padding: 13px 18px; border-bottom: none; }
-  .site-nav .langselect { margin-top: 14px; align-self: flex-start; }
   .nav-toggle:checked ~ .site-nav { display: flex; }
   .nav-toggle:checked ~ .nav-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .nav-toggle:checked ~ .nav-burger span:nth-child(2) { opacity: 0; }

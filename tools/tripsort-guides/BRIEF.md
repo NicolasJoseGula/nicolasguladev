@@ -6,53 +6,48 @@ so you write only what goes after the cover image.
 
 ## Files you write (only these)
 
-- `content/<slug>.html`: the bilingual article body (fragment, no <html>/<head>/<body>, no h1).
+- `content/<slug>.html`: the article body in English (fragment, no <html>/<head>/<body>, no h1).
 - `content/<slug>.faq.json`: `[["question", "answer"], ...]`, the same 3 "people also ask" questions you put at the end,
-  in the guide's main language (`lang` in guides.json: "en" or "es"), plain text.
+  in English, plain text.
 
 Read `guides.json` for the slug, keyword, secondary keywords, titles and descriptions. Don't edit it.
 
 ## Format rules
 
-- Every visible text is bilingual, inside its element, like this:
-  `<p><span data-lang="en">English text.</span><span data-lang="es" lang="es">Texto en español.</span></p>`
-  Same for h2, h3, li, figcaption, button labels. Never put block elements inside the spans.
-- Spanish: rioplatense voseo, like the rest of the site ("jugá", "tocá", "podés", "descargá"). Natural, not a literal translation.
-  For guides whose `lang` is "es", Spanish is the primary, keyword-targeted text and English is the translation.
+- The site is English only. No translations, no `data-lang` spans, no language switcher.
 - Structure:
   1. `<p class="lede">`: answer the search intent in the first two sentences (featured-snippet style), with the main keyword.
   2. 4 to 6 `<h2>` sections that genuinely answer what the searcher wants (general, useful, not an ad), with lists or numbered steps where it helps. Put the main keyword naturally in at least one h2 and the secondary keywords where they fit. No keyword stuffing.
   3. At least one figure using the real images below.
-  4. A `<div class="callout">` titled "How to do it in Trip Sort" / "Cómo hacerlo en Trip Sort" (h2) with an `<ol>` of concrete steps in the app, then
-     `<p><a class="btn btn-primary" href="../../#download"><span data-lang="en">Download Trip Sort free</span><span data-lang="es" lang="es">Descargar Trip Sort gratis</span></a></p>`
+  4. A `<div class="callout">` titled "How to do it in Trip Sort" (h2) with an `<ol>` of concrete steps in the app, then
+     `<p><a class="btn btn-primary" href="../../#download">Download Trip Sort free</a></p>`
   5. Optional `<div class="tip"><p>...</p></div>` with a pro tip.
-  6. `<h2>` "Questions people also ask" / "Lo que también preguntan" with 3 `<h3>` + `<p>` pairs (the same 3 go in the faq.json).
+  6. `<h2>` "Questions people also ask" with 3 `<h3>` + `<p>` pairs (the same 3 go in the faq.json).
 - Link naturally to 1 or 2 other guides: `<a class="inline" href="../<other-slug>/">...</a>` (slugs in guides.json).
-- Length: about 900–1,300 words per language. Indent with 4 spaces (it sits inside `<div class="narrow">`).
+- Length: about 900–1,300 words. Indent with 4 spaces (it sits inside `<div class="narrow">`).
 - No emojis. No "best", "#1", "top" claims about Trip Sort. Don't name or criticize competitor apps (generic genres like "mahjong solitaire" are fine).
 - No health or medical claims (no "improves memory", "reduces anxiety", "prevents dementia"). Say things like "keeps your mind busy", "a calm break", "practice attention and planning".
 - Only claim game facts listed below. If you are not sure something exists in the game, don't mention it.
 
 ## Images you can use (paths relative to the guide page)
 
-- Store screenshots, 480x1043, one per language (swap with data-lang):
-  `../../assets/img/shots/en-01.webp` ... `en-06.webp` and `es-01.webp` ... `es-06.webp`
+- Store screenshots, 480x1043:
+  `../../assets/img/shots/en-01.webp` ... `en-06.webp`
   01 "Match 3 Tiles!" (Paris board, Eiffel tiles in the tray) · 02 "Train Your Brain" (Kyoto board, torii, sushi) ·
   03 "255 Destinations" (map of Europe with a route, postcards of Paris and Santorini) · 04 "Relax & Unwind" (Santorini board) ·
   05 "Travel the World" (Rio board, Christ the Redeemer, toucans) · 06 "Play Offline" (London board, Big Ben, double-decker bus).
   Use as:
   ```html
     <figure class="phone">
-      <img data-lang="en" src="../../assets/img/shots/en-01.webp" width="480" height="1043" loading="lazy" alt="...">
-      <img data-lang="es" src="../../assets/img/shots/es-01.webp" width="480" height="1043" loading="lazy" alt="...">
-      <figcaption><span data-lang="en">...</span><span data-lang="es" lang="es">...</span></figcaption>
+      <img src="../../assets/img/shots/en-01.webp" width="480" height="1043" loading="lazy" alt="...">
+      <figcaption>...</figcaption>
     </figure>
   ```
-- Wide art (no text in it, one for both languages), use `<figure><img ...></figure>`:
+- Wide art (no text in it), use `<figure><img ...></figure>`:
   `../../assets/img/route.webp` (1440x780, map with a trip route and postcards) ·
   `../../assets/img/postcards.webp` (1500x900, fan of five city postcards) ·
   `../../assets/img/landmarks.webp` (1500x900, twelve landmark tiles).
-  Alt text: descriptive and in English, with a keyword where natural.
+  Alt text: descriptive, with a keyword where natural.
 
 ## Trip Sort facts (the only things you may claim)
 

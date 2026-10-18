@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Builds the Trip Sort guides from guides.json and content/<slug>.html.
 
-Each content file holds only the body of the article (bilingual, with
-data-lang spans). This script wraps it with the shared head, header, footer
-and structured data, writes tripsort/guides/<slug>/index.html and the guides
+Each content file holds only the body of the article, in English (the site
+is English only since October 2026). This script wraps the body with the shared head, header, footer and
+structured data, writes tripsort/guides/<slug>/index.html and the guides
 index, and refreshes the guides grid on the landing between the
 <!-- guides:start --> and <!-- guides:end --> markers.
 
@@ -24,8 +24,10 @@ PLAY = 'https://play.google.com/store/apps/details?id=lat.dezeo.trip_sort'
 GUIDES = json.loads((HERE / 'guides.json').read_text(encoding='utf-8'))
 
 
-def bi(en, es):
-    return f'<span data-lang="en">{en}</span><span data-lang="es" lang="es">{es}</span>'
+def en(text):
+    # El sitio es solo en ingles. El texto sigue dentro de un <span>, como
+    # cuando cada frase venia en un par ingles/espanol: el CSS no cambia.
+    return f'<span>{text}</span>'
 
 
 def esc(s):
@@ -41,16 +43,12 @@ def header(up):
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
     <nav class="site-nav" aria-label="Main">
-      <a href="{up}#screenshots">{bi('Screenshots', 'Capturas')}</a>
-      <a href="{up}#how-it-works">{bi('How it works', 'Cómo funciona')}</a>
-      <a href="{up}guides/">{bi('Guides', 'Guías')}</a>
+      <a href="{up}#screenshots">{en('Screenshots')}</a>
+      <a href="{up}#how-it-works">{en('How it works')}</a>
+      <a href="{up}guides/">{en('Guides')}</a>
       <a href="{up}#faq">FAQ</a>
-      <a href="/projects.html">{bi('All projects', 'Proyectos')}</a>
-      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language / Idioma">
-        <option value="en">English</option>
-        <option value="es">Español</option>
-      </select>
-      <a class="nav-cta" href="{up}#download">{bi('Download', 'Descargar')}</a>
+      <a href="/projects.html">{en('All projects')}</a>
+      <a class="nav-cta" href="{up}#download">{en('Download')}</a>
     </nav>
     <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></label>
   </div>
@@ -58,12 +56,12 @@ def header(up):
 
 
 def footer(up):
-    foot = [('triple-tile-match', 'Triple tile match', 'Triple tile match'),
-            ('how-to-beat-hard-tile-match-levels', 'Hard level tips', 'Niveles difíciles'),
-            ('offline-games-no-wifi', 'Offline games', 'Juegos sin internet'),
-            ('games-to-play-on-a-plane', 'Games for flights', 'Juegos para el avión'),
-            ('brain-puzzle-games-for-adults', 'Brain games', 'Juegos mentales')]
-    links = ''.join(f'\n          <li><a href="{up}guides/{s}/">{bi(en, es)}</a></li>' for s, en, es in foot)
+    foot = [('triple-tile-match', 'Triple tile match'),
+            ('how-to-beat-hard-tile-match-levels', 'Hard level tips'),
+            ('offline-games-no-wifi', 'Offline games'),
+            ('games-to-play-on-a-plane', 'Games for flights'),
+            ('brain-puzzle-games-for-adults', 'Brain games')]
+    links = ''.join(f'\n          <li><a href="{up}guides/{s}/">{en(label)}</a></li>' for s, label in foot)
     return f'''<footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
@@ -72,55 +70,38 @@ def footer(up):
           <img src="{up}assets/img/tripsort-icon.png" alt="Trip Sort app icon" width="32" height="32">
           Trip Sort
         </a>
-        <p>{bi('A relaxing triple tile match puzzle. Match 3 tiles, train your brain and travel the world, offline.', 'Un puzzle relajante de emparejar fichas de a tres. Juntá 3 fichas, entrená la cabeza y viajá por el mundo, sin internet.')}</p>
+        <p>{en('A relaxing triple tile match puzzle. Match 3 tiles, train your brain and travel the world, offline.')}</p>
       </div>
       <div>
         <h4>App</h4>
         <ul>
-          <li><a href="{up}#download">{bi('Download', 'Descargar')}</a></li>
-          <li><a href="{up}#screenshots">{bi('Screenshots', 'Capturas')}</a></li>
-          <li><a href="{up}#how-it-works">{bi('How it works', 'Cómo funciona')}</a></li>
-          <li><a href="{up}route/">{bi('World route', 'Ruta del mundo')}</a></li>
+          <li><a href="{up}#download">{en('Download')}</a></li>
+          <li><a href="{up}#screenshots">{en('Screenshots')}</a></li>
+          <li><a href="{up}#how-it-works">{en('How it works')}</a></li>
+          <li><a href="{up}route/">{en('World route')}</a></li>
           <li><a href="{up}#faq">FAQ</a></li>
-          <li><a href="{up}support/">{bi('Support', 'Soporte')}</a></li>
-          <li><a href="/projects.html">{bi('All projects', 'Proyectos')}</a></li>
+          <li><a href="{up}support/">{en('Support')}</a></li>
+          <li><a href="/projects.html">{en('All projects')}</a></li>
         </ul>
       </div>
       <div>
-        <h4>{bi('Guides', 'Guías')}</h4>
+        <h4>{en('Guides')}</h4>
         <ul>{links}
-          <li><a href="{up}guides/">{bi('All guides →', 'Todas las guías →')}</a></li>
+          <li><a href="{up}guides/">{en('All guides →')}</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Trip Sort · Nicolas Gula · <a href="https://dezeo.lat/">dezeo</a></span>
       <span>
-        <a href="{up}privacypolicy/">{bi('Privacy Policy', 'Privacidad')}</a> ·
-        <a href="{up}terms/">{bi('Terms of Use', 'Términos')}</a> ·
-        <a href="{up}support/">{bi('Support', 'Soporte')}</a>
+        <a href="{up}privacypolicy/">{en('Privacy Policy')}</a> ·
+        <a href="{up}terms/">{en('Terms of Use')}</a> ·
+        <a href="{up}support/">{en('Support')}</a>
       </span>
     </div>
   </div>
 </footer>'''
 
-
-LANG_JS = '''<script>
-  function setLang(l) {
-    document.body.setAttribute('data-active', l);
-    document.documentElement.lang = l;
-    var sel = document.getElementById('langselect');
-    if (sel) sel.value = l;
-    try { localStorage.setItem('ts-lang', l); } catch (e) {}
-  }
-  (function () {
-    var saved = null;
-    try { saved = localStorage.getItem('ts-lang'); } catch (e) {}
-    var page = document.body.getAttribute('data-default');
-    var l = saved || ((navigator.language || '').toLowerCase().indexOf('es') === 0 ? 'es' : page || 'en');
-    setLang(l);
-  })();
-</script>'''
 
 
 def head(title, desc, url, image, up, extra=''):
@@ -149,11 +130,10 @@ def head(title, desc, url, image, up, extra=''):
 
 def guide_page(g, body):
     slug = g['slug']
-    lang = g['lang']
     url = f'{BASE}guides/{slug}/'
     image = f'{BASE}assets/img/guides/{slug}.jpg'
-    title = g[f'title_{lang}']
-    desc = g[f'desc_{lang}']
+    title = g['title_en']
+    desc = g['desc_en']
     up = '../../'
     faq_path = HERE / 'content' / f'{slug}.faq.json'
     faq_ld = ''
@@ -165,7 +145,7 @@ def guide_page(g, body):
         }, ensure_ascii=False, indent=2) + '\n  </script>'
     article_ld = json.dumps({
         '@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc,
-        'image': image, 'inLanguage': lang, 'datePublished': UPDATED, 'dateModified': UPDATED,
+        'image': image, 'inLanguage': 'en', 'datePublished': UPDATED, 'dateModified': UPDATED,
         'author': {'@type': 'Organization', 'name': 'Trip Sort', 'url': BASE},
         'publisher': {'@type': 'Organization', 'name': 'dezeo', 'url': 'https://dezeo.lat/',
                       'logo': {'@type': 'ImageObject', 'url': BASE + 'assets/img/tripsort-icon.png'}},
@@ -182,26 +162,26 @@ def guide_page(g, body):
     # Related links: the next three guides in the list, wrapping around.
     i = [x['slug'] for x in GUIDES].index(slug)
     related = [GUIDES[(i + k) % len(GUIDES)] for k in (1, 2, 3)]
-    rel = ''.join(f'\n    <a class="guide-card" href="../{r["slug"]}/"><img src="../../assets/img/guides/{r["slug"]}.jpg" width="1200" height="630" loading="lazy" alt=""><div class="body"><span class="tag">{bi(esc(r["tag_en"]), esc(r["tag_es"]))}</span><h3>{bi(esc(r["title_en"]), esc(r["title_es"]))}</h3><span class="read">{bi("Read the guide →", "Leer la guía →")}</span></div></a>' for r in related)
+    rel = ''.join(f'\n    <a class="guide-card" href="../{r["slug"]}/"><img src="../../assets/img/guides/{r["slug"]}.jpg" width="1200" height="630" loading="lazy" alt=""><div class="body"><span class="tag">{en(esc(r["tag_en"]))}</span><h3>{en(esc(r["title_en"]))}</h3><span class="read">{en("Read the guide →")}</span></div></a>' for r in related)
     return f'''<!DOCTYPE html>
-<html lang="{lang}">
+<html lang="en">
 <head>
   {head(title, desc, url, image, up, extra)}
 </head>
-<body data-active="{lang}" data-default="{lang}">
+<body>
 
 {header(up)}
 
 <main>
 <article class="article article-hero">
   <div class="narrow">
-    <p class="breadcrumb"><a href="{up}">Trip Sort</a> › <a href="../">{bi('Guides', 'Guías')}</a></p>
-    <h1>{bi(esc(g['title_en']), esc(g['title_es']))}</h1>
-    <p class="meta">{bi(f'Updated {UPDATED} · Trip Sort for iPhone and Android', f'Actualizado {UPDATED} · Trip Sort para iPhone y Android')}</p>
+    <p class="breadcrumb"><a href="{up}">Trip Sort</a> › <a href="../">{en('Guides')}</a></p>
+    <h1>{en(esc(g['title_en']))}</h1>
+    <p class="meta">{en(f'Updated {UPDATED} · Trip Sort for iPhone and Android')}</p>
     <img class="cover" src="../../assets/img/guides/{slug}.jpg" width="1200" height="630" alt="{esc(g['title_en'])}">
 {body.strip()}
     <section class="related" aria-label="Related guides">
-      <h2>{bi('Keep reading', 'Seguir leyendo')}</h2>
+      <h2>{en('Keep reading')}</h2>
       <div class="guides-grid">{rel}
       </div>
     </section>
@@ -211,7 +191,6 @@ def guide_page(g, body):
 
 {footer(up)}
 
-{LANG_JS}
 </body>
 </html>
 '''
@@ -222,10 +201,10 @@ def guide_cards(prefix):
         <a class="guide-card" href="{prefix}{g["slug"]}/">
           <img src="{'../' if prefix == '' else ''}assets/img/guides/{g["slug"]}.jpg" width="1200" height="630" loading="lazy" alt="{esc(g["title_en"])}">
           <div class="body">
-            <span class="tag">{bi(esc(g["tag_en"]), esc(g["tag_es"]))}</span>
-            <h3>{bi(esc(g["title_en"]), esc(g["title_es"]))}</h3>
-            <p>{bi(esc(g["short_en"]), esc(g["short_es"]))}</p>
-            <span class="read">{bi("Read the guide →", "Leer la guía →")}</span>
+            <span class="tag">{en(esc(g["tag_en"]))}</span>
+            <h3>{en(esc(g["title_en"]))}</h3>
+            <p>{en(esc(g["short_en"]))}</p>
+            <span class="read">{en("Read the guide →")}</span>
           </div>
         </a>''' for g in GUIDES)
 
@@ -234,7 +213,7 @@ def guides_index():
     url = BASE + 'guides/'
     title = 'Trip Sort Guides: Tile Match Tips, Offline Games and Brain Puzzles'
     desc = 'Guides for tile match players: how triple tile match works, tips for hard levels, offline games for flights, relaxing brain puzzles and how to play Trip Sort.'
-    items = [{'@type': 'ListItem', 'position': k + 1, 'url': f'{BASE}guides/{g["slug"]}/', 'name': g[f'title_{g["lang"]}']} for k, g in enumerate(GUIDES)]
+    items = [{'@type': 'ListItem', 'position': k + 1, 'url': f'{BASE}guides/{g["slug"]}/', 'name': g['title_en']} for k, g in enumerate(GUIDES)]
     ld = json.dumps({'@context': 'https://schema.org', '@type': 'ItemList', 'itemListElement': items}, ensure_ascii=False, indent=2)
     extra = f'\n  <script type="application/ld+json">\n{ld}\n  </script>'
     return f'''<!DOCTYPE html>
@@ -242,7 +221,7 @@ def guides_index():
 <head>
   {head(title, desc, url, BASE + 'assets/img/og-tripsort.jpg', '../', extra)}
 </head>
-<body data-active="en">
+<body>
 
 {header('../')}
 
@@ -250,9 +229,9 @@ def guides_index():
 <section class="article-hero">
   <div class="container">
     <div class="section-head">
-      <p class="breadcrumb"><a href="../">Trip Sort</a> › {bi('Guides', 'Guías')}</p>
-      <h1 class="display" style="font-size:clamp(36px,5vw,58px);margin-bottom:14px">{bi('Trip Sort guides', 'Guías de Trip Sort')}</h1>
-      <p>{bi('Tile match rules and tips, offline games for your next flight, relaxing brain puzzles and everything Trip Sort can do.', 'Reglas y consejos de tile match, juegos sin internet para tu próximo vuelo, puzzles relajantes y todo lo que puede hacer Trip Sort.')}</p>
+      <p class="breadcrumb"><a href="../">Trip Sort</a> › {en('Guides')}</p>
+      <h1 class="display" style="font-size:clamp(36px,5vw,58px);margin-bottom:14px">{en('Trip Sort guides')}</h1>
+      <p>{en('Tile match rules and tips, offline games for your next flight, relaxing brain puzzles and everything Trip Sort can do.')}</p>
     </div>
     <div class="guides-grid">{guide_cards('')}
     </div>
@@ -262,7 +241,6 @@ def guides_index():
 
 {footer('../')}
 
-{LANG_JS}
 </body>
 </html>
 '''
@@ -294,7 +272,6 @@ def main():
         t = p.read_text(encoding='utf-8')
         t = re.sub(r'<header class="site-header">.*?</header>', lambda m: header(up), t, count=1, flags=re.S)
         t = re.sub(r'<footer class="site-footer">.*?</footer>', lambda m: footer(up), t, count=1, flags=re.S)
-        t = re.sub(r'<script>\s*function setLang.*?</script>', lambda m: LANG_JS, t, count=1, flags=re.S)
         p.write_text(t, encoding='utf-8')
     print(f'{built} guides built, landing grid {"updated" if n else "NOT FOUND"}')
 

@@ -9,10 +9,11 @@
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#0a0a12">
 <meta name="apple-itunes-app" content="app-id=6802888272">
+<script src="assets/js/charlatan-demo.js" defer></script>
 <link rel="icon" type="image/png" href="assets/img/charlatan-app-icon.png">
 <link rel="apple-touch-icon" href="assets/img/charlatan-app-icon.png">
 <link rel="stylesheet" href="assets/css/style.css?v=12">
-<script src="assets/js/charlatan-i18n.js" defer></script>
+
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Charlatan">
@@ -109,7 +110,7 @@
 }
 </script>
 </head>
-<body data-active="en">
+<body>
 
 <header class="site-header">
   <div class="container">
@@ -119,26 +120,13 @@
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
     <nav class="site-nav" aria-label="Main">
-      <a href="#inside-the-app"><span data-lang="en">Inside the app</span><span data-lang="es" lang="es">La app por dentro</span></a>
-      <a href="#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a>
-      <a href="#pricing"><span data-lang="en">Pricing</span><span data-lang="es" lang="es">Precios</span></a>
-      <a href="guides/"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></a>
+      <a href="#inside-the-app"><span>Inside the app</span></a>
+      <a href="#how-it-works"><span>How it works</span></a>
+      <a href="#pricing"><span>Pricing</span></a>
+      <a href="guides/"><span>Guides</span></a>
       <a href="#faq">FAQ</a>
-      <a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a>
-      <select class="langselect" id="langselect" onchange="setLang(this.value)" aria-label="Language">
-        <option value="en">English</option>
-        <option value="es">Español</option>
-        <option value="pt-BR">Português (BR)</option>
-        <option value="pt-PT">Português (PT)</option>
-        <option value="it">Italiano</option>
-        <option value="fr">Français</option>
-        <option value="de">Deutsch</option>
-        <option value="ja">日本語</option>
-        <option value="ko">한국어</option>
-        <option value="zh-Hans">简体中文</option>
-        <option value="zh-Hant">繁體中文</option>
-      </select>
-      <a class="nav-cta js-appstore" href="#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a>
+      <a href="/projects.html"><span>All projects</span></a>
+      <a class="nav-cta js-appstore" href="#download"><span>Download</span></a>
     </nav>
     <label class="nav-burger" for="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></label>
   </div>
@@ -149,28 +137,28 @@
 <!-- ══════════════ HERO ══════════════ -->
 <section class="hero" id="top">
   <div class="container">
-    <span class="eyebrow"><span data-lang="en">99 fonts · Ready-made styles · On-device · iPhone · iPad</span><span data-lang="es" lang="es">99 tipografías · Estilos listos · Sin subir nada · iPhone · iPad</span></span>
+    <span class="eyebrow"><span>99 fonts · Ready-made styles · On-device · iPhone · iPad</span></span>
     <h1>
-      <span data-lang="en">Add subtitles to your video in <span class="accent">any font you like</span></span>
-      <span data-lang="es" lang="es">Ponele subtítulos a tu video con <span class="accent">la tipografía que quieras</span></span>
+      <span>Add subtitles to your video in <span class="accent">any font you like</span></span>
+      
     </h1>
     <p class="sub">
-      <span data-lang="en">Charlatan listens to your video, writes every word you say, and lets you pick how it looks — from 99 fonts, not the same three everyone else is using. All on your iPhone.</span>
-      <span data-lang="es" lang="es">Charlatan escucha tu video, escribe cada palabra que decís y vos elegís cómo se ve — entre 99 tipografías, no las mismas tres de siempre. Todo dentro de tu iPhone.</span>
+      <span>Charlatan listens to your video, writes every word you say, and lets you pick how it looks — from 99 fonts, not the same three everyone else is using. All on your iPhone.</span>
+      
     </p>
     <div class="hero-ctas">
       <a class="appstore-badge js-appstore" href="#download" aria-label="Download on the App Store">
         <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
         <span class="badge-text">
-          <small><span data-lang="en">Download on the</span><span data-lang="es" lang="es">Descargala en el</span></small>
+          <small><span>Download on the</span></small>
           <strong>App Store</strong>
         </span>
       </a>
-      <a class="btn btn-outline" href="#how-it-works"><span data-lang="en">See how it works</span><span data-lang="es" lang="es">Ver cómo funciona</span></a>
+      <a class="btn btn-outline" href="#how-it-works"><span>See how it works</span></a>
     </div>
     <p class="micro">
-      <span data-lang="en">Free to start · No account · Nothing leaves your iPhone</span>
-      <span data-lang="es" lang="es">Gratis para empezar · Sin cuenta · Nada sale de tu iPhone</span>
+      <span>Free to start · No account · Nothing leaves your iPhone</span>
+      
     </p>
 
     <!-- El mismo clip dos veces, con y sin Charlatan, dentro de un iPhone real.
@@ -188,8 +176,8 @@
             <span class="ba-mark"><img src="assets/img/charlatan-watermark.png" alt="" width="160" height="160"><span>CHARLA<b>TAN</b></span></span>
             <div class="ba-cap" id="bacap"></div>
           </div>
-          <span class="ba-label left on"><span data-lang="en">WITH CHARLATAN</span><span data-lang="es" lang="es">CON CHARLATAN</span></span>
-          <span class="ba-label right"><span data-lang="en">WITHOUT</span><span data-lang="es" lang="es">SIN</span></span>
+          <span class="ba-label left on"><span>WITH CHARLATAN</span></span>
+          <span class="ba-label right"><span>WITHOUT</span></span>
           <div class="ba-divider" aria-hidden="true"></div>
           <div class="ba-knob" aria-hidden="true">&#8596;</div>
           <input type="range" min="0" max="100" value="50" step="0.1" aria-label="Compare with and without subtitles">
@@ -198,8 +186,8 @@
       <img class="device-frame" src="assets/img/iphone-frame.png" alt="" width="760" height="1508" fetchpriority="high">
     </div>
     <p class="device-hint">
-      <span data-lang="en">Drag the handle — same clip, with and without Charlatan.</span>
-      <span data-lang="es" lang="es">Arrastrá la manija — el mismo clip, con y sin Charlatan.</span>
+      <span>Drag the handle — same clip, with and without Charlatan.</span>
+      
     </p>
   </div>
 </section>
@@ -208,19 +196,19 @@
 <section class="section-panel center" id="download" style="padding: 64px 0">
   <div class="container">
     <div class="section-head" style="margin-bottom: 28px">
-      <h2><span data-lang="en">Your next video, subtitled.</span><span data-lang="es" lang="es">Tu próximo video, subtitulado.</span></h2>
-      <p><span data-lang="en">Pick a clip, let it write itself, choose the font. The first one takes about two minutes.</span><span data-lang="es" lang="es">Elegí un clip, dejá que se escriba solo, elegí la tipografía. El primero lleva unos dos minutos.</span></p>
+      <h2><span>Your next video, subtitled.</span></h2>
+      <p><span>Pick a clip, let it write itself, choose the font. The first one takes about two minutes.</span></p>
     </div>
     <a class="appstore-badge js-appstore" href="#download" aria-label="Download on the App Store">
       <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
       <span class="badge-text">
-        <small><span data-lang="en">Download on the</span><span data-lang="es" lang="es">Descargala en el</span></small>
+        <small><span>Download on the</span></small>
         <strong>App Store</strong>
       </span>
     </a>
     <p class="micro" style="margin-top: 16px">
-      <span data-lang="en">Free on the App Store · iPhone · iPad · iOS 18 or later</span>
-      <span data-lang="es" lang="es">Gratis en el App Store · iPhone · iPad · iOS 18 o posterior</span>
+      <span>Free on the App Store · iPhone · iPad · iOS 18 or later</span>
+      
     </p>
   </div>
 </section>
@@ -229,59 +217,59 @@
 <section id="styles">
   <div class="container">
     <div class="section-head">
-      <span class="kicker"><span data-lang="en">New · Styles</span><span data-lang="es" lang="es">Nuevo · Estilos</span></span>
-      <h2><span data-lang="en">The looks people ask for, one tap away</span><span data-lang="es" lang="es">Los looks que la gente pide, a un toque</span></h2>
-      <p><span data-lang="en">Eleven ready-made styles, each shown on your own video before you choose it: font, colours, outline, box, highlight and animation at once. Then tweak anything you like.</span><span data-lang="es" lang="es">Once estilos listos, cada uno sobre tu propio video antes de elegirlo: tipografía, colores, contorno, caja, resaltado y animación de una vez. Después retocás lo que quieras.</span></p>
+      <span class="kicker"><span>New · Styles</span></span>
+      <h2><span>The looks people ask for, one tap away</span></h2>
+      <p><span>Eleven ready-made styles, each shown on your own video before you choose it: font, colours, outline, box, highlight and animation at once. Then tweak anything you like.</span></p>
     </div>
     <div class="look-grid">
       <figure class="look-card">
-        <img src="assets/img/app/en/look-hustle.webp" data-shot="look-hustle" alt="Hustle caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Hustle</strong><span class="look-pro">Pro</span><span class="look-line"><span data-lang="en">Bold capitals, the keyword in yellow, each word rising in.</span><span data-lang="es" lang="es">Mayúsculas gruesas, la palabra clave en amarillo y cada palabra entrando desde abajo.</span></span></figcaption>
+        <img src="assets/img/app/en/look-hustle.webp" alt="Hustle caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Hustle</strong><span class="look-pro">Pro</span><span class="look-line"><span>Bold capitals, the keyword in yellow, each word rising in.</span></span></figcaption>
       </figure>
       <figure class="look-card">
-        <img src="assets/img/app/en/look-beast.webp" data-shot="look-beast" alt="Beast caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Beast</strong><span class="look-pro">Pro</span><span class="look-line"><span data-lang="en">Comic letters, a hard shadow, the keyword in green.</span><span data-lang="es" lang="es">Letra de cómic, sombra dura y la palabra clave en verde.</span></span></figcaption>
+        <img src="assets/img/app/en/look-beast.webp" alt="Beast caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Beast</strong><span class="look-pro">Pro</span><span class="look-line"><span>Comic letters, a hard shadow, the keyword in green.</span></span></figcaption>
       </figure>
       <figure class="look-card">
-        <img src="assets/img/app/en/look-karaoke-real.webp" data-shot="look-karaoke-real" alt="Karaoke caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Karaoke</strong><span class="look-pro">Pro</span><span class="look-line"><span data-lang="en">The line waits faded and fills with colour as it is said.</span><span data-lang="es" lang="es">La frase espera tenue y se llena de color mientras se dice.</span></span></figcaption>
+        <img src="assets/img/app/en/look-karaoke-real.webp" alt="Karaoke caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Karaoke</strong><span class="look-pro">Pro</span><span class="look-line"><span>The line waits faded and fills with colour as it is said.</span></span></figcaption>
       </figure>
       <figure class="look-card">
-        <img src="assets/img/app/en/look-pill.webp" data-shot="look-pill" alt="Pill caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Pill</strong><span class="look-pro">Pro</span><span class="look-line"><span data-lang="en">A soft black capsule, clean and quiet.</span><span data-lang="es" lang="es">Una cápsula negra, limpia y tranquila.</span></span></figcaption>
+        <img src="assets/img/app/en/look-pill.webp" alt="Pill caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Pill</strong><span class="look-pro">Pro</span><span class="look-line"><span>A soft black capsule, clean and quiet.</span></span></figcaption>
       </figure>
       <figure class="look-card">
-        <img src="assets/img/app/en/look-block.webp" data-shot="look-block" alt="Block caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Block</strong><span class="look-pro">Pro</span><span class="look-line"><span data-lang="en">A yellow box that jumps from word to word.</span><span data-lang="es" lang="es">Una caja amarilla que salta de palabra en palabra.</span></span></figcaption>
+        <img src="assets/img/app/en/look-block.webp" alt="Block caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Block</strong><span class="look-pro">Pro</span><span class="look-line"><span>A yellow box that jumps from word to word.</span></span></figcaption>
       </figure>
       <figure class="look-card">
-        <img src="assets/img/app/en/look-soft.webp" data-shot="look-soft" alt="Soft caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Soft</strong><span class="look-pro">Pro</span><span class="look-line"><span data-lang="en">Light letters, the spoken word in bold.</span><span data-lang="es" lang="es">Letra fina y la palabra que suena en negrita.</span></span></figcaption>
+        <img src="assets/img/app/en/look-soft.webp" alt="Soft caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Soft</strong><span class="look-pro">Pro</span><span class="look-line"><span>Light letters, the spoken word in bold.</span></span></figcaption>
       </figure>
       <figure class="look-card">
-        <img src="assets/img/app/en/look-fade.webp" data-shot="look-fade" alt="Fade caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Fade</strong><span class="look-pro">Pro</span><span class="look-line"><span data-lang="en">What has been said fades as the line goes on.</span><span data-lang="es" lang="es">Lo ya dicho se va apagando.</span></span></figcaption>
+        <img src="assets/img/app/en/look-fade.webp" alt="Fade caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Fade</strong><span class="look-pro">Pro</span><span class="look-line"><span>What has been said fades as the line goes on.</span></span></figcaption>
       </figure>
       <figure class="look-card">
-        <img src="assets/img/app/en/look-glow.webp" data-shot="look-glow" alt="Glow caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Glow</strong><span class="look-pro">Pro</span><span class="look-line"><span data-lang="en">Lime letters with their own neon halo.</span><span data-lang="es" lang="es">Letras lima con su propio halo de neón.</span></span></figcaption>
+        <img src="assets/img/app/en/look-glow.webp" alt="Glow caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Glow</strong><span class="look-pro">Pro</span><span class="look-line"><span>Lime letters with their own neon halo.</span></span></figcaption>
       </figure>
       <figure class="look-card">
-        <img src="assets/img/app/en/look-meme.webp" data-shot="look-meme" alt="Meme caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Meme</strong><span class="look-pro">Pro</span><span class="look-line"><span data-lang="en">Impact, white and black, at the top of the frame.</span><span data-lang="es" lang="es">Impact, blanco y negro, arriba del cuadro.</span></span></figcaption>
+        <img src="assets/img/app/en/look-meme.webp" alt="Meme caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Meme</strong><span class="look-pro">Pro</span><span class="look-line"><span>Impact, white and black, at the top of the frame.</span></span></figcaption>
       </figure>
       <figure class="look-card">
-        <img src="assets/img/app/en/look-native.webp" data-shot="look-native" alt="Native caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Native</strong><span class="look-free"><span data-lang="en">Free</span><span data-lang="es" lang="es">Gratis</span></span><span class="look-line"><span data-lang="en">Minimal, one accent colour on the keyword.</span><span data-lang="es" lang="es">Minimalista, un solo color en la palabra clave.</span></span></figcaption>
+        <img src="assets/img/app/en/look-native.webp" alt="Native caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Native</strong><span class="look-free"><span>Free</span></span><span class="look-line"><span>Minimal, one accent colour on the keyword.</span></span></figcaption>
       </figure>
       <figure class="look-card">
-        <img src="assets/img/app/en/look-classic.webp" data-shot="look-classic" alt="Classic caption style in Charlatan" width="480" height="600" loading="lazy">
-        <figcaption><strong>Classic</strong><span class="look-free"><span data-lang="en">Free</span><span data-lang="es" lang="es">Gratis</span></span><span class="look-line"><span data-lang="en">White with a thin border, like the app's own.</span><span data-lang="es" lang="es">Blanco con borde fino, como el de la app.</span></span></figcaption>
+        <img src="assets/img/app/en/look-classic.webp" alt="Classic caption style in Charlatan" width="480" height="600" loading="lazy">
+        <figcaption><strong>Classic</strong><span class="look-free"><span>Free</span></span><span class="look-line"><span>White with a thin border, like the app's own.</span></span></figcaption>
       </figure>
     </div>
     <p class="center micro" style="margin-top: 26px">
-      <span data-lang="en">Plus Telop, Variety and Marugo for Japanese, Korean and Chinese. Rendered by the app, exactly as they export.</span>
-      <span data-lang="es" lang="es">Y además Telop, Variety y Marugo para japonés, coreano y chino. Dibujados por la app, tal como se exportan.</span>
+      <span>Plus Telop, Variety and Marugo for Japanese, Korean and Chinese. Rendered by the app, exactly as they export.</span>
+      
     </p>
   </div>
 </section>
@@ -290,78 +278,78 @@
 <section id="inside-the-app">
   <div class="container">
     <div class="section-head">
-      <span class="kicker"><span data-lang="en">Inside the app</span><span data-lang="es" lang="es">La app por dentro</span></span>
-      <h2><span data-lang="en">Every screen between a clip and a post</span><span data-lang="es" lang="es">Cada pantalla entre un clip y un posteo</span></h2>
-      <p><span data-lang="en">Most people watch with the sound off. What separates a clip that looks made from one that looks posted is the type on it.</span><span data-lang="es" lang="es">La mayoría mira sin sonido. Lo que separa un clip que parece hecho de uno que parece subido es la tipografía que lleva encima.</span></p>
+      <span class="kicker"><span>Inside the app</span></span>
+      <h2><span>Every screen between a clip and a post</span></h2>
+      <p><span>Most people watch with the sound off. What separates a clip that looks made from one that looks posted is the type on it.</span></p>
     </div>
 
     <div class="feature-row">
-      <div class="shot"><img src="assets/img/app/en/transcribing.webp" data-shot="transcribing" alt="Charlatan transcribing a video's audio on an iPhone" width="640" height="1328" loading="lazy"></div>
+      <div class="shot"><img src="assets/img/app/en/transcribing.webp" alt="Charlatan transcribing a video's audio on an iPhone" width="640" height="1328" loading="lazy"></div>
       <div class="feature-copy">
-        <span class="feature-kicker"><span data-lang="en">Speech to subtitles</span><span data-lang="es" lang="es">De voz a subtítulos</span></span>
-        <h3><span data-lang="en">It writes every word you say</span><span data-lang="es" lang="es">Escribe cada palabra que decís</span></h3>
-        <p><span data-lang="en">Pick a clip or record one in the app. Charlatan transcribes the audio and times each word to the moment you said it — on the iPhone, with nothing uploaded anywhere.</span><span data-lang="es" lang="es">Elegí un clip o grabá uno en la app. Charlatan transcribe el audio y sincroniza cada palabra con el momento en que la dijiste — en el iPhone, sin subir nada a ningún lado.</span></p>
-        <a class="feature-link" href="guides/how-to-add-subtitles-to-video-on-iphone/"><span data-lang="en">How to add subtitles on iPhone →</span><span data-lang="es" lang="es">Cómo poner subtítulos en iPhone →</span></a>
+        <span class="feature-kicker"><span>Speech to subtitles</span></span>
+        <h3><span>It writes every word you say</span></h3>
+        <p><span>Pick a clip or record one in the app. Charlatan transcribes the audio and times each word to the moment you said it — on the iPhone, with nothing uploaded anywhere.</span></p>
+        <a class="feature-link" href="guides/how-to-add-subtitles-to-video-on-iphone/"><span>How to add subtitles on iPhone →</span></a>
       </div>
     </div>
 
     <div class="feature-row flip">
-      <div class="shot"><img src="assets/img/app/en/fonts.webp" data-shot="fonts" alt="The Charlatan font picker with subtitle fonts grouped by style" width="640" height="1328" loading="lazy"></div>
+      <div class="shot"><img src="assets/img/app/en/fonts.webp" alt="The Charlatan font picker with subtitle fonts grouped by style" width="640" height="1328" loading="lazy"></div>
       <div class="feature-copy">
-        <span class="feature-kicker"><span data-lang="en">99 fonts</span><span data-lang="es" lang="es">99 tipografías</span></span>
-        <h3><span data-lang="en">The font is the whole point</span><span data-lang="es" lang="es">La tipografía es el punto</span></h3>
-        <p><span data-lang="en">Bold, aesthetic, cute, cursive, pixel, gothic — grouped the way people search for them, with Montserrat, TikTok Sans, Anton and Bangers inside. Every caption app gives you a default; Charlatan gives you a catalogue, previewed on your own video before you choose. Japanese, Korean and Chinese get their own heavy fonts.</span><span data-lang="es" lang="es">Bold, aesthetic, cute, cursiva, pixel, góticas — agrupadas como las busca la gente, con Montserrat, TikTok Sans, Anton y Bangers adentro. Toda app de subtítulos te da una por defecto; Charlatan te da un catálogo, que probás sobre tu propio video antes de elegir. El japonés, el coreano y el chino tienen sus propias letras gruesas.</span></p>
-        <a class="feature-link" href="guides/best-fonts-for-subtitles/"><span data-lang="en">The best fonts for subtitles →</span><span data-lang="es" lang="es">Las mejores tipografías para subtítulos →</span></a>
+        <span class="feature-kicker"><span>99 fonts</span></span>
+        <h3><span>The font is the whole point</span></h3>
+        <p><span>Bold, aesthetic, cute, cursive, pixel, gothic — grouped the way people search for them, with Montserrat, TikTok Sans, Anton and Bangers inside. Every caption app gives you a default; Charlatan gives you a catalogue, previewed on your own video before you choose. Japanese, Korean and Chinese get their own heavy fonts.</span></p>
+        <a class="feature-link" href="guides/best-fonts-for-subtitles/"><span>The best fonts for subtitles →</span></a>
       </div>
     </div>
 
     <div class="feature-row">
-      <div class="shot"><img src="assets/img/app/en/karaoke.webp" data-shot="karaoke" alt="Styling a word-by-word karaoke caption in the Charlatan editor" width="640" height="1328" loading="lazy"></div>
+      <div class="shot"><img src="assets/img/app/en/karaoke.webp" alt="Styling a word-by-word karaoke caption in the Charlatan editor" width="640" height="1328" loading="lazy"></div>
       <div class="feature-copy">
-        <span class="feature-kicker"><span data-lang="en">Styles &amp; karaoke</span><span data-lang="es" lang="es">Estilos y karaoke</span></span>
-        <h3><span data-lang="en">Word by word, right on time</span><span data-lang="es" lang="es">Palabra por palabra, en el momento justo</span></h3>
-        <p><span data-lang="en">Tap a ready-made style — Hustle, Beast, Karaoke, Pill and more — or build your own. Each word lights up exactly when it is spoken, the keyword of every line gets its own colour, words can pop or rise in, and what has been said can fade. Then drag the caption where you want it.</span><span data-lang="es" lang="es">Tocá un estilo listo — Hustle, Beast, Karaoke, Pill y más — o armá el tuyo. Cada palabra se enciende justo cuando se dice, la palabra clave de cada frase tiene su propio color, las palabras pueden saltar o subir, y lo ya dicho se puede apagar. Después arrastrás el subtítulo adonde quieras.</span></p>
-        <a class="feature-link" href="guides/word-by-word-karaoke-captions/"><span data-lang="en">How karaoke captions work →</span><span data-lang="es" lang="es">Cómo funcionan los subtítulos karaoke →</span></a>
+        <span class="feature-kicker"><span>Styles &amp; karaoke</span></span>
+        <h3><span>Word by word, right on time</span></h3>
+        <p><span>Tap a ready-made style — Hustle, Beast, Karaoke, Pill and more — or build your own. Each word lights up exactly when it is spoken, the keyword of every line gets its own colour, words can pop or rise in, and what has been said can fade. Then drag the caption where you want it.</span></p>
+        <a class="feature-link" href="guides/word-by-word-karaoke-captions/"><span>How karaoke captions work →</span></a>
       </div>
     </div>
 
     <div class="feature-row flip">
-      <div class="shot"><img src="assets/img/app/en/pace.webp" data-shot="pace" alt="Charlatan home screen with the word, punch and phrase subtitle paces" width="640" height="1328" loading="lazy"></div>
+      <div class="shot"><img src="assets/img/app/en/pace.webp" alt="Charlatan home screen with the word, punch and phrase subtitle paces" width="640" height="1328" loading="lazy"></div>
       <div class="feature-copy">
-        <span class="feature-kicker"><span data-lang="en">Three paces</span><span data-lang="es" lang="es">Tres ritmos</span></span>
-        <h3><span data-lang="en">Word. Punch. Phrase.</span><span data-lang="es" lang="es">Palabra. Punch. Frase.</span></h3>
-        <p><span data-lang="en">One word at a time for the classic short-form look, bursts of two or three for rhythm, or full sentences that are easier to read. Switch between them and the timing recalculates itself.</span><span data-lang="es" lang="es">Una palabra a la vez para el look clásico del formato corto, golpes de dos o tres para el ritmo, o frases completas más fáciles de leer. Cambiás entre ellos y el timing se recalcula solo.</span></p>
-        <a class="feature-link" href="guides/tiktok-caption-font/"><span data-lang="en">The TikTok caption look →</span><span data-lang="es" lang="es">El look de subtítulos de TikTok →</span></a>
+        <span class="feature-kicker"><span>Three paces</span></span>
+        <h3><span>Word. Punch. Phrase.</span></h3>
+        <p><span>One word at a time for the classic short-form look, bursts of two or three for rhythm, or full sentences that are easier to read. Switch between them and the timing recalculates itself.</span></p>
+        <a class="feature-link" href="guides/tiktok-caption-font/"><span>The TikTok caption look →</span></a>
       </div>
     </div>
 
     <div class="feature-row">
-      <div class="shot"><img src="assets/img/app/en/translate.webp" data-shot="translate" alt="Editing subtitle text and timing, with Translate, in the Charlatan editor" width="640" height="1328" loading="lazy"></div>
+      <div class="shot"><img src="assets/img/app/en/translate.webp" alt="Editing subtitle text and timing, with Translate, in the Charlatan editor" width="640" height="1328" loading="lazy"></div>
       <div class="feature-copy">
-        <span class="feature-kicker"><span data-lang="en">Translation</span><span data-lang="es" lang="es">Traducción</span></span>
-        <h3><span data-lang="en">Record in one language, post in another</span><span data-lang="es" lang="es">Grabá en un idioma, publicá en otro</span></h3>
-        <p><span data-lang="en">The same clip can go out with subtitles in twenty languages. The footage cost you once — every extra language after that is a couple of minutes.</span><span data-lang="es" lang="es">El mismo clip puede salir con subtítulos en veinte idiomas. El material te costó una vez — cada idioma extra son un par de minutos.</span></p>
-        <a class="feature-link" href="guides/translate-video-subtitles/"><span data-lang="en">How to translate subtitles →</span><span data-lang="es" lang="es">Cómo traducir subtítulos →</span></a>
+        <span class="feature-kicker"><span>Translation</span></span>
+        <h3><span>Record in one language, post in another</span></h3>
+        <p><span>The same clip can go out with subtitles in twenty languages. The footage cost you once — every extra language after that is a couple of minutes.</span></p>
+        <a class="feature-link" href="guides/translate-video-subtitles/"><span>How to translate subtitles →</span></a>
       </div>
     </div>
 
     <div class="feature-row flip">
-      <div class="shot"><img src="assets/img/app/en/on-device.webp" data-shot="on-device" alt="Choosing the spoken language, transcribed on the iPhone itself" width="640" height="1328" loading="lazy"></div>
+      <div class="shot"><img src="assets/img/app/en/on-device.webp" alt="Choosing the spoken language, transcribed on the iPhone itself" width="640" height="1328" loading="lazy"></div>
       <div class="feature-copy">
-        <span class="feature-kicker"><span data-lang="en">On-device</span><span data-lang="es" lang="es">En tu teléfono</span></span>
-        <h3><span data-lang="en">No account. No upload. No internet.</span><span data-lang="es" lang="es">Sin cuenta. Sin subida. Sin internet.</span></h3>
-        <p><span data-lang="en">The speech recognition runs on the iPhone itself, so your audio never leaves the phone. There is nothing to sign up for, and it works on a plane.</span><span data-lang="es" lang="es">El reconocimiento de voz corre en el iPhone, así que tu audio nunca sale del teléfono. No hay nada que registrar, y funciona en un avión.</span></p>
-        <a class="feature-link" href="guides/subtitles-without-internet/"><span data-lang="en">Subtitles without internet →</span><span data-lang="es" lang="es">Subtítulos sin internet →</span></a>
+        <span class="feature-kicker"><span>On-device</span></span>
+        <h3><span>No account. No upload. No internet.</span></h3>
+        <p><span>The speech recognition runs on the iPhone itself, so your audio never leaves the phone. There is nothing to sign up for, and it works on a plane.</span></p>
+        <a class="feature-link" href="guides/subtitles-without-internet/"><span>Subtitles without internet →</span></a>
       </div>
     </div>
 
     <div class="feature-row">
-      <div class="shot"><img src="assets/img/app/en/reframe.webp" data-shot="reframe" alt="Reframing a captioned video to 1:1 before exporting it from Charlatan" width="640" height="1328" loading="lazy"></div>
+      <div class="shot"><img src="assets/img/app/en/reframe.webp" alt="Reframing a captioned video to 1:1 before exporting it from Charlatan" width="640" height="1328" loading="lazy"></div>
       <div class="feature-copy">
-        <span class="feature-kicker"><span data-lang="en">Burned-in export</span><span data-lang="es" lang="es">Exportación quemada</span></span>
-        <h3><span data-lang="en">Captions that survive every platform</span><span data-lang="es" lang="es">Subtítulos que sobreviven a toda plataforma</span></h3>
-        <p><span data-lang="en">The captions are rendered into the video frames themselves — no SRT file to attach or lose. Export 9:16, 1:1, 16:9 or the original framing, and it looks identical everywhere you post it.</span><span data-lang="es" lang="es">Los subtítulos quedan dibujados en los cuadros del video — sin archivo SRT que adjuntar ni perder. Exportá 9:16, 1:1, 16:9 o el encuadre original, y se ve igual en todos lados.</span></p>
-        <a class="feature-link" href="guides/burn-subtitles-into-video/"><span data-lang="en">Burned-in vs SRT, explained →</span><span data-lang="es" lang="es">Quemados contra SRT, explicado →</span></a>
+        <span class="feature-kicker"><span>Burned-in export</span></span>
+        <h3><span>Captions that survive every platform</span></h3>
+        <p><span>The captions are rendered into the video frames themselves — no SRT file to attach or lose. Export 9:16, 1:1, 16:9 or the original framing, and it looks identical everywhere you post it.</span></p>
+        <a class="feature-link" href="guides/burn-subtitles-into-video/"><span>Burned-in vs SRT, explained →</span></a>
       </div>
     </div>
   </div>
@@ -371,11 +359,11 @@
 <section id="ipad">
   <div class="container">
     <div class="section-head">
-      <span class="kicker"><span data-lang="en">Now on iPad</span><span data-lang="es" lang="es">Ahora en iPad</span></span>
-      <h2><span data-lang="en">The big screen, side by side</span><span data-lang="es" lang="es">La pantalla grande, lado a lado</span></h2>
-      <p><span data-lang="en">The video on one side, the fonts and styles on the other, and a line you drag to give either one more room. Same app, same purchase.</span><span data-lang="es" lang="es">El video de un lado, las tipografías y los estilos del otro, y una línea que arrastrás para darle más lugar a cualquiera de los dos. La misma app, la misma compra.</span></p>
+      <span class="kicker"><span>Now on iPad</span></span>
+      <h2><span>The big screen, side by side</span></h2>
+      <p><span>The video on one side, the fonts and styles on the other, and a line you drag to give either one more room. Same app, same purchase.</span></p>
     </div>
-    <div class="ipad-shot"><img src="assets/img/app/en/ipad.webp" data-shot="ipad" alt="Charlatan on iPad: the video and the subtitle editor side by side" width="1000" height="1311" loading="lazy"></div>
+    <div class="ipad-shot"><img src="assets/img/app/en/ipad.webp" alt="Charlatan on iPad: the video and the subtitle editor side by side" width="1000" height="1311" loading="lazy"></div>
   </div>
 </section>
 
@@ -383,21 +371,21 @@
 <section class="section-panel" id="fonts">
   <div class="container">
     <div class="section-head">
-      <span class="kicker"><span data-lang="en">The catalogue</span><span data-lang="es" lang="es">El catálogo</span></span>
-      <h2><span data-lang="en">One caption, 99 personalities</span><span data-lang="es" lang="es">Un subtítulo, 99 personalidades</span></h2>
-      <p><span data-lang="en">The same word changes character with every typeface — which is how your videos start looking like a channel instead of an app.</span><span data-lang="es" lang="es">La misma palabra cambia de carácter con cada tipografía — así es como tus videos empiezan a parecer un canal y no una app.</span></p>
+      <span class="kicker"><span>The catalogue</span></span>
+      <h2><span>One caption, 99 personalities</span></h2>
+      <p><span>The same word changes character with every typeface — which is how your videos start looking like a channel instead of an app.</span></p>
     </div>
     <div class="fontstrip">
-      <div class="fontchip f-impact"><span data-lang="en">HELLO</span><span data-lang="es" lang="es">HOLA</span><span>Impact</span></div>
-      <div class="fontchip f-cond"><span data-lang="en">HELLO</span><span data-lang="es" lang="es">HOLA</span><span><span data-lang="en">Condensed</span><span data-lang="es" lang="es">Condensada</span></span></div>
-      <div class="fontchip f-serif"><span data-lang="en">Hello</span><span data-lang="es" lang="es">Hola</span><span>Serif</span></div>
-      <div class="fontchip f-hand"><span data-lang="en">Hello</span><span data-lang="es" lang="es">Hola</span><span><span data-lang="en">Handwritten</span><span data-lang="es" lang="es">Manuscrita</span></span></div>
-      <div class="fontchip f-chalk"><span data-lang="en">Hello</span><span data-lang="es" lang="es">Hola</span><span><span data-lang="en">Chalk</span><span data-lang="es" lang="es">Tiza</span></span></div>
-      <div class="fontchip f-mono"><span data-lang="en">HELLO</span><span data-lang="es" lang="es">HOLA</span><span>Mono</span></div>
+      <div class="fontchip f-impact"><span>HELLO</span><span>Impact</span></div>
+      <div class="fontchip f-cond"><span>HELLO</span><span><span>Condensed</span></span></div>
+      <div class="fontchip f-serif"><span>Hello</span><span>Serif</span></div>
+      <div class="fontchip f-hand"><span>Hello</span><span><span>Handwritten</span></span></div>
+      <div class="fontchip f-chalk"><span>Hello</span><span><span>Chalk</span></span></div>
+      <div class="fontchip f-mono"><span>HELLO</span><span>Mono</span></div>
     </div>
     <p class="center micro" style="margin-top: 26px">
-      <span data-lang="en">A rough taste rendered in your browser — the real set is 99 typefaces inside the app.</span>
-      <span data-lang="es" lang="es">Una muestra aproximada hecha en tu navegador — el set real son 99 tipografías dentro de la app.</span>
+      <span>A rough taste rendered in your browser — the real set is 99 typefaces inside the app.</span>
+      
     </p>
   </div>
 </section>
@@ -406,30 +394,30 @@
 <section id="how-it-works">
   <div class="container">
     <div class="section-head">
-      <span class="kicker"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></span>
-      <h2><span data-lang="en">Four steps. About two minutes.</span><span data-lang="es" lang="es">Cuatro pasos. Unos dos minutos.</span></h2>
-      <p><span data-lang="en">No computer, no timeline editing, no typing out what you already said.</span><span data-lang="es" lang="es">Sin computadora, sin editar líneas de tiempo, sin tipear lo que ya dijiste.</span></p>
+      <span class="kicker"><span>How it works</span></span>
+      <h2><span>Four steps. About two minutes.</span></h2>
+      <p><span>No computer, no timeline editing, no typing out what you already said.</span></p>
     </div>
     <div class="steps">
       <div class="step">
         <span class="num">1</span>
-        <h3><span data-lang="en">Pick or record</span><span data-lang="es" lang="es">Elegí o grabá</span></h3>
-        <p><span data-lang="en">Take a clip from your library, or shoot one straight into the app.</span><span data-lang="es" lang="es">Tomá un clip de tu galería, o filmá uno ahí mismo en la app.</span></p>
+        <h3><span>Pick or record</span></h3>
+        <p><span>Take a clip from your library, or shoot one straight into the app.</span></p>
       </div>
       <div class="step">
         <span class="num">2</span>
-        <h3><span data-lang="en">It transcribes</span><span data-lang="es" lang="es">Transcribe solo</span></h3>
-        <p><span data-lang="en">Every word, timed to when you said it. On the phone, offline.</span><span data-lang="es" lang="es">Cada palabra, sincronizada con cuando la dijiste. En el teléfono, sin internet.</span></p>
+        <h3><span>It transcribes</span></h3>
+        <p><span>Every word, timed to when you said it. On the phone, offline.</span></p>
       </div>
       <div class="step">
         <span class="num">3</span>
-        <h3><span data-lang="en">Make it yours</span><span data-lang="es" lang="es">Hacelo tuyo</span></h3>
-        <p><span data-lang="en">Font, pace, colour, outline, position. Save the style and reuse it.</span><span data-lang="es" lang="es">Tipografía, ritmo, color, contorno, posición. Guardá el estilo y reusalo.</span></p>
+        <h3><span>Make it yours</span></h3>
+        <p><span>Font, pace, colour, outline, position. Save the style and reuse it.</span></p>
       </div>
       <div class="step">
         <span class="num">4</span>
-        <h3><span data-lang="en">Export</span><span data-lang="es" lang="es">Exportá</span></h3>
-        <p><span data-lang="en">Burned into the file, ready to post anywhere. That's it.</span><span data-lang="es" lang="es">Quemado en el archivo, listo para publicar donde sea. Eso es todo.</span></p>
+        <h3><span>Export</span></h3>
+        <p><span>Burned into the file, ready to post anywhere. That's it.</span></p>
       </div>
     </div>
   </div>
@@ -439,37 +427,37 @@
 <section class="section-panel" id="pricing">
   <div class="container">
     <div class="section-head">
-      <span class="kicker"><span data-lang="en">Pricing</span><span data-lang="es" lang="es">Precios</span></span>
-      <h2><span data-lang="en">Free to start. Pro when it earns it.</span><span data-lang="es" lang="es">Gratis para empezar. Pro cuando se lo gane.</span></h2>
+      <span class="kicker"><span>Pricing</span></span>
+      <h2><span>Free to start. Pro when it earns it.</span></h2>
     </div>
     <div class="price-grid">
       <div class="price">
-        <h3><span data-lang="en">Free</span><span data-lang="es" lang="es">Gratis</span></h3>
+        <h3><span>Free</span></h3>
         <div class="amount"><span class="js-p0">$0</span></div>
         <ul>
-          <li><span class="tick">✓</span><span data-lang="en">Automatic transcription</span><span data-lang="es" lang="es">Transcripción automática</span></li>
-          <li><span class="tick">✓</span><span data-lang="en">17 fonts</span><span data-lang="es" lang="es">17 tipografías</span></li>
-          <li><span class="tick">✓</span><span data-lang="en">The full style editor</span><span data-lang="es" lang="es">El editor de estilo completo</span></li>
-          <li><span class="tick">✓</span><span data-lang="en">Export with a small watermark</span><span data-lang="es" lang="es">Exportación con marca de agua chica</span></li>
+          <li><span class="tick">✓</span><span>Automatic transcription</span></li>
+          <li><span class="tick">✓</span><span>17 fonts</span></li>
+          <li><span class="tick">✓</span><span>The full style editor</span></li>
+          <li><span class="tick">✓</span><span>Export with a small watermark</span></li>
         </ul>
       </div>
       <div class="price featured">
-        <span class="tag"><span data-lang="en">Everything unlocked</span><span data-lang="es" lang="es">Todo desbloqueado</span></span>
+        <span class="tag"><span>Everything unlocked</span></span>
         <h3>Charlatan Pro</h3>
-        <div class="amount"><span class="js-py">$9.99</span><small> <span data-lang="en">/ year</span><span data-lang="es" lang="es">/ año</span></small></div>
+        <div class="amount"><span class="js-py">$9.99</span><small> <span>/ year</span></small></div>
         <ul>
-          <li><span class="tick">✓</span><span data-lang="en">All 99 fonts</span><span data-lang="es" lang="es">Las 99 tipografías</span></li>
-          <li><span class="tick">✓</span><span data-lang="en">Karaoke word-by-word highlight</span><span data-lang="es" lang="es">Resaltado karaoke palabra por palabra</span></li>
-          <li><span class="tick">✓</span><span data-lang="en">Translation into 20 languages</span><span data-lang="es" lang="es">Traducción a 20 idiomas</span></li>
-          <li><span class="tick">✓</span><span data-lang="en">Reframe to 9:16, 1:1, 16:9</span><span data-lang="es" lang="es">Reencuadre a 9:16, 1:1, 16:9</span></li>
-          <li><span class="tick">✓</span><span data-lang="en">Saved styles · any video length</span><span data-lang="es" lang="es">Estilos guardados · videos de cualquier duración</span></li>
-          <li><span class="tick">✓</span><span data-lang="en">No watermark</span><span data-lang="es" lang="es">Sin marca de agua</span></li>
+          <li><span class="tick">✓</span><span>All 99 fonts</span></li>
+          <li><span class="tick">✓</span><span>Karaoke word-by-word highlight</span></li>
+          <li><span class="tick">✓</span><span>Translation into 20 languages</span></li>
+          <li><span class="tick">✓</span><span>Reframe to 9:16, 1:1, 16:9</span></li>
+          <li><span class="tick">✓</span><span>Saved styles · any video length</span></li>
+          <li><span class="tick">✓</span><span>No watermark</span></li>
         </ul>
       </div>
     </div>
     <p class="center micro" style="margin-top: 28px">
-      <span data-lang="en">Also <span class="js-pm">$1.99</span> a month, or <span class="js-pl">$19.99</span> once — forever. Manage or cancel any time in Settings. <span class="js-pwhere"></span></span>
-      <span data-lang="es" lang="es">También <span class="js-pm">$1.99</span> por mes, o <span class="js-pl">$19.99</span> una sola vez — para siempre. Se gestiona o cancela cuando quieras desde Ajustes. <span class="js-pwhere"></span></span>
+      <span>Also <span class="js-pm">$1.99</span> a month, or <span class="js-pl">$19.99</span> once — forever. Manage or cancel any time in Settings. <span class="js-pwhere"></span></span>
+      
     </p>
   </div>
 </section>
@@ -478,50 +466,50 @@
 <section id="guides">
   <div class="container">
     <div class="section-head">
-      <span class="kicker"><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></span>
-      <h2><span data-lang="en">How to get a specific look</span><span data-lang="es" lang="es">Cómo lograr un look concreto</span></h2>
-      <p><span data-lang="en">For a specific platform, step by step — the question first, the app second.</span><span data-lang="es" lang="es">Para una plataforma concreta, paso a paso — primero la pregunta, después la app.</span></p>
+      <span class="kicker"><span>Guides</span></span>
+      <h2><span>How to get a specific look</span></h2>
+      <p><span>For a specific platform, step by step — the question first, the app second.</span></p>
     </div>
     <div class="guide-grid">
       <a class="guide-card" href="guides/how-to-add-subtitles-to-video-on-iphone/">
         <span class="tag">iPhone</span>
-        <h3><span data-lang="en">How to add subtitles to a video on iPhone</span><span data-lang="es" lang="es">Cómo poner subtítulos a un video en iPhone</span></h3>
-        <p><span data-lang="en">The whole thing without a computer, in about two minutes.</span><span data-lang="es" lang="es">Todo el proceso sin computadora, en unos dos minutos.</span></p>
-        <span class="read"><span data-lang="en">Read the guide</span><span data-lang="es" lang="es">Leer la guía</span></span>
+        <h3><span>How to add subtitles to a video on iPhone</span></h3>
+        <p><span>The whole thing without a computer, in about two minutes.</span></p>
+        <span class="read"><span>Read the guide</span></span>
       </a>
       <a class="guide-card" href="guides/best-fonts-for-subtitles/">
-        <span class="tag"><span data-lang="en">Fonts</span><span data-lang="es" lang="es">Tipografías</span></span>
-        <h3><span data-lang="en">The best fonts for subtitles</span><span data-lang="es" lang="es">Las mejores tipografías para subtítulos</span></h3>
-        <p><span data-lang="en">What stays readable on a phone, and why weight beats style.</span><span data-lang="es" lang="es">Qué se sigue leyendo en un teléfono, y por qué el peso gana al estilo.</span></p>
-        <span class="read"><span data-lang="en">Read the guide</span><span data-lang="es" lang="es">Leer la guía</span></span>
+        <span class="tag"><span>Fonts</span></span>
+        <h3><span>The best fonts for subtitles</span></h3>
+        <p><span>What stays readable on a phone, and why weight beats style.</span></p>
+        <span class="read"><span>Read the guide</span></span>
       </a>
       <a class="guide-card" href="guides/tiktok-caption-font/">
         <span class="tag">TikTok</span>
-        <h3><span data-lang="en">The TikTok caption font</span><span data-lang="es" lang="es">La tipografía de subtítulos de TikTok</span></h3>
-        <p><span data-lang="en">What top creators actually use, and how to get that look.</span><span data-lang="es" lang="es">Qué usan de verdad los creadores grandes, y cómo lograr ese look.</span></p>
-        <span class="read"><span data-lang="en">Read the guide</span><span data-lang="es" lang="es">Leer la guía</span></span>
+        <h3><span>The TikTok caption font</span></h3>
+        <p><span>What top creators actually use, and how to get that look.</span></p>
+        <span class="read"><span>Read the guide</span></span>
       </a>
       <a class="guide-card" href="guides/word-by-word-karaoke-captions/">
         <span class="tag">Karaoke</span>
-        <h3><span data-lang="en">Word-by-word karaoke captions</span><span data-lang="es" lang="es">Subtítulos karaoke palabra por palabra</span></h3>
-        <p><span data-lang="en">The style that keeps the viewer's eye moving, and how to set it up.</span><span data-lang="es" lang="es">El estilo que mantiene el ojo en movimiento, y cómo configurarlo.</span></p>
-        <span class="read"><span data-lang="en">Read the guide</span><span data-lang="es" lang="es">Leer la guía</span></span>
+        <h3><span>Word-by-word karaoke captions</span></h3>
+        <p><span>The style that keeps the viewer's eye moving, and how to set it up.</span></p>
+        <span class="read"><span>Read the guide</span></span>
       </a>
       <a class="guide-card" href="guides/add-captions-to-instagram-reels/">
         <span class="tag">Reels</span>
-        <h3><span data-lang="en">Add captions to Instagram Reels</span><span data-lang="es" lang="es">Poner subtítulos a Reels de Instagram</span></h3>
-        <p><span data-lang="en">Why burned-in captions beat the built-in ones, and the right export size.</span><span data-lang="es" lang="es">Por qué los quemados ganan a los nativos, y el tamaño correcto.</span></p>
-        <span class="read"><span data-lang="en">Read the guide</span><span data-lang="es" lang="es">Leer la guía</span></span>
+        <h3><span>Add captions to Instagram Reels</span></h3>
+        <p><span>Why burned-in captions beat the built-in ones, and the right export size.</span></p>
+        <span class="read"><span>Read the guide</span></span>
       </a>
       <a class="guide-card" href="guides/add-subtitles-to-youtube-shorts/">
         <span class="tag">Shorts</span>
-        <h3><span data-lang="en">Add subtitles to YouTube Shorts</span><span data-lang="es" lang="es">Poner subtítulos a YouTube Shorts</span></h3>
-        <p><span data-lang="en">Where to place the text so the interface doesn't cover it.</span><span data-lang="es" lang="es">Dónde poner el texto para que la interfaz no lo tape.</span></p>
-        <span class="read"><span data-lang="en">Read the guide</span><span data-lang="es" lang="es">Leer la guía</span></span>
+        <h3><span>Add subtitles to YouTube Shorts</span></h3>
+        <p><span>Where to place the text so the interface doesn't cover it.</span></p>
+        <span class="read"><span>Read the guide</span></span>
       </a>
     </div>
     <p class="center mt-40">
-      <a class="btn btn-outline" href="guides/"><span data-lang="en">View all 14 guides</span><span data-lang="es" lang="es">Ver las 14 guías</span></a>
+      <a class="btn btn-outline" href="guides/"><span>View all 14 guides</span></a>
     </p>
   </div>
 </section>
@@ -531,87 +519,87 @@
   <div class="container">
     <div class="section-head">
       <span class="kicker">FAQ</span>
-      <h2><span data-lang="en">Frequently asked questions</span><span data-lang="es" lang="es">Preguntas frecuentes</span></h2>
+      <h2><span>Frequently asked questions</span></h2>
     </div>
     <div class="faq-list">
 
       <details class="faq-item">
-        <summary><span data-lang="en">How do I add subtitles to a video on my iPhone?</span><span data-lang="es" lang="es">¿Cómo pongo subtítulos a un video en mi iPhone?</span></summary>
+        <summary><span>How do I add subtitles to a video on my iPhone?</span></summary>
         <div class="faq-body">
-          <p><span data-lang="en">Open Charlatan, pick a clip from your library or record one in the app, and it transcribes the audio on the device. Choose a font and a pace, drag the subtitle where you want it, and export. The captions are burned into the video file, so they show up on every platform.</span><span data-lang="es" lang="es">Abrí Charlatan, elegí un clip de tu galería o grabá uno en la app, y transcribe el audio en el teléfono. Elegí una tipografía y un ritmo, arrastrá el subtítulo donde quieras y exportá. Los subtítulos quedan quemados en el archivo, así que se ven en todas las plataformas.</span></p>
-          <p><a href="guides/how-to-add-subtitles-to-video-on-iphone/"><span data-lang="en">Learn more</span><span data-lang="es" lang="es">Ver más</span></a></p>
+          <p><span>Open Charlatan, pick a clip from your library or record one in the app, and it transcribes the audio on the device. Choose a font and a pace, drag the subtitle where you want it, and export. The captions are burned into the video file, so they show up on every platform.</span></p>
+          <p><a href="guides/how-to-add-subtitles-to-video-on-iphone/"><span>Learn more</span></a></p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary><span data-lang="en">What is the best font for subtitles?</span><span data-lang="es" lang="es">¿Cuál es la mejor tipografía para subtítulos?</span></summary>
+        <summary><span>What is the best font for subtitles?</span></summary>
         <div class="faq-body">
-          <p><span data-lang="en">For video watched on a phone, a heavy condensed sans with a strong outline reads best — Impact, Bebas Neue, or a bold grotesque. Weight and contrast matter more than the typeface itself, because the caption has to survive a bright background and a small screen.</span><span data-lang="es" lang="es">Para video que se mira en el teléfono, lo que mejor se lee es una sans condensada pesada con contorno fuerte — Impact, Bebas Neue o una grotesca bold. El peso y el contraste importan más que la tipografía en sí, porque el subtítulo tiene que sobrevivir a un fondo brillante y a una pantalla chica.</span></p>
-          <p><a href="guides/best-fonts-for-subtitles/"><span data-lang="en">Learn more</span><span data-lang="es" lang="es">Ver más</span></a></p>
+          <p><span>For video watched on a phone, a heavy condensed sans with a strong outline reads best — Impact, Bebas Neue, or a bold grotesque. Weight and contrast matter more than the typeface itself, because the caption has to survive a bright background and a small screen.</span></p>
+          <p><a href="guides/best-fonts-for-subtitles/"><span>Learn more</span></a></p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary><span data-lang="en">Can I make word-by-word karaoke captions?</span><span data-lang="es" lang="es">¿Puedo hacer subtítulos karaoke palabra por palabra?</span></summary>
+        <summary><span>Can I make word-by-word karaoke captions?</span></summary>
         <div class="faq-body">
-          <p><span data-lang="en">Yes. Charlatan has three paces — one word at a time, short punches of two or three words, or full sentences — and a karaoke highlight that lights each word up at the exact moment it is spoken. That is the style most short-form creators use.</span><span data-lang="es" lang="es">Sí. Charlatan tiene tres ritmos — una palabra a la vez, golpes de dos o tres palabras, o frases completas — y un resaltado karaoke que enciende cada palabra justo cuando se dice. Es el estilo que usa la mayoría de los creadores de formato corto.</span></p>
-          <p><a href="guides/word-by-word-karaoke-captions/"><span data-lang="en">Learn more</span><span data-lang="es" lang="es">Ver más</span></a></p>
+          <p><span>Yes. Charlatan has three paces — one word at a time, short punches of two or three words, or full sentences — and a karaoke highlight that lights each word up at the exact moment it is spoken. That is the style most short-form creators use.</span></p>
+          <p><a href="guides/word-by-word-karaoke-captions/"><span>Learn more</span></a></p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary><span data-lang="en">Are the subtitles burned into the video or a separate file?</span><span data-lang="es" lang="es">¿Los subtítulos quedan quemados o en un archivo aparte?</span></summary>
+        <summary><span>Are the subtitles burned into the video or a separate file?</span></summary>
         <div class="faq-body">
-          <p><span data-lang="en">Burned in. Charlatan renders the captions into the exported frames, so they survive being uploaded anywhere and look identical on every device. There is no SRT file to attach or lose.</span><span data-lang="es" lang="es">Quemados. Charlatan dibuja los subtítulos dentro de los cuadros exportados, así que sobreviven a cualquier subida y se ven iguales en todos los dispositivos. No hay archivo SRT que adjuntar ni perder.</span></p>
-          <p><a href="guides/burn-subtitles-into-video/"><span data-lang="en">Learn more</span><span data-lang="es" lang="es">Ver más</span></a></p>
+          <p><span>Burned in. Charlatan renders the captions into the exported frames, so they survive being uploaded anywhere and look identical on every device. There is no SRT file to attach or lose.</span></p>
+          <p><a href="guides/burn-subtitles-into-video/"><span>Learn more</span></a></p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary><span data-lang="en">Does Charlatan work without internet?</span><span data-lang="es" lang="es">¿Charlatan funciona sin internet?</span></summary>
+        <summary><span>Does Charlatan work without internet?</span></summary>
         <div class="faq-body">
-          <p><span data-lang="en">Yes. The speech recognition runs on the iPhone itself, so transcription, styling and export all work with no connection. There is no account, no upload and no server — the audio never leaves your phone.</span><span data-lang="es" lang="es">Sí. El reconocimiento de voz corre en el iPhone, así que transcribir, dar estilo y exportar funcionan sin conexión. No hay cuenta, ni subida, ni servidor — el audio nunca sale de tu teléfono.</span></p>
-          <p><a href="guides/subtitles-without-internet/"><span data-lang="en">Learn more</span><span data-lang="es" lang="es">Ver más</span></a></p>
+          <p><span>Yes. The speech recognition runs on the iPhone itself, so transcription, styling and export all work with no connection. There is no account, no upload and no server — the audio never leaves your phone.</span></p>
+          <p><a href="guides/subtitles-without-internet/"><span>Learn more</span></a></p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary><span data-lang="en">Can I translate my subtitles into another language?</span><span data-lang="es" lang="es">¿Puedo traducir mis subtítulos a otro idioma?</span></summary>
+        <summary><span>Can I translate my subtitles into another language?</span></summary>
         <div class="faq-body">
-          <p><span data-lang="en">Yes. Record in one language and export the subtitles in another — twenty languages are available. You choose the audio language before transcribing, then translate the finished captions before export.</span><span data-lang="es" lang="es">Sí. Grabá en un idioma y exportá los subtítulos en otro — hay veinte idiomas disponibles. Elegís el idioma del audio antes de transcribir, y traducís los subtítulos listos antes de exportar.</span></p>
-          <p><a href="guides/translate-video-subtitles/"><span data-lang="en">Learn more</span><span data-lang="es" lang="es">Ver más</span></a></p>
+          <p><span>Yes. Record in one language and export the subtitles in another — twenty languages are available. You choose the audio language before transcribing, then translate the finished captions before export.</span></p>
+          <p><a href="guides/translate-video-subtitles/"><span>Learn more</span></a></p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary><span data-lang="en">Can I add captions to Instagram Reels and TikTok?</span><span data-lang="es" lang="es">¿Puedo poner subtítulos a Reels de Instagram y TikTok?</span></summary>
+        <summary><span>Can I add captions to Instagram Reels and TikTok?</span></summary>
         <div class="faq-body">
-          <p><span data-lang="en">Yes. Export at 9:16 for Reels, TikTok and Shorts, 1:1 for the feed, or 16:9 for wide. Because the captions are burned in, they stay exactly as you styled them instead of being replaced by each platform's own caption tool.</span><span data-lang="es" lang="es">Sí. Exportá 9:16 para Reels, TikTok y Shorts, 1:1 para el feed, o 16:9 para pantalla ancha. Como los subtítulos están quemados, quedan tal cual les diste estilo en lugar de que los reemplace la herramienta de cada plataforma.</span></p>
-          <p><a href="guides/add-captions-to-instagram-reels/"><span data-lang="en">Learn more</span><span data-lang="es" lang="es">Ver más</span></a></p>
+          <p><span>Yes. Export at 9:16 for Reels, TikTok and Shorts, 1:1 for the feed, or 16:9 for wide. Because the captions are burned in, they stay exactly as you styled them instead of being replaced by each platform's own caption tool.</span></p>
+          <p><a href="guides/add-captions-to-instagram-reels/"><span>Learn more</span></a></p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary><span data-lang="en">Is there a watermark on exported videos?</span><span data-lang="es" lang="es">¿Los videos exportados llevan marca de agua?</span></summary>
+        <summary><span>Is there a watermark on exported videos?</span></summary>
         <div class="faq-body">
-          <p><span data-lang="en">The free version adds a small Charlatan mark in the top-left corner. Charlatan Pro removes it. Nothing else about the export changes — same resolution, same quality.</span><span data-lang="es" lang="es">La versión gratis agrega una marca chica de Charlatan arriba a la izquierda. Charlatan Pro la saca. Nada más del export cambia — misma resolución, misma calidad.</span></p>
-          <p><a href="guides/captions-without-watermark/"><span data-lang="en">Learn more</span><span data-lang="es" lang="es">Ver más</span></a></p>
+          <p><span>The free version adds a small Charlatan mark in the top-left corner. Charlatan Pro removes it. Nothing else about the export changes — same resolution, same quality.</span></p>
+          <p><a href="guides/captions-without-watermark/"><span>Learn more</span></a></p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary><span data-lang="en">How many fonts does Charlatan have?</span><span data-lang="es" lang="es">¿Cuántas tipografías tiene Charlatan?</span></summary>
+        <summary><span>How many fonts does Charlatan have?</span></summary>
         <div class="faq-body">
-          <p><span data-lang="en">99, grouped the way people search for them — Bold, Aesthetic, Condensed, Cute, Cursive, Serif, Typewriter, Pixel, Comic, Gothic — and you preview each one on your own video before choosing. 17 are free; the rest come with Charlatan Pro.</span><span data-lang="es" lang="es">99, agrupadas como las busca la gente — Bold, Aesthetic, Condensadas, Cute, Cursiva, Serif, Máquina de escribir, Pixel, Cómic, Góticas — y probás cada una sobre tu propio video antes de elegir. 17 son gratis; el resto vienen con Charlatan Pro.</span></p>
-          <p><a href="guides/tiktok-caption-font/"><span data-lang="en">Learn more</span><span data-lang="es" lang="es">Ver más</span></a></p>
+          <p><span>99, grouped the way people search for them — Bold, Aesthetic, Condensed, Cute, Cursive, Serif, Typewriter, Pixel, Comic, Gothic — and you preview each one on your own video before choosing. 17 are free; the rest come with Charlatan Pro.</span></p>
+          <p><a href="guides/tiktok-caption-font/"><span>Learn more</span></a></p>
         </div>
       </details>
 
       <details class="faq-item">
-        <summary><span data-lang="en">Where should I put the subtitles in the frame?</span><span data-lang="es" lang="es">¿Dónde conviene poner los subtítulos en el cuadro?</span></summary>
+        <summary><span>Where should I put the subtitles in the frame?</span></summary>
         <div class="faq-body">
-          <p><span data-lang="en">Lower-middle third, above the platform's own interface. On Shorts and Reels the bottom fifth of the screen is covered by buttons and the caption text, so anything down there gets hidden. Charlatan lets you drag the subtitle anywhere and shows you exactly where it lands.</span><span data-lang="es" lang="es">En el tercio medio-bajo, arriba de la interfaz de la plataforma. En Shorts y Reels el quinto inferior queda tapado por los botones y el texto del posteo, así que todo lo que va ahí se pierde. Charlatan te deja arrastrar el subtítulo a donde quieras y te muestra exactamente dónde queda.</span></p>
-          <p><a href="guides/add-subtitles-to-youtube-shorts/"><span data-lang="en">Learn more</span><span data-lang="es" lang="es">Ver más</span></a></p>
+          <p><span>Lower-middle third, above the platform's own interface. On Shorts and Reels the bottom fifth of the screen is covered by buttons and the caption text, so anything down there gets hidden. Charlatan lets you drag the subtitle anywhere and shows you exactly where it lands.</span></p>
+          <p><a href="guides/add-subtitles-to-youtube-shorts/"><span>Learn more</span></a></p>
         </div>
       </details>
 
@@ -623,23 +611,23 @@
 <section class="cta">
   <div class="container">
     <blockquote>
-      <span data-lang="en">Your video is good.<br><span class="accent">Now make it look edited.</span></span>
-      <span data-lang="es" lang="es">Tu video está bien.<br><span class="accent">Ahora hacé que parezca editado.</span></span>
+      <span>Your video is good.<br><span class="accent">Now make it look edited.</span></span>
+      
     </blockquote>
     <p class="cta-sub">
-      <span data-lang="en">Pick a clip, let it write itself, choose the font. You'll see the difference on the way out.</span>
-      <span data-lang="es" lang="es">Elegí un clip, dejá que se escriba solo, elegí la tipografía. La diferencia la ves saliendo.</span>
+      <span>Pick a clip, let it write itself, choose the font. You'll see the difference on the way out.</span>
+      
     </p>
     <a class="appstore-badge js-appstore" href="#download" aria-label="Download on the App Store">
       <svg viewBox="0 0 384 512" aria-hidden="true"><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg>
       <span class="badge-text">
-        <small><span data-lang="en">Download on the</span><span data-lang="es" lang="es">Descargala en el</span></small>
+        <small><span>Download on the</span></small>
         <strong>App Store</strong>
       </span>
     </a>
     <p class="micro">
-      <span data-lang="en">Free to start · No account · Works offline</span>
-      <span data-lang="es" lang="es">Gratis para empezar · Sin cuenta · Funciona sin internet</span>
+      <span>Free to start · No account · Works offline</span>
+      
     </p>
   </div>
 </section>
@@ -656,38 +644,38 @@
           <span>Charla<span class="tan">tan</span></span>
         </a>
         <p>
-          <span data-lang="en">Automatic subtitles in any font you like, entirely on your iPhone. From the developer of <a class="inline" href="/guardianreader/">Guardian Reader</a>.</span>
-          <span data-lang="es" lang="es">Subtítulos automáticos con la tipografía que quieras, enteramente en tu iPhone. Del creador de <a class="inline" href="/guardianreader/">Guardian Reader</a>.</span>
+          <span>Automatic subtitles in any font you like, entirely on your iPhone. From the developer of <a class="inline" href="/guardianreader/">Guardian Reader</a>.</span>
+          
         </p>
         <p class="socials"><a href="https://www.instagram.com/charlatancaptions.app/" rel="noopener" aria-label="Instagram" class="social-link"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5"/><circle cx="12" cy="12" r="4.6"/><circle cx="17.4" cy="6.6" r="1.15" fill="currentColor" stroke="none"/></svg></a><a href="https://www.tiktok.com/@charlatan.app" rel="noopener" aria-label="TikTok" class="social-link"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.youtube.com/@CharlatanApp" rel="noopener" aria-label="YouTube" class="social-link"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 0 0 .5 6.19C0 8.07 0 12 0 12s0 3.93.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 0 0 2.12-2.14C24 15.93 24 12 24 12s0-3.93-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg></a></p>
       </div>
       <div>
         <h4>App</h4>
         <ul>
-          <li><a href="#download"><span data-lang="en">Download</span><span data-lang="es" lang="es">Descargar</span></a></li>
-          <li><a href="#inside-the-app"><span data-lang="en">Inside the app</span><span data-lang="es" lang="es">La app por dentro</span></a></li>
-          <li><a href="#how-it-works"><span data-lang="en">How it works</span><span data-lang="es" lang="es">Cómo funciona</span></a></li>
-          <li><a href="#pricing"><span data-lang="en">Pricing</span><span data-lang="es" lang="es">Precios</span></a></li>
+          <li><a href="#download"><span>Download</span></a></li>
+          <li><a href="#inside-the-app"><span>Inside the app</span></a></li>
+          <li><a href="#how-it-works"><span>How it works</span></a></li>
+          <li><a href="#pricing"><span>Pricing</span></a></li>
           <li><a href="#faq">FAQ</a></li>
-          <li><a href="/projects.html"><span data-lang="en">All projects</span><span data-lang="es" lang="es">Proyectos</span></a></li>
+          <li><a href="/projects.html"><span>All projects</span></a></li>
         </ul>
       </div>
       <div>
-        <h4><span data-lang="en">Guides</span><span data-lang="es" lang="es">Guías</span></h4>
+        <h4><span>Guides</span></h4>
         <ul>
-          <li><a href="guides/how-to-add-subtitles-to-video-on-iphone/"><span data-lang="en">Subtitles on iPhone</span><span data-lang="es" lang="es">Subtítulos en iPhone</span></a></li>
-          <li><a href="guides/best-fonts-for-subtitles/"><span data-lang="en">Best subtitle fonts</span><span data-lang="es" lang="es">Mejores tipografías</span></a></li>
-          <li><a href="guides/word-by-word-karaoke-captions/"><span data-lang="en">Karaoke captions</span><span data-lang="es" lang="es">Subtítulos karaoke</span></a></li>
-          <li><a href="guides/"><span data-lang="en">All guides →</span><span data-lang="es" lang="es">Todas las guías →</span></a></li>
+          <li><a href="guides/how-to-add-subtitles-to-video-on-iphone/"><span>Subtitles on iPhone</span></a></li>
+          <li><a href="guides/best-fonts-for-subtitles/"><span>Best subtitle fonts</span></a></li>
+          <li><a href="guides/word-by-word-karaoke-captions/"><span>Karaoke captions</span></a></li>
+          <li><a href="guides/"><span>All guides →</span></a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 Charlatan · Nicolas Gula</span>
       <span>
-        <a href="privacypolicy/"><span data-lang="en">Privacy Policy</span><span data-lang="es" lang="es">Privacidad</span></a> ·
-        <a href="terms/"><span data-lang="en">Terms of Use</span><span data-lang="es" lang="es">Términos</span></a> ·
-        <a href="support/"><span data-lang="en">Support</span><span data-lang="es" lang="es">Soporte</span></a>
+        <a href="privacypolicy/"><span>Privacy Policy</span></a> ·
+        <a href="terms/"><span>Terms of Use</span></a> ·
+        <a href="support/"><span>Support</span></a>
       </span>
     </div>
   </div>
@@ -703,87 +691,11 @@
     });
   }
 
-  /* Once idiomas sobre el mecanismo de dos: inglés y español viven en el HTML
-     (los pares de spans de siempre); los otros nueve rellenan los spans de
-     español con su texto, alineado por orden de documento, y muestran ese
-     lado. El HTML no crece y el inglés queda intacto para los buscadores. */
-  var CH_LANGS = ["en","es","pt-BR","pt-PT","it","fr","de","ja","ko","zh-Hans","zh-Hant"];
-  var esSpans = null, esOriginal = null;
-
-  function fillSpans(l) {
-    if (!esSpans) {
-      esSpans = Array.prototype.slice.call(document.querySelectorAll('[data-lang="es"]'));
-      esOriginal = esSpans.map(function (n) { return n.innerHTML; });
-    }
-    var t = (l !== "es" && window.CH_I18N) ? window.CH_I18N[l] : null;
-    for (var i = 0; i < esSpans.length; i++) {
-      esSpans[i].innerHTML = t ? t[i] : esOriginal[i];
-    }
-  }
-
-  function setLang(l) {
-    if (CH_LANGS.indexOf(l) < 0) l = "en";
-    if (l === "en") {
-      document.body.setAttribute("data-active", "en");
-    } else {
-      fillSpans(l);
-      document.body.setAttribute("data-active", "es");
-    }
-    document.documentElement.lang = l;
-    var sel = document.getElementById("langselect");
-    if (sel) sel.value = l;
-    try { localStorage.setItem("ch-lang", l); } catch (e) {}
-    if (window.chSetDemo) window.chSetDemo(l);
-    /* Cada captura, con la app en el idioma de la página. */
-    document.querySelectorAll("img[data-shot]").forEach(function (img) {
-      img.src = "assets/img/app/" + l + "/" + img.getAttribute("data-shot") + ".webp";
-    });
-    if (window.chPrices) window.chPrices(l);
-  }
-
-  /* El idioma inicial sale de la lista del sistema, en su orden — el primero
-     que la página habla. El chino decide por escritura y región, y Hong Kong
-     además se lleva el demo en cantonés. */
-  var CH_VIDEO_OVERRIDE = null;
-  function detectLang() {
-    var list = navigator.languages || [navigator.language || "en"];
-    for (var i = 0; i < list.length; i++) {
-      var tag = String(list[i]);
-      var lower = tag.toLowerCase();
-      var code = lower.split("-")[0];
-      if (code === "zh" || code === "yue") {
-        var hant = /hant|tw|hk|mo/.test(lower);
-        if (code === "yue" || /hk|mo/.test(lower)) CH_VIDEO_OVERRIDE = "yue";
-        return hant || code === "yue" ? "zh-Hant" : "zh-Hans";
-      }
-      /* Solo la region Portugal va a pt-PT: "pt" a secas es Brasil, que es
-         donde esta casi todo el portugues del mundo. */
-      if (code === "pt") return /-pt$/.test(lower) ? "pt-PT" : "pt-BR";
-      for (var j = 0; j < CH_LANGS.length; j++) {
-        if (CH_LANGS[j].toLowerCase() === lower || CH_LANGS[j].toLowerCase() === code) return CH_LANGS[j];
-      }
-    }
-    return "en";
-  }
-  (function () {
-    var saved = null;
-    try { saved = localStorage.getItem("ch-lang"); } catch (e) {}
-    detectLang(); /* fija el override de video aunque haya idioma guardado */
-    var init = function () { setLang(saved && CH_LANGS.indexOf(saved) >= 0 ? saved : detectLang()); };
-    /* Las traducciones cargan con defer y corren antes de DOMContentLoaded:
-       si aún no están, se espera a ese evento y no antes. */
-    if (window.CH_I18N) init();
-    else document.addEventListener("DOMContentLoaded", init);
-  })();
-
   /* Los precios del país del visitante, los mismos que cobra el App Store
      ahí. El país sale de la región del idioma del navegador (es-AR, pt-BR);
-     sin región, quedan los de Estados Unidos. */
+     sin región, quedan los de Estados Unidos. Los datos llegan con defer en
+     charlatan-demo.js, así que esto corre en DOMContentLoaded. */
   (function () {
-    var WHERE = {"en": "Prices for: {c}.", "es": "Precios para: {c}.", "pt-BR": "Preços para: {c}.",
-      "pt-PT": "Preços para: {c}.", "it": "Prezzi per: {c}.", "fr": "Tarifs pour : {c}.",
-      "de": "Preise für: {c}.", "ja": "{c}での価格です。", "ko": "{c} 기준 가격입니다.",
-      "zh-Hans": "以上为{c}的价格。", "zh-Hant": "以上為{c}的價格。"};
     function country() {
       var list = navigator.languages || [navigator.language || ""];
       for (var i = 0; i < list.length; i++) {
@@ -795,24 +707,23 @@
       }
       return "US";
     }
-    window.chPrices = function (lang) {
+    function prices() {
       if (!window.CH_PRICES) return;
       var cc = country(), p = window.CH_PRICES[cc];
       function money(v) {
         var whole = Math.round(v) === v;
         try {
-          return new Intl.NumberFormat(lang, { style: "currency", currency: p[0],
+          return new Intl.NumberFormat("en", { style: "currency", currency: p[0],
             minimumFractionDigits: whole ? 0 : 2, maximumFractionDigits: whole ? 0 : 2 }).format(v);
         } catch (e) { return p[0] + " " + v; }
       }
       function put(cls, v) { document.querySelectorAll("." + cls).forEach(function (n) { n.textContent = money(v); }); }
       put("js-p0", 0); put("js-pm", p[1]); put("js-py", p[2]); put("js-pl", p[3]);
       var name = cc;
-      try { name = new Intl.DisplayNames([lang], { type: "region" }).of(cc) || cc; } catch (e) {}
-      var line = (WHERE[lang] || WHERE.en).replace("{c}", name);
-      document.querySelectorAll(".js-pwhere").forEach(function (n) { n.textContent = line; });
-    };
-    if (window.CH_PRICES) window.chPrices(document.documentElement.lang || "en");
+      try { name = new Intl.DisplayNames(["en"], { type: "region" }).of(cc) || cc; } catch (e) {}
+      document.querySelectorAll(".js-pwhere").forEach(function (n) { n.textContent = "Prices for: " + name + "."; });
+    }
+    document.addEventListener("DOMContentLoaded", prices);
   })();
 
   /* Slider antes/después: el range invisible maneja puntero y teclado; los dos
@@ -860,32 +771,17 @@
     }
   })();
 
-  /* El demo habla el idioma del visitante: un clip limpio por idioma, y los
-     subtítulos — los mismos .srt que usa la app — dibujados encima con el
-     estilo Creator, palabra por palabra. */
+  /* El demo: un clip limpio y los subtítulos — los mismos del .srt en inglés
+     que usa la app — dibujados encima con el estilo Creator, palabra por
+     palabra. Los cues llegan con defer en charlatan-demo.js. */
   (function () {
     var video = document.getElementById("bavideo");
     var cap = document.getElementById("bacap");
     if (!video || !cap) return;
-    var cues = [], spaced = true, lastKey = "";
-
-    window.chSetDemo = function (lang) {
-      var code = (CH_VIDEO_OVERRIDE === "yue" && lang === "zh-Hant") ? "yue" : lang;
-      if (!(window.CH_CUES && window.CH_CUES[code])) code = "en";
-      cues = window.CH_CUES[code] || [];
-      spaced = cues.some(function (c) { return c[2].indexOf(" ") >= 0; });
-      cap.classList.toggle("cjk", !spaced);
-      lastKey = "";
-      var src = "assets/video/demo-" + code + ".mp4";
-      if (!video.src || video.src.indexOf(src) < 0) {
-        video.poster = "assets/video/demo-" + code + ".jpg";
-        video.src = src;
-        video.load();
-        var resume = function () { video.play().catch(function () {}); };
-        video.addEventListener("canplay", resume, { once: true });
-        resume();
-      }
-    };
+    var cues = [], lastKey = "";
+    document.addEventListener("DOMContentLoaded", function () {
+      cues = (window.CH_CUES && window.CH_CUES.en) || [];
+    });
 
     function paint() {
       var t = video.currentTime || 0;
@@ -895,8 +791,6 @@
       }
       if (!cue) {
         if (lastKey !== "") { cap.textContent = ""; lastKey = ""; }
-      } else if (!spaced) {
-        if (lastKey !== cue[2]) { cap.textContent = cue[2]; lastKey = cue[2]; }
       } else {
         /* La palabra activa se reparte por peso de caracteres dentro del cue,
            igual que hace la app cuando el motor no trae tiempos por palabra. */
