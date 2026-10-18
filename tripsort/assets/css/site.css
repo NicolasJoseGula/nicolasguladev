@@ -172,6 +172,49 @@ section { padding: 96px 0; position: relative; }
 .shots-scroller img { border-radius: 26px; box-shadow: 0 18px 40px rgba(27, 37, 86, .2); background: #fff; }
 .shots-scroller figcaption { text-align: center; font-size: 14px; color: var(--muted); margin-top: 12px; }
 
+/* ---------- Videos de TikTok ---------- */
+.videos-wrap { position: relative; max-width: 1480px; margin: 0 auto; }
+.videos-scroller {
+  display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 10px 24px 26px; scrollbar-width: none;
+}
+.videos-scroller::-webkit-scrollbar { display: none; }
+/* Centra la fila cuando entra entera; si desborda, los margenes se anulan. */
+.video-card:first-child { margin-left: auto; }
+.video-card:last-child { margin-right: auto; }
+.video-card { flex: 0 0 clamp(250px, 74vw, 340px); margin-top: 0; margin-bottom: 0; scroll-snap-align: center; }
+.video-frame {
+  position: relative; aspect-ratio: 9 / 16; border-radius: 26px; overflow: hidden;
+  background: #10142b; box-shadow: 0 18px 40px rgba(27, 37, 86, .22);
+}
+.video-frame .video-blur {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  filter: blur(22px) brightness(.8); transform: scale(1.15);
+}
+.video-play { position: absolute; inset: 0; display: block; }
+.video-play[hidden] { display: none; }
+.video-poster { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.video-btn {
+  position: absolute; left: 50%; top: 50%; width: 78px; height: 78px; margin: -39px 0 0 -39px;
+  display: flex; align-items: center; justify-content: center; border-radius: 50%;
+  background: rgba(255, 255, 255, .94); box-shadow: 0 10px 30px rgba(16, 20, 43, .3); transition: transform .2s ease;
+}
+.video-btn svg { width: 32px; height: 32px; fill: var(--pink); margin-left: 4px; }
+.video-play:hover .video-btn, .video-play:focus-visible .video-btn { transform: scale(1.08); }
+.video-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video-card figcaption { text-align: center; font-size: 15px; font-weight: 600; color: var(--ink-2); margin-top: 12px; }
+.videos-nav {
+  position: absolute; top: calc(50% - 44px); z-index: 2; width: 52px; height: 52px; display: none;
+  align-items: center; justify-content: center; border-radius: 50%; border: 1px solid var(--line);
+  background: #fff; color: var(--ink); font-size: 30px; line-height: 1; cursor: pointer;
+  box-shadow: 0 8px 24px rgba(27, 37, 86, .18); transition: opacity .2s ease;
+}
+.videos-nav.prev { left: 16px; }
+.videos-nav.next { right: 16px; }
+.videos-wrap.desborda .videos-nav { display: flex; }
+.videos-nav:disabled { opacity: 0; pointer-events: none; }
+@media (max-width: 700px) { .videos-wrap.desborda .videos-nav { display: none; } }
+
 /* ---------- Feature rows ---------- */
 .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-bottom: 96px; }
 .feature:last-child { margin-bottom: 0; }
@@ -296,6 +339,14 @@ section { padding: 96px 0; position: relative; }
 .site-footer li { margin-bottom: 8px; }
 .site-footer a { color: #c9cde6; text-decoration: none; font-size: 15px; }
 .site-footer a:hover { color: var(--sun); }
+.footer-social { display: flex; gap: 12px; margin-top: 18px; }
+.site-footer .footer-social a {
+  display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px;
+  border-radius: 12px; background: rgba(255, 255, 255, .07); border: 1px solid rgba(255, 255, 255, .12);
+  color: #c9cde6; transition: background .15s ease, color .15s ease, transform .15s ease;
+}
+.site-footer .footer-social a:hover { background: var(--sun); color: #10142b; transform: translateY(-2px); }
+.footer-social svg { width: 20px; height: 20px; }
 .footer-bottom { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; padding-top: 22px; border-top: 1px solid rgba(255, 255, 255, .1); font-size: 14px; color: #8f95b8; }
 @media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr; } }
 
