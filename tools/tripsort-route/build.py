@@ -102,11 +102,18 @@ def simplify(pts, tol):
         a, b = stack.pop()
         (ax, ay), (bx, by) = pts[a], pts[b]
         dx, dy = bx - ax, by - ay
-        L = (dx * dx + dy * dy) ** .5 or 1e-9
+        L = (dx * dx + dy * dy) ** .5
         far, fi = -1, -1
         for i in range(a + 1, b):
             px, py = pts[i]
-            dd = abs(dy * (px - ax) - dx * (py - ay)) / L
+            # Un anillo cerrado empieza y termina en el mismo punto: no hay
+            # recta entre los extremos y la distancia a "la recta" daba 0 para
+            # todo el contorno, que quedaba en dos puntos y se descartaba. Asi
+            # se perdia Afro-Eurasia entera. Sin recta, se mide al punto.
+            if L < 1e-9:
+                dd = ((px - ax) ** 2 + (py - ay) ** 2) ** .5
+            else:
+                dd = abs(dy * (px - ax) - dx * (py - ay)) / L
             if dd > far:
                 far, fi = dd, i
         if far > tol:
