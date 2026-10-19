@@ -8,7 +8,6 @@ Site and landing-page host for dezeo — a creative studio.
 nicolasdev/
 ├── index.html      Home (the portal: logo, two buttons, full-page photo)
 ├── projects.html   Work (grid of projects)
-├── press/          Press kit (app cards generated from projects.json)
 ├── styles.css      Shared styles (dark theme, lime accent)  <- edit here
 ├── projects.json   The list of projects  <- add work here
 ├── projects.js     Scroll-reveal for the cards (no data)
@@ -67,12 +66,12 @@ Create a folder (for example `charlatan/`) with an `index.html` and a
 
 ## Build step
 
-The CSS and scripts are inlined into `index.html`, `projects.html` and
-`press/index.html` so each page paints in a single round trip. `styles.css`,
+The CSS and scripts are inlined into `index.html` and `projects.html` so
+each page paints in a single round trip. `styles.css`,
 `assets/fonts/fonts.css`, `projects.js` and `cometa.js` are still the files you
 edit; the `<style id="css-del-sitio">` and `<script id="js:...">` blocks, the
-Work cards, the footer app links and the press cards (all from
-`projects.json`) are generated. **After touching any of them, run:**
+Work cards and the footer app links (both from `projects.json`) are
+generated. **After touching any of them, run:**
 
 ```
 python3 tools/construir.py

@@ -11,17 +11,7 @@
         "android"
       ],
       "background": "#091022",
-      "alt": "Trip Sort artwork: three tiles with world landmarks over a colorful travel scene",
-      "press": {
-        "app_store": "id6818841022",
-        "google_play": "lat.dezeo.trip_sort",
-        "icon": "tripsort/assets/img/tripsort-icon.png",
-        "images": [
-          "tripsort/assets/img/og-tripsort.jpg",
-          "tripsort/assets/img/shots/en-01.webp",
-          "tripsort/assets/img/shots/en-02.webp"
-        ]
-      }
+      "alt": "Trip Sort artwork: three tiles with world landmarks over a colorful travel scene"
     },
     {
       "name": "FaceCheck",
@@ -30,16 +20,7 @@
       "url": "facecheck/",
       "platform": "ios",
       "background": "#1a0912",
-      "alt": "FaceCheck icon: a golden face on a purple background",
-      "press": {
-        "app_store": "id6805500460",
-        "icon": "facecheck/assets/img/facecheck-icon.png",
-        "images": [
-          "facecheck/assets/img/face-symmetry-test-result.png",
-          "facecheck/assets/img/photo-angle-analysis.png",
-          "facecheck/assets/img/private-face-analysis.png"
-        ]
-      }
+      "alt": "FaceCheck icon: a golden face on a purple background"
     },
     {
       "name": "Chart Maker",
@@ -48,14 +29,7 @@
       "url": "chartmaker/",
       "platform": "mac",
       "background": "#131c18",
-      "alt": "Chart Maker icon: three green bars of a bar chart race",
-      "press": {
-        "app_store": "id6799297730",
-        "icon": "chartmaker/assets/img/chart-maker-app-icon.png",
-        "images": [
-          "chartmaker/assets/img/chart-maker-social-card.jpg"
-        ]
-      }
+      "alt": "Chart Maker icon: three green bars of a bar chart race"
     },
     {
       "name": "Charlatan",
@@ -63,15 +37,7 @@
       "description": "Automatic subtitles for your videos, in any of 71 fonts. Everything runs on the iPhone.",
       "url": "charlatan/",
       "platform": "ios",
-      "alt": "Charlatan icon: pink and blue lips with speech lines",
-      "press": {
-        "app_store": "id6802888272",
-        "icon": "charlatan/assets/img/charlatan-app-icon.png",
-        "images": [
-          "charlatan/assets/img/charlatan-social-card.jpg",
-          "charlatan/assets/img/app/en/pace.webp"
-        ]
-      }
+      "alt": "Charlatan icon: pink and blue lips with speech lines"
     },
     {
       "name": "Guardian Reader",
@@ -79,16 +45,7 @@
       "description": "Kids earn their screen time by reading real books out loud, verified on the iPhone.",
       "url": "guardianreader/",
       "platform": "ios",
-      "alt": "Guardian Reader icon: an owl reading an open book",
-      "press": {
-        "app_store": "id6800491060",
-        "icon": "guardianreader/assets/img/guardian-reader-icon.png",
-        "images": [
-          "guardianreader/assets/img/og-guardian-reader.png",
-          "guardianreader/assets/img/earn-screen-time-by-reading.jpg",
-          "guardianreader/assets/img/apps-unlocked-screen-time-reward.jpg"
-        ]
-      }
+      "alt": "Guardian Reader icon: an owl reading an open book"
     },
     {
       "name": "Block&Read",
@@ -97,16 +54,7 @@
       "url": "blockandread/",
       "platform": "ios",
       "imageFit": "contain",
-      "alt": "Block&Read icon: a golden padlock shaped like an open book",
-      "press": {
-        "app_store": "id6788574367",
-        "icon": "blockandread/assets/img/blockread-icon.png",
-        "images": [
-          "blockandread/assets/img/app-blocker-read-to-unlock.png",
-          "blockandread/assets/img/today-continue-reading.webp",
-          "blockandread/assets/img/home-screen-streak-widget.webp"
-        ]
-      }
+      "alt": "Block&Read icon: a golden padlock shaped like an open book"
     },
     {
       "name": "Fix Your Life",
@@ -114,16 +62,7 @@
       "description": "Alarms that ask you questions, and habits you can see: your own photos, streaks and the whole year in color.",
       "url": "fixyourlife/",
       "platform": "ios",
-      "alt": "Fix Your Life icon: the letters FYL in white on black",
-      "press": {
-        "app_store": "id6777588712",
-        "icon": "fixyourlife/assets/img/fyl-logo.svg",
-        "images": [
-          "fixyourlife/assets/img/og-image.png",
-          "fixyourlife/assets/img/habit-tracker-with-your-photos.webp",
-          "fixyourlife/assets/img/streak-widget-iphone-home-screen.png"
-        ]
-      }
+      "alt": "Fix Your Life icon: the letters FYL in white on black"
     }
   ],
   "platforms": {

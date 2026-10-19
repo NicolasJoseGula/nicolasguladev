@@ -16,7 +16,7 @@ import pathlib
 import re
 
 RAIZ = pathlib.Path(__file__).resolve().parent.parent
-PAGINAS = ('index.html', 'projects.html', 'press/index.html')
+PAGINAS = ('index.html', 'projects.html')
 HOJAS = ('assets/fonts/fonts.css', 'styles.css')
 MARCA_CSS = re.compile(r'(<style id="css-del-sitio">)(.*?)(</style>)', re.S)
 # Cada página declara qué guiones quiere con <script id="js:archivo.js">.
@@ -95,13 +95,9 @@ def tarjetas():
     return ''.join(piezas), nombres
 
 
-# Pie de las paginas de la raiz: una fila con las apps y el kit de prensa.
+# Pie de las paginas de la raiz: una fila con las apps.
 # Le da a la home enlaces rastreables a cada app sin tocar la portada.
 MARCA_PIE = re.compile(r'(<!-- apps-pie:.*?-->)(.*?)(\n *<!-- /apps-pie -->)', re.S)
-# Kit de prensa: fichas de cada app y el total, desde projects.json.
-MARCA_PRENSA = re.compile(r'(<!-- prensa:apps:.*?-->)(.*?)(\n *<!-- /prensa:apps -->)', re.S)
-MARCA_CANTIDAD = re.compile(r'(<!-- prensa:cantidad -->)(.*?)(<!-- /prensa:cantidad -->)', re.S)
-PT = '129004153'   # provider token de App Store Connect, para medir descargas desde prensa
 
 
 def datos():
@@ -111,49 +107,9 @@ def datos():
 def pie_apps(prefijo):
     e = html.escape
     enlaces = [f'<a href="{prefijo}{e(p["url"])}">{e(p["name"])}</a>' for p in datos()['projects']]
-    enlaces.append(f'<a href="{prefijo}press/">Press kit</a>')
     return ('\n    <nav class="pie-apps" aria-label="Apps by dezeo">\n      '
             + '\n      '.join(enlaces) + '\n    </nav>')
 
-
-def prensa_apps(prefijo):
-    e = html.escape
-    d = datos()
-    plataformas = {k: v['label'].replace(' app', '') for k, v in d['platforms'].items()}
-    fichas = []
-    for p in d['projects']:
-        pr = p['press']
-        claves = p.get('platform') or []
-        claves = [claves] if isinstance(claves, str) else claves
-        tiendas = [f'<a href="{prefijo}{e(p["url"])}">Website</a>']
-        if pr.get('app_store'):
-            tiendas.append(f'<a href="https://apps.apple.com/app/apple-store/{e(pr["app_store"])}'
-                           f'?pt={PT}&amp;ct=presskit&amp;mt=8">App Store</a>')
-        if pr.get('google_play'):
-            tiendas.append(f'<a href="https://play.google.com/store/apps/details?id={e(pr["google_play"])}'
-                           f'&amp;referrer=utm_source%3Dpresskit">Google Play</a>')
-        imagenes = [(pr['icon'], f'{p["name"]} app icon', 'App icon')] + [
-            (ruta, f'{p["name"]}, press image {i}', f'Image {i}') for i, ruta in enumerate(pr['images'], 1)]
-        lista = ''.join(
-            f'\n            <li><a href="{prefijo}{e(r)}" download>'
-            f'<img src="{prefijo}{e(r)}" alt="{e(alt)}" loading="lazy" decoding="async">'
-            f'<span>{e(rotulo)}</span></a></li>' for r, alt, rotulo in imagenes)
-        ancla = p['url'].strip('/').split('/')[-1]
-        fichas.append(f'''
-      <article class="prensa-app" id="{e(ancla)}">
-        <div class="prensa-cabeza">
-          <img class="prensa-icono" src="{prefijo}{e(pr["icon"])}" alt="" width="56" height="56" loading="lazy" decoding="async">
-          <div>
-            <h3>{e(p["name"])}</h3>
-            <p class="prensa-plataformas">{e(" · ".join(plataformas[k] for k in claves if k in plataformas))}</p>
-          </div>
-        </div>
-        <p class="prensa-texto">{e(p["description"])}</p>
-        <p class="prensa-enlaces">{" · ".join(tiendas)}</p>
-        <ul class="prensa-imagenes">{lista}
-        </ul>
-      </article>''')
-    return ''.join(fichas), len(d['projects'])
 
 
 def comprimir(css):
@@ -183,17 +139,12 @@ def main():
         if not MARCA_CSS.search(t):
             raise SystemExit(f'{nombre}: falta <style id="css-del-sitio"></style>')
         antes = len(t)
-        # Las paginas en subcarpetas (press/) necesitan las fuentes un nivel arriba.
+        # Una pagina en una subcarpeta necesitaria las fuentes un nivel arriba.
         prefijo = '../' * (len(pathlib.Path(nombre).parts) - 1)
         css_pagina = css.replace('url(assets/', f'url({prefijo}assets/')
         t = MARCA_CSS.sub(lambda m: m.group(1) + '\n' + css_pagina + '\n  ' + m.group(3), t, count=1)
         if MARCA_PIE.search(t):
             t = MARCA_PIE.sub(lambda m: m.group(1) + pie_apps(prefijo) + m.group(3), t, count=1)
-        if MARCA_PRENSA.search(t):
-            fichas, cantidad = prensa_apps(prefijo)
-            t = MARCA_PRENSA.sub(lambda m: m.group(1) + fichas + m.group(3), t, count=1)
-            t = MARCA_CANTIDAD.sub(lambda m: m.group(1) + f'<div><dt>Apps published</dt><dd>{cantidad}</dd></div>' + m.group(3), t, count=1)
-            print(f'  {nombre}: {cantidad} fichas de prensa desde {DATOS}')
         if MARCA_TARJETAS.search(t):
             grilla, nombres = tarjetas()
             t = MARCA_TARJETAS.sub(lambda m: m.group(1) + grilla + m.group(3), t, count=1)
