@@ -31,7 +31,7 @@
 
   var quieto = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var VIDA_ESTELA = 260;   // ms que tarda un punto de la estela en apagarse
+  var VIDA_ESTELA = 190;   // ms que tarda un punto de la estela en apagarse
   var MAX_PARTICULAS = 260;
 
   // ---- sprites de luz ----
@@ -115,11 +115,12 @@
     var dt = ultimo ? Math.min(0.05, (ahora - ultimo) / 1000) : 1 / 60;
     ultimo = ahora;
 
-    // Seguimiento independiente de los fps: la cabeza arrastra un poco.
-    var k = quieto ? 1 : 1 - Math.pow(0.00035, dt);
+    // La cabeza va pegada al puntero: es el cursor, y cualquier arrastre se
+    // siente pesado (con 125 ms de demora se sentia). El cometa lo dan la
+    // estela y las particulas, que si quedan atras.
     var ox = cx, oy = cy;
-    cx += (px - cx) * k;
-    cy += (py - cy) * k;
+    cx = px;
+    cy = py;
     var mx = cx - ox, my = cy - oy;
     var dist = Math.sqrt(mx * mx + my * my);
 
