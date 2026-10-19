@@ -124,22 +124,22 @@
     <a href="../../guides/"><span>Guides</span></a></p>
   <h1><span>Export a bar chart race as an MP4</span></h1>
   <p class="meta"><span>Updated 2026-08-08 · Chart Maker for Mac</span></p>
-  <p class="lead"><span>A real video file, up to 3840&times;2160, written frame by frame &mdash; not a recording of a browser window.</span></p>
+  <p class="lead"><span>A real video file, up to 3840&times;2160, written frame by frame, not a recording of a browser window.</span></p>
 
 <figure><div class="screen screen-iphone"><video src="../../assets/img/chart-race-iphone.mp4" autoplay muted loop playsinline preload="none" aria-hidden="true"></video><img src="../../assets/img/frame-iphone.png" alt="A 9:16 bar chart race playing on an iPhone before export"></div><figcaption><span>What you see in the preview is the frame the exporter writes.</span></figcaption></figure>
 <h2><span>Why screen recording is the wrong tool</span></h2>
 <p><span>Most bar chart race tools live in a browser and hand you an embed or a GIF. To get a video, people screen-record the animation. That has three costs, and all three end up in the finished upload: the frame is the size of a window rather than the size of the format, the frame rate wobbles with whatever else the machine is doing, and every re-record comes out slightly different.</span></p>
-<p><span>Chart Maker records the chart the way an offline renderer does: it loads the page at the exact size of the finished frame, asks it for one position on its timeline, captures that frame, and asks for the next &mdash; however long each one takes.</span></p>
+<p><span>Chart Maker records the chart the way an offline renderer does: it loads the page at the exact size of the finished frame, asks it for one position on its timeline, captures that frame, and asks for the next; however long each one takes.</span></p>
 <h2><span>The settings</span></h2>
 <table><thead><tr><th><span>Setting</span></th><th><span>Options</span></th><th><span>What to pick</span></th></tr></thead><tbody><tr><td><span>Shape</span></td><td><span>16:9 or 9:16</span></td><td><span>YouTube, or Shorts / TikTok / Reels</span></td></tr><tr><td><span>Size</span></td><td><span>3840×2160 or 1920×1080</span></td><td><span>Full for YouTube, half for short-form</span></td></tr><tr><td><span>Frames per second</span></td><td><span>30 or 60</span></td><td><span>30 is plenty; 60 doubles the export time</span></td></tr></tbody></table>
 <h2><span>How long it takes</span></h2>
-<p><span>Measured on an Apple silicon Mac, a 4K export runs at roughly five frames a second, so a minute of finished video is around six minutes of exporting. Half size is four times fewer pixels and correspondingly quicker &mdash; and 1920&times;1080 is what a Short needs anyway. The app stays usable while it runs, and Stop leaves no half-written file behind.</span></p>
+<p><span>Measured on an Apple silicon Mac, a 4K export runs at roughly five frames a second, so a minute of finished video is around six minutes of exporting. Half size is four times fewer pixels and correspondingly quicker, and 1920&times;1080 is what a Short needs anyway. The app stays usable while it runs, and Stop leaves no half-written file behind.</span></p>
 <div class="callout">
 <h3><span>Codec</span></h3>
 <p><span>H.264 in an .mp4, generously bitrated. The file exists to be uploaded, and flat colour with hard edges is where compression shows first. Every platform and every editor takes it without conversion.</span></p>
 </div>
 <h2><span>Getting the length right</span></h2>
-<p><span>The runtime is the number of points in time multiplied by the pace. Drag the pace slider and the finished length updates beside it, so you can aim at a target &mdash; under a minute for a Short, one to three minutes for YouTube &mdash; before you spend the render.</span></p>
+<p><span>The runtime is the number of points in time multiplied by the pace. Drag the pace slider and the finished length updates beside it, so you can aim at a target (under a minute for a Short, one to three minutes for YouTube) before you spend the render.</span></p>
 
 <h2><span>Questions</span></h2>
 <div class="faq">

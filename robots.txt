@@ -1,4 +1,4 @@
-# dezeo.lat — creative studio
+# dezeo.lat, creative studio
 # Allow all crawlers full access.
 User-agent: *
 Allow: /

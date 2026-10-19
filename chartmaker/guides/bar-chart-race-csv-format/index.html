@@ -136,14 +136,14 @@ Austria,at,3,3,3,4</code></pre>
 <p><span>Headings that count as time: a plain year (<code>1924</code>), a season (<code>1992-93</code>, <code>2025/26</code>), or a date (<code>2026-03-01</code>, <code>01/03/2026</code>). Everything else is treated as a property of the competitor.</span></p>
 <h2><span>The optional columns</span></h2>
 <table><thead><tr><th><span>Role</span></th><th><span>Call the column</span></th><th><span>What it does</span></th></tr></thead><tbody><tr><td><span>Name</span></td><td><span>Name, Nation, Country, Team, Club, Company, Player</span></td><td><span>The label on the bar</span></td></tr><tr><td><span>Flag code</span></td><td><span>ISO2, ISO, Code, Country Code</span></td><td><span>Draws a bundled round flag</span></td></tr><tr><td><span>Picture</span></td><td><span>Image, Logo, Badge, Crest, Photo, Icon</span></td><td><span>A web address, drawn on the bar</span></td></tr><tr><td><span>Group</span></td><td><span>Region, Continent, Group, Category, League</span></td><td><span>Colours the bars and fills the legend</span></td></tr><tr><td><span>Short name</span></td><td><span>Short, Abbr, Abbreviation</span></td><td><span>Used in the vertical cut only</span></td></tr></tbody></table>
-<p><span>Matching is case-insensitive and none of these are required &mdash; a file with nothing but a name column and some years works. If a column is not recognised, the app says so: <em>View data</em> lists every role it looked for, which heading answered to it, and which found nothing.</span></p>
+<p><span>Matching is case-insensitive and none of these are required: a file with nothing but a name column and some years works. If a column is not recognised, the app says so: <em>View data</em> lists every role it looked for, which heading answered to it, and which found nothing.</span></p>
 <h2><span>Mistake one: zeros where there is no reading</span></h2>
-<p><span>A zero is a statement &mdash; it says this competitor was in the race and had none. A blank says it was not in the race yet. If you fill your blanks with zeros, every future competitor sits on the baseline from the first frame, and a chart that should start with three bars starts with forty.</span></p>
+<p><span>A zero is a statement: it says this competitor was in the race and had none. A blank says it was not in the race yet. If you fill your blanks with zeros, every future competitor sits on the baseline from the first frame, and a chart that should start with three bars starts with forty.</span></p>
 <h2><span>Mistake two: the wrong kind of number</span></h2>
 <p><span>Decide whether your column is a <strong>running total</strong> or a <strong>per-period figure</strong>. Medals won <em>in total by 1936</em> and medals won <em>during 1936</em> are different charts. In a spreadsheet a running total is one <code>SUM</code> away.</span></p>
 <h2><span>What the reader copes with on its own</span></h2>
 <ul>
-  <li><span>Commas, semicolons, tabs or pipes as the separator &mdash; detected, not asked about.</span></li>
+  <li><span>Commas, semicolons, tabs or pipes as the separator: detected, not asked about.</span></li>
   <li><span>Quoted fields containing commas: <code>"Korea, Republic of"</code>.</span></li>
   <li><span>Both thousands conventions, guessed per cell: <code>1,234.56</code> and <code>1.234,56</code>.</span></li>
   <li><span>Currency symbols, per-cent signs and spaces used as group markers.</span></li>
@@ -152,7 +152,7 @@ Austria,at,3,3,3,4</code></pre>
   <li><span>Windows line endings and Excel&rsquo;s byte order mark.</span></li>
 </ul>
 <h2><span>How many rows can it take?</span></h2>
-<p><span>As many as you like. On import, a row is kept if it reaches the top at any single point in time &mdash; a few places deeper than the bars on screen &mdash; and the rest are dropped with a note saying how many. That keeps every overtake while sparing the render two hundred competitors who were never in shot.</span></p>
+<p><span>As many as you like. On import, a row is kept if it reaches the top at any single point in time, a few places deeper than the bars on screen, and the rest are dropped with a note saying how many. That keeps every overtake while sparing the render two hundred competitors who were never in shot.</span></p>
 
 <h2><span>Questions</span></h2>
 <div class="faq">

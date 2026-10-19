@@ -197,6 +197,24 @@ def main():
     fv = ASSETS / 'favicon.png'
     favicon.save(fv, format='PNG', optimize=True)
     filas.append((fv, favicon.size))
+    # Google pide un favicon cuadrado y multiplo de 48 px, y guarda en cache el
+    # que ya conoce: uno de 192 con nombre propio lo obliga a pedirlo de nuevo.
+    f192 = ASSETS / 'favicon-192.png'
+    favicon.resize((192, 192), Image.LANCZOS).save(f192, format='PNG', optimize=True)
+    filas.append((f192, (192, 192)))
+    # /favicon.ico en la raiz: lo piden los rastreadores y navegadores que no
+    # leen el <link rel="icon">.
+    ico = RAIZ / 'favicon.ico'
+    favicon.save(ico, format='ICO', sizes=[(16, 16), (32, 32), (48, 48)])
+    filas.append((ico, (48, 48)))
+    # iOS no respeta la transparencia de las puntas: fondo lleno, 180 px.
+    toque = Image.new('RGBA', (180, 180), (11, 11, 11, 255))
+    alto_t = round(180 * 0.62)
+    chico_t = simbolo.resize((round(simbolo.width * alto_t / simbolo.height), alto_t), Image.LANCZOS)
+    toque.alpha_composite(chico_t, ((180 - chico_t.width) // 2, (180 - alto_t) // 2))
+    at = ASSETS / 'apple-touch-icon.png'
+    toque.convert('RGB').save(at, format='PNG', optimize=True)
+    filas.append((at, (180, 180)))
 
     # En la pastilla se ve a 44 px de alto: 132 px es 3x y alcanza de sobra.
     # Servirlo a 196 era mandar cuatro veces los pixeles necesarios.
