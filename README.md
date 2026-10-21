@@ -36,7 +36,7 @@ nicolasdev/
 
 ### Change the home buttons / links
 Edit `.portal-acciones` in `index.html` and the nav links. The contact email
-is `dezeogsp@gmail.com`.
+is `contact@dezeo.lat`.
 
 ### Add a project to the grid
 Drop the full-size image in `assets/originales/`, run
