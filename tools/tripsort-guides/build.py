@@ -155,13 +155,14 @@ def guide_page(g, body):
         }, ensure_ascii=False, indent=2) + '\n  </script>'
     article_ld = json.dumps({
         '@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc,
-        'image': image, 'inLanguage': 'en', 'datePublished': UPDATED, 'dateModified': UPDATED,
+        'image': image, 'inLanguage': 'en', 'datePublished': UPDATED + 'T12:00:00-03:00', 'dateModified': UPDATED + 'T12:00:00-03:00',
         'author': {'@type': 'Person', 'name': 'Nicolas Gula', 'url': 'https://dezeo.lat/'},
         'publisher': {'@type': 'Organization', 'name': 'dezeo', 'url': 'https://dezeo.lat/',
                       'logo': {'@type': 'ImageObject', 'url': BASE + 'assets/img/tripsort-icon.png'}},
         'mainEntityOfPage': url,
-        'about': {'@type': 'MobileApplication', 'name': 'Trip Sort: Triple Tile Match', 'operatingSystem': 'iOS, Android',
-                  'applicationCategory': 'GameApplication', 'url': BASE},
+        # Referencia simple: un MobileApplication anidado sin calificaciones sale
+        # como 'no valido' en la prueba de resultados enriquecidos de Google.
+        'about': {'@type': 'Thing', 'name': 'Trip Sort: Triple Tile Match', 'url': BASE},
     }, ensure_ascii=False, indent=2)
     crumbs = json.dumps({
         '@context': 'https://schema.org', '@type': 'BreadcrumbList', 'itemListElement': [
