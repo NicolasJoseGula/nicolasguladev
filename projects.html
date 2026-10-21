@@ -421,43 +421,54 @@ color: var(--text-3);
 .vitrina-lista { display: flex; flex-direction: column; gap: 144px; }
 .show {
 display: grid;
-grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-gap: 80px;
+grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+gap: 72px;
 align-items: center;
 }
 .show:nth-child(even) .show-media { order: 2; }
-.show-media { position: relative; z-index: 0; display: block; }
+.show-media { position: relative; z-index: 0; display: block; justify-self: center; width: min(360px, 100%); }
+.show-media::after {
+content: "";
+position: absolute;
+z-index: -1;
+inset: -16px;
+border-radius: 50%;
+border: 1px solid rgba(255, 255, 255, 0.07);
+border-top-color: color-mix(in srgb, var(--acento) 55%, transparent);
+transition: border-color 0.8s ease;
+animation: aro 24s linear infinite;
+}
+@keyframes aro { to { transform: rotate(360deg); } }
 .show-media::before {
 content: "";
 position: absolute;
 z-index: -1;
-inset: 10% 0 -6%;
+inset: -10%;
 background: radial-gradient(closest-side, var(--acento), transparent);
-opacity: 0.14;
+opacity: 0.16;
 filter: blur(60px);
 transition: opacity 0.8s ease;
 }
 .show-frame {
 position: relative;
-aspect-ratio: 16 / 10;
+aspect-ratio: 1;
 overflow: hidden;
-border-radius: 22px;
+border-radius: 50%;
 background: var(--fondo);
 box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 40px 80px -30px rgba(0, 0, 0, 0.7);
 transition: box-shadow 0.8s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .show-frame img {
 position: absolute;
-left: 0;
+left: -5%;
 top: -5%;
-width: 100%;
+width: 110%;
 height: 110%;
 object-fit: cover;
 display: block;
 transform: translate3d(0, var(--py, 0px), 0) scale(1.01);
 transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.show-frame img.fit-contain { object-fit: contain; padding: 5%; background: #000; }
 .show-frame::after {
 content: "";
 position: absolute;
@@ -471,6 +482,7 @@ transition: opacity 0.6s ease;
 pointer-events: none;
 }
 .show:hover .show-media::before { opacity: 0.3; }
+.show:hover .show-media::after { border-color: rgba(255, 255, 255, 0.12); border-top-color: var(--acento); }
 .show:hover .show-frame { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 50px 90px -30px rgba(0, 0, 0, 0.8); }
 .show:hover .show-frame img { transform: translate3d(0, var(--py, 0px), 0) scale(1.04); }
 .show:hover .show-frame::after { opacity: 1; }
@@ -576,7 +588,7 @@ transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bez
 }
 @media (prefers-reduced-motion: reduce) {
 .work-title .w, .work-sub, .work-datos, .work-bajar { opacity: 1; transform: none; filter: none; animation: none; }
-.work-aura span, .cinta-pista, .work-bajar span, .punto { animation: none; }
+.work-aura span, .cinta-pista, .work-bajar span, .punto, .show-media::after { animation: none; }
 }
 @media (max-width: 860px) {
 .work { padding: 0 20px 32px; }
@@ -585,7 +597,8 @@ transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bez
 .work-datos i { display: none; }
 .cinta { margin-bottom: 88px; }
 .vitrina-lista { gap: 96px; }
-.show { grid-template-columns: 1fr; gap: 30px; }
+.show { grid-template-columns: 1fr; gap: 40px; }
+.show-media { width: min(280px, 78%); }
 .show:nth-child(even) .show-media { order: 0; }
 .valores { margin-top: 120px; }
 .valores-grid { grid-template-columns: 1fr; }
@@ -978,7 +991,7 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
           <div class="show-frame">
             <picture>
               <source type="image/webp" srcset="assets/blockandread.webp">
-              <img src="assets/blockandread.jpg" alt="Block&amp;Read icon: a golden padlock shaped like an open book" class="fit-contain" width="800" height="800" loading="lazy" decoding="async">
+              <img src="assets/blockandread.jpg" alt="Block&amp;Read icon: a golden padlock shaped like an open book" width="800" height="800" loading="lazy" decoding="async">
             </picture>
           </div>
         </a>

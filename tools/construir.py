@@ -73,12 +73,11 @@ def tarjetas():
         if p.get('image'):
             webp = re.sub(r'\.(jpe?g|png)$', '.webp', p['image'], flags=re.I)
             fuente = (f'\n              <source type="image/webp" srcset="{e(webp)}">' if webp != p['image'] else '')
-            clase = ' class="fit-contain"' if p.get('imageFit') == 'contain' else ''
             carga = 'loading="eager" fetchpriority="high"' if i == 0 else 'loading="lazy"'
             tam = medidas(p['image'])
             dims = f' width="{tam[0]}" height="{tam[1]}"' if tam else ''
             imagen = (f'\n            <picture>{fuente}'
-                      f'\n              <img src="{e(p["image"])}" alt="{e(p.get("alt") or p["name"])}"{clase}{dims}'
+                      f'\n              <img src="{e(p["image"])}" alt="{e(p.get("alt") or p["name"])}"{dims}'
                       f' {carga} decoding="async">'
                       f'\n            </picture>')
 

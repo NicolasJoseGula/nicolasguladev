@@ -63,7 +63,6 @@
       "description": "Blocks your distracting apps until you read a few pages of a good book.",
       "url": "blockandread/",
       "platform": "ios",
-      "imageFit": "contain",
       "alt": "Block&Read icon: a golden padlock shaped like an open book",
       "tag": "Focus & books",
       "accent": "#cda250"

@@ -384,45 +384,57 @@ a { color: inherit; text-decoration: none; }
 
 .show {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 80px;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 72px;
   align-items: center;
 }
 .show:nth-child(even) .show-media { order: 2; }
 
-.show-media { position: relative; z-index: 0; display: block; }
+.show-media { position: relative; z-index: 0; display: block; justify-self: center; width: min(360px, 100%); }
+/* Aro fino alrededor del circulo, que gira muy despacio */
+.show-media::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -16px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-top-color: color-mix(in srgb, var(--acento) 55%, transparent);
+  transition: border-color 0.8s ease;
+  animation: aro 24s linear infinite;
+}
+@keyframes aro { to { transform: rotate(360deg); } }
 /* Brillo del color de la app detras de la imagen, apenas insinuado */
 .show-media::before {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 10% 0 -6%;
+  inset: -10%;
   background: radial-gradient(closest-side, var(--acento), transparent);
-  opacity: 0.14;
+  opacity: 0.16;
   filter: blur(60px);
   transition: opacity 0.8s ease;
 }
 .show-frame {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 1;
   overflow: hidden;
-  border-radius: 22px;
+  border-radius: 50%;
   background: var(--fondo);
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 40px 80px -30px rgba(0, 0, 0, 0.7);
   transition: box-shadow 0.8s ease, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .show-frame img {
   position: absolute;
-  left: 0;
+  left: -5%;
   top: -5%;
-  width: 100%;
+  width: 110%;
   height: 110%;
   object-fit: cover;
   display: block;
   transform: translate3d(0, var(--py, 0px), 0) scale(1.01);
   transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.show-frame img.fit-contain { object-fit: contain; padding: 5%; background: #000; }
 /* Reflejo de vidrio arriba y luz que sigue al puntero */
 .show-frame::after {
   content: "";
@@ -437,6 +449,7 @@ a { color: inherit; text-decoration: none; }
   pointer-events: none;
 }
 .show:hover .show-media::before { opacity: 0.3; }
+.show:hover .show-media::after { border-color: rgba(255, 255, 255, 0.12); border-top-color: var(--acento); }
 .show:hover .show-frame { transform: translateY(-4px); box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12), 0 50px 90px -30px rgba(0, 0, 0, 0.8); }
 .show:hover .show-frame img { transform: translate3d(0, var(--py, 0px), 0) scale(1.04); }
 .show:hover .show-frame::after { opacity: 1; }
@@ -555,7 +568,7 @@ a { color: inherit; text-decoration: none; }
 
 @media (prefers-reduced-motion: reduce) {
   .work-title .w, .work-sub, .work-datos, .work-bajar { opacity: 1; transform: none; filter: none; animation: none; }
-  .work-aura span, .cinta-pista, .work-bajar span, .punto { animation: none; }
+  .work-aura span, .cinta-pista, .work-bajar span, .punto, .show-media::after { animation: none; }
 }
 
 @media (max-width: 860px) {
@@ -565,7 +578,8 @@ a { color: inherit; text-decoration: none; }
   .work-datos i { display: none; }
   .cinta { margin-bottom: 88px; }
   .vitrina-lista { gap: 96px; }
-  .show { grid-template-columns: 1fr; gap: 30px; }
+  .show { grid-template-columns: 1fr; gap: 40px; }
+  .show-media { width: min(280px, 78%); }
   .show:nth-child(even) .show-media { order: 0; }
   .valores { margin-top: 120px; }
   .valores-grid { grid-template-columns: 1fr; }
