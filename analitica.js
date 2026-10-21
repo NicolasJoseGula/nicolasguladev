@@ -17,7 +17,7 @@
 // Publicidad: todo lo de anuncios queda negado siempre. El sitio no tiene ads.
 // ----------------------------------------------------------------
 (function () {
-  var ID = "G-PENDIENTE";
+  var ID = "G-50DQGD17SX";
   if (!/^G-[A-Z0-9]{6,}$/.test(ID)) return;
 
   var CLAVE = "dz-analitica";
