@@ -11,7 +11,9 @@
         "android"
       ],
       "background": "#091022",
-      "alt": "Trip Sort artwork: three tiles with world landmarks over a colorful travel scene"
+      "alt": "Trip Sort artwork: three tiles with world landmarks over a colorful travel scene",
+      "tag": "Puzzle game",
+      "accent": "#ffc531"
     },
     {
       "name": "FaceCheck",
@@ -20,7 +22,9 @@
       "url": "facecheck/",
       "platform": "ios",
       "background": "#1a0912",
-      "alt": "FaceCheck icon: a golden face on a purple background"
+      "alt": "FaceCheck icon: a golden face on a purple background",
+      "tag": "Face analysis",
+      "accent": "#de1c6b"
     },
     {
       "name": "Chart Maker",
@@ -29,7 +33,9 @@
       "url": "chartmaker/",
       "platform": "mac",
       "background": "#131c18",
-      "alt": "Chart Maker icon: three green bars of a bar chart race"
+      "alt": "Chart Maker icon: three green bars of a bar chart race",
+      "tag": "Data videos",
+      "accent": "#4fbf8b"
     },
     {
       "name": "Charlatan",
@@ -37,7 +43,9 @@
       "description": "Automatic subtitles for your videos, in any of 71 fonts. Everything runs on the iPhone.",
       "url": "charlatan/",
       "platform": "ios",
-      "alt": "Charlatan icon: pink and blue lips with speech lines"
+      "alt": "Charlatan icon: pink and blue lips with speech lines",
+      "tag": "Video captions",
+      "accent": "#ff2d8a"
     },
     {
       "name": "Guardian Reader",
@@ -45,7 +53,9 @@
       "description": "Kids earn their screen time by reading real books out loud, verified on the iPhone.",
       "url": "guardianreader/",
       "platform": "ios",
-      "alt": "Guardian Reader icon: an owl reading an open book"
+      "alt": "Guardian Reader icon: an owl reading an open book",
+      "tag": "Kids & reading",
+      "accent": "#ffb833"
     },
     {
       "name": "Block&Read",
@@ -53,8 +63,9 @@
       "description": "Blocks your distracting apps until you read a few pages of a good book.",
       "url": "blockandread/",
       "platform": "ios",
-      "imageFit": "contain",
-      "alt": "Block&Read icon: a golden padlock shaped like an open book"
+      "alt": "Block&Read icon: a golden padlock shaped like an open book",
+      "tag": "Focus & books",
+      "accent": "#cda250"
     },
     {
       "name": "Fix Your Life",
@@ -62,7 +73,9 @@
       "description": "Alarms that ask you questions, and habits you can see: your own photos, streaks and the whole year in color.",
       "url": "fixyourlife/",
       "platform": "ios",
-      "alt": "Fix Your Life icon: the letters FYL in white on black"
+      "alt": "Fix Your Life icon: the letters FYL in white on black",
+      "tag": "Habits & journaling",
+      "accent": "#35d07f"
     }
   ],
   "platforms": {

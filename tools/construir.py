@@ -53,6 +53,8 @@ def medidas(ruta):
 
 
 def tarjetas():
+    """Las filas de la vitrina de Work: imagen grande con el brillo del color
+    de la app, numero, rubro, descripcion, plataformas y enlace."""
     datos = json.loads((RAIZ / DATOS).read_text(encoding='utf-8'))
     plataformas = datos['platforms']
     e = html.escape
@@ -66,46 +68,59 @@ def tarjetas():
         if p['url'].startswith(('#', 'http')) or not (destino / 'index.html' if p['url'].endswith('/') else destino).exists():
             raise SystemExit(f'{DATOS}: "{p["name"]}" apunta a {p["url"]}, que no es una pagina del sitio')
 
-        fondo = f' style="background: {e(p["background"])}"' if p.get('background') else ''
+        fondo = p.get('background') or '#111119'
         imagen = ''
         if p.get('image'):
             webp = re.sub(r'\.(jpe?g|png)$', '.webp', p['image'], flags=re.I)
-            fuente = (f'\n            <source type="image/webp" srcset="{e(webp)}">' if webp != p['image'] else '')
-            clase = ' class="fit-contain"' if p.get('imageFit') == 'contain' else ''
-            # la primera tarjeta suele ser el elemento mas grande en pantalla
+            fuente = (f'\n              <source type="image/webp" srcset="{e(webp)}">' if webp != p['image'] else '')
             carga = 'loading="eager" fetchpriority="high"' if i == 0 else 'loading="lazy"'
             tam = medidas(p['image'])
             dims = f' width="{tam[0]}" height="{tam[1]}"' if tam else ''
-            imagen = (f'\n          <picture>{fuente}'
-                      f'\n            <img src="{e(p["image"])}" alt="{e(p.get("alt") or p["name"])}"{clase}{fondo}{dims}'
-                      f' {carga} decoding="async" onerror="this.parentNode.remove()">'
-                      f'\n          </picture>')
+            imagen = (f'\n            <picture>{fuente}'
+                      f'\n              <img src="{e(p["image"])}" alt="{e(p.get("alt") or p["name"])}"{dims}'
+                      f' {carga} decoding="async">'
+                      f'\n            </picture>')
 
         claves = p.get('platform') or []
         claves = [claves] if isinstance(claves, str) else claves
         insignias = ''.join(
-            f'\n              <span class="card-platform" title="{e(plataformas[k]["label"])}">'
-            f'{plataformas[k]["svg"]}<span class="sr-only">{e(plataformas[k]["label"])}</span></span>'
+            f'\n            <li>{plataformas[k]["svg"]}<span>{e(plataformas[k]["label"].replace(" app", ""))}</span></li>'
             for k in claves if k in plataformas)
-        if insignias:
-            insignias = f'\n            <span class="card-platforms">{insignias}\n            </span>'
-
+        # Color de marca de la app (el de su landing): tine el brillo de su fila.
+        color = e(p.get('accent') or '#b8ff00')
         piezas.append(f'''
-      <a class="card" href="{e(p["url"])}">
-        <div class="card-image"{fondo}>
-          <span class="card-mono" aria-hidden="true">{e(p["name"][0])}</span>{imagen}
-        </div>
-        <div class="card-body">
-          <h2 class="card-name">{e(p["name"])}</h2>
-          <p class="card-desc">{e(p["description"])}</p>
-          <div class="card-foot">
-            <span class="card-open">→ open</span>{insignias}
+      <article class="show" style="--acento: {color}; --fondo: {e(fondo)}" data-reveal>
+        <a class="show-media" href="{e(p["url"])}" tabindex="-1" aria-hidden="true">
+          <div class="show-frame">{imagen}
           </div>
+        </a>
+        <div class="show-info">
+          <p class="show-meta"><span class="show-num">{i + 1:02d}</span><span class="show-tag">{e(p.get("tag", ""))}</span></p>
+          <h2 class="show-name"><a href="{e(p["url"])}">{e(p["name"])}</a></h2>
+          <p class="show-desc">{e(p["description"])}</p>
+          <ul class="show-plat" aria-label="Platforms">{insignias}
+          </ul>
+          <a class="show-cta" href="{e(p["url"])}">Explore {e(p["name"])}<span aria-hidden="true">→</span></a>
         </div>
-      </a>''')
+      </article>''')
     nombres = [p['name'] for p in datos['projects']]
     return ''.join(piezas), nombres
 
+
+# Cinta de Work: los nombres de las apps pasando en letra grande. Va dos veces
+# seguida para que el bucle de la animacion no tenga corte.
+MARCA_CINTA = re.compile(r'(<!-- cinta:.*?-->)(.*?)(\n *<!-- /cinta -->)', re.S)
+MARCA_CUANTAS = re.compile(r'(<!-- cuantas -->)(.*?)(<!-- /cuantas -->)', re.S)
+
+
+def cinta():
+    e = html.escape
+    nombres = [p['name'] for p in datos()['projects']]
+    una = ''.join(f'<span>{e(n)}</span><i aria-hidden="true">✦</i>' for n in nombres)
+    return (f'\n      <div class="cinta-pista">'
+            f'\n        <p class="cinta-tira">{una}</p>'
+            f'\n        <p class="cinta-tira" aria-hidden="true">{una}</p>'
+            f'\n      </div>')
 
 # Datos estructurados de Work: la lista de apps, para que Google entienda la
 # pagina como una coleccion y no como texto suelto.
@@ -173,6 +188,10 @@ def main():
         t = MARCA_CSS.sub(lambda m: m.group(1) + '\n' + css_pagina + '\n  ' + m.group(3), t, count=1)
         if MARCA_PIE.search(t):
             t = MARCA_PIE.sub(lambda m: m.group(1) + pie_apps(prefijo) + m.group(3), t, count=1)
+        if MARCA_CINTA.search(t):
+            t = MARCA_CINTA.sub(lambda m: m.group(1) + cinta() + m.group(3), t, count=1)
+        if MARCA_CUANTAS.search(t):
+            t = MARCA_CUANTAS.sub(lambda m: m.group(1) + str(len(datos()['projects'])) + m.group(3), t, count=1)
         if MARCA_LD.search(t):
             t = MARCA_LD.sub(lambda m: m.group(1) + '\n' + ld_proyectos() + '\n  ' + m.group(3), t, count=1)
         if MARCA_TARJETAS.search(t):
