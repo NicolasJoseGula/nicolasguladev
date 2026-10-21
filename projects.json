@@ -11,7 +11,10 @@
         "android"
       ],
       "background": "#091022",
-      "alt": "Trip Sort artwork: three tiles with world landmarks over a colorful travel scene"
+      "alt": "Trip Sort artwork: three tiles with world landmarks over a colorful travel scene",
+      "tag": "Puzzle game",
+      "accent": "#ffc531",
+      "icon": "tripsort/assets/img/tripsort-icon-180.png"
     },
     {
       "name": "FaceCheck",
@@ -20,7 +23,10 @@
       "url": "facecheck/",
       "platform": "ios",
       "background": "#1a0912",
-      "alt": "FaceCheck icon: a golden face on a purple background"
+      "alt": "FaceCheck icon: a golden face on a purple background",
+      "tag": "Face analysis",
+      "accent": "#de1c6b",
+      "icon": "facecheck/assets/img/facecheck-icon-180.png"
     },
     {
       "name": "Chart Maker",
@@ -29,7 +35,10 @@
       "url": "chartmaker/",
       "platform": "mac",
       "background": "#131c18",
-      "alt": "Chart Maker icon: three green bars of a bar chart race"
+      "alt": "Chart Maker icon: three green bars of a bar chart race",
+      "tag": "Data videos",
+      "accent": "#4fbf8b",
+      "icon": "chartmaker/assets/img/chart-maker-app-icon-180.png"
     },
     {
       "name": "Charlatan",
@@ -37,7 +46,10 @@
       "description": "Automatic subtitles for your videos, in any of 71 fonts. Everything runs on the iPhone.",
       "url": "charlatan/",
       "platform": "ios",
-      "alt": "Charlatan icon: pink and blue lips with speech lines"
+      "alt": "Charlatan icon: pink and blue lips with speech lines",
+      "tag": "Video captions",
+      "accent": "#ff2d8a",
+      "icon": "charlatan/assets/img/charlatan-app-icon-180.png"
     },
     {
       "name": "Guardian Reader",
@@ -45,7 +57,10 @@
       "description": "Kids earn their screen time by reading real books out loud, verified on the iPhone.",
       "url": "guardianreader/",
       "platform": "ios",
-      "alt": "Guardian Reader icon: an owl reading an open book"
+      "alt": "Guardian Reader icon: an owl reading an open book",
+      "tag": "Kids & reading",
+      "accent": "#ffb833",
+      "icon": "guardianreader/assets/img/guardian-reader-icon-180.png"
     },
     {
       "name": "Block&Read",
@@ -54,7 +69,10 @@
       "url": "blockandread/",
       "platform": "ios",
       "imageFit": "contain",
-      "alt": "Block&Read icon: a golden padlock shaped like an open book"
+      "alt": "Block&Read icon: a golden padlock shaped like an open book",
+      "tag": "Focus & books",
+      "accent": "#cda250",
+      "icon": "blockandread/assets/img/blockread-icon-180.png"
     },
     {
       "name": "Fix Your Life",
@@ -62,7 +80,10 @@
       "description": "Alarms that ask you questions, and habits you can see: your own photos, streaks and the whole year in color.",
       "url": "fixyourlife/",
       "platform": "ios",
-      "alt": "Fix Your Life icon: the letters FYL in white on black"
+      "alt": "Fix Your Life icon: the letters FYL in white on black",
+      "tag": "Habits & journaling",
+      "accent": "#35d07f",
+      "icon": "fixyourlife/assets/img/fyl-logo.svg"
     }
   ],
   "platforms": {
