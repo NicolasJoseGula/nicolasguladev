@@ -277,7 +277,8 @@ def main():
     if n:
         landing.write_text(page, encoding='utf-8')
     # Header and footer on the landing and support page come from here too.
-    for p, up in ((landing, ''), (SITE / 'support' / 'index.html', '../')):
+    for p, up in ((landing, ''), (SITE / 'support' / 'index.html', '../'),
+                  (SITE / 'privacypolicy' / 'index.html', '../'), (SITE / 'terms' / 'index.html', '../')):
         if not p.exists():
             continue
         t = p.read_text(encoding='utf-8')
