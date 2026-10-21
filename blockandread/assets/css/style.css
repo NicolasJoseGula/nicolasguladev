@@ -452,3 +452,6 @@ section { padding: 96px 0; }
    franja transparente de los costados se comeria los clics del hero. */
 .site-header { pointer-events: none; }
 .site-header .container, .site-header .wrap { pointer-events: auto; }
+
+/* Firma y fecha de las guias */
+.article-hero .meta { font-size: 13.5px; color: var(--muted-2); margin-top: 14px; }

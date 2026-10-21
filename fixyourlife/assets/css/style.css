@@ -671,3 +671,6 @@ section { padding: 96px 0; }
 .js .guide-card.reveal.in, .js .step.reveal.in { transition: opacity .7s ease, transform .18s ease, border-color .18s ease; }
 .js .guide-card.reveal.in:hover, .js .step.reveal.in:hover { transform: translateY(-4px); }
 
+
+/* Firma y fecha de las guias */
+.article-hero .meta { font-size: 13.5px; color: var(--muted-2); margin-top: 14px; }

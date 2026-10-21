@@ -62,7 +62,7 @@
     "tag_en": "Brain games",
     "title_en": "Brain Puzzle Games for Adults: A Few Minutes a Day",
     "short_en": "What a tile puzzle actually asks of your brain, and how to build a short daily habit.",
-    "desc_en": "Brain puzzle games for adults work your attention, visual scanning and planning. What tile matching exercises, and how to play Trip Sort as a short daily brain break."
+    "desc_en": "Brain puzzle games for adults work your attention, scanning and planning. What tile matching exercises, and how to play Trip Sort as a short daily brain break."
   },
   {
     "slug": "puzzle-games-for-seniors",
@@ -101,7 +101,7 @@
     "tag_en": "Relax",
     "title_en": "Relaxing Zen Puzzle Games to Unwind After a Long Day",
     "short_en": "What makes a game feel calm, and how to set Trip Sort up for a quiet ten minutes.",
-    "desc_en": "What makes a puzzle game relaxing: no timers, gentle sounds, small wins. How to turn Trip Sort into a calm ten-minute wind-down with music, sound and vibration settings."
+    "desc_en": "What makes a puzzle game relaxing: no timers, gentle sounds, small wins. How to turn Trip Sort into a calm ten-minute wind-down with music and sound settings."
   },
   {
     "slug": "travel-puzzle-game",
@@ -114,7 +114,7 @@
     "tag_en": "World tour",
     "title_en": "A Travel Puzzle Game: Visit 255 Destinations From Your Phone",
     "short_en": "Postcards, passport stamps and famous landmarks: how a trip around the world works.",
-    "desc_en": "Love travel? Trip Sort is a puzzle trip through 255 real destinations: city tiles, a postcard for every stop, passport stamps and 23 famous landmarks to collect."
+    "desc_en": "Love travel? Trip Sort is a puzzle trip through 255 real destinations: city tiles, a postcard for every stop, passport stamps and 23 landmarks to collect."
   },
   {
     "slug": "tile-match-boosters",
@@ -127,6 +127,7 @@
     "tag_en": "Boosters",
     "title_en": "Tile Match Boosters Explained: Hint, Undo, Shuffle, Wand, Extra Slot",
     "short_en": "What each booster does, when it saves a level, and how to earn more without paying.",
-    "desc_en": "Every Trip Sort booster explained: Hint, Undo, Shuffle, Magic Wand and the extra tray slot. When to use each one, and how to earn more with daily rewards and missions."
+    "desc_en": "Every Trip Sort booster explained: Hint, Undo, Shuffle, Magic Wand and the extra slot. When to use each, and how to earn more with daily rewards and missions.",
+    "seo_title": "Tile Match Boosters Explained: Hint, Undo, Shuffle and More"
   }
 ]

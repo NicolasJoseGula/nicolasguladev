@@ -141,7 +141,8 @@ def guide_page(g, body):
     slug = g['slug']
     url = f'{BASE}guides/{slug}/'
     image = f'{BASE}assets/img/guides/{slug}.jpg'
-    title = g['title_en']
+    # El <title> puede ser mas corto que el h1: Google corta pasados los ~60 caracteres.
+    title = g.get('seo_title') or g['title_en']
     desc = g['desc_en']
     up = '../../'
     faq_path = HERE / 'content' / f'{slug}.faq.json'
@@ -155,7 +156,7 @@ def guide_page(g, body):
     article_ld = json.dumps({
         '@context': 'https://schema.org', '@type': 'Article', 'headline': title, 'description': desc,
         'image': image, 'inLanguage': 'en', 'datePublished': UPDATED, 'dateModified': UPDATED,
-        'author': {'@type': 'Organization', 'name': 'Trip Sort', 'url': BASE},
+        'author': {'@type': 'Person', 'name': 'Nicolas Gula', 'url': 'https://dezeo.lat/'},
         'publisher': {'@type': 'Organization', 'name': 'dezeo', 'url': 'https://dezeo.lat/',
                       'logo': {'@type': 'ImageObject', 'url': BASE + 'assets/img/tripsort-icon.png'}},
         'mainEntityOfPage': url,
@@ -186,7 +187,7 @@ def guide_page(g, body):
   <div class="narrow">
     <p class="breadcrumb"><a href="{up}">Trip Sort</a> › <a href="../">{en('Guides')}</a></p>
     <h1>{en(esc(g['title_en']))}</h1>
-    <p class="meta">{en(f'Updated {UPDATED} · Trip Sort for iPhone and Android')}</p>
+    <p class="meta">{en(f'By Nicolas Gula · Updated {UPDATED} · Trip Sort for iPhone and Android')}</p>
     <img class="cover" src="../../assets/img/guides/{slug}.jpg" width="1200" height="630" alt="{esc(g['title_en'])}">
 {body.strip()}
     <section class="related" aria-label="Related guides">
