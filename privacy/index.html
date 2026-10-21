@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website privacy | dezeo</title>
+  <meta name="description" content="How the dezeo.lat website uses Google Analytics, what it measures, and how to change your cookie choice. Each app has its own privacy policy.">
+  <link rel="canonical" href="https://dezeo.lat/privacy/">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" href="/favicon.ico" sizes="48x48">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <style>
+@font-face {
+  font-family: 'Space Grotesk';
+  font-style: normal; font-weight: 700; font-display: swap;
+  src: url(/assets/fonts/space-grotesk-latin.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal; font-weight: 400; font-display: swap;
+  src: url(/assets/fonts/inter-latin.woff2) format('woff2');
+}
+:root {
+  --bg: #0b0b0b;
+  --surface: #111119;
+  --border: #23232e;
+  --border-strong: #30303c;
+  --text: #f4f4f7;
+  --text-2: #9a9aa6;
+  --text-3: #7c7c88;
+  --lima: #b8ff00;
+  --font-head: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg); color: var(--text);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--lima); }
+.wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 40px 24px 72px; }
+header { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 56px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none;
+         font-family: var(--font-head); font-weight: 700; letter-spacing: -.02em; }
+.brand img { width: 27px; height: 34px; }
+header nav { display: flex; gap: 20px; font-size: 15px; }
+header nav a { color: var(--text-2); text-decoration: none; }
+header nav a:hover { color: var(--text); }
+.kicker { font-family: var(--font-head); font-weight: 700; font-size: 12px; letter-spacing: .14em;
+          text-transform: uppercase; color: var(--lima); }
+h1 { font-family: var(--font-head); font-weight: 700; letter-spacing: -.02em; font-size: clamp(30px, 5vw, 42px);
+     line-height: 1.15; margin: 10px 0 8px; }
+.meta { color: var(--text-3); font-size: 14px; }
+h2 { font-family: var(--font-head); font-weight: 700; font-size: 20px; margin: 40px 0 10px; }
+p, li { color: var(--text-2); }
+p + p { margin-top: 12px; }
+ul { margin: 10px 0 0 20px; }
+li { margin-bottom: 6px; }
+strong { color: var(--text); font-weight: 600; }
+.choice { margin-top: 16px; padding: 18px 20px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); }
+.choice p { margin: 0 0 14px; }
+.choice button { font: 600 15px/1 var(--font-body); padding: 12px 18px; border-radius: 999px; cursor: pointer;
+                 border: 1px solid var(--border-strong); background: transparent; color: var(--text); margin-right: 8px; }
+.choice button.yes { background: var(--lima); border-color: var(--lima); color: #0b0b0b; }
+footer { margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--border); color: var(--text-3); font-size: 14px; }
+  </style>
+  <script src="/analitica.js" async></script>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/">
+        <img src="/assets/dezeo-icono.png" alt="" width="27" height="34">
+        dezeo
+      </a>
+      <nav>
+        <a href="/projects.html">Work</a>
+        <a href="mailto:hola@dezeo.lat">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <p class="kicker">Privacy</p>
+      <h1>Website privacy</h1>
+      <p class="meta">dezeo.lat · Last updated: October 21, 2026</p>
+
+      <h2>What this page covers</h2>
+      <p>This page is about the <strong>website</strong> dezeo.lat only. Each app has its own privacy policy, and most of our apps collect nothing at all: see the policies for <a href="/tripsort/privacypolicy/">Trip Sort</a>, <a href="/charlatan/privacypolicy/">Charlatan</a>, <a href="/guardianreader/privacypolicy/">Guardian Reader</a>, <a href="/blockandread/privacypolicy/">Block&amp;Read</a>, <a href="/fixyourlife/privacypolicy/">Fix Your Life</a>, <a href="/facecheck/privacypolicy/">FaceCheck</a> and <a href="/chartmaker/privacypolicy/">Chart Maker</a>.</p>
+
+      <h2>What we measure</h2>
+      <p>The website uses <strong>Google Analytics</strong> to count visits, see which pages are read, where visitors come from (a search, a TikTok video, a link) and which App Store or Google Play buttons get tapped. We use it only to learn which pages help people find our apps.</p>
+
+      <h2>What Google receives</h2>
+      <ul>
+        <li>Google Analytics sets first-party cookies (<code>_ga</code> and <code>_ga_*</code>) to tell a returning visitor from a new one.</li>
+        <li>It receives the page address, the page you came from, your browser, device type and language, and an approximate location derived from your IP address. Google Analytics does not log or store IP addresses.</li>
+        <li>Google signals and every advertising feature are turned off. The data is not used for ads and is not shared with advertisers.</li>
+        <li>Data is kept for 14 months, then deleted.</li>
+      </ul>
+      <p>Google processes this data under <a href="https://business.safety.google/privacy/" rel="noopener">Google's privacy terms</a>.</p>
+
+      <h2>Your choice</h2>
+      <p>In the European Economic Area, the United Kingdom and Switzerland, Google Analytics stays off until you accept it in the banner. Everywhere else it runs by default, and you can turn it off here. If your browser sends a <strong>Global Privacy Control</strong> signal, Google Analytics never runs.</p>
+      <div class="choice">
+        <p id="estado">Your current choice: checking…</p>
+        <button type="button" class="yes" data-v="granted">Allow analytics</button>
+        <button type="button" data-v="denied">Turn analytics off</button>
+      </div>
+      <p style="margin-top:14px">Turning it off stops new measurement right away. To remove cookies already set, clear this site's data in your browser.</p>
+
+      <h2>Other content on the site</h2>
+      <ul>
+        <li>The Trip Sort pages load their typeface from Google Fonts, which receives your IP address to serve it.</li>
+        <li>The videos on the Trip Sort page use TikTok's own player, which loads only when you tap a video and is covered by <a href="https://www.tiktok.com/legal/privacy-policy" rel="noopener">TikTok's privacy policy</a>.</li>
+        <li>The site is hosted on GitHub Pages, which keeps standard server access logs, including IP address and user agent, under <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's own privacy statement</a>. We do not read, receive or have access to those logs.</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Questions about this page: <a href="mailto:hola@dezeo.lat">hola@dezeo.lat</a>. dezeo is run by Nicolás Gula, Montevideo, Uruguay.</p>
+    </main>
+
+    <footer>© 2026 dezeo creative studio</footer>
+  </div>
+
+  <script>
+  // Muestra la eleccion actual y la cambia. Si el script de analitica todavia
+  // no cargo (va con async), se espera a que exista window.dzAnalitica.
+  (function () {
+    var estado = document.getElementById("estado");
+    var TEXTO = {
+      granted: "Your current choice: analytics allowed.",
+      denied: "Your current choice: analytics turned off.",
+      pending: "Your current choice: not made yet (analytics is off until you choose).",
+      gpc: "Your browser sends Global Privacy Control, so analytics never runs here."
+    };
+    function pintar() {
+      if (!window.dzAnalitica) { estado.textContent = "Analytics is not active on this site right now."; return; }
+      estado.textContent = TEXTO[window.dzAnalitica.estado()] || TEXTO.pending;
+    }
+    document.querySelector(".choice").addEventListener("click", function (e) {
+      var b = e.target.closest("button[data-v]");
+      if (!b || !window.dzAnalitica) return;
+      window.dzAnalitica.elegir(b.getAttribute("data-v"));
+      pintar();
+    });
+    if (window.dzAnalitica) pintar();
+    else window.addEventListener("load", pintar);
+  })();
+  </script>
+</body>
+</html>

@@ -312,6 +312,8 @@ a { color: inherit; text-decoration: none; }
 .socials svg { width: 16px; height: 16px; display: block; }
 
 .copyright { font-size: 12px; letter-spacing: 0.01em; }
+.copyright a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.copyright a:hover { color: var(--text); }
 
 /* ----------------------------------------------------------------
    Small screens

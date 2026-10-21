@@ -133,7 +133,8 @@ def head(title, desc, url, image, up, extra=''):
   <meta property="og:url" content="{url}">
   <meta property="og:image" content="{image}">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="{image}">{extra}'''
+  <meta name="twitter:image" content="{image}">{extra}
+  <script src="/analitica.js" async></script>'''
 
 
 def guide_page(g, body):
