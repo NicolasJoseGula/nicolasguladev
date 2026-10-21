@@ -283,7 +283,7 @@ pointer-events: none;
 max-width: 13ch;
 font-family: var(--font-head);
 font-weight: 600;
-font-size: clamp(42px, 6.4vw, 84px);
+font-size: clamp(42px, 7.6vw, 104px);
 line-height: 1;
 letter-spacing: -0.035em;
 color: #fff;
@@ -339,53 +339,6 @@ transition: color 0.2s ease;
 .work-bajar span { display: inline-block; animation: bajar 1.8s ease-in-out infinite; }
 .work-bajar:hover { color: var(--lima); }
 @keyframes bajar { 50% { transform: translateY(5px); } }
-.orbita {
-position: absolute;
-top: 118px;
-right: -20px;
-width: min(370px, 30vw);
-aspect-ratio: 1;
-opacity: 0;
-animation: palabra 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.5s forwards;
-}
-.orbita-anillo {
-position: absolute;
-inset: 18%;
-border-radius: 50%;
-border: 1px solid rgba(184, 255, 0, 0.28);
-box-shadow: 0 0 60px rgba(184, 255, 0, 0.18), inset 0 0 60px rgba(184, 255, 0, 0.12);
-animation: anillo 7s ease-in-out infinite;
-}
-.orbita-anillo::before {
-content: "";
-position: absolute;
-inset: -16%;
-border-radius: 50%;
-border: 1px dashed rgba(255, 255, 255, 0.08);
-animation: girar 60s linear infinite;
-}
-@keyframes anillo { 50% { box-shadow: 0 0 90px rgba(184, 255, 0, 0.3), inset 0 0 80px rgba(184, 255, 0, 0.2); } }
-@keyframes girar { to { transform: rotate(360deg); } }
-.orb {
-position: absolute;
-left: var(--x);
-top: var(--y);
-width: var(--lado);
-height: var(--lado);
-transform: translate3d(calc(var(--px, 0) * var(--z) * 18px), calc(var(--py, 0) * var(--z) * 18px), 0);
-transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-.orb img {
-display: block;
-width: 100%;
-height: 100%;
-border-radius: 23%;
-box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
-animation: flotar 6s ease-in-out var(--d) infinite;
-transition: box-shadow 0.3s ease;
-}
-.orb:hover img { box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 0 0 2px var(--lima), 0 0 40px rgba(184, 255, 0, 0.35); }
-@keyframes flotar { 50% { transform: translateY(-12px) rotate(-2deg); } }
 .cinta {
 position: relative;
 left: 50%;
@@ -599,11 +552,7 @@ transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 @media (prefers-reduced-motion: reduce) {
 .work-title .w, .work-sub, .work-datos, .work-bajar { opacity: 1; transform: none; filter: none; animation: none; }
-.work-grilla, .cinta-pista, .work-bajar span, .orbita-anillo, .orbita-anillo::before, .orb img { animation: none; }
-.orbita { opacity: 1; animation: none; }
-}
-@media (max-width: 1100px) {
-.orbita { display: none; }
+.work-grilla, .cinta-pista, .work-bajar span { animation: none; }
 }
 @media (max-width: 860px) {
 .work { padding: 0 20px 32px; }
@@ -893,18 +842,6 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
         <div><dt>UY</dt><dd>made in Montevideo, Uruguay</dd></div>
       </dl>
       <a class="work-bajar" href="#vitrina">See the work <span aria-hidden="true">↓</span></a>
-      <div class="orbita" aria-hidden="true">
-        <span class="orbita-anillo"></span>
-        <!-- orbita: la escribe tools/construir.py desde projects.json -->
-        <a class="orb" href="tripsort/" tabindex="-1" aria-hidden="true" style="--x: 16%; --y: 18%; --z: 1.1; --lado: 96px; --d: 0.0s"><img src="tripsort/assets/img/tripsort-icon-180.png" alt="" width="96" height="96" loading="lazy" decoding="async"></a>
-        <a class="orb" href="facecheck/" tabindex="-1" aria-hidden="true" style="--x: 66%; --y: 8%; --z: 0.6; --lado: 74px; --d: 0.7s"><img src="facecheck/assets/img/facecheck-icon-180.png" alt="" width="74" height="74" loading="lazy" decoding="async"></a>
-        <a class="orb" href="chartmaker/" tabindex="-1" aria-hidden="true" style="--x: 84%; --y: 40%; --z: 1.3; --lado: 88px; --d: 1.4s"><img src="chartmaker/assets/img/chart-maker-app-icon-180.png" alt="" width="88" height="88" loading="lazy" decoding="async"></a>
-        <a class="orb" href="charlatan/" tabindex="-1" aria-hidden="true" style="--x: 64%; --y: 72%; --z: 0.9; --lado: 104px; --d: 2.1s"><img src="charlatan/assets/img/charlatan-app-icon-180.png" alt="" width="104" height="104" loading="lazy" decoding="async"></a>
-        <a class="orb" href="guardianreader/" tabindex="-1" aria-hidden="true" style="--x: 20%; --y: 70%; --z: 1.2; --lado: 82px; --d: 2.8s"><img src="guardianreader/assets/img/guardian-reader-icon-180.png" alt="" width="82" height="82" loading="lazy" decoding="async"></a>
-        <a class="orb" href="blockandread/" tabindex="-1" aria-hidden="true" style="--x: 42%; --y: 38%; --z: 1.6; --lado: 110px; --d: 3.5s"><img src="blockandread/assets/img/blockread-icon-180.png" alt="" width="110" height="110" loading="lazy" decoding="async"></a>
-        <a class="orb" href="fixyourlife/" tabindex="-1" aria-hidden="true" style="--x: 2%; --y: 44%; --z: 0.7; --lado: 68px; --d: 4.2s"><img src="fixyourlife/assets/img/fyl-logo.svg" alt="" width="68" height="68" loading="lazy" decoding="async"></a>
-        <!-- /orbita -->
-      </div>
     </section>
 
     <section class="cinta" aria-hidden="true">
@@ -1168,15 +1105,6 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
     window.addEventListener("scroll", pedir, { passive: true });
     window.addEventListener("resize", pedir);
     mover();
-  }
-
-  // ---- constelacion: los iconos se corren un poco con el puntero ----
-  var orbita = document.querySelector(".orbita");
-  if (orbita && window.matchMedia("(hover: hover)").matches) {
-    window.addEventListener("pointermove", function (e) {
-      orbita.style.setProperty("--px", (e.clientX / window.innerWidth - 0.5).toFixed(3));
-      orbita.style.setProperty("--py", (e.clientY / window.innerHeight - 0.5).toFixed(3));
-    }, { passive: true });
   }
 
   // ---- luz que sigue al puntero ----

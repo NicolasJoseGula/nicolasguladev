@@ -13,8 +13,7 @@
       "background": "#091022",
       "alt": "Trip Sort artwork: three tiles with world landmarks over a colorful travel scene",
       "tag": "Puzzle game",
-      "accent": "#ffc531",
-      "icon": "tripsort/assets/img/tripsort-icon-180.png"
+      "accent": "#ffc531"
     },
     {
       "name": "FaceCheck",
@@ -25,8 +24,7 @@
       "background": "#1a0912",
       "alt": "FaceCheck icon: a golden face on a purple background",
       "tag": "Face analysis",
-      "accent": "#de1c6b",
-      "icon": "facecheck/assets/img/facecheck-icon-180.png"
+      "accent": "#de1c6b"
     },
     {
       "name": "Chart Maker",
@@ -37,8 +35,7 @@
       "background": "#131c18",
       "alt": "Chart Maker icon: three green bars of a bar chart race",
       "tag": "Data videos",
-      "accent": "#4fbf8b",
-      "icon": "chartmaker/assets/img/chart-maker-app-icon-180.png"
+      "accent": "#4fbf8b"
     },
     {
       "name": "Charlatan",
@@ -48,8 +45,7 @@
       "platform": "ios",
       "alt": "Charlatan icon: pink and blue lips with speech lines",
       "tag": "Video captions",
-      "accent": "#ff2d8a",
-      "icon": "charlatan/assets/img/charlatan-app-icon-180.png"
+      "accent": "#ff2d8a"
     },
     {
       "name": "Guardian Reader",
@@ -59,8 +55,7 @@
       "platform": "ios",
       "alt": "Guardian Reader icon: an owl reading an open book",
       "tag": "Kids & reading",
-      "accent": "#ffb833",
-      "icon": "guardianreader/assets/img/guardian-reader-icon-180.png"
+      "accent": "#ffb833"
     },
     {
       "name": "Block&Read",
@@ -71,8 +66,7 @@
       "imageFit": "contain",
       "alt": "Block&Read icon: a golden padlock shaped like an open book",
       "tag": "Focus & books",
-      "accent": "#cda250",
-      "icon": "blockandread/assets/img/blockread-icon-180.png"
+      "accent": "#cda250"
     },
     {
       "name": "Fix Your Life",
@@ -82,8 +76,7 @@
       "platform": "ios",
       "alt": "Fix Your Life icon: the letters FYL in white on black",
       "tag": "Habits & journaling",
-      "accent": "#35d07f",
-      "icon": "fixyourlife/assets/img/fyl-logo.svg"
+      "accent": "#35d07f"
     }
   ],
   "platforms": {

@@ -283,7 +283,7 @@ pointer-events: none;
 max-width: 13ch;
 font-family: var(--font-head);
 font-weight: 600;
-font-size: clamp(42px, 6.4vw, 84px);
+font-size: clamp(42px, 7.6vw, 104px);
 line-height: 1;
 letter-spacing: -0.035em;
 color: #fff;
@@ -339,53 +339,6 @@ transition: color 0.2s ease;
 .work-bajar span { display: inline-block; animation: bajar 1.8s ease-in-out infinite; }
 .work-bajar:hover { color: var(--lima); }
 @keyframes bajar { 50% { transform: translateY(5px); } }
-.orbita {
-position: absolute;
-top: 118px;
-right: -20px;
-width: min(370px, 30vw);
-aspect-ratio: 1;
-opacity: 0;
-animation: palabra 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) 0.5s forwards;
-}
-.orbita-anillo {
-position: absolute;
-inset: 18%;
-border-radius: 50%;
-border: 1px solid rgba(184, 255, 0, 0.28);
-box-shadow: 0 0 60px rgba(184, 255, 0, 0.18), inset 0 0 60px rgba(184, 255, 0, 0.12);
-animation: anillo 7s ease-in-out infinite;
-}
-.orbita-anillo::before {
-content: "";
-position: absolute;
-inset: -16%;
-border-radius: 50%;
-border: 1px dashed rgba(255, 255, 255, 0.08);
-animation: girar 60s linear infinite;
-}
-@keyframes anillo { 50% { box-shadow: 0 0 90px rgba(184, 255, 0, 0.3), inset 0 0 80px rgba(184, 255, 0, 0.2); } }
-@keyframes girar { to { transform: rotate(360deg); } }
-.orb {
-position: absolute;
-left: var(--x);
-top: var(--y);
-width: var(--lado);
-height: var(--lado);
-transform: translate3d(calc(var(--px, 0) * var(--z) * 18px), calc(var(--py, 0) * var(--z) * 18px), 0);
-transition: transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
-}
-.orb img {
-display: block;
-width: 100%;
-height: 100%;
-border-radius: 23%;
-box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
-animation: flotar 6s ease-in-out var(--d) infinite;
-transition: box-shadow 0.3s ease;
-}
-.orb:hover img { box-shadow: 0 18px 50px rgba(0, 0, 0, 0.55), 0 0 0 2px var(--lima), 0 0 40px rgba(184, 255, 0, 0.35); }
-@keyframes flotar { 50% { transform: translateY(-12px) rotate(-2deg); } }
 .cinta {
 position: relative;
 left: 50%;
@@ -599,11 +552,7 @@ transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 @media (prefers-reduced-motion: reduce) {
 .work-title .w, .work-sub, .work-datos, .work-bajar { opacity: 1; transform: none; filter: none; animation: none; }
-.work-grilla, .cinta-pista, .work-bajar span, .orbita-anillo, .orbita-anillo::before, .orb img { animation: none; }
-.orbita { opacity: 1; animation: none; }
-}
-@media (max-width: 1100px) {
-.orbita { display: none; }
+.work-grilla, .cinta-pista, .work-bajar span { animation: none; }
 }
 @media (max-width: 860px) {
 .work { padding: 0 20px 32px; }

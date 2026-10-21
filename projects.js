@@ -55,15 +55,6 @@
     mover();
   }
 
-  // ---- constelacion: los iconos se corren un poco con el puntero ----
-  var orbita = document.querySelector(".orbita");
-  if (orbita && window.matchMedia("(hover: hover)").matches) {
-    window.addEventListener("pointermove", function (e) {
-      orbita.style.setProperty("--px", (e.clientX / window.innerWidth - 0.5).toFixed(3));
-      orbita.style.setProperty("--py", (e.clientY / window.innerHeight - 0.5).toFixed(3));
-    }, { passive: true });
-  }
-
   // ---- luz que sigue al puntero ----
   if (window.matchMedia("(hover: hover)").matches) {
     marcos.forEach(function (m) {

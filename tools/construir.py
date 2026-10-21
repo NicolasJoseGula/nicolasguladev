@@ -108,27 +108,6 @@ def tarjetas():
     return ''.join(piezas), nombres
 
 
-# Constelacion del encabezado de Work: el icono de cada app flotando alrededor
-# de un anillo de luz. Las posiciones y la profundidad (--z, cuanto se mueve con
-# el puntero) estan a mano, una por app, en el orden de projects.json.
-MARCA_ORBITA = re.compile(r'(<!-- orbita:.*?-->)(.*?)(\n *<!-- /orbita -->)', re.S)
-LUGARES = [(16, 18, 1.1, 96), (66, 8, 0.6, 74), (84, 40, 1.3, 88), (64, 72, 0.9, 104),
-           (20, 70, 1.2, 82), (42, 38, 1.6, 110), (2, 44, 0.7, 68)]
-
-
-def orbita():
-    e = html.escape
-    piezas = []
-    for i, p in enumerate(datos()['projects']):
-        if not p.get('icon'):
-            continue
-        x, y, z, lado = LUGARES[i % len(LUGARES)]
-        piezas.append(f'\n        <a class="orb" href="{e(p["url"])}" tabindex="-1" aria-hidden="true"'
-                      f' style="--x: {x}%; --y: {y}%; --z: {z}; --lado: {lado}px; --d: {i * 0.7:.1f}s">'
-                      f'<img src="{e(p["icon"])}" alt="" width="{lado}" height="{lado}" loading="lazy" decoding="async"></a>')
-    return ''.join(piezas)
-
-
 # Cinta de Work: los nombres de las apps pasando en letra grande. Va dos veces
 # seguida para que el bucle de la animacion no tenga corte.
 MARCA_CINTA = re.compile(r'(<!-- cinta:.*?-->)(.*?)(\n *<!-- /cinta -->)', re.S)
@@ -210,8 +189,6 @@ def main():
         t = MARCA_CSS.sub(lambda m: m.group(1) + '\n' + css_pagina + '\n  ' + m.group(3), t, count=1)
         if MARCA_PIE.search(t):
             t = MARCA_PIE.sub(lambda m: m.group(1) + pie_apps(prefijo) + m.group(3), t, count=1)
-        if MARCA_ORBITA.search(t):
-            t = MARCA_ORBITA.sub(lambda m: m.group(1) + orbita() + m.group(3), t, count=1)
         if MARCA_CINTA.search(t):
             t = MARCA_CINTA.sub(lambda m: m.group(1) + cinta() + m.group(3), t, count=1)
         if MARCA_CUANTAS.search(t):
