@@ -496,6 +496,68 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
     })();
   </script>
   <script src="/analitica.js" async></script>
+  <!-- Lo escribe tools/construir.py desde projects.json. -->
+  <script type="application/ld+json" id="ld-proyectos">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Work | dezeo",
+  "url": "https://dezeo.lat/projects.html",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "dezeo",
+    "url": "https://dezeo.lat/"
+  },
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": 7,
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Trip Sort",
+        "url": "https://dezeo.lat/tripsort/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "FaceCheck",
+        "url": "https://dezeo.lat/facecheck/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Chart Maker",
+        "url": "https://dezeo.lat/chartmaker/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Charlatan",
+        "url": "https://dezeo.lat/charlatan/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 5,
+        "name": "Guardian Reader",
+        "url": "https://dezeo.lat/guardianreader/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 6,
+        "name": "Block&Read",
+        "url": "https://dezeo.lat/blockandread/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 7,
+        "name": "Fix Your Life",
+        "url": "https://dezeo.lat/fixyourlife/"
+      }
+    ]
+  }
+}
+  </script>
 </head>
 <body>
   <div class="glow" aria-hidden="true"></div>
@@ -528,7 +590,7 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
           <span class="card-mono" aria-hidden="true">T</span>
           <picture>
             <source type="image/webp" srcset="assets/tripsort.webp">
-            <img src="assets/tripsort.jpg" alt="Trip Sort artwork: three tiles with world landmarks over a colorful travel scene" style="background: #091022" loading="eager" fetchpriority="high" decoding="async" onerror="this.parentNode.remove()">
+            <img src="assets/tripsort.jpg" alt="Trip Sort artwork: three tiles with world landmarks over a colorful travel scene" style="background: #091022" width="800" height="500" loading="eager" fetchpriority="high" decoding="async" onerror="this.parentNode.remove()">
           </picture>
         </div>
         <div class="card-body">
@@ -548,7 +610,7 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
           <span class="card-mono" aria-hidden="true">F</span>
           <picture>
             <source type="image/webp" srcset="assets/facecheck.webp">
-            <img src="assets/facecheck.jpg" alt="FaceCheck icon: a golden face on a purple background" style="background: #1a0912" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+            <img src="assets/facecheck.jpg" alt="FaceCheck icon: a golden face on a purple background" style="background: #1a0912" width="1280" height="800" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
           </picture>
         </div>
         <div class="card-body">
@@ -567,7 +629,7 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
           <span class="card-mono" aria-hidden="true">C</span>
           <picture>
             <source type="image/webp" srcset="assets/chartmaker.webp">
-            <img src="assets/chartmaker.jpg" alt="Chart Maker icon: three green bars of a bar chart race" style="background: #131c18" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+            <img src="assets/chartmaker.jpg" alt="Chart Maker icon: three green bars of a bar chart race" style="background: #131c18" width="800" height="500" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
           </picture>
         </div>
         <div class="card-body">
@@ -586,7 +648,7 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
           <span class="card-mono" aria-hidden="true">C</span>
           <picture>
             <source type="image/webp" srcset="assets/charlatan.webp">
-            <img src="assets/charlatan.jpg" alt="Charlatan icon: pink and blue lips with speech lines" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+            <img src="assets/charlatan.jpg" alt="Charlatan icon: pink and blue lips with speech lines" width="512" height="512" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
           </picture>
         </div>
         <div class="card-body">
@@ -605,7 +667,7 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
           <span class="card-mono" aria-hidden="true">G</span>
           <picture>
             <source type="image/webp" srcset="assets/guardianreader.webp">
-            <img src="assets/guardianreader.jpg" alt="Guardian Reader icon: an owl reading an open book" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+            <img src="assets/guardianreader.jpg" alt="Guardian Reader icon: an owl reading an open book" width="800" height="500" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
           </picture>
         </div>
         <div class="card-body">
@@ -624,7 +686,7 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
           <span class="card-mono" aria-hidden="true">B</span>
           <picture>
             <source type="image/webp" srcset="assets/blockandread.webp">
-            <img src="assets/blockandread.jpg" alt="Block&amp;Read icon: a golden padlock shaped like an open book" class="fit-contain" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+            <img src="assets/blockandread.jpg" alt="Block&amp;Read icon: a golden padlock shaped like an open book" class="fit-contain" width="800" height="800" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
           </picture>
         </div>
         <div class="card-body">
@@ -643,7 +705,7 @@ body.portada .socials a { filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.95)); }
           <span class="card-mono" aria-hidden="true">F</span>
           <picture>
             <source type="image/webp" srcset="assets/fixyourlife.webp">
-            <img src="assets/fixyourlife.jpg" alt="Fix Your Life icon: the letters FYL in white on black" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
+            <img src="assets/fixyourlife.jpg" alt="Fix Your Life icon: the letters FYL in white on black" width="800" height="800" loading="lazy" decoding="async" onerror="this.parentNode.remove()">
           </picture>
         </div>
         <div class="card-body">

@@ -38,7 +38,7 @@ def header(up):
     return f'''<header class="site-header">
   <div class="container">
     <a class="brand" href="{up}">
-      <img src="{up}assets/img/tripsort-icon.png" alt="Trip Sort app icon" width="32" height="32">
+      <img src="{up}assets/img/tripsort-icon-64.webp" alt="Trip Sort app icon" width="32" height="32">
       Trip Sort
     </a>
     <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
@@ -74,7 +74,7 @@ def footer(up):
     <div class="footer-grid">
       <div>
         <a class="brand" href="{up}">
-          <img src="{up}assets/img/tripsort-icon.png" alt="Trip Sort app icon" width="32" height="32">
+          <img src="{up}assets/img/tripsort-icon-64.webp" alt="Trip Sort app icon" width="32" height="32">
           Trip Sort
         </a>
         <p>{en('A relaxing triple tile match puzzle. Match 3 tiles, train your brain and travel the world, offline.')}</p>
@@ -120,8 +120,8 @@ def head(title, desc, url, image, up, extra=''):
   <link rel="canonical" href="{url}">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#8fd6ff">
-  <link rel="icon" type="image/png" href="{up}assets/img/tripsort-icon.png">
-  <link rel="apple-touch-icon" href="{up}assets/img/tripsort-icon.png">
+  <link rel="icon" type="image/png" href="{up}assets/img/tripsort-icon-180.png">
+  <link rel="apple-touch-icon" href="{up}assets/img/tripsort-icon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap">

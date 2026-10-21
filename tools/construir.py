@@ -42,6 +42,16 @@ def lista_legible(nombres):
     return nombres[0] if len(nombres) == 1 else ', '.join(nombres[:-1]) + ' and ' + nombres[-1]
 
 
+def medidas(ruta):
+    """Ancho y alto de una imagen, para que el navegador reserve el lugar."""
+    try:
+        from PIL import Image
+        with Image.open(RAIZ / ruta) as im:
+            return im.size
+    except Exception:
+        return None
+
+
 def tarjetas():
     datos = json.loads((RAIZ / DATOS).read_text(encoding='utf-8'))
     plataformas = datos['platforms']
@@ -64,8 +74,10 @@ def tarjetas():
             clase = ' class="fit-contain"' if p.get('imageFit') == 'contain' else ''
             # la primera tarjeta suele ser el elemento mas grande en pantalla
             carga = 'loading="eager" fetchpriority="high"' if i == 0 else 'loading="lazy"'
+            tam = medidas(p['image'])
+            dims = f' width="{tam[0]}" height="{tam[1]}"' if tam else ''
             imagen = (f'\n          <picture>{fuente}'
-                      f'\n            <img src="{e(p["image"])}" alt="{e(p.get("alt") or p["name"])}"{clase}{fondo}'
+                      f'\n            <img src="{e(p["image"])}" alt="{e(p.get("alt") or p["name"])}"{clase}{fondo}{dims}'
                       f' {carga} decoding="async" onerror="this.parentNode.remove()">'
                       f'\n          </picture>')
 
@@ -93,6 +105,22 @@ def tarjetas():
       </a>''')
     nombres = [p['name'] for p in datos['projects']]
     return ''.join(piezas), nombres
+
+
+# Datos estructurados de Work: la lista de apps, para que Google entienda la
+# pagina como una coleccion y no como texto suelto.
+MARCA_LD = re.compile(r'(<script type="application/ld\+json" id="ld-proyectos">)(.*?)(</script>)', re.S)
+
+
+def ld_proyectos():
+    d = datos()
+    lista = [{'@type': 'ListItem', 'position': i + 1, 'name': p['name'],
+              'url': 'https://dezeo.lat/' + p['url'].lstrip('/')} for i, p in enumerate(d['projects'])]
+    ld = {'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': 'Work | dezeo',
+          'url': 'https://dezeo.lat/projects.html',
+          'isPartOf': {'@type': 'WebSite', 'name': 'dezeo', 'url': 'https://dezeo.lat/'},
+          'mainEntity': {'@type': 'ItemList', 'numberOfItems': len(lista), 'itemListElement': lista}}
+    return json.dumps(ld, ensure_ascii=False, indent=2)
 
 
 # Pie de las paginas de la raiz: una fila con las apps.
@@ -145,6 +173,8 @@ def main():
         t = MARCA_CSS.sub(lambda m: m.group(1) + '\n' + css_pagina + '\n  ' + m.group(3), t, count=1)
         if MARCA_PIE.search(t):
             t = MARCA_PIE.sub(lambda m: m.group(1) + pie_apps(prefijo) + m.group(3), t, count=1)
+        if MARCA_LD.search(t):
+            t = MARCA_LD.sub(lambda m: m.group(1) + '\n' + ld_proyectos() + '\n  ' + m.group(3), t, count=1)
         if MARCA_TARJETAS.search(t):
             grilla, nombres = tarjetas()
             t = MARCA_TARJETAS.sub(lambda m: m.group(1) + grilla + m.group(3), t, count=1)
