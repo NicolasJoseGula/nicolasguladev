@@ -27,17 +27,6 @@
       "accent": "#de1c6b"
     },
     {
-      "name": "Chart Maker",
-      "image": "assets/chartmaker.jpg",
-      "description": "Turns a CSV into an animated ranking video. Exports a real 4K MP4 for YouTube and a 9:16 cut for Shorts.",
-      "url": "chartmaker/",
-      "platform": "mac",
-      "background": "#131c18",
-      "alt": "Chart Maker icon: three green bars of a bar chart race",
-      "tag": "Data videos",
-      "accent": "#4fbf8b"
-    },
-    {
       "name": "Charlatan",
       "image": "assets/charlatan.jpg",
       "description": "Automatic subtitles for your videos, in any of 71 fonts. Everything runs on the iPhone.",
@@ -66,16 +55,6 @@
       "alt": "Block&Read icon: a golden padlock shaped like an open book",
       "tag": "Focus & books",
       "accent": "#cda250"
-    },
-    {
-      "name": "Fix Your Life",
-      "image": "assets/fixyourlife.jpg",
-      "description": "Alarms that ask you questions, and habits you can see: your own photos, streaks and the whole year in color.",
-      "url": "fixyourlife/",
-      "platform": "ios",
-      "alt": "Fix Your Life icon: the letters FYL in white on black",
-      "tag": "Habits & journaling",
-      "accent": "#35d07f"
     }
   ],
   "platforms": {
@@ -101,6 +80,27 @@
     }
   },
   "_borradores": [
+    {
+      "name": "Chart Maker",
+      "image": "assets/chartmaker.jpg",
+      "description": "Turns a CSV into an animated ranking video. Exports a real 4K MP4 for YouTube and a 9:16 cut for Shorts.",
+      "url": "chartmaker/",
+      "platform": "mac",
+      "background": "#131c18",
+      "alt": "Chart Maker icon: three green bars of a bar chart race",
+      "tag": "Data videos",
+      "accent": "#4fbf8b"
+    },
+    {
+      "name": "Fix Your Life",
+      "image": "assets/fixyourlife.jpg",
+      "description": "Alarms that ask you questions, and habits you can see: your own photos, streaks and the whole year in color.",
+      "url": "fixyourlife/",
+      "platform": "ios",
+      "alt": "Fix Your Life icon: the letters FYL in white on black",
+      "tag": "Habits & journaling",
+      "accent": "#35d07f"
+    },
     {
       "name": "CurrencyFlow",
       "image": "assets/currencyflow.png",
