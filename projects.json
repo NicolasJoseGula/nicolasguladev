@@ -55,6 +55,20 @@
       "alt": "Block&Read icon: a golden padlock shaped like an open book",
       "tag": "Focus & books",
       "accent": "#cda250"
+    },
+    {
+      "name": "Word Search",
+      "image": "assets/wordsearch.jpg",
+      "description": "A word search where every word is English vocabulary. Find it from its picture, hear how it sounds and keep it: 2000 levels, from CAT to GALAXY.",
+      "url": "wordsearch/",
+      "platform": [
+        "ios",
+        "android"
+      ],
+      "alt": "Word Search: Learning English app icon",
+      "tag": "Word game",
+      "accent": "#00c2ff",
+      "soon": true
     }
   ],
   "platforms": {

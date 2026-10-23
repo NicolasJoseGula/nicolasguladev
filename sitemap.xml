@@ -275,4 +275,19 @@
     <priority>0.7</priority>
   </url>
   <!-- Fix Your Life, localized landings -->
+  <!-- Word Search: Learning English -->
+  <url><loc>https://dezeo.lat/wordsearch/</loc><lastmod>2026-10-22</lastmod><priority>1.0</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/guides/</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/guides/word-search-to-learn-english/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/guides/english-vocabulary-game/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/guides/esl-word-search-for-adults/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/guides/how-to-memorize-english-vocabulary/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/guides/learn-english-with-pictures/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/guides/english-words-for-beginners/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/guides/english-pronunciation-new-words/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/guides/do-word-searches-help-learn-a-language/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/guides/learn-english-10-minutes-a-day/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/privacy/</loc><lastmod>2026-10-22</lastmod><priority>0.3</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/terms/</loc><lastmod>2026-10-22</lastmod><priority>0.3</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/support/</loc><lastmod>2026-10-22</lastmod><priority>0.4</priority></url>
 </urlset>

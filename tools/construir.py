@@ -88,6 +88,9 @@ def tarjetas():
             for k in claves if k in plataformas)
         # Color de marca de la app (el de su landing): tine el brillo de su fila.
         color = e(p.get('accent') or '#b8ff00')
+        # "soon": la landing ya existe pero la app todavia no salio. Va en Work
+        # con su etiqueta, pero no cuenta en el total, el pie ni los datos estructurados.
+        soon = '<span class="show-soon">Coming soon</span>' if p.get('soon') else ''
         piezas.append(f'''
       <article class="show" style="--acento: {color}; --fondo: {e(fondo)}" data-reveal>
         <a class="show-media" href="{e(p["url"])}" tabindex="-1" aria-hidden="true">
@@ -95,7 +98,7 @@ def tarjetas():
           </div>
         </a>
         <div class="show-info">
-          <p class="show-meta"><span class="show-num">{i + 1:02d}</span><span class="show-tag">{e(p.get("tag", ""))}</span></p>
+          <p class="show-meta"><span class="show-num">{i + 1:02d}</span><span class="show-tag">{e(p.get("tag", ""))}</span>{soon}</p>
           <h2 class="show-name"><a href="{e(p["url"])}">{e(p["name"])}</a></h2>
           <p class="show-desc">{e(p["description"])}</p>
           <ul class="show-plat" aria-label="Platforms">{insignias}
@@ -128,9 +131,8 @@ MARCA_LD = re.compile(r'(<script type="application/ld\+json" id="ld-proyectos">)
 
 
 def ld_proyectos():
-    d = datos()
     lista = [{'@type': 'ListItem', 'position': i + 1, 'name': p['name'],
-              'url': 'https://dezeo.lat/' + p['url'].lstrip('/')} for i, p in enumerate(d['projects'])]
+              'url': 'https://dezeo.lat/' + p['url'].lstrip('/')} for i, p in enumerate(publicadas())]
     ld = {'@context': 'https://schema.org', '@type': 'CollectionPage', 'name': 'Work | dezeo',
           'url': 'https://dezeo.lat/projects.html',
           'isPartOf': {'@type': 'WebSite', 'name': 'dezeo', 'url': 'https://dezeo.lat/'},
@@ -147,9 +149,13 @@ def datos():
     return json.loads((RAIZ / DATOS).read_text(encoding='utf-8'))
 
 
+def publicadas():
+    return [p for p in datos()['projects'] if not p.get('soon')]
+
+
 def pie_apps(prefijo):
     e = html.escape
-    enlaces = [f'<a href="{prefijo}{e(p["url"])}">{e(p["name"])}</a>' for p in datos()['projects']]
+    enlaces = [f'<a href="{prefijo}{e(p["url"])}">{e(p["name"])}</a>' for p in publicadas()]
     return ('\n    <nav class="pie-apps" aria-label="Apps by dezeo">\n      '
             + '\n      '.join(enlaces) + '\n    </nav>')
 
@@ -191,7 +197,7 @@ def main():
         if MARCA_CINTA.search(t):
             t = MARCA_CINTA.sub(lambda m: m.group(1) + cinta() + m.group(3), t, count=1)
         if MARCA_CUANTAS.search(t):
-            t = MARCA_CUANTAS.sub(lambda m: m.group(1) + str(len(datos()['projects'])) + m.group(3), t, count=1)
+            t = MARCA_CUANTAS.sub(lambda m: m.group(1) + str(len(publicadas())) + m.group(3), t, count=1)
         if MARCA_LD.search(t):
             t = MARCA_LD.sub(lambda m: m.group(1) + '\n' + ld_proyectos() + '\n  ' + m.group(3), t, count=1)
         if MARCA_TARJETAS.search(t):
