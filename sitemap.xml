@@ -278,6 +278,8 @@
   <!-- Word Search: Learning English -->
   <url><loc>https://dezeo.lat/wordsearch/</loc><lastmod>2026-10-22</lastmod><priority>1.0</priority></url>
   <url><loc>https://dezeo.lat/wordsearch/guides/</loc><lastmod>2026-10-22</lastmod><priority>0.8</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/worksheets/</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority></url>
+  <url><loc>https://dezeo.lat/wordsearch/worksheets/food/</loc><lastmod>2026-10-30</lastmod><priority>0.8</priority></url>
   <url><loc>https://dezeo.lat/wordsearch/guides/word-search-to-learn-english/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://dezeo.lat/wordsearch/guides/english-vocabulary-game/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
   <url><loc>https://dezeo.lat/wordsearch/guides/esl-word-search-for-adults/</loc><lastmod>2026-10-22</lastmod><priority>0.7</priority></url>
